@@ -1,0 +1,20 @@
+<odoo>
+  <record model="ir.ui.view" id="sale_order_add_edf_prime_form">
+    <field name="name">Wizard add edf prime form</field>
+    <field name="model">wizard.add.edf_prime</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="amount"/>
+          </group>
+        </sheet>
+        <footer>
+          <button name="confirm" type="object" string="Confirmer" class="btn-primary"/>
+          or
+          <button string="Annuler" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>

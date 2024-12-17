@@ -1,0 +1,35 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* amb_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20191106\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-22 11:16+0000\n"
+"PO-Revision-Date: 2020-03-22 11:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: amb_purchase
+#: code:addons/amb_purchase/models/purchase_bill.py:0
+#: model:ir.model.fields,field_description:amb_purchase.field_purchase_bill_union__purchase_order_line_id
+#, python-format
+msgid "PO line"
+msgstr "Ligne achat"
+
+#. module: amb_purchase
+#: model:ir.model,name:amb_purchase.model_purchase_bill_union
+msgid "Purchases & Bills Union"
+msgstr "Union des achats & factures"
+
+#. module: amb_purchase
+#: code:addons/amb_purchase/models/purchase_bill.py:0
+#: model:ir.model.fields,field_description:amb_purchase.field_purchase_bill_union__stock_picking_bill_id
+#, python-format
+msgid "Stock picking"
+msgstr "Bon de réception"

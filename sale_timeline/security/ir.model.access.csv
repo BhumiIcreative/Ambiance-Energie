@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_payment_timeline,access_payment_timeline,model_payment_timeline,base.group_user,1,1,1,1
+access_sale_timeline_payment_instrument,access_sale_timeline_payment_instrument,model_sale_timeline_payment_instrument,base.group_user,1,1,1,1

@@ -1,0 +1,312 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* amb_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20200121\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-19 14:38+0000\n"
+"PO-Revision-Date: 2020-03-19 14:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><ins>Comments:</ins></small>"
+msgstr "<small><ins>Commentaire:</ins></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Amount residual</strong></small>"
+msgstr "<small><strong>Reste à payer</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Amount</strong></small>"
+msgstr "<small><strong>Montant</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Base WT</strong></small>"
+msgstr "<small><strong>Base HT</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Date due</strong></small>"
+msgstr "<small><strong>Date d'échéance</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Name</strong></small>"
+msgstr "<small><strong>Nom</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Payment method</strong></small>"
+msgstr "<small><strong>Moyen de paiement</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Quantity</strong></small>"
+msgstr "<small><strong>Quantité</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Rate</strong></small>"
+msgstr "<small><strong>Taux</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Ref</strong></small>"
+msgstr "<small><strong>Réf</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<strong>Discount</strong>"
+msgstr "<strong>Remise</strong>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Subtotal</strong></small>"
+msgstr "<small><strong>Sous-total</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Total</strong></small>"
+msgstr "<small><strong>Total</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>Unit price (WT)</strong></small>"
+msgstr "<small><strong>Prix Unitaire (HT)</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>VAT Amount</strong></small>"
+msgstr "<small><strong>Montant de TVA</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small><strong>VAT</strong></small>"
+msgstr "<small><strong>TVA</strong></small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small>Advance</small>"
+msgstr "<small>Acompte</small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small>Total Taxes</small>"
+msgstr "<small>Total Taxes</small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<small>Total Without Taxes</small>"
+msgstr "<small>Total HT</small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<strong>Informations:</strong>"
+msgstr "<strong>Informations:</strong>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<strong>Mobile:</strong>"
+msgstr "<strong>Mobile:</strong>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>Tél:</strong>"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "Advance"
+msgstr "Acompte"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "Amount left to pay"
+msgstr "Reste à payer"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+#, python-format
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "Current subscription wood pellet"
+msgstr "Abonnement en cours pellets"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Date"
+msgstr "Date"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "EDF prime"
+msgstr "Prime EDF"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+msgid "Export informations"
+msgstr "Export informations"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#: model:ir.model.fields.selection,name:amb_account.selection__account_move__type_invoice__gran
+#, python-format
+msgid "Granule"
+msgstr "Granule"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#: model:ir.model.fields,field_description:amb_account.field_account_move__commissioning_identification
+#, python-format
+msgid "Identification"
+msgstr "Identification"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Invoice n°"
+msgstr "Facture n°"
+
+#. module: amb_account
+#: model:ir.model,name:amb_account.model_account_move
+msgid "Journal Entries"
+msgstr "Pièces comptables"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Kgs"
+msgstr "Kgs"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_move__package_count
+msgid "Nombre colis"
+msgstr "Nombre colis"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Num"
+msgstr "Num"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Package amount:"
+msgstr "Nombre de colis:"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "Package count"
+msgstr "Nombre colis"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+msgid "Package info"
+msgstr "Informations colis"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+msgid "Package informations"
+msgstr "Informations colis"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_move__weight
+msgid "Poids"
+msgstr "Poids"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#: model:ir.model.fields,field_description:amb_account.field_account_move__port
+#, python-format
+msgid "Port"
+msgstr "Port"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Port:"
+msgstr "Port:"
+
+#. module: amb_account
+#: model:ir.model.fields.selection,name:amb_account.selection__account_move__type_invoice__sto
+msgid "Poële"
+msgstr "Poêle"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_move__edf_prime
+msgid "Prime EDF"
+msgstr "Prime EDF"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_move__amount_left_to_pay
+msgid "Reste à payer"
+msgstr "Reste à payer"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_move__type_invoice
+msgid "Type facture"
+msgstr ""
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "Type invoice"
+msgstr "Type facture"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#: model:ir.model.fields,field_description:amb_account.field_account_move__volume
+#, python-format
+msgid "Volume"
+msgstr "Volume"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Volume:"
+msgstr "Volume:"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "Weight"
+msgstr "Poids"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Weight:"
+msgstr "Poids:"
+
+#. module: amb_account
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid ""
+"You can't confirm the quotation, amount in subscription is not sufficient"
+msgstr ""
+"Vous ne pouvez pas confirmer ce devis, le solde de l'abonnement n'est pas "
+"suffisant"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "Your ref"
+msgstr "Votre référence"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.edited_report_invoice
+msgid "date"
+msgstr "date"

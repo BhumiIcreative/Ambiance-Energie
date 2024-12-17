@@ -1,0 +1,97 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+
+<!--<odoo>-->
+<!--    <data>-->
+<!--        <record model="ir.ui.view" id="amb_product_template_form_view_procurement_button">-->
+<!--            <field name="name">amb_product_template_form_view_procurement_button</field>-->
+<!--            <field name="model">product.template</field>-->
+<!--            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <button name="action_view_stock_move_lines" position="before">-->
+<!--                    <button class="oe_stat_button"-->
+<!--                           name="action_view_stock_move_lines_free_qty"-->
+<!--                           icon="fa-cubes"-->
+<!--                           type="object" attrs="{'invisible':[('type', '!=', 'product')]}">-->
+<!--                           <div class="o_field_widget o_stat_info">-->
+<!--                                <span class="o_stat_value">-->
+<!--                                    <field name="free_qty" widget="statinfo" nolabel="1" class="mr4"/>-->
+<!--                                    <field name="uom_name"/>-->
+<!--                                </span>-->
+<!--                                <span class="o_stat_text">Quantité vendable</span>-->
+<!--                           </div>-->
+<!--                    </button>-->
+<!--                    <button class="oe_stat_button"-->
+<!--                           name="action_view_stock_move_lines_net_qty"-->
+<!--                           icon="fa-cubes"-->
+<!--                           type="object" attrs="{'invisible':[('type', '!=', 'product')]}">-->
+<!--                           <div class="o_field_widget o_stat_info">-->
+<!--                                <span class="o_stat_value">-->
+<!--                                    <field name="net_qty" widget="statinfo" nolabel="1" class="mr4"/>-->
+<!--                                    <field name="uom_name"/>-->
+<!--                                </span>-->
+<!--                                <span class="o_stat_text">Quantité nette</span>-->
+<!--                           </div>-->
+<!--                    </button>-->
+<!--                    <button class="oe_stat_button"-->
+<!--                           name="action_view_ordered_stock"-->
+<!--                           icon="fa-cubes"-->
+<!--                           type="object" attrs="{'invisible':[('type', '!=', 'product')]}">-->
+<!--                           <div class="o_field_widget o_stat_info">-->
+<!--                                <span class="o_stat_value">-->
+<!--                                    <field name="order_qty" widget="statinfo" nolabel="1" class="mr4"/>-->
+<!--                                    <field name="uom_name"/>-->
+<!--                                </span>-->
+<!--                                <span class="o_stat_text">Quantité commandée</span>-->
+<!--                           </div>-->
+<!--                    </button>-->
+<!--                  </button>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record model="ir.ui.view" id="amb_product_product_free_qty">-->
+<!--            <field name="name">amb_product_product_free_qty</field>-->
+<!--            <field name="model">product.product</field>-->
+<!--            <field name="inherit_id" ref="stock.product_form_view_procurement_button"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <button name="action_view_stock_move_lines" position="before">-->
+<!--                    <button class="oe_stat_button"-->
+<!--                           name="action_view_stock_move_lines_free_qty"-->
+<!--                           icon="fa-cubes"-->
+<!--                           type="object" attrs="{'invisible':[('type', '!=', 'product')]}">-->
+<!--                           <div class="o_field_widget o_stat_info">-->
+<!--                                <span class="o_stat_value">-->
+<!--                                    <field name="free_qty" widget="statinfo" nolabel="1" class="mr4"/>-->
+<!--                                    <field name="uom_name"/>-->
+<!--                                </span>-->
+<!--                                <span class="o_stat_text">Quantité vendable</span>-->
+<!--                           </div>-->
+<!--                    </button>-->
+<!--                    <button class="oe_stat_button"-->
+<!--                           name="action_view_stock_move_lines_net_qty"-->
+<!--                           icon="fa-cubes"-->
+<!--                           type="object" attrs="{'invisible':[('type', '!=', 'product')]}">-->
+<!--                           <div class="o_field_widget o_stat_info">-->
+<!--                                <span class="o_stat_value">-->
+<!--                                    <field name="net_qty" widget="statinfo" nolabel="1" class="mr4"/>-->
+<!--                                    <field name="uom_name"/>-->
+<!--                                </span>-->
+<!--                                <span class="o_stat_text">Quantité nette</span>-->
+<!--                           </div>-->
+<!--                    </button>-->
+<!--                    <button class="oe_stat_button"-->
+<!--                           name="action_view_ordered_stock"-->
+<!--                           icon="fa-cubes"-->
+<!--                           type="object" attrs="{'invisible':[('type', '!=', 'product')]}">-->
+<!--                           <div class="o_field_widget o_stat_info">-->
+<!--                                <span class="o_stat_value">-->
+<!--                                    <field name="order_qty" widget="statinfo" nolabel="1" class="mr4"/>-->
+<!--                                    <field name="uom_name"/>-->
+<!--                                </span>-->
+<!--                                <span class="o_stat_text">Quantité commandée</span>-->
+<!--                           </div>-->
+<!--                    </button>-->
+<!--                  </button>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--</odoo>-->

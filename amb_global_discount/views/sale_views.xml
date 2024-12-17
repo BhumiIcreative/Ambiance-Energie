@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="amb_sale_view_form_discount" model="ir.ui.view">
+      <field name="priority" eval="10"/>
+      <field name="name">amb.sale.form.discount</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form" />
+      <field name="arch" type="xml">
+
+          <xpath expr="//field[@name='amount_untaxed']" position="before">
+            <label for="global_discount"/>
+            <div class="oe_inline o_td_label">
+              <button class="col-6 btn btn-secondary" name="action_global_discount" states="draft,sent" type="object" string="Modifier"/>
+              <field class="col-6 text-right pr-0" name="global_discount"/>
+            </div>
+          </xpath>
+
+      </field>
+  </record>
+
+</odoo>

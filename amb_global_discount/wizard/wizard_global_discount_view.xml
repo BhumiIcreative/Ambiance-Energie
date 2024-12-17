@@ -1,0 +1,20 @@
+<odoo>
+  <record model="ir.ui.view" id="sale_order_global_discount_form">
+    <field name="name">Wizard global discount</field>
+    <field name="model">wizard.global.discount</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="global_discount"/>
+          </group>
+        </sheet>
+        <footer>
+          <button name="confirm" type="object" string="Confirmer" class="btn-primary"/>
+          or
+          <button string="Annuler" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>

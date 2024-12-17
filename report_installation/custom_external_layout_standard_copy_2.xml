@@ -1,0 +1,246 @@
+<t t-name="amb_account.custom_external_layout_standard_copy_2">
+    <div class="header">
+        <div class="row">
+            <div class="col-6">
+                <div>
+                    <div name="company_address" class="text-center">
+                        <style>
+                          .small-text{
+                            font-size:10px;
+                          }
+                          .medium-text{
+                            font-size:14px;
+                            font-weight:bold;
+                          }
+                          .large-text{
+                            font-size:18px;
+                          }
+                        </style>
+                        <div class="row">
+                            <img src="amb_sale/static/description/logo-ambiance-fondblanc.bmp" style="width:100%;"/>
+                            <t t-set="company" t-value="o.company_id"/>
+                        </div>
+                        <div class="row">
+                            <div class="col" style="line-height:12px">
+                                <span class="medium-text" t-field="company.x_studio_oci_conf_juridique"/>
+                                <br/>
+                                <strong>
+                                    <span t-esc="company.website.replace('http://', '').replace('https://', '')"/>
+                                </strong>
+                                <br/>
+                                <span class="small-text">Qualibois </span>
+                                <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>
+                                <br/>
+                                <span class="small-text">Garantie RC et Décenale : </span>
+                                <span class="small-text" t-field="company.x_studio_assurance"/>
+                                <br/>
+                                <!--<strong class="medium-text">CELCA REIMS FR7615135205900800092576879 Swift : CEPAFRPP513</strong>-->
+                                <strong class="medium-text">
+                                    <span class="small-text" t-field="company.x_studio_oci_conf_rib"/>
+                                    <br/>
+                                    <span class="small-text" t-field="company.x_studio_oci_conf_bic"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12" style="line-height:13px">
+                            <div class="text-left small-text">
+                                <p>
+                                    <span t-field="company.city"/> :
+
+
+                                    <span t-field="company.street"/> ∙
+
+
+                                    <span t-field="company.zip"/>
+                                    <span t-field="company.city"/> ∙
+                                                Siret :
+
+
+                                    <span t-field="company.siret"/>
+                                    <br/>
+                                                Tél:
+
+
+                                    <span style="font-size:15px;" t-field="company.phone"/>
+                                    <t t-if="company.second_partner_id">
+                                        <br/>
+                                        <span t-field="company.second_partner_id.city"/> :
+
+
+                                        <span t-field="company.second_partner_id.street"/> ∙
+
+
+                                        <span t-field="company.second_partner_id.zip"/>
+                                        <span t-field="company.second_partner_id.city"/> ∙
+                                                Siret :
+
+
+                                        <span t-field="company.second_partner_id.x_studio_siret_contact"/>
+                                        <br/>
+                                                Tél:
+
+
+
+                                        <span style="font-size:15px;" t-field="company.second_partner_id.phone"/>
+                                    </t>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-sm table-bordered border-dark">
+                        <tbody>
+                            <tr>
+                                <td class="border-dark text-center" style="font-size:10px;">Identification</td>
+                            </tr>
+                            <tr>
+                                <td t-if="o.partner_id.x_studio_numero_serie_equipement_contact" class="border-dark text-center small-text">
+                                    <span t-field="o.partner_id.x_studio_numero_serie_equipement_contact"/>
+                                </td>
+                                <td t-else="else" class="border-dark text-center">
+                                    <br/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row" style="height:20px;"/>
+                <div class="row" >
+                    <div class="col text-center">
+                        <strong>
+                          Annexe
+
+
+                            <span t-if="o.type == 'out_invoice' and o.state == 'posted'">Facture n°</span>
+                            <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Facture brouillon</span>
+                            <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Facture annulée</span>
+                            <span t-if="o.type == 'out_refund'">Avoir</span>
+                            <span t-if="o.type == 'in_refund'">Avoir de fournisseur</span>
+                            <span t-if="o.type == 'in_invoice'">Facture fournisseur</span>
+                            <span t-if="o.name != '/'" t-field="o.name"/>
+                        </strong>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <table class="table table-sm table-bordered border-dark">
+                            <tbody>
+                                <tr>
+                                    <td class="border-dark text-center" style="font-size:10px;">Client</td>
+                                </tr>
+                                <tr>
+                                    <td t-if="o.partner_id.ref" class="border-dark text-center small-text">
+                                        <span t-field="o.partner_id.ref"/>
+                                    </td>
+                                    <td t-else="else" class="border-dark text-center">
+                                        <br/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <table class="table table-sm table-bordered border-dark">
+                            <tbody>
+                                <tr>
+                                    <td class="border-dark text-center" style="font-size:10px;">Date</td>
+                                </tr>
+                                <tr>
+                                    <td t-if="o.invoice_date" class="border-dark text-center small-text">
+                                        <span t-field="o.invoice_date"/>
+                                    </td>
+                                    <td t-else="else" class="border-dark text-center">
+                                        <br/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class=" border border-dark">
+                            <div class="col text-center">
+                                <t t-set="partner_id" t-value="o.partner_id"/>
+                                <p class="text-center">
+                                    <span t-field="partner_id.name"/>
+                                </p>
+                                <p class="text-center mt-n3">
+                                    <span t-field="partner_id.street"/>
+                                </p>
+                                <p class="text-center mt-n3">
+                                    <span t-field="partner_id.street2"/>
+                                </p>
+                                <p class="text-center mt-n3">
+                                    <span t-field="partner_id.zip"/>
+                                    <span t-field="partner_id.city"/>
+                                    <br/>
+                                    <span t-if="partner_id.country_id" t-field="partner_id.country_id.name"/>
+                                </p>
+                                <p class="text-center mt-n3">
+                                    <t t-if="partner_id.phone">
+                                        <strong>Tél:</strong>
+                                        <span t-field="partner_id.phone"/>
+                                    </t>
+                                    <t t-if="partner_id.mobile">
+                                        <strong>Mobile:</strong>
+                                        <span t-field="partner_id.mobile"/>
+                                    </t>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+        <div style="padding-bottom: 1px">
+            <!-- This div ensures that the address is not cropped by the header. only for first page -->
+            <t t-raw="0"/>
+        </div>
+    </div>
+    <div class="footer o_standard_footer" style="font-size:15px;">
+        <div class="text-center" style="border-top: 1px solid black;font-size:12px;">
+            <ul style="list-style:none; margin:0; text-align:center;">
+                <li>
+                    <t t-esc="company.x_studio_oci_conf_formejurid"/> - N° siren :
+
+                    <t t-esc="company.x_studio_oci_conf_siren"/> - APE
+
+                    <t t-esc="company.ape"/> - Identification
+
+
+                    <t t-esc="company.country_id.vat_label or 'Tax ID'"/>:
+
+
+                    <span t-field="company.vat"/>
+                </li>
+                <li t-if="company.siret">Siège social :
+
+                    <span t-field="company.x_studio_oci_conf_juridique"/> ∙
+
+
+                    <span t-field="company.street"/> ∙
+
+
+                    <span t-field="company.street2"/>
+                    <span t-field="company.zip"/> ∙
+
+
+                    <span t-field="company.city"/>
+                </li>
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page:
+
+                    <span class="page"/> /
+
+                    <span class="topage"/>
+                </div>
+            </ul>
+        </div>
+    </div>
+</t>

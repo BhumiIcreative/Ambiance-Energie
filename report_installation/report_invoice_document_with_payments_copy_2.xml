@@ -1,0 +1,138 @@
+<t t-name="account.report_invoice_document_with_payments_copy_2">
+    <t t-call="amb_account.custom_external_layout_copy_2">
+        <div class="page">
+            <h4 class="text-center mt-1 mb-1">
+                <span>RAPPORT DE MISE EN SERVICE</span>
+                <span style="font-size:15px;"> (PV de réception)</span>
+            </h4>
+            <div id="informations" class="row mt-2" style="font-size:12px">
+                <div class="col-4 mb-2" name="description">
+                    <strong>Année de construction > 1975  &#160;</strong>
+                    <span class="border border-dark" style="padding:2px;"> OUI </span>
+                </div>
+                <div class="col-5 mb-2" name="invoice_date">
+                    <strong>Surface habitable(m²) &#160;</strong>
+                    <span class="border border-dark" style="width:90px;display:inline-block;padding:2px;"> &#160;</span>
+                </div>
+                <div class="col-3 mb-2" name="due_date">
+                    <strong>Nombre de pièces &#160;</strong>
+                    <span class="border border-dark" style="width:50px;display:inline-block;padding:2px;"> &#160;</span>
+                </div>
+            </div>
+            <div class="row mt-2"  style="font-size:12px">
+                <div class="col-6 mb-2" name="origin">
+                    <strong>Mode chauffage avant: &#160;</strong>
+                    <span class="border border-dark" style="width:210px;display:inline-block;padding:2px;"> &#160;</span>
+                </div>
+                <div class="col-6 mb-2" name="customer_code">
+                    <strong>Mode chauffage après: &#160;</strong>
+                    <span class="border border-dark" style="width:210px;display:inline-block;padding:2px;"> &#160;</span>
+                </div>
+            </div>
+            <h6 class="text-center mt-1 mb-1">
+                      CONTROLES EFFECTUES
+                    </h6>
+            <div class="border border-dark "  style="padding:5px">
+                <table class="col-12 small">
+                    <tr>
+                        <td>Hauteur du conduit d'évacuation en m :</td>
+                        <td>Type : Tubage - Simple paroi - Double paroi - Lame d'air</td>
+                    </tr>
+                    <tr>
+                        <td>Raccordement du poêle au conduit :</td>
+                        <td>Oui - Non</td>
+                    </tr>
+                    <tr>
+                        <td>Arrivée d'air frais dans la pièce :</td>
+                        <td>Existante - Créée</td>
+                    </tr>
+                    <tr>
+                        <td>Paramètres du poêle :</td>
+                        <td>Confirmés - Adaptés</td>
+                    </tr>
+                    <tr>
+                        <td>Distance du poêle aux matériaux combustibles :</td>
+                        <td>Correcte - Insuffisante (demande client)</td>
+                    </tr>
+                    <tr>
+                        <td>Démarrage du poêle</td>
+                        <td>Effectué - Non effectué (demande client)</td>
+                    </tr>
+                    <tr>
+                        <td>Autres contrôles ou observations:</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <h6 class="text-center mt-3 mb-3">
+                      EXPLICATIONS DUES A L'UTILISATEUR
+                    </h6>
+            <div class="border border-dark mb-3"  style="padding:5px">
+                <table class="col-12 small">
+                    <tr>
+                        <td>Le Client reconnaît que le réglage de l'appareil lui a été expliqué</td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît que les opérations de nettoyage lui ont été montrées (foyer, échangeur, tiroir à cendres)</td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît que la programmation (dont allumage et extinction) lui a été montrée</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît avoir été informé :</td>
+                    </tr>
+                    <tr>
+                        <td>- de l'utilisation et du fonctionnement de l'appareil</td>
+                    </tr>
+                    <tr>
+                        <td>- de l'importance de la qualité du granulé et de ses conditions de stockage</td>
+                    </tr>
+                    <tr>
+                        <td>- sur la maintenance obligatoire de l'appareil</td>
+                    </tr>
+                    <tr>
+                        <td>- sur des conditions générales de vente et de garantie (affichées au magasinet sur internet)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Le Client et le Partenaire Bleu Ciel d'EDF qui a réalisé les travaux reconnaissent la contribution d'EDF dans l'amélioration de la performance énergétique du logement ; s'engagent à ne pas avoir signé et ne pas signer d'attestation similaire concernant ces travaux réalisés et à transmettre exclusivement à EDF les justificatifs au titre de la loi n°2005-781 du 13 juillet 2005 et du décret n° 2006-603 du 23 mai 2006 relatif aux certificats d'économies d'énergie</td>
+                    </tr>
+                    <tr>
+                        <td>Sont informés que la Direction Générale de l'Industrie, de la Recherche et de l'Environnement (DRIRE) est susceptible de contrôler la réalité des travaux réalisés et peut demander au Client un descriptif de ces travaux.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît avoir eu la notice de l'appareil en Français</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table class="table table-bordered col-12">
+                    <tr>
+                        <td style="border:solid 1px; border-collapse:collapse;height:70px;width:50%">Signature Technicien</td>
+                        <td style="border:solid 1px; border-collapse:collapse;height:70px;width:50%">Signature Client</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </t>
+</t>

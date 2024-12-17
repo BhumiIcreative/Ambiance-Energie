@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_by_location_tree_view" model="ir.ui.view">
+        <field name="name">stock.location.product.tree.view</field>
+        <field name="model">stock.location.product</field>
+        <field name="arch" type="xml">
+            <tree string="stock.location.product" expand="1" >
+                    <field name="outgoing_total" invisible="1"/>
+                    <field name="category"/>
+                    <field name="supplier"/>
+                    <field name="custom_template_id"/>
+                    <field name="stock_location_id"/>
+                    <field name="on_hand_qty"/>
+                    <field name="out_qty"/>
+                    <field name="free_qty"/>
+                    <field name="incoming_qty"/>
+                    <field name="forcasted_qty"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="stock_by_location_action" model="ir.actions.server">
+          <field name="name">Stock by location</field>
+          <field name="model_id" ref="model_stock_location_product"/>
+          <field name="state">code</field>
+          <field name="code">action = env.get('stock.location.product').stock_by_location_action()</field>
+    </record>
+
+    <menuitem id="account_move_import_menu"
+            parent="stock.menu_stock_root"
+            action="stock_by_location_action"
+            sequence="150" />
+</odoo>

@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* oci_backdated_inventory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210330\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 14:42+0000\n"
+"PO-Revision-Date: 2021-06-24 14:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,help:oci_backdated_inventory.field_stock_inventory__prefill_counted_quantity
+msgid ""
+"Allows to start with a pre-filled counted quantity for each lines or with "
+"all counted quantities set to zero."
+msgstr ""
+"Permet de commencer avec la quantité comptée pré-remplie pour chaque ligne, "
+"ou avec la quantité comptée à zéro pour chaque ligne."
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_inventory__prefill_counted_quantity
+msgid "Counted Quantities"
+msgstr "Quantités Comptées"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields.selection,name:oci_backdated_inventory.selection__stock_inventory__prefill_counted_quantity__at_date
+msgid "Default to stock at date"
+msgstr "Quantité en stock à la date par défaut"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields.selection,name:oci_backdated_inventory.selection__stock_inventory__prefill_counted_quantity__counted
+msgid "Default to stock on hand"
+msgstr "Quantité en stock par défaut"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields.selection,name:oci_backdated_inventory.selection__stock_inventory__prefill_counted_quantity__zero
+msgid "Default to zero"
+msgstr "Zéro par défaut"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_inventory__display_name
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_move__display_name
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_valuation_layer__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_inventory__id
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_move__id
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_valuation_layer__id
+msgid "ID"
+msgstr "ID"
+
+#. module: oci_backdated_inventory
+#: model:ir.model,name:oci_backdated_inventory.model_stock_inventory
+msgid "Inventory"
+msgstr "Inventaire"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_inventory__inv_backdated
+msgid "Inventory Backdate"
+msgstr "Inventaire antidaté"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_inventory__is_backdated_inv
+msgid "Is Backdated Inventory?"
+msgstr "Inventaire antidaté ?"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_inventory____last_update
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_move____last_update
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_valuation_layer____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: oci_backdated_inventory
+#: model:ir.model.fields,field_description:oci_backdated_inventory.field_stock_inventory__backdated_remark
+msgid "Notes"
+msgstr ""
+
+#. module: oci_backdated_inventory
+#: model:ir.model,name:oci_backdated_inventory.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: oci_backdated_inventory
+#: model:ir.model,name:oci_backdated_inventory.model_stock_valuation_layer
+msgid "Stock Valuation Layer"
+msgstr "Couche de valorisation d'inventaire"

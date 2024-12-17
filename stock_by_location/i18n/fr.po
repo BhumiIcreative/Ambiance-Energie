@@ -1,0 +1,199 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_by_location
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20210330\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-22 08:24+0000\n"
+"PO-Revision-Date: 2021-09-22 08:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "<span style=\"font-weight: bold;\"> Product : </span>"
+msgstr "<span style=\"font-weight: bold;\"> Article : </span>"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "<span style=\"font-weight: bold;\">Date : </span>"
+msgstr "<span style=\"font-weight: bold;\">Date : </span>"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__custom_product_id
+msgid "Custom Product"
+msgstr "Article"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__custom_template_id
+msgid "Custom Template"
+msgstr "Modèle d'article"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_product_product__end_date
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "Forcasted"
+msgstr "Prévision"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__forcasted_qty
+msgid "Forcasted Quantity"
+msgstr "Quantité prévue"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__id
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "Incoming"
+msgstr "Réception"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__incoming_qty
+msgid "Incoming Quantity"
+msgstr "Quantité à recevoir"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__stock_location_id
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "Location"
+msgstr "Lieu"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "On Hand"
+msgstr "En stock"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__on_hand_qty
+msgid "On hand Quantity"
+msgstr "Quantité en stock"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_stock_location_product__out_qty
+msgid "Out Quantity"
+msgstr "Quantité sortante"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "Outgoing"
+msgstr "Sortants"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.stock_by_location_tree_view
+msgid "Outgoing total"
+msgstr "Quantité sortante totale"
+
+#. module: stock_by_location
+#: model:ir.model,name:stock_by_location.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: stock_by_location
+#: model:ir.model,name:stock_by_location.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.view_product_bi_inherit
+msgid "Remove Filter"
+msgstr "Enlever le filtre"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_product_product__start_date
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: stock_by_location
+#: model:ir.model.fields,field_description:stock_by_location.field_product_product__stock_location
+#: model:ir.model.fields,field_description:stock_by_location.field_product_product__stock_location_template
+#: model:ir.model.fields,field_description:stock_by_location.field_product_template__stock_location_template
+msgid "Stock Location"
+msgstr "Emplacement de stock"
+
+#. module: stock_by_location
+#: code:addons/stock_by_location/models/product.py:0
+#: model:ir.actions.server,name:stock_by_location.stock_by_location_action
+#: model:ir.ui.menu,name:stock_by_location.account_move_import_menu
+#, python-format
+msgid "Stock by location"
+msgstr "Stock par lieu"
+
+#. module: stock_by_location
+#: model:ir.actions.report,name:stock_by_location.report_custom_stock_location
+#: model:ir.actions.report,name:stock_by_location.report_custom_stock_location_template
+msgid "Stocks By Location"
+msgstr "Stocks par lieu"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.view_product_bi_inherit
+#: model_terms:ir.ui.view,arch_db:stock_by_location.view_template_bi_inherit
+msgid "Stocks Qty By Location"
+msgstr "Quantité de stock par lieu"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_custom_view
+#: model_terms:ir.ui.view,arch_db:stock_by_location.report_stock_location_templte_view
+msgid "Total"
+msgstr "Total"
+
+#. module: stock_by_location
+#: model_terms:ir.ui.view,arch_db:stock_by_location.view_product_bi_inherit
+#: model_terms:ir.ui.view,arch_db:stock_by_location.view_template_bi_inherit
+msgid "Update Stock By Location"
+msgstr "Mettre à jour les chiffres par lieu"
+
+#. module: stock_by_location
+#: model:ir.model,name:stock_by_location.model_stock_location_product
+#: model_terms:ir.ui.view,arch_db:stock_by_location.stock_by_location_tree_view
+msgid "stock.location.product"
+msgstr ""

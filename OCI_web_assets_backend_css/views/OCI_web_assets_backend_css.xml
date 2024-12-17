@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="listview" inherit_id="web.assets_backend">
+		<xpath expr="." position="inside"><style>
+			div.table-responsive{overflow-y:auto;height:100%;}
+      table.o_list_table.table thead{top:0;position:sticky;z-index:5;}
+	  table.o_list_table.table tfoot{bottom:0;position:sticky;z-index:5;}
+	  .table-striped tbody tr:nth-of-type(odd){background-color: rgba(0, 0, 0, 0.09);}
+		</style></xpath>
+    </template>
+</odoo>

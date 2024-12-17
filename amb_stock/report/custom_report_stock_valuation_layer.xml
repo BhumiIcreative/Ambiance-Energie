@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_stock_valuation_layer">
+        <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <t t-esc="inventory_datetime"/>
+                        <table class="table o_report_block_table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span>Name</span>
+                                        <td>
+                                            <span>Quantité</span>
+                                        </td>
+                                        <td>
+                                            <span>Valeur totale</span>
+                                        </td>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="quantite" t-value="0"/>
+                                <t t-set="valeur_totale" t-value="0"/>
+                                <t t-set="article" t-value="0"/>
+                                <t t-set="line_index" t-value="0"/>
+                                <t t-set="line_last" t-value="len(docs)"/>
+                                <t t-set="valostock" t-value="0"/>
+                                <t t-foreach="docs.sorted(key=lambda l: (l.product_id.id, l.create_date, l.stock_move_id.id))"
+                                   t-as="table_line">
+                                    <t t-set="valostock" t-value="valostock + table_line.value"/>
+                                    <t t-if="article != table_line.product_id and article != 0">
+                                        <tr>
+                                            <td>
+                                                <span t-field="article.display_name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="quantite"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="round(valeur_totale,2)"/>
+                                                <span>€</span>
+                                            </td>
+                                        </tr>
+                                        <t t-set="quantite" t-value="0"/>
+                                        <t t-set="valeur_totale" t-value="0"/>
+                                        <t t-set="article" t-value="0"/>
+                                    </t>
+                                    <t t-set="quantite" t-value="quantite + table_line.quantity"/>
+                                    <t t-set="valeur_totale" t-value="valeur_totale + table_line.value"/>
+                                    <t t-set="line_index" t-value="line_index + 1"/>
+                                    <t t-set="article" t-value="table_line.product_id"/>
+                                    <t t-if="(line_last == line_index)">
+                                        <tr>
+                                            <td>
+                                                <span t-field="table_line.display_name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="quantite"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="round(valeur_totale,2)"/>
+                                                <span>€</span>
+                                            </td>
+                                        </tr>
+                                        <t t-set="quantite" t-value="0"/>
+                                        <t t-set="valeur_totale" t-value="0"/>
+                                        <t t-set="article" t-value="0"/>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </t>
+        </t>
+    </template>
+
+    <report
+            id="report_stock_valuation_layer"
+            string="couche"
+            model="stock.valuation.layer"
+            report_type="qweb-pdf"
+            name="amb_stock.report_stock_valuation_layer"
+            file="amb_stock.report_stock_valuation_layer"/>
+</odoo>
