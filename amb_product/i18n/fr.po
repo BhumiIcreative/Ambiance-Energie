@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* amb_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20210111\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-29 13:09+0000\n"
+"PO-Revision-Date: 2021-01-29 13:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_sale_with_margin_view_form
+msgid "Delivered"
+msgstr "Livré"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_sale_with_margin_view_form
+msgid "Disc.%"
+msgstr "Remise.%"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_sale_with_margin_view_form
+msgid "Invoiced"
+msgstr "Facturé"
+
+#. module: amb_product
+#: code:addons/amb_product/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_product.field_sale_order_line__is_greater_than_min
+#, python-format
+msgid "Is greater than minimum price"
+msgstr "Est plus grand que le prix minimum"
+
+#. module: amb_product
+#: code:addons/amb_product/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_product.field_sale_order__margin_order_line
+#, python-format
+msgid "Lines with margin"
+msgstr "Lignes avec marges"
+
+#. module: amb_product
+#: code:addons/amb_product/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_product.field_sale_order_line__margin_percentage
+#, python-format
+msgid "Margin %"
+msgstr "Marge.%"
+
+#. module: amb_product
+#: code:addons/amb_product/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_product.field_sale_order_line__margin_euro
+#, python-format
+msgid "Margin Euro"
+msgstr "Marge en euro"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_sale_with_margin_view_form
+msgid "Margin Lines"
+msgstr "Lignes de marges"
+
+#. module: amb_product
+#: code:addons/amb_product/models/product.py:0
+#: code:addons/amb_product/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_product.field_product_product__min_price
+#: model:ir.model.fields,field_description:amb_product.field_product_template__min_price
+#: model:ir.model.fields,field_description:amb_product.field_sale_order_line__min_price
+#, python-format
+msgid "Minimum Price"
+msgstr "Prix minimum"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_product_product_view_form
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_product_template_view_form
+msgid "Minimum price"
+msgstr "Prix minimum"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_sale_with_margin_view_form
+msgid "Product"
+msgstr "Produit"
+
+#. module: amb_product
+#: model:ir.model,name:amb_product.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: amb_product
+#: model:ir.model,name:amb_product.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: amb_product
+#: model:ir.model,name:amb_product.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_sale_with_margin_view_form
+msgid "Sales Order Lines With Margin"
+msgstr "Lignes de vente avec la marge"
+
+#. module: amb_product
+#: model_terms:ir.ui.view,arch_db:amb_product.amb_sale_with_margin_view_form
+msgid "UoM"
+msgstr "Unité de mesure"
