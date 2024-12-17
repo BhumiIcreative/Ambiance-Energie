@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="edited_report_saleorderdocument_inherit_sale_stock">
+          <field name="name">Custom_saleorder_document_inherit_sale_stock</field>
+          <field name="inherit_id" ref="sale_stock.report_saleorder_document_inherit_sale_stock"/>
+          <field name="active" eval="False"/>
+          <!-- <field name="arch" type="xml">
+
+            <xpath expr="//t[@t-call=&quot;web.external_layout&quot;]" position="replace">
+
+            </xpath>
+          </field> -->
+        </record>
+    </data>
+</odoo>

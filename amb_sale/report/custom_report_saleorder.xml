@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="sale.action_report_saleorder" model="ir.actions.report">
+        <field name="paperformat_id" ref="amb_sale.custom_sale_order_report_format" />
+    </record>
+
+    <record model="ir.ui.view" id="edited_report_saleorder">
+      <field name="name">Custom_saleorder</field>
+      <field name="inherit_id" ref="sale.report_saleorder_document"/>
+      <field name="arch" type="xml">
+        <t t-call="web.external_layout" position="replace">
+          <t t-call="amb_sale.custom_external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <table class="table table-sm o_main_table table-bordered border-dark small-text">
+                    <thead class="small">
+                        <tr>
+                            <th width="10%" class="border-dark text-center">
+                                <strong>Réf</strong>
+                            </th>
+                            <th width="45%" class="border-dark text-center">
+                                <strong>Description</strong>
+                            </th>
+                            <th width="8%" class="border-dark text-center">
+                                <strong>Qté</strong>
+                            </th>
+                            <th width="8%" class="border-dark text-center">
+                                <strong>PU HT</strong>
+                            </th>
+                            <th width="8%" class="border-dark text-center">
+                                <strong>TVA</strong>
+                            </th>
+                            <th width="8%" class="border-dark text-center">
+                                <strong>Remise %</strong>
+                            </th>
+                            <th width="14%" class="border-dark text-center">
+                                <strong>Prix TTC</strong>
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody style="font-size:9px">
+                      <tr>
+                         <td colspan="99" class="border-dark text-left">
+                            <t t-if="doc.state not in ['draft','sent']">
+                                      *** Devis n°
+                                <span t-field="doc.name"/> du
+                                <span t-field="doc.create_date" t-options="{'widget': 'date'}"/> ***
+                            </t>
+                        </td>
+                      </tr>
+                        <tr t-foreach="doc.order_line" t-as="line" t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                            <t t-if="not line.display_type">
+                                <td class="border-dark text-center">
+                                    <span t-field="line.product_id.default_code"/>
+                                </td>
+                                <td class="border-dark text-left">
+                                    <span t-esc="line.name.split(']',1)[1] if ']' in line.name else line.name"/>
+                                </td>
+                                <td class="border-dark text-center">
+                                    <span t-esc="'%.1f'%(line.product_uom_qty)"/>
+                                </td>
+                                <td class="border-dark text-right">
+                                    <t t-if="line.tax_id">
+                                        <t t-set="total_tax_price_include" t-value="(sum(t.amount for t in line.tax_id.filtered(lambda x: x.price_include))/100)+1"/>
+                                        <t t-if="bool(line.tax_id.filtered(lambda x: x.price_include))">
+                                            <span t-esc="round(line.price_unit/total_tax_price_include,2)" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: line.currency_id}"/>
+                                        </t>
+                                        <t t-else="">
+                                        <span t-esc="round(line.price_unit,2)"/>
+                                    </t>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="round(line.price_unit,2)"/>
+                                </t>
+                                </td>
+                                <td class="border-dark text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
+                                </td>
+                                <td class="border-dark text-right">
+                                    <span t-field="line.discount_fixed" t-options="{&quot;widget&quot;:&quot;float&quot;, &quot;precision&quot;:2}"/>
+                                </td>
+                                <td class="border-dark text-right">
+                                    <span t-field="line.price_total"/>
+                                </td>
+                            </t>
+                            <t t-if="line.display_type == 'line_note'">
+                                <td class="border-dark text-left" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                            </t>
+                            <t t-if="line.display_type == 'line_section'">
+                                <td class="border-dark text-left" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                            </t>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row mt-1">
+                    <div class="col">
+                        <div class="table table-bordered border-dark text-center" style="page-break-inside: avoid; font-size: 0.7rem; line-height: 1.1em;">
+                            <div>
+                                <t t-if="doc.type_order=='sto'">
+                                    <p>
+                                        <small>
+                                            <ins>Commentaires:</ins>
+                                        </small>
+                                        Tout ou partie des travaux relatifs à ce devis ou bon de commande sont éligibles à une prime d'un montant de
+
+
+                                        <span t-field="doc.edf_prime"/>
+                                        dont EDF (SIREN 552 081 317) est à l'origine dans le cadre du dispositif des certificats d'économie d'énergie. Le montant de cette prime ne pourra être révisé à la baisse qu'en cas de modification du volume de certificats d'économie d'énergie attachés à l'opération ou aux opérations d'économies d'énergie ou de la situation de précarité énergétique et ce, de manière proportionnelle. Dans le cadre de la réglementation un contrôle qualité des travaux sur site ou par contact pourra être demandé. Un refus de ce contrôle sur site ou par contact via EDF ou un prestataire d'EDF conduira au refus de cette prime par EDF."
+
+                                    </p>
+                                </t>
+                            </div>
+                            <div class="text-center" style="font-size: 0.8rem;">
+                                Entreprise partenaire Solution Habitat EDF N° PACTE 47198, agréée QualiBois sous le
+
+                                <span t-field="doc.company_id.x_studio_oci_conf_qualibois"/>
+                                <br/>
+                                <span t-raw="doc.env['ir.config_parameter'].sudo().get_param('text_conform')"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </t>
+        </t>
+      </field>
+    </record>
+  </data>
+</odoo>

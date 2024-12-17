@@ -1,0 +1,152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_timeline
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20191106\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-22 11:11+0000\n"
+"PO-Revision-Date: 2020-03-22 11:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#, python-format
+msgid "Amount"
+msgstr "Montant"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#, python-format
+msgid "Currency"
+msgstr "Devise"
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__date
+#, python-format
+msgid "Date"
+msgstr "Date"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__currency_id
+msgid "Devise"
+msgstr "Devise"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_move__payment_timeline_ids
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_order__payment_timeline_ids
+msgid "Echéancier de paiement"
+msgstr ""
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__journal_id
+#, python-format
+msgid "Journal"
+msgstr "Journal"
+
+#. module: sale_timeline
+#: model:ir.model,name:sale_timeline.model_account_move
+msgid "Journal Entries"
+msgstr "Pièces comptables"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__amount
+msgid "Montant"
+msgstr "Montant"
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__move_id
+#, python-format
+msgid "Move"
+msgstr "Mouvement"
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__payment_method_id
+#, python-format
+msgid "Payment method"
+msgstr "Méthode de paiement"
+
+#. module: sale_timeline
+#: model:account.payment.term,name:sale_timeline.timeline_payment
+#: code:addons/sale_timeline/models/account_move.py:0
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#: code:addons/sale_timeline/models/sale_order.py:0
+#: model:ir.model,name:sale_timeline.model_payment_timeline
+#: model_terms:ir.ui.view,arch_db:sale_timeline.account_move_timeline_form_view
+#: model_terms:ir.ui.view,arch_db:sale_timeline.sale_timeline_form_view
+#, python-format
+msgid "Payment timeline"
+msgstr "Echéancier de paiement"
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#, python-format
+msgid "Payments timeline sum have to be %s € (current is %s €)"
+msgstr "La somme de l'échéancier doit être de %s € (actuellement %s €)"
+
+#. module: sale_timeline
+#: code:addons/sale_timeline/models/payment_timeline.py:0
+#, python-format
+msgid "Sale"
+msgstr "Vente"
+
+#. module: sale_timeline
+#: model:ir.model,name:sale_timeline.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: sale_timeline
+#: model_terms:ir.ui.view,arch_db:sale_timeline.account_move_timeline_form_view
+#: model_terms:ir.ui.view,arch_db:sale_timeline.sale_timeline_form_view
+msgid "Total"
+msgstr "Total"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__sale_id
+msgid "Vente"
+msgstr "Vente"

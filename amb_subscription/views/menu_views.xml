@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            id="menu_root"
+            name="Wood pellet subscriptions"
+            web_icon="subscription_form,static/description/icon.png"
+    />
+
+    <menuitem
+            id="subscription_menu"
+            name="Wood pellet subscriptions"
+            parent="menu_root"
+            action="subscription_action"
+            sequence="10"
+    />
+</odoo>

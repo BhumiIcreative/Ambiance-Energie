@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="custom_sale_views" model="ir.ui.view">
+            <field name="name">amb.sale.add.wizard.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+              <xpath expr="//button[@name='action_cancel']" position="after">
+                <button name="%(action_switch_tva)d" states="draft,sent" type="action" string="Switch TVA"/>
+              </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

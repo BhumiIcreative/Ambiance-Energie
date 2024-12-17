@@ -1,0 +1,35 @@
+<odoo>
+  <record model="ir.ui.view" id="sale_timeline_form_view">
+    <field name="name">Sale timeline form</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='partner_id']/.." position="inside">
+        <!-- <page string="Payment timeline" name="payment_timeline" attrs="{'invisible': [('is_timeline', '=', False)]}"> -->
+        <field name="is_timeline" attrs="{'invisible': True}"/>
+        <field name="payment_timeline_ids" nolabel="1" colspan="2" attrs="{'readonly': [('state', 'not in', ('draft'))], 'invisible': [('is_timeline', '=', False)]}">
+          <tree editable="bottom">
+            <field name="date"/>
+            <field name="payment_instrument_id"/>
+            <field name="amount" widget="monetary"/>
+<!--			<field name="amount" widget="monetary" sum="Total"/> --><!-- DELETE SUM -->
+          </tree>
+        </field>
+        <!-- </page> -->
+        <field name="amount_missing_from_timeline" nolabel="1" colspan="2" attrs="{'invisible': [('is_timeline', '=', False)]}" class="d-block w-50 p-1 text-right font-weight-bold" style="margin-left: 50%;"/>
+      </xpath>
+      <field name="payment_term_id" position="attributes">
+        <attribute name="domain">[
+            '|',
+              ('company_id', '=', False),
+              ('company_id', '=', company_id),
+            ('move_id', '=', False),
+          ]</attribute>
+          <attribute name="widget">selection</attribute>
+      </field>
+      <xpath expr="//field[@name='payment_term_id']" position="after">
+          <field name="payment_instrument_id" options="{'no_open':True}" attrs="{'invisible': [('is_timeline', '!=', False)]}"/>
+        </xpath>
+    </field>
+  </record>
+</odoo>

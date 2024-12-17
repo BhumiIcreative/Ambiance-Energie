@@ -1,0 +1,18 @@
+<odoo>
+  <data noupdate="1">
+    <record model="ir.config_parameter" id="text_edf">
+      <field name="key">text_edf</field>
+      <field name="value">"Tout ou partie des travaux relatifs à ce devis ou bon de commande sont éligibles à une prime d'un montant de 107€ dont EDF est à l'origine dans le cadre du dispositif des certificats d'économie d'énergie. Le montant de cette prime ne pourra être révisé à la baisse qu'en cas de modification du volume de certificats d'économie d'énergie attachés à l'opération ou aux opérations d'économies d'énergie ou de la situation de précarité énergétique et ce, de manière proportionnelle."</field>
+    </record>
+
+    <record model="ir.config_parameter" id="text_enterprise_partner">
+      <field name="key">text_enterprise_partner</field>
+      <field name="value">Entreprise partenaire Solution Habitat EDF N° PACTE 47198, agréée QualiBois sous le</field>
+    </record>
+
+    <record model="ir.config_parameter" id="text_conform">
+      <field name="key">text_conform</field>
+      <field name="value">Travaux conformes à l'arrêté du 3 mai 2007 relatif aux caractéristiques thermiques et à la performance énergétique / RendementW>85%, indice E&#60;0.3%, l&#60;2</field>
+    </record>
+  </data>
+</odoo>

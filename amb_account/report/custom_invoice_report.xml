@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.actions.report" id="account.account_invoices">
+      <field name="paperformat_id" ref="amb_account.custom_invoice_report_format" />
+    </record>
+    <record model="ir.ui.view" id="edited_report_invoice">
+      <field name="name">Custom_invoice</field>
+      <field name="inherit_id" ref="account.report_invoice_document_with_payments"/>
+      <field name="arch" type="xml">
+        <t t-call="web.external_layout" position="replace">
+          <t t-call="amb_account.custom_external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <table class="table table-sm table-bordered border-dark">
+                    <thead>
+                        <tr>
+                            <th width="10%" class="border-dark text-center">
+                                <small>
+                                    <strong>Réf</strong>
+                                </small>
+                            </th>
+                            <th width="45%" class="border-dark text-center">
+                                <small>
+                                    <strong>Libellé</strong>
+                                </small>
+                            </th>
+                            <th width="10%" class="border-dark text-center">
+                                <small>
+                                    <strong>Qté</strong>
+                                </small>
+                            </th>
+                            <th width="10%" class="border-dark text-center">
+                                <small>
+                                    <strong>Prix unit HT</strong>
+                                </small>
+                            </th>
+                            <th width="8%" class="border-dark text-center">
+                                <small>
+                                    <strong>TVA</strong>
+                                </small>
+                            </th>
+                            <th width="8%" class="border-dark text-center">
+                                <small>
+                                    <strong>Remise %</strong>
+                                </small>
+                            </th>
+                            <th width="20%" class="border-dark text-center">
+                                <small>
+                                    <strong>Sous-total</strong>
+                                </small>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="99" class="border-dark text-left">
+                                          *** Bon de commande n°
+                                <span t-field="o.invoice_origin"/> du
+                                <span t-field="o.origin_so.date_order" t-eval="False" t-options="{'widget': 'date'}"/> ***
+                                <br/>
+                                      *** Devis n°
+                                <span t-field="o.invoice_origin"/> du
+                                <span t-field="o.origin_so.date_order" t-eval="False" t-options="{'widget': 'date'}"/> ***
+                            </td>
+                        </tr>
+                        <t t-set="lines" t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+                        <t t-foreach="lines" t-as="l">
+                          <tr t-att-class="'bg-200 font-weight-bold o_line_section' if l.display_type == 'line_section' else 'font-italic o_line_note' if l.display_type == 'line_note' else ''">
+                            <t t-if="not l.display_type" >
+                            <td class="border-dark text-center">
+                                <span t-field="l.product_id.default_code"/>
+                            </td>
+                            <td class="border-dark text-left">
+                                <span t-esc="l.name.split(']',1)[1] if ']' in l.name else l.name"/>
+                            </td>
+                            <td class="border-dark text-center">
+                                <span t-esc="'%.1f'%(l.quantity)"/>
+                            </td>
+                            <td class="border-dark text-right">
+                                <t t-if="l.tax_ids">
+                                    <t t-set="total_tax" t-value="(sum(t.amount for t in l.tax_ids)/100)+1"/>
+                                    <t t-if="l.tax_ids[0].price_include">
+                                       <span t-esc="round(l.price_unit/total_tax,2)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="round(l.price_unit,2)"/>
+                                    </t>
+                                </t>
+                                <t t-else="">
+                                    <span t-esc="round(l.price_unit,2)"/>
+                                </t>
+                            </td>
+                            <td class="border-dark text-right">
+                                <span t-esc="'  '.join([str(x).replace('.', ',') for x in l.tax_ids.mapped('amount')])"/>
+                            </td>
+                            <td class="border-dark text-right">
+                                <span t-field="l.discount" t-options='{"widget":"float", "precision":2}'/>
+                            </td>
+                            <td class="border-dark text-right">
+                                <span t-field="l.price_subtotal"/>
+                            </td>
+                            </t>
+                            <t t-if="l.display_type == 'line_section'">
+                                    <td colspan="99" class="border-dark">
+                                        <span t-field="l.name" t-options="{'widget': 'text'}"/>
+                                    </td>
+
+                                </t>
+                                <t t-if="l.display_type == 'line_note'">
+                                    <td colspan="99" class="border-dark">
+                                        <span t-field="l.name" t-options="{'widget': 'text'}"/>
+                                    </td>
+                                </t>
+                         </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="border border-dark text-center" style="font-size: 0.8rem;">
+                            <div style="font-size: 0.8rem;">
+                                <p>
+                                    <small>
+                                        <ins>Commentaires:</ins>
+                                    </small>
+                                    <span t-raw="o.env['ir.config_parameter'].sudo().get_param('text_invoice_comments_1')"/>
+                                </p>
+                            </div>
+                            <div class="text-center" style="font-size: 0.8rem;">
+                                <span t-raw="o.env['ir.config_parameter'].sudo().get_param('text_enterprise_partner')"/>
+                                <span t-field="o.company_id.x_studio_oci_conf_qualibois"/>
+                                <br/>
+                                <span t-raw="o.env['ir.config_parameter'].sudo().get_param('text_invoice_comments_2')"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </t>
+        </t>
+      </field>
+    </record>
+  </data>
+</odoo>
