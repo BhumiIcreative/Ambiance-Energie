@@ -1,0 +1,438 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* amb_subscription
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-19 09:13+0000\n"
+"PO-Revision-Date: 2024-12-19 09:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "- APE 4674B"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "- Identification"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "- N° siren : 479573099"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid ""
+"- de l'importance de la qualité du granulé et de ses conditions de stockage"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "- de l'utilisation et du fonctionnement de l'appareil"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid ""
+"- sur des conditions générales de vente et de garantie (affichées au "
+"magasinet sur internet)"
+msgstr ""
+
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "- sur la maintenance obligatoire de l'appareil"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid ""
+"<br/>\n"
+"                        <span class=\"small-text\">Garantie RC et Décenale : GROUPAMA N° 16553239R</span><br/>\n"
+"                        <strong class=\"small-text\">CELCA REIMS FR7615135205900800092576879 Swift : CEPAFRPP513</strong>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "<span class=\"small-text\">SAS BILL</span><br/>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "<span>RAPPORT DE MISE EN SERVICE (PV de réception)</span>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "<strong>Année de construction:</strong>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "<strong>Mode chauffage après:</strong>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "<strong>Mode chauffage avant:</strong>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "<strong>Nombre de pièces:</strong>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "<strong>Surface habitable:</strong>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Annexe facture"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Arrivée d'air frais dans la pièce :"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Autres chose ou observations"
+msgstr "Autres choses ou observations"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__amount
+msgid "Balance"
+msgstr "Équilibre"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "CONTROLES EFFECTUES"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.actions.report,name:amb_subscription.commissioning_report_id
+msgid "Commissioning report"
+msgstr "Rapport commission"
+
+#. module: amb_subscription
+#: model:ir.model,name:amb_subscription.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Confirmés - Adaptés"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.model,name:amb_subscription.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Correcte - Insuffisante (demande client)"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_res_company__mandatory_particular_invoice
+msgid "Custom Comments On Invoice"
+msgstr "Commentaire facture"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_res_company__mandatory_particular_saleorder
+msgid "Custom Comments On Sale"
+msgstr "Commentaire commande"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.amb_res_partner_form
+msgid "Custom history..."
+msgstr "Historique"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_res_partner__customer_history
+#: model:ir.model.fields,field_description:amb_subscription.field_res_users__customer_history
+msgid "Customer History"
+msgstr "Historique client"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.amb_res_partner_form
+msgid "Customer history"
+msgstr "Historique client"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__date_end
+msgid "Date End"
+msgstr "Date fin"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__date_start
+msgid "Date Start"
+msgstr "Date début"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Distance du poêle aux matériaux combustibles :"
+msgstr "Distance du poële aux matériaux combustibles :"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Démarrage du poêle"
+msgstr "Démarrage du poële"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_res_company__edf_prime
+msgid "EDF Prime"
+msgstr "Prime EDF"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "EXPLICATIONS DUES A L'UTILISATEUR"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Effectué - Non effectué (demande client)"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Existante - Créée"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.actions.server,name:amb_subscription.cron_generate_payment_ir_actions_server
+msgid "Generate payments each month"
+msgstr "Générer paiements chaque mois"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Hauteur du conduit d'évacuation en m :"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__id
+msgid "ID"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Identification:"
+msgstr "Identification"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid ""
+"Le Client et le Partenaire Bleu Ciel d'EDF qui a réalisé les travaux "
+"reconnaissent la contribution d'EDF dans l'amélioration de la performance "
+"énergétique du logement ; s'engagent à ne pas avoir signé et ne pas signer "
+"d'attestation similaire concernant ces travaux réalisés et à transmettre "
+"exclusivement à EDF les justificatifs au titre de la loi n°2005-781 du 13 "
+"juillet 2005 et du décret n° 2006-603 du 23 mai 2006 relatif aux certificats"
+" d'économies d'énergie"
+msgstr ""
+"Le Client et le Partenaire Bleu Ciel d'EDF qui a réalisé les travaux "
+"reconnaissent la contribution d'EDF dans l'amélioration de la performance "
+"énergétique du logement ; s'engagent à ne avoir signé et ne pas signer "
+"d'attestation similaire concernant ces travaux réalisés et à transmettre "
+"exclusivement à EDF les justificatifs au titre de la loi n°2005-781 du 13 "
+"juillet 2005 et du décret n° 2006-603 du 23 mai 2006 relatif aux certificats"
+" d'économies d'énergie"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Le Client reconnaît avoir eu la notice de l'appareil en Français"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Le Client reconnaît avoir été informé :"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid ""
+"Le Client reconnaît que la programmation (dont allumage et extinction) lui a"
+" été montrée"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Le Client reconnaît que le réglage de l'appareil lui a été expliqué"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid ""
+"Le Client reconnaît que les opérations de nettoyage lui ont été montrées "
+"(foyer, échangeur, tiroir à cendres)"
+msgstr ""
+
+#. module: amb_subscription
+#. odoo-python
+#: code:addons/amb_subscription/models/subscription.py:0
+#, python-format
+msgid "New"
+msgstr "Nouveau"
+
+#. module: amb_subscription
+#: model:ir.model.fields.selection,name:amb_subscription.selection__subscription_wood_pellet__type_subscription__b
+msgid "Not standard"
+msgstr "Non standard"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Oui - Non"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Paramètres du poêle :"
+msgstr "Paramètres du poële :"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__price
+msgid "Price"
+msgstr "Prix"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Raccordement du poêle au conduit :"
+msgstr "Raccordement du poële au conduit :"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__renewable
+msgid "Renewable"
+msgstr "Renouvelable"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "S.A.S au capital de 32 000 euros"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_res_company__second_partner_id
+msgid "Second Contact"
+msgstr "Deuxième Contact"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Signature Client"
+msgstr "Client Signé"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Signature Technicien"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "Siret :"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "Siège social : sas bill"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid ""
+"Sont informés que la Direction Générale de l'Industrie, de la Recherche et "
+"de l'Environnement (DRIRE) est susceptible de contrôler la réalité des "
+"travaux réalisés et peut demander au Client un descriptif de ces travaux."
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.model.fields.selection,name:amb_subscription.selection__subscription_wood_pellet__type_subscription__a
+msgid "Standard"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__name
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. module: amb_subscription
+#: model:ir.model,name:amb_subscription.model_subscription_wood_pellet
+msgid "Subscription wood pellet"
+msgstr "Abonnement pellets"
+
+#. module: amb_subscription
+#: model:ir.actions.act_window,name:amb_subscription.subscription_action
+msgid "Subscriptions"
+msgstr "Abonnements"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Tubage - Simple paroi - Double paroi - Lame d'air"
+msgstr ""
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.report_commissioning_document
+msgid "Type"
+msgstr "Taper"
+
+#. module: amb_subscription
+#: model:ir.model.fields,field_description:amb_subscription.field_subscription_wood_pellet__type_subscription
+msgid "Type Subscription"
+msgstr "Tapez Abonnement"
+
+#. module: amb_subscription
+#: model_terms:ir.ui.view,arch_db:amb_subscription.custom_external_layout_standard
+msgid "Tél:"
+msgstr ""
+
+#. module: amb_subscription
+#: model:ir.ui.menu,name:amb_subscription.menu_root
+#: model:ir.ui.menu,name:amb_subscription.subscription_menu
+msgid "Wood pellet subscriptions"
+msgstr "Abonnements Granulés De Bois"

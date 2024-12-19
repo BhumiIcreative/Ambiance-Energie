@@ -1,0 +1,140 @@
+<odoo>
+    <template id="amb_subscription.report_commissioning_document">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context(lang=lang)"/>
+
+            <t t-set="address">
+                Annexe facture <span t-field="o.name"/>
+                <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                <div t-if="o.partner_id.vat" class="mt16"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></div>
+            </t>
+
+            <div class="page">
+                <h5>
+<!--                  Identification: <span t-field="o.commissioning_identification"/>-->
+                </h5>
+                <h2>
+                    <span>RAPPORT DE MISE EN SERVICE (PV de réception)</span>
+                </h2>
+
+                <div id="informations" class="row mt32 mb32">
+                    <div class="col-auto mw-100 mb-2" name="description">
+                        <strong>Année de construction:</strong>
+                        <p class="m-0">.....</p>
+                    </div>
+                    <div class="col-auto mw-100 mb-2" name="invoice_date">
+                        <strong>Surface habitable:</strong>
+                        <p class="m-0">.....</p>
+                    </div>
+                    <div class="col-auto mw-100 mb-2" name="due_date">
+                        <strong>Nombre de pièces:</strong>
+                        <p class="m-0">.....</p>
+                    </div>
+                    <div class="col-auto mw-100 mb-2" name="origin">
+                        <strong>Mode chauffage avant:</strong>
+                        <p class="m-0">.....</p>
+                    </div>
+                    <div class="col-auto mw-100 mb-2" name="customer_code">
+                        <strong>Mode chauffage après:</strong>
+                        <p class="m-0">.....</p>
+                    </div>
+                </div>
+
+                <h4>
+                  CONTROLES EFFECTUES
+                </h4>
+
+                <table class="table table-sm o_main_table">
+                    <tr>
+                        <td>Hauteur du conduit d'évacuation en m :</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Raccordement du poêle au conduit :</td>
+                        <td>Oui - Non</td>
+                    </tr>
+                    <tr>
+                        <td>Arrivée d'air frais dans la pièce :</td>
+                        <td>Existante - Créée</td>
+                    </tr>
+                    <tr>
+                        <td>Paramètres du poêle :</td>
+                        <td>Confirmés - Adaptés</td>
+                    </tr>
+                    <tr>
+                        <td>Distance du poêle aux matériaux combustibles :</td>
+                        <td>Correcte - Insuffisante (demande client)</td>
+                    </tr>
+                    <tr>
+                        <td>Démarrage du poêle</td>
+                        <td>Effectué - Non effectué (demande client)</td>
+                    </tr>
+                    <tr>
+                        <td>Autres chose ou observations</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>Tubage - Simple paroi - Double paroi - Lame d'air</td>
+                    </tr>
+                </table>
+
+                <h4>
+                  EXPLICATIONS DUES A L'UTILISATEUR
+                </h4>
+
+                <table class="table table-sm o_main_table">
+                    <tr>
+                        <td>Le Client reconnaît que le réglage de l'appareil lui a été expliqué</td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît que les opérations de nettoyage lui ont été montrées (foyer, échangeur, tiroir à cendres)</td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît que la programmation (dont allumage et extinction) lui a été montrée</td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît avoir été informé :</td>
+                    </tr>
+                    <tr>
+                        <td>- de l'utilisation et du fonctionnement de l'appareil</td>
+                    </tr>
+                    <tr>
+                        <td>- de l'importance de la qualité du granulé et de ses conditions de stockage</td>
+                    </tr>
+                    <tr>
+                        <td>- sur la maintenance obligatoire de l'appareil</td>
+                    </tr>
+                    <tr>
+                        <td>- sur des conditions générales de vente et de garantie (affichées au magasinet sur internet)</td>
+                    </tr>
+                    <tr>
+                        <td>Le Client et le Partenaire Bleu Ciel d'EDF qui a réalisé les travaux reconnaissent la contribution d'EDF dans l'amélioration de la performance énergétique du logement ; s'engagent à ne pas avoir signé et ne pas signer d'attestation similaire concernant ces travaux réalisés et à transmettre exclusivement à EDF les justificatifs au titre de la loi n°2005-781 du 13 juillet 2005 et du décret n° 2006-603 du 23 mai 2006 relatif aux certificats d'économies d'énergie</td>
+                    </tr>
+                    <tr>
+                        <td>Sont informés que la Direction Générale de l'Industrie, de la Recherche et de l'Environnement (DRIRE) est susceptible de contrôler la réalité des travaux réalisés et peut demander au Client un descriptif de ces travaux.</td>
+                    </tr>
+                    <tr>
+                        <td>Le Client reconnaît avoir eu la notice de l'appareil en Français</td>
+                    </tr>
+                </table>
+
+                <table class="table table-sm o_main_table">
+                    <tr>
+                        <td>Signature Technicien</td>
+                        <td>Signature Client</td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="amb_subscription.commissioning_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.user_id.lang if o.move_type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                <t t-call="amb_subscription.report_commissioning_document" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

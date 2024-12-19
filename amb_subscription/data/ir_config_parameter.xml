@@ -1,0 +1,8 @@
+<odoo>
+    <data noupdate="0">
+        <record id="date_exec_payment" model="ir.config_parameter">
+            <field name="key">date_exec_payment</field>
+            <field name="value">1</field>
+        </record>
+  </data>
+</odoo>
