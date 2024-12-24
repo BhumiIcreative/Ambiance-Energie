@@ -51,7 +51,8 @@ class SubscriptionWoodPellet(models.Model):
     @api.onchange("date_start", "date_end", "partner_id")
     def _compute_name(self):
         """
-            Automatically generate the subscription name based on partner name and date range.
+            Automatically generates the subscription name based on partner
+            name and date range.
         """
         for subscription_id in self:
             if (
@@ -70,7 +71,8 @@ class SubscriptionWoodPellet(models.Model):
 
     def generate_payments(self):
         """
-            Create customer payments for active subscriptions on a specific date.
+            Create customer payments for active subscriptions on a specific
+            date through schedular.
         """
         if datetime.date.today().day == int(
             self.env["ir.config_parameter"].get_param("date_exec_payment")
@@ -85,8 +87,8 @@ class SubscriptionWoodPellet(models.Model):
                 self.env["account.payment"].create(
                     {
                         "amount": subscription.price,
-                        "journal_id": self.env["account.journal"]
-                        .search([("code", "=", "BNK1")]).id,
+                        "journal_id": self.env["account.journal"].search(
+                            [("code", "=", "BNK1")], limit=1).id,
                         "date": datetime.datetime.now(),
                         "payment_type": "inbound",
                         "partner_type": "customer",
@@ -101,5 +103,5 @@ class SubscriptionWoodPellet(models.Model):
                         "partner_id": subscription.partner_id.id,
                         "ref": self.name,
                     }
-                ).action_register_payment()
+                ).move_id.action_register_payment()
         return True

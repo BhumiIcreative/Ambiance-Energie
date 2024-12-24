@@ -8,14 +8,13 @@
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     "category": "subscription",
-    "version": "0.1",
+    "version": "17.0.1.0.0",
     "application": True,
     # any module necessary for this one to work correctly
     "depends": [
-        "base",
         "sale_management",
         "account",
-        "sale_timeline",
+        # "sale_timeline",
         "l10n_fr",
         # 'amb_account',
     ],
