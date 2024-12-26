@@ -1,0 +1,47 @@
+<odoo>
+    <record model="ir.ui.view" id="inherit_account_move_form_view">
+        <field name="name">inherit.account.move.form.view</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="invoice_payment_term_id" position="attributes">
+                <attribute name="domain">[
+                    '|',
+                    ('company_id', '=', False),
+                    ('company_id', '=', company_id),
+                    '|',
+                    ('move_id', '=', active_id),
+                    ('move_id', '=', False),
+                    ]
+                </attribute>
+                <attribute name="invisible">move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund','out_receipt', 'in_receipt')
+                </attribute>
+                <attribute name="readonly">state not in ('draft') and payment_timeline_ids != []
+                </attribute>
+            </field>
+
+            <xpath expr="//field[@name='invoice_payment_term_id']/.." position="after">
+                <field name="move_type" invisible="1"/>
+<!--                <field name="payment_instrument_id" options="{'no_open':True}" attrs="{'invisible':-->
+<!--        ['|', '&amp;', ['type','!=','out_invoice'],['type','!=','out_refund'], ['is_timeline', '!=', False]]}"/>-->
+            </xpath>
+            <xpath expr="//field[@name='partner_id']/.." position="inside">
+                <!-- <page string="Payment timeline" name="payment_timeline" attrs="{'invisible': [('is_timeline', '=', False)]}"> -->
+                <field name="is_timeline" invisible="1"/>
+                <field name="payment_timeline_ids" nolabel="1" colspan="2"
+                       readonly="state not in ('draft')" invisible="not is_timeline">
+                    <tree editable="bottom">
+                        <field name="date"/>
+                        <field name="payment_instrument_id"/>
+                        <field name="amount" widget="monetary"/>
+                        <field name="advance"/>
+                        <!--			  <field name="amount" widget="monetary" sum="Total"/>	--><!-- DELETE SUM -->
+                    </tree>
+                </field>
+<!--                <field name="amount_missing_from_timeline" nolabel="1" colspan="2"-->
+<!--                       invisible="not is_timeline"-->
+<!--                       class="d-block w-50 p-1 text-right font-weight-bold" style="margin-left: 50%;"/>-->
+            </xpath>
+        </field>
+    </record>
+</odoo>
