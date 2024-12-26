@@ -2,16 +2,18 @@
     <template id="amb_subscription.report_commissioning_document">
         <t t-call="web.external_layout">
             <t t-set="o" t-value="o.with_context(lang=lang)"/>
-
             <t t-set="address">
-                Annexe facture <span t-field="o.name"/>
-                <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
-                <div t-if="o.partner_id.vat" class="mt16"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></div>
+                Annexe facture
+                <span t-field="o.name"/>
+                <address t-field="o.partner_id"
+                         t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                <div t-if="o.partner_id.vat" class="mt16"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>:
+                    <span t-field="o.partner_id.vat"/>
+                </div>
             </t>
-
             <div class="page">
                 <h5>
-<!--                  Identification: <span t-field="o.commissioning_identification"/>-->
+                    <!--                  Identification: <span t-field="o.commissioning_identification"/>-->
                 </h5>
                 <h2>
                     <span>RAPPORT DE MISE EN SERVICE (PV de réception)</span>
@@ -41,7 +43,7 @@
                 </div>
 
                 <h4>
-                  CONTROLES EFFECTUES
+                    CONTROLES EFFECTUES
                 </h4>
 
                 <table class="table table-sm o_main_table">
@@ -80,7 +82,7 @@
                 </table>
 
                 <h4>
-                  EXPLICATIONS DUES A L'UTILISATEUR
+                    EXPLICATIONS DUES A L'UTILISATEUR
                 </h4>
 
                 <table class="table table-sm o_main_table">
@@ -88,10 +90,13 @@
                         <td>Le Client reconnaît que le réglage de l'appareil lui a été expliqué</td>
                     </tr>
                     <tr>
-                        <td>Le Client reconnaît que les opérations de nettoyage lui ont été montrées (foyer, échangeur, tiroir à cendres)</td>
+                        <td>Le Client reconnaît que les opérations de nettoyage lui ont été montrées (foyer, échangeur,
+                            tiroir à cendres)
+                        </td>
                     </tr>
                     <tr>
-                        <td>Le Client reconnaît que la programmation (dont allumage et extinction) lui a été montrée</td>
+                        <td>Le Client reconnaît que la programmation (dont allumage et extinction) lui a été montrée
+                        </td>
                     </tr>
                     <tr>
                         <td>Le Client reconnaît avoir été informé :</td>
@@ -106,13 +111,24 @@
                         <td>- sur la maintenance obligatoire de l'appareil</td>
                     </tr>
                     <tr>
-                        <td>- sur des conditions générales de vente et de garantie (affichées au magasinet sur internet)</td>
+                        <td>- sur des conditions générales de vente et de garantie (affichées au magasinet sur
+                            internet)
+                        </td>
                     </tr>
                     <tr>
-                        <td>Le Client et le Partenaire Bleu Ciel d'EDF qui a réalisé les travaux reconnaissent la contribution d'EDF dans l'amélioration de la performance énergétique du logement ; s'engagent à ne pas avoir signé et ne pas signer d'attestation similaire concernant ces travaux réalisés et à transmettre exclusivement à EDF les justificatifs au titre de la loi n°2005-781 du 13 juillet 2005 et du décret n° 2006-603 du 23 mai 2006 relatif aux certificats d'économies d'énergie</td>
+                        <td>Le Client et le Partenaire Bleu Ciel d'EDF qui a réalisé les travaux reconnaissent la
+                            contribution d'EDF dans l'amélioration de la performance énergétique du logement ;
+                            s'engagent à ne pas avoir signé et ne pas signer d'attestation similaire concernant ces
+                            travaux réalisés et à transmettre exclusivement à EDF les justificatifs au titre de la loi
+                            n°2005-781 du 13 juillet 2005 et du décret n° 2006-603 du 23 mai 2006 relatif aux
+                            certificats d'économies d'énergie
+                        </td>
                     </tr>
                     <tr>
-                        <td>Sont informés que la Direction Générale de l'Industrie, de la Recherche et de l'Environnement (DRIRE) est susceptible de contrôler la réalité des travaux réalisés et peut demander au Client un descriptif de ces travaux.</td>
+                        <td>Sont informés que la Direction Générale de l'Industrie, de la Recherche et de
+                            l'Environnement (DRIRE) est susceptible de contrôler la réalité des travaux réalisés et peut
+                            demander au Client un descriptif de ces travaux.
+                        </td>
                     </tr>
                     <tr>
                         <td>Le Client reconnaît avoir eu la notice de l'appareil en Français</td>
@@ -132,9 +148,20 @@
     <template id="amb_subscription.commissioning_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
-                <t t-set="lang" t-value="o.user_id.lang if o.move_type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                <t t-set="lang"
+                   t-value="o.user_id.lang if o.move_type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
                 <t t-call="amb_subscription.report_commissioning_document" t-lang="lang"/>
             </t>
         </t>
     </template>
+
+    <record id="commissioning_report_id" model="ir.actions.report">
+        <field name="name">Commissioning report</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">amb_subscription.commissioning_report</field>
+        <field name="report_file">amb_subscription.commissioning_report</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>

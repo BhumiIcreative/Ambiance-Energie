@@ -3,7 +3,7 @@
         <field name="priority" eval="10"/>
         <field name="name">amb_subscription.res_company.form</field>
         <field name="model">res.company</field>
-        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='website']" position="after">
                 <field name="mandatory_particular_invoice"/>
@@ -12,6 +12,6 @@
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="second_partner_id"/>
             </xpath>
-      </field>
-  </record>
+        </field>
+    </record>
 </odoo>

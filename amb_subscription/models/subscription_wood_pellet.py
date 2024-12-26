@@ -1,4 +1,5 @@
 import datetime
+
 from odoo import api, fields, models, _
 
 
@@ -28,9 +29,7 @@ class SubscriptionWoodPellet(models.Model):
     partner_id = fields.Many2one("res.partner", string="Partner", required=True)
 
     def _modify_amount(self):
-        """
-            Update the subscription balance based on customer payments and reconciled invoices.
-        """
+        """Update the subscription balance based on customer payments and reconciled invoices."""
         for subscription in self:
             account_payments = self.env["account.payment"].search(
                 [
@@ -38,41 +37,34 @@ class SubscriptionWoodPellet(models.Model):
                     ("payment_type", "=", "inbound"),
                 ]
             )
-
-            amount = sum(account_payments.mapped("amount"))
-            other_amount = sum(
+            new_amount = sum(account_payments.mapped("amount")) - sum(
                 account_payments.mapped("reconciled_invoice_ids.amount_total")
             )
-
-            new_amount = amount - other_amount
             if new_amount >= 0:
                 subscription.amount += new_amount
 
     @api.onchange("date_start", "date_end", "partner_id")
     def _compute_name(self):
         """
-            Automatically generates the subscription name based on partner
-            name and date range.
+        Automatically generates the subscription name based on partner
+        name and date range.
         """
-        for subscription_id in self:
-            if (
-                subscription_id.date_start
-                and subscription_id.date_end
-                and subscription_id.partner_id
-            ):
-                subscription_id.name = (
-                    "SUB "
-                    + str(subscription_id.partner_id.name)
-                    + " from "
-                    + str(subscription_id.date_start)
-                    + " to "
-                    + str(subscription_id.date_end)
-                )
+        for subscription_id in self.filtered(
+            lambda sub: sub.date_start and sub.date_end and sub.partner_id
+        ):
+            subscription_id.name = (
+                "SUB "
+                + str(subscription_id.partner_id.name)
+                + " from "
+                + str(subscription_id.date_start)
+                + " to "
+                + str(subscription_id.date_end)
+            )
 
     def generate_payments(self):
         """
-            Create customer payments for active subscriptions on a specific
-            date through schedular.
+        Create customer payments for active subscriptions on a specific
+        date through schedular.
         """
         if datetime.date.today().day == int(
             self.env["ir.config_parameter"].get_param("date_exec_payment")
@@ -87,8 +79,9 @@ class SubscriptionWoodPellet(models.Model):
                 self.env["account.payment"].create(
                     {
                         "amount": subscription.price,
-                        "journal_id": self.env["account.journal"].search(
-                            [("code", "=", "BNK1")], limit=1).id,
+                        "journal_id": self.env["account.journal"]
+                        .search([("code", "=", "BNK1")], limit=1)
+                        .id,
                         "date": datetime.datetime.now(),
                         "payment_type": "inbound",
                         "partner_type": "customer",

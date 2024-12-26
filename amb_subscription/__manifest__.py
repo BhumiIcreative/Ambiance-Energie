@@ -26,7 +26,6 @@
         "views/subscription_views.xml",
         "views/res_company_views.xml",
         "views/res_partner_views.xml",
-        "report/ir_actions_report.xml",
         "report/commissioning_report.xml",
         "report/custom_external_layout.xml",
         "report/custom_external_layout_commissioning.xml",
