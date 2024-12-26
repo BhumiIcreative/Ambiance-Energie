@@ -25,9 +25,9 @@
         "security/ir.model.access.csv",
         "views/subscription_views.xml",
         "views/res_company_views.xml",
-        "views/res_partner_views.xml",
         "report/commissioning_report.xml",
         "report/custom_external_layout.xml",
         "report/custom_external_layout_commissioning.xml",
     ],
+    'license': 'LGPL-3',
 }
