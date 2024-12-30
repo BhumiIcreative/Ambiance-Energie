@@ -1,0 +1,51 @@
+<odoo>
+    <data noupdate="0">
+        <record id="custom_sale_order_report_format" model="report.paperformat">
+            <field name="name">Sale order report format</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">75</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">73</field>
+            <field name="dpi">90</field>
+        </record>
+        
+        <record id="custom_sale_order_report_pro_format" model="report.paperformat">
+            <field name="name">Sale order report PRO-FORMAT</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">75</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">73</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="custom_intervention_request_report_format" model="report.paperformat">
+            <field name="name">Intervention request report format</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">85</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+    </data>
+</odoo>
