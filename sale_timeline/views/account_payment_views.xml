@@ -1,41 +1,44 @@
 <odoo>
-    <record model="ir.ui.view" id="inherit_account_payment_timeline_search_view">
-        <field name="name">inherit.account.payment.timeline.search.view</field>
+    <record id="account_payment_inherit_timeline_search_view" model="ir.ui.view">
+        <field name="name">account.payment.inherit.timeline.search.view</field>
         <field name="model">account.payment</field>
         <field name="inherit_id" ref="account.view_account_payment_search"/>
         <field name="arch" type="xml">
-            <field name="journal_id" position="after">
+            <xpath expr="//field[@name='journal_id']" position="after">
                 <field name="payment_method_id"/>
-            </field>
+            </xpath>
         </field>
     </record>
 
-<!--    <record model="ir.ui.view" id="inherit_account_payment_tree_view">-->
-<!--        <field name="name">inherit.account.payment.tree.view</field>-->
-<!--        <field name="model">account.payment</field>-->
-<!--        <field name="inherit_id" ref="account.view_account_payment_tree"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--&lt;!&ndash;            <tree position="attributes">&ndash;&gt;-->
-<!--&lt;!&ndash;                <attribute name="edit">true</attribute>&ndash;&gt;-->
-<!--&lt;!&ndash;                <attribute name="multi_edit">1</attribute>&ndash;&gt;-->
-<!--&lt;!&ndash;            </tree>&ndash;&gt;-->
-<!--&lt;!&ndash;            <field name="amount" position="attributes">&ndash;&gt;-->
-<!--&lt;!&ndash;                <attribute name="readonly">1</attribute>&ndash;&gt;-->
-<!--&lt;!&ndash;            </field>&ndash;&gt;-->
-<!--        </field>-->
-<!--    </record>-->
+    <record id="account_payment_inherit_tree_view" model="ir.ui.view">
+        <field name="name">account.payment.inherit.tree.view</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_tree"/>
+        <field name="arch" type="xml">
+            <!-- partner_id domain error -->
+<!--            <xpath expr="//tree" position="attributes">-->
+<!--                <attribute name="edit">true</attribute>-->
+<!--                <attribute name="multi_edit">1</attribute>-->
+<!--            </xpath>-->
 
-<!--    <record model="ir.ui.view" id="inherit_account_payment_form_view">-->
-<!--        <field name="name">inherit.account.payment.form.view</field>-->
-<!--        <field name="model">account.payment</field>-->
-<!--        <field name="inherit_id" ref="account.view_account_payment_form"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--&lt;!&ndash;            <field name="company_id" position="after">&ndash;&gt;-->
-<!--&lt;!&ndash;                <field name="oci_point_of_sale"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            </field>&ndash;&gt;-->
-<!--            <field name="payment_method_id" position="after">-->
+            <xpath expr="//field[@name='amount_company_currency_signed']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_payment_inherit_form_view" model="ir.ui.view">
+        <field name="name">account.payment.inherit.form.view</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/field[@name='company_id']" position="after">
+                <field name="oci_point_of_sale"/>
+            </xpath>
+            <!-- Field commented -->
+<!--            <xpath expr="//sheet/field[@name='company_id']" position="after">-->
 <!--                <field name="payment_instrument_id"/>-->
-<!--            </field>-->
-<!--        </field>-->
-<!--    </record>-->
+<!--            </xpath>-->
+        </field>
+    </record>
 </odoo>

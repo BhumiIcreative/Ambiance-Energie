@@ -3,18 +3,18 @@ from odoo.exceptions import UserError
 from odoo.tools.float_utils import float_compare
 
 class PaymentTimeLine(models.Model):
+    """
+    creating payment terms dynamically based on specific timelines
+    """
     _name = 'payment.timeline'
     _description = 'Payment timeline'
     _order = 'date'
 
-    @api.model
     def _get_default_currency(self):
-        """Return the default currency for account moves"""
-        journal = self.env["account.move"]._search_default_journal()
-        return journal.currency_id or journal.company_id.currency_id
+        return self.env['account.move']._compute_currency_id()
 
-    amount = fields.Monetary(string='Amount', required=True)
     date = fields.Date(string='Date', required=True, default=fields.Date.today())
+    amount = fields.Monetary(string='Amount', required=True)
     currency_id = fields.Many2one('res.currency', store=True, readonly=True,
                            required=True, string='Currency',
                            default=_get_default_currency)
@@ -25,6 +25,14 @@ class PaymentTimeLine(models.Model):
     advance = fields.Boolean(string='Deposit', default=False, readonly=True)
 
     def compute_payment_term_id(self):
+        """
+            - Dynamically computes and/or updates the payment term for a
+            related account.move (e.g., an invoice).
+            - Creates or updates a record in the account.payment.term model
+            for tracking payment terms related to the invoice.
+            - Links the payment term with payment.term.line entries,
+            representing each payment line in the term.
+        """
         if not self:
             return
         move_id = self[0].move_id
@@ -46,12 +54,19 @@ class PaymentTimeLine(models.Model):
         else:
             payment_term_id.write(vals)
 
-        payment_term_id.line_ids = [(6, 0,
-            self.generate_payment_term_line(
-                                        move_id.invoice_date or Date.today(),
-                                        payment_term_id).ids)]
+        payment_term_id.line_ids = [
+            (6, 0, self.generate_payment_term_line(
+                move_id.invoice_date or Date.today(),payment_term_id
+            ).ids)]
 
     def generate_payment_term_line(self, invoice_date, payment_term_id):
+        # Unvisited Method
+        """
+
+        :param invoice_date: Current date if not invoice date.
+        :param payment_term_id: account.payment.term
+        :return:
+        """
         PaymentTermLine = self.env['account.payment.term.line']
         for timeline_id in self:
             if timeline_id.date <= invoice_date:
@@ -74,18 +89,21 @@ class PaymentTimeLine(models.Model):
         return PaymentTermLine
 
     def validate_amount(self, amount_target):
+        print("\n\n\n ######### amount_target: ", amount_target)
         amount = sum(self.mapped('amount'))
+        print("\n\n\n ######### amount: ", amount)
         if float_compare(amount,amount_target, precision_rounding=self.currency_id.rounding) or not self:
-            raise UserError(_("Payments timeline sum have to be %s € (current is %s €)") % (amount_target, amount))
-
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
-        return res
-
+            raise UserError("Payments timeline sum have to be %s € (current is %s €)" % (amount_target, amount))
 
     def write(self, values):
+        """
+            Overrides the write method to dynamically recompute payment terms
+            whenever payment timeline entries are updated.
+        """
         res = super().write(values)
+        print("\n\n\n ###### WRITE")
+        print("\n\n\n ############# move_id: ", self.move_id)
+        print("\n\n\n ############# payment_timeline_ids: ", self.move_id.payment_timeline_ids)
         if self.move_id:
             self.move_id.payment_timeline_ids.compute_payment_term_id()
         return res
