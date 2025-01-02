@@ -11,13 +11,10 @@ class SaleOrderLine(models.Model):
     margin_euro = fields.Monetary(string="Margin Euro", compute="_margins_compute")
     margin_percentage = fields.Float(string="Margin %", compute="_margins_compute")
     article_cost = fields.Float(string="Unit Cost", related="product_id.standard_price")
-    article_cost_subtotal = fields.Float(
-        string="Cost", compute="_margins_compute", store=True
-    )
+    article_cost_subtotal = fields.Float(string="Cost", compute="_cost_compute")
 
     def _margins_compute(self):
-        """Compute and update the margin for each line based on the price and cost values
-        Calculates margin in euros and percentage"""
+        """Compute and update the margin for each line based on the price and cost values Calculates margin in euros and percentage"""
         for line_id in self:
             margin_euro = line_id.price_subtotal - line_id.article_cost_subtotal
             line_id.update(
@@ -28,8 +25,16 @@ class SaleOrderLine(models.Model):
                         if line_id.price_subtotal != 0
                         else 0
                     ),
+                }
+            )
+
+    def _cost_compute(self):
+        """Compute and update the cost for each line based on the price and cost values"""
+        for line_id in self:
+            line_id.update(
+                {
                     "article_cost_subtotal": line_id.article_cost
-                    * line_id.product_uom_qty,
+                    * line_id.product_uom_qty
                 }
             )
 
