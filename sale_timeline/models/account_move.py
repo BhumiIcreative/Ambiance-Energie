@@ -11,11 +11,11 @@ class AccountMove(models.Model):
 
     payment_timeline_ids = fields.One2many(
         'payment.timeline', 'move_id', string=_('Payment timeline'))
-    is_timeline = fields.Boolean(
-        _('Is Timeline ?'), compute='_compute_is_timeline', store=True, default=False)
+    is_timeline = fields.Boolean('Is Timeline ?',
+            compute='_compute_is_timeline', store=True, default=False)
     payment_instrument_id = fields.Many2one(
-        'sale_timeline.payment.instrument', string=_('Payment method'))
-    amount_missing_from_timeline = fields.Monetary(string=_("Amount missing from payment timeline"),
+        'sale_timeline.payment.instrument', string='Payment method')
+    amount_missing_from_timeline = fields.Monetary(string="Amount missing from payment timeline",
                                                    compute="_compute_amount_missing_from_timeline")
     advance = fields.Monetary('Advance', digits=(14, 10))
     advance_payment_ids = fields.One2many(
@@ -34,7 +34,7 @@ class AccountMove(models.Model):
     @api.depends('invoice_payment_term_id')
     def _compute_is_timeline(self):
         for move in self:
-            move.is_timeline = account_id.invoice_payment_term_id.name == "Echéancier de paiement"
+            move.is_timeline = move.invoice_payment_term_id.name == "Echéancier de paiement"
 
     def write(self, values):
         res = super().write(values)

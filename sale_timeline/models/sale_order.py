@@ -7,13 +7,13 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     payment_timeline_ids = fields.One2many(
-        'payment.timeline', 'sale_id', string=_('Payment timeline'))
-    is_timeline = fields.Boolean(
-        _('Is Timeline ?'), compute="_compute_is_timeline", store=True, default=False)
+        'payment.timeline', 'sale_id', string='Payment timeline')
+    is_timeline = fields.Boolean('Is Timeline ?',
+            compute="_compute_is_timeline", store=True, default=False)
     payment_instrument_id = fields.Many2one(
-        'sale_timeline.payment.instrument', string=_('Payment method'))
-    amount_missing_from_timeline = fields.Monetary(string=_(
-        "Amount out of payment timeline"), compute="_compute_amount_missing_from_timeline")
+        'sale_timeline.payment.instrument', 'Payment method')
+    amount_missing_from_timeline = fields.Monetary(
+        "Amount out of payment timeline", compute="_compute_amount_missing_from_timeline")
 
     @api.depends('payment_term_id')
     def _compute_is_timeline(self):
@@ -39,8 +39,7 @@ class SaleOrder(models.Model):
     def write(self, values):
         res = super().write(values)
         if self.state != 'draft' and self.payment_term_id == self.env.ref('sale_timeline.timeline_payment'):
+            self.payment_timeline_ids.validate_amount(self.amount_left_to_pay)
             if self.type_order == 'sto':
                 self.payment_timeline_ids.validate_amount(self.amount_left_to_pay - self.edf_prime)
-            else:
-                self.payment_timeline_ids.validate_amount(self.amount_left_to_pay)
         return res

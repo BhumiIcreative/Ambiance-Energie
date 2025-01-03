@@ -40,7 +40,6 @@ class PaymentTimeLine(models.Model):
         move_id = self[0].move_id
 
         payment_term_id = move_id.invoice_payment_term_id
-        payment_term_name = move_id.name
         PaymentTerm = self.env['account.payment.term']
         vals = {
             'name': '%s' % (payment_term_id.name),
