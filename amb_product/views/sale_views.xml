@@ -1,0 +1,79 @@
+<odoo>
+    <!-- Inherit sale order for adding fields -->
+    <record id="amb_sale_with_margin_view_form" model="ir.ui.view">
+        <field name="priority" eval="10"/>
+        <field name="name">amb.sale.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='order_lines']" position="after">
+                <page string="Margin Lines" name="margin_lines">
+                    <field name="margin_order_line" widget="section_and_note_one2many" mode="tree"
+                           readonly="state in ['done','cancel']">
+                        <tree string="Sales Order Lines With Margin" delete="false"
+                              decoration-danger="is_greater_than_min == False" decoration-success="is_greater_than_min == True"
+                              decoration-info="(not display_type and invoice_status == 'to invoice')">
+                            <field name="sequence" widget="handle"/>
+                            <field name="product_id"
+                                   readonly="not product_updatable" required="not display_type"
+                                   options="{'no_open': True}" force_save="1"
+                                   context="{'partner_id': parent.partner_id,'quantity': product_uom_qty,'pricelist': parent.pricelist_id,'uom':product_uom,'company_id': parent.company_id,'default_lst_price': price_unit,'default_description_sale': name}"
+                                   domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"
+                                   widget="product_configurator" groups="uom.group_uom"/>
+                            <field name="name" widget="section_and_note_text" optional="show"/>
+                            <field name="product_uom_qty"
+                                   context="{'partner_id': parent.partner_id,'quantity': product_uom_qty,'pricelist': parent.pricelist_id,'uom': product_uom,'company_id': parent.company_id}"
+                                   groups="uom.group_uom"/>
+                            <field name="qty_delivered" string="Delivered"
+                                   column_invisible="parent.state not in ['sale', 'done']"
+                                   readonly="qty_delivered_method != 'manual'"
+                                   optional="show"/>
+                            <field name="qty_invoiced" string="Invoiced"
+                                   column_invisible="parent.state not in ['sale', 'done']"
+                                   optional="show"/>
+                            <field name="product_uom" force_save="1" string="UoM"
+                                   readonly="state in ['sale','done', 'cancel']" required="not display_type"
+                                   context="{'company_id': parent.company_id}" groups="uom.group_uom"
+                                   options="{&quot;no_open&quot;: True}" optional="show"/>
+                            <field name="customer_lead" optional="hide"
+                                   readonly="parent.state not in ['draft', 'sent']"/>
+                            <field name="price_unit" readonly="qty_invoiced &gt; 0"/>
+                            <field name="article_cost" widget="monetary"/>
+                            <field name="discount" string="Disc.%" groups="product.group_discount_per_so_line"
+                                   optional="show"/>
+                            <field name="price_subtotal" widget="monetary" sum="total"/>
+                            <field name="article_cost_subtotal" widget="monetary" sum="total cost"/>
+                            <field name="min_price" widget="monetary"/>
+                            <field name="margin_euro" widget="monetary" sum="total"/>
+                            <field name="margin_percentage"/>
+                            <!-- We do not display the type because we don't want the user to be bothered with that information if he has no section or note. -->
+                            <field name="display_type" column_invisible="True"/>
+                            <field name="product_uom_category_id" column_invisible="True"/>
+                            <field name="product_updatable" column_invisible="True"/>
+                            <field name="qty_delivered_method" column_invisible="True"/>
+                            <field name="qty_to_invoice" column_invisible="True"/>
+                            <field name="is_greater_than_min" column_invisible="True"/>
+                            <field name="state" column_invisible="True"/>
+                            <field name="invoice_status" column_invisible="True"/>
+                            <field name="currency_id" column_invisible="True"/>
+                            <field name="price_tax" column_invisible="True"/>
+                            <field name="company_id" column_invisible="True"/>
+                            <field name="product_template_id" string="Product" column_invisible="True"
+                                   readonly="not product_updatable" required="not display_type"
+                                   options="{'no_open': True}"
+                                   context="{'partner_id': parent.partner_id,'quantity': product_uom_qty,'pricelist': parent.pricelist_id,'uom':product_uom,'company_id': parent.company_id,'default_list_price': price_unit,'default_description_sale': name}"
+                                   domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"
+                                   widget="product_configurator" groups="uom.group_uom"/>
+                            <field name="tax_id" widget="many2many_tags" options="{'no_create': True}"
+                                   column_invisible="True"
+                                   domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"
+                                   readonly="qty_invoiced &gt; 0" optional="show"/>
+                        </tree>
+                    </field>
+                    <field name="margin_total" string="Margin Total" widget="percentpie"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
