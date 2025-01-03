@@ -17,7 +17,6 @@
             <t t-raw="0"/>
         </t>
     </template>
-
     <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
         <!-- Header -->
         <div class="header">

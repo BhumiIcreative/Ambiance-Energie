@@ -14,9 +14,9 @@
     "depends": [
         "sale_management",
         "account",
-        # "sale_timeline",
+        "sale_timeline",
         "l10n_fr",
-        # 'amb_account',
+        'amb_account',
     ],
     # always loaded
     "data": [

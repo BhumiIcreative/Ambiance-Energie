@@ -13,7 +13,8 @@
             </t>
             <div class="page">
                 <h5>
-                    <!--                  Identification: <span t-field="o.commissioning_identification"/>-->
+                    Identification:
+                    <span t-field="o.commissioning_identification"/>
                 </h5>
                 <h2>
                     <span>RAPPORT DE MISE EN SERVICE (PV de réception)</span>
@@ -49,7 +50,7 @@
                 <table class="table table-sm o_main_table">
                     <tr>
                         <td>Hauteur du conduit d'évacuation en m :</td>
-                        <td></td>
+                        <td/>
                     </tr>
                     <tr>
                         <td>Raccordement du poêle au conduit :</td>
@@ -73,7 +74,7 @@
                     </tr>
                     <tr>
                         <td>Autres chose ou observations</td>
-                        <td></td>
+                        <td/>
                     </tr>
                     <tr>
                         <td>Type</td>
@@ -144,7 +145,6 @@
             </div>
         </t>
     </template>
-
     <template id="amb_subscription.commissioning_report">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
@@ -154,7 +154,6 @@
             </t>
         </t>
     </template>
-
     <record id="commissioning_report_id" model="ir.actions.report">
         <field name="name">Commissioning report</field>
         <field name="model">account.move</field>
