@@ -1,0 +1,13 @@
+<odoo>
+    <template id="custom_external_layout_standard_commissioning" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[hasclass('row')][1]" position="replace">
+        </xpath>
+    </template>
+    <template id="custom_external_layout_commissioning" inherit_id="web.external_layout">
+        <xpath expr="//t[@t-call='web.external_layout_standard']" position="replace">
+            <t t-else="else" t-call="amb_subscription.custom_external_layout_standard_commissioning">
+                <t t-raw="0"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

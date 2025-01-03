@@ -1,0 +1,147 @@
+<odoo>
+    <template id="custom_external_layout" t-name="custom_external_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-call="amb_subscription.custom_external_layout_standard">
+            <t t-raw="0"/>
+        </t>
+    </template>
+    <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
+        <!-- Header -->
+        <div class="header">
+
+        </div>
+
+        <!-- Body -->
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <div name="company_address" class="text-center">
+                <style>
+                    .small-text{
+                    font-size:10px;
+                    }
+                    .medium-text{
+                    font-size:14px;
+                    font-weight:bold;
+                    }
+                    .large-text{
+                    font-size:18px;
+                    }
+                </style>
+
+                <div class="row">
+                    <div class="col-6">
+                        <span class="small-text">SAS BILL</span>
+                        <br/>
+                        <span class="large-text">
+                            <span t-field="company.partner_id"/>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="small-text">
+                                    <span t-field="company.street"/>
+                                    <br/>
+                                    <span t-field="company.street2"/>
+                                </span>
+                                <br/>
+                                <span class="small-text">
+                                    <span t-field="company.zip"/>
+                                    <span t-field="company.city"/>
+                                </span>
+                                <br/>
+                                <span class="medium-text">Tél:
+                                    <span t-field="company.phone"/>
+                                </span>
+                                <br/>
+                                <span class="medium-text">Siret :
+                                    <span t-field="company.siret"/>
+                                </span>
+                            </div>
+
+                            <div class="col-6">
+                                <span class="small-text">
+                                    <span t-field="company.second_partner_id.street"/>
+                                </span>
+                                <br/>
+                                <span class="small-text">
+                                    <span t-field="company.second_partner_id.zip"/>
+                                    <span t-field="company.second_partner_id.city"/>
+                                </span>
+                                <br/>
+                                <span class="medium-text">Tél:
+                                    <span t-field="company.second_partner_id.phone"/>
+                                </span>
+                                <br/>
+                                <span class="medium-text">Siret :
+                                    <span t-field="company.second_partner_id.x_studio_siret_contact"/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="small-text">
+                            <span t-esc="company.website.replace('http://', '').replace('https://', '')"/>
+                        </strong>
+                        <br/>
+                        <span class="small-text">Garantie RC et Décenale : GROUPAMA N° 16553239R</span>
+                        <br/>
+                        <strong class="small-text">CELCA REIMS FR7615135205900800092576879 Swift : CEPAFRPP513</strong>
+                    </div>
+                </div>
+            </div>
+            <t t-raw="0"/>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer o_standard_footer" style="font-size:15px;">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <ul style="list-style:none; margin:0; text-align:center;">
+                    <li style="display:table-cell;">S.A.S au capital de 32 000 euros</li>
+                    <li style="display:table-cell;">- N° siren : 479573099</li>
+                    <li style="display:table-cell;">- APE 4674B</li>
+                    <li t-if="company.vat" style="display:table-cell;">- Identification<t
+                            t-esc="company.country_id.vat_label or 'Tax ID'"/>:
+                        <span t-field="company.vat"/>
+                    </li>
+                    <li t-if="company.siret">Siège social : sas bill
+                        <span t-field="company.street"/>
+                        <span t-field="company.street2"/>
+                        <span t-field="company.zip"/>
+                        <span t-field="company.city"/>
+                    </li>
+                </ul>
+
+                <div name="financial_infos">
+                    <span t-field="company.report_footer"/>
+                </div>
+
+                <div t-if="report_type == 'pdf'" class="text-muted"
+                     style="text-align:center; padding-top:8px; color: #8A8989;">
+                    Page:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
