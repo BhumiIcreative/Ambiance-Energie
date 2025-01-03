@@ -1,5 +1,3 @@
-# coding: utf-8
-
 from odoo import models, fields, api, _
 
 
@@ -7,13 +5,13 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     payment_timeline_ids = fields.One2many(
-        'payment.timeline', 'sale_id', string='Payment timeline')
+        'payment.timeline', 'sale_id', string='Payment Timeline')
     is_timeline = fields.Boolean('Is Timeline ?',
             compute="_compute_is_timeline", store=True, default=False)
     payment_instrument_id = fields.Many2one(
-        'sale_timeline.payment.instrument', 'Payment method')
+        'sale_timeline.payment.instrument', 'Payment Method')
     amount_missing_from_timeline = fields.Monetary(
-        "Amount out of payment timeline", compute="_compute_amount_missing_from_timeline")
+        "Amount Out of Payment Timeline", compute="_compute_amount_missing_from_timeline")
 
     @api.depends('payment_term_id')
     def _compute_is_timeline(self):

@@ -49,8 +49,7 @@ class PaymentTimeLine(models.Model):
         }
         if not payment_term_id.move_id:
             # We aren't on a copy of timeline payment term
-            payment_term_id = PaymentTerm.create(vals)
-            move_id.invoice_payment_term_id = payment_term_id
+            move_id.invoice_payment_term_id = PaymentTerm.create(vals)
         else:
             payment_term_id.write(vals)
 

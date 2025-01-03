@@ -1,6 +1,6 @@
-# coding: utf-8
+from odoo import models, fields, api
+from odoo.exceptions import UserError
 
-from odoo import models, fields, api, _
 
 
 class AccountMove(models.Model):
@@ -10,24 +10,21 @@ class AccountMove(models.Model):
         return name == 'digits' or super()._valid_field_parameter(field, name)
 
     payment_timeline_ids = fields.One2many(
-        'payment.timeline', 'move_id', string=_('Payment timeline'))
+        'payment.timeline', 'move_id', string='Payment Timeline')
     is_timeline = fields.Boolean('Is Timeline ?',
-            compute='_compute_is_timeline', store=True, default=False)
+                                 compute='_compute_is_timeline', store=True, default=False)
     payment_instrument_id = fields.Many2one(
-        'sale_timeline.payment.instrument', string='Payment method')
-    amount_missing_from_timeline = fields.Monetary(string="Amount missing from payment timeline",
+        'sale_timeline.payment.instrument', string='Payment Method')
+    amount_missing_from_timeline = fields.Monetary(string="Amount Missing from Payment Timeline",
                                                    compute="_compute_amount_missing_from_timeline")
     advance = fields.Monetary('Advance', digits=(14, 10))
     advance_payment_ids = fields.One2many(
-        'account.payment', 'ac_id', string="advance payments")
+        'account.payment', 'ac_id', string="Advance Payments")
 
     @api.depends('amount_total', 'payment_timeline_ids')
     def _compute_amount_missing_from_timeline(self):
         for move in self:
-            if move.edf_prime:
-                move.amount_missing_from_timeline = move.amount_total - move.edf_prime
-            else:
-                move.amount_missing_from_timeline = move.amount_total
+            move.amount_missing_from_timeline = move.amount_total - move.edf_prime if move.edf_prime else move.amount_total
             for payment_timeline in move.payment_timeline_ids:
                 move.amount_missing_from_timeline -= payment_timeline.amount
 
@@ -77,15 +74,10 @@ class AccountMove(models.Model):
                 self.payment_timeline_ids.compute_payment_term_id()
 
     def _get_amount_validate_timeline(self):
-        if self.edf_prime:
-            amount = self.amount_total - self.edf_prime
-        else:
-            amount = self.amount_total
-        return amount
+        return self.amount_total - self.edf_prime if self.edf_prime else self.amount_total
 
     def validate_timeline(self):
-        self.payment_timeline_ids.validate_amount(
-            self._get_amount_validate_timeline())
+        self.payment_timeline_ids.validate_amount(self._get_amount_validate_timeline())
 
     def action_post(self):
         self._process_timeline(validate_timeline=True)
@@ -117,9 +109,10 @@ class AccountMove(models.Model):
                     if (not payment_timeline_id.payment_instrument_id):
                         raise UserError(
                             "Please add a payment instrument on all the payment timelines")
-                    payment_method_line_id = self.env['account.payment.method.line'].search([('payment_method_id', '=', self.env.ref(
-                        'account.account_payment_method_manual_in').id),
-                        ('journal_id', '=', var_journal_id)], limit=1)
+                    payment_method_line_id = self.env['account.payment.method.line'].search(
+                        [('payment_method_id', '=', self.env.ref(
+                            'account.account_payment_method_manual_in').id),
+                         ('journal_id', '=', var_journal_id)], limit=1)
                     self.env['account.payment'].create({
                         'payment_type': var_payment_type,
                         'partner_type': 'customer',
@@ -136,9 +129,10 @@ class AccountMove(models.Model):
                         'payment_instrument_id': payment_timeline_id.payment_instrument_id.id,
                     })
             else:
-                payment_method_line_id = self.env['account.payment.method.line'].search([('payment_method_id', '=', self.env.ref(
-                    'account.account_payment_method_manual_in').id),
-                    ('journal_id', '=', var_journal_id)], limit=1)
+                payment_method_line_id = self.env['account.payment.method.line'].search(
+                    [('payment_method_id', '=', self.env.ref(
+                        'account.account_payment_method_manual_in').id),
+                     ('journal_id', '=', var_journal_id)], limit=1)
                 self.env['account.payment'].create({
                     'payment_type': var_payment_type,
                     'partner_type': 'customer',
