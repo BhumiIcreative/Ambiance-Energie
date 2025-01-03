@@ -1,0 +1,32 @@
+<odoo>
+    <record id="switch_tva_wizard" model="ir.ui.view">
+        <field name="name">Switch tva wizard form view</field>
+        <field name="model">switch.tva.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Switch tva wizard">
+                <sheet>
+                    <field name="name" readonly="1"/>
+                    <group>
+                        <field name="company_id" invisible="1"/>
+                        <field name="first_tva" options="{'no_create': True, 'no_create_edit':True}"/>
+                        <field name="second_tva" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                    <footer>
+                        <button name="button_confirm" string="Confirm" class="btn-primary" type="object"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_switch_tva" model="ir.actions.act_window">
+        <field name="name">Switch tva Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">switch.tva.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="switch_tva_wizard"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
