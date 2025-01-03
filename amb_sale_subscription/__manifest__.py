@@ -9,7 +9,12 @@
     "website": "http://www.aktivsoftware.com / https://www.oci.fr",
     "version": "17.0.1.0.0",
     "license": "LGPL-3",
-    "depends": ["amb_sale", "sale_subscription", "sale_timeline"],
+    "depends": [
+        'amb_account'
+        # "amb_sale",
+        "sale_subscription",
+        "sale_timeline"
+    ],
     "data": [
         "views/sale_subscription_views.xml",
     ],
