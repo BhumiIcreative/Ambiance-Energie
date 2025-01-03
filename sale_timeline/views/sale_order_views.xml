@@ -1,0 +1,36 @@
+<odoo>
+    <record id="inherit_sale_order_view_form" model="ir.ui.view">
+        <field name="name">inherit.sale.order.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_header']" position="inside">
+               <group name="payment_timeline">
+                    <field invisible="True" name="is_timeline"/>
+                    <field colspan="2" invisible="not is_timeline" name="payment_timeline_ids" nolabel="1" readonly="state not in ('draft')">
+                        <tree editable="bottom">
+                            <field name="date"/>
+                            <field name="payment_instrument_id"/>
+                            <field name="amount" widget="monetary"/>
+                            <field name="advance"/>
+                        </tree>
+                    </field>
+                </group>
+                <field class="d-block w-50 p-1 text-right font-weight-bold" colspan="2" invisible="not is_timeline" name="amount_missing_from_timeline" nolabel="1" style="margin-left: 45%;"/>
+            </xpath>
+            <field name="payment_term_id" position="attributes">
+                <attribute name="domain">[
+                    '|',
+                    ('company_id', '=', False),
+                    ('company_id', '=', company_id),
+                    ('move_id', '=', False),
+                    ]
+                </attribute>
+                <attribute name="widget">selection</attribute>
+            </field>
+            <field name="payment_term_id" position="after">
+                <field invisible="not is_timeline" name="payment_instrument_id" options="{'no_open':True}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

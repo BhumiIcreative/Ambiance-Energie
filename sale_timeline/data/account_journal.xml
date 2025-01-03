@@ -1,0 +1,7 @@
+<odoo noupdate="1">
+    <record model="account.journal" id="subscription_default_journal">
+        <field name="name">Echeancier</field>
+        <field name="type">cash</field>
+        <field name="code">CHNCR</field>
+    </record>
+</odoo>

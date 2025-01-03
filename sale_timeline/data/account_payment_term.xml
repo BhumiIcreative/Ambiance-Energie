@@ -1,0 +1,5 @@
+<odoo noupdate="1">
+    <record id="timeline_payment" model="account.payment.term">
+        <field name="name">Payment timeline</field>
+    </record>
+</odoo>
