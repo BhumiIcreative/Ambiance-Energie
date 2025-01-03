@@ -9,15 +9,18 @@
     'application': True,
     'depends': [
         'account',
-        'sale_management',
+        'sale',
+        'amb_sale',
+        'amb_edf_prime',
     ],
     'data': [
+        # 'data/account_payment_term.xml',
         'data/account_journal.xml',
-        'data/account_payment_term.xml',
         'security/ir.model.access.csv',
-        # 'views/account_move_views.xml',
+        'views/account_move_views.xml',
         'views/account_payment_views.xml',
-        # 'views/sale_order_views.xml',
+        'views/sale_order_views.xml',
     ],
     'license': 'LGPL-3',
+    'pre_init_hook': '_pre_init_hook',
 }

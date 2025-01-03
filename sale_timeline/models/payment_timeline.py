@@ -2,6 +2,7 @@ from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 from odoo.tools.float_utils import float_compare
 
+
 class PaymentTimeLine(models.Model):
     """
     creating payment terms dynamically based on specific timelines
@@ -13,15 +14,16 @@ class PaymentTimeLine(models.Model):
     def _get_default_currency(self):
         return self.env['account.move']._compute_currency_id()
 
-    date = fields.Date(string='Date', required=True, default=fields.Date.today())
+    date = fields.Date(string='Date', required=True,
+                       default=fields.Date.today())
     amount = fields.Monetary(string='Amount', required=True)
     currency_id = fields.Many2one('res.currency', store=True, readonly=True,
-                           required=True, string='Currency',
-                           default=_get_default_currency)
+                                  required=True, string='Currency',
+                                  default=lambda self: self.env.company.currency_id)
     move_id = fields.Many2one('account.move', string='Move')
     sale_id = fields.Many2one('sale.order', string='Sale')
     payment_instrument_id = fields.Many2one('sale_timeline.payment.instrument',
-                                     string='Payment method')
+                                            string='Payment method')
     advance = fields.Boolean(string='Deposit', default=False, readonly=True)
 
     def compute_payment_term_id(self):
@@ -46,18 +48,12 @@ class PaymentTimeLine(models.Model):
             'note': payment_term_id.note,
             'move_id': move_id.id,
         }
-
         if not payment_term_id.move_id:
             # We aren't on a copy of timeline payment term
             payment_term_id = PaymentTerm.create(vals)
             move_id.invoice_payment_term_id = payment_term_id
         else:
             payment_term_id.write(vals)
-
-        payment_term_id.line_ids = [
-            (6, 0, self.generate_payment_term_line(
-                move_id.invoice_date or Date.today(),payment_term_id
-            ).ids)]
 
     def generate_payment_term_line(self, invoice_date, payment_term_id):
         # Unvisited Method
@@ -76,24 +72,24 @@ class PaymentTimeLine(models.Model):
                 delta = timeline_id.date - invoice_date
                 days = delta.days
             PaymentTermLine |= PaymentTermLine.create({
-                'value': 'fixed',
-                'value_amount': timeline_id.amount,
-                'option': 'day_after_invoice_date',
-                'days': days,
+                'value': 'percent',
+                'value_amount': 100,
+                'delay_type': 'days_after',
+                'nb_days': days,
                 'payment_id': payment_term_id.id,
             })
         PaymentTermLine[-1].write({
-            'value_amount': 0,
-            'value': 'balance',
+            'value_amount': 100,
+            'value': 'percent',
         })
         return PaymentTermLine
 
     def validate_amount(self, amount_target):
-        print("\n\n\n ######### amount_target: ", amount_target)
         amount = sum(self.mapped('amount'))
-        print("\n\n\n ######### amount: ", amount)
-        if float_compare(amount,amount_target, precision_rounding=self.currency_id.rounding) or not self:
-            raise UserError("Payments timeline sum have to be %s € (current is %s €)" % (amount_target, amount))
+        currency_id = self.currency_id or self.env.company.currency_id
+        if float_compare(amount, amount_target, precision_rounding=currency_id.rounding) or not self:
+            raise UserError("Payments timeline sum have to be %s € (current is %s €)" % (
+                amount_target, amount))
 
     def write(self, values):
         """
@@ -101,9 +97,6 @@ class PaymentTimeLine(models.Model):
             whenever payment timeline entries are updated.
         """
         res = super().write(values)
-        print("\n\n\n ###### WRITE")
-        print("\n\n\n ############# move_id: ", self.move_id)
-        print("\n\n\n ############# payment_timeline_ids: ", self.move_id.payment_timeline_ids)
         if self.move_id:
             self.move_id.payment_timeline_ids.compute_payment_term_id()
         return res
