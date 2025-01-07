@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+script_tools.access_script_tools,access_script_tools,script_tools.model_script_tools,base.group_user,1,1,1,1
+script_tools.access_script_wizard,access_script_wizard,script_tools.model_script_wizard,base.group_user,1,1,1,1
+script_tools.access_script_export_record_xml,access_script_export_record_xml,script_tools.model_script_export_record_xml,base.group_user,1,1,1,1
+script_tools.access_confirmation_wizard,access_confirmation_wizard,script_tools.model_confirmation_wizard,base.group_user,1,1,1,1

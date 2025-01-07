@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  Confirmation wizard form view and add fields and buttons -->
+    <record model="ir.ui.view" id="confirmation_wizard_form">
+        <field name="name">Confirmation wizard</field>
+        <field name="model">confirmation.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="description" nolabel="1"/>
+                        <field name="cancel_method" groups="base.group_no_one"/>
+                        <field name="confirm_method" groups="base.group_no_one"/>
+                        <field name="global_run" groups="base.group_no_one"/>
+                        <field name="res_model" groups="base.group_no_one"/>
+                        <field name="res_domain" groups="base.group_no_one"/>
+                    </group>
+                    <footer>
+                        <button name="confirm" type="object" class="btn-primary">
+                            <field name="confirm_string"/>
+                        </button>
+                        <button name="cancel" type="object" class="btn-primary">
+                            <field name="cancel_string"/>
+                        </button>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

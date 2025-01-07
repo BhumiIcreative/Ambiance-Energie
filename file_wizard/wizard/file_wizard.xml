@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--File wizard form view and add field and button-->
+    <record id="file_wizard_form" model="ir.ui.view">
+        <field name="name">File wizard form view</field>
+        <field name="model">file_wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="File wizard">
+                <sheet>
+                    <h1>
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <field name="file_content" widget="binary" filename="file_name" readonly="1"/>
+                        <field name="file_name" invisible="1" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button string="Close" class="btn-default" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

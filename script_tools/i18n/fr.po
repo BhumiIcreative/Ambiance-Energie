@@ -1,0 +1,282 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* script_tools
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-29 10:46+0000\n"
+"PO-Revision-Date: 2024-08-29 10:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: script_tools
+#: model_terms:ir.ui.view,arch_db:script_tools.script_tools_form
+msgid "CODE"
+msgstr "CODE"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#, python-format
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__cancel_method
+#, python-format
+msgid "Cancel method"
+msgstr "Méthode d'annulation"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__cancel_string
+#, python-format
+msgid "Cancel string"
+msgstr "Annuler la chaîne"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/script_tools.py:0
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__code
+#, python-format
+msgid "Code"
+msgstr "Code"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#, python-format
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#, python-format
+msgid "Confirm action ?"
+msgstr "Confirmer l'action ?"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#, python-format
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__confirm_method
+#, python-format
+msgid "Confirmation method"
+msgstr "Méthode de validation"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__confirm_string
+#, python-format
+msgid "Confirmation string"
+msgstr "Chaîne de confirmation"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model,name:script_tools.model_confirmation_wizard
+#, python-format
+msgid "Confirmation wizard"
+msgstr "Assistant de confirmation"
+
+#. module: script_tools
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__create_uid
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__create_uid
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__create_uid
+#: model:ir.model.fields,field_description:script_tools.field_script_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: script_tools
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__create_date
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__create_date
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__create_date
+#: model:ir.model.fields,field_description:script_tools.field_script_wizard__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__description
+#, python-format
+msgid "Description"
+msgstr "Description"
+
+#. module: script_tools
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__display_name
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__display_name
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__display_name
+#: model:ir.model.fields,field_description:script_tools.field_script_wizard__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__res_domain
+#, python-format
+msgid "Domain to apply method"
+msgstr "Domaine à appliquer, méthode"
+
+#. module: script_tools
+#: model_terms:ir.ui.view,arch_db:script_tools.script_tools_form
+msgid "Exec code"
+msgstr "Code d'exécution"
+
+#. module: script_tools
+#: model_terms:ir.ui.view,arch_db:script_tools.export_record_to_xml_form
+msgid "Export"
+msgstr "Exporter"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/xml_export/export_record_to_xml.py:0
+#: model:ir.actions.act_window,name:script_tools.export_record_to_xml_action
+#: model:ir.model,name:script_tools.model_script_export_record_xml
+#: model:ir.ui.menu,name:script_tools.export_record_to_xml_menu
+#: model_terms:ir.ui.view,arch_db:script_tools.export_record_to_xml_form
+#, python-format
+msgid "Export record to xml"
+msgstr "Exporter l'enregistrement au format XML"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/xml_export/export_record_to_xml.py:0
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__field_ids
+#: model_terms:ir.ui.view,arch_db:script_tools.export_record_to_xml_form
+#, python-format
+msgid "Exported fields"
+msgstr "Champs exportés"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/file/script_tools.py:0
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__file
+#: model_terms:ir.ui.view,arch_db:script_tools.script_tools_form
+#, python-format
+msgid "File"
+msgstr "Déposer"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/file/script_tools.py:0
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__fname
+#, python-format
+msgid "File name"
+msgstr "Nom de fichier"
+
+#. module: script_tools
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__id
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__id
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__id
+#: model:ir.model.fields,field_description:script_tools.field_script_wizard__id
+msgid "ID"
+msgstr "IDENTIFIANT"
+
+#. module: script_tools
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__write_uid
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__write_uid
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__write_uid
+#: model:ir.model.fields,field_description:script_tools.field_script_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: script_tools
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__write_date
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__write_date
+#: model:ir.model.fields,field_description:script_tools.field_script_tools__write_date
+#: model:ir.model.fields,field_description:script_tools.field_script_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__res_model
+#, python-format
+msgid "Model to apply method"
+msgstr "Modèle pour appliquer la méthode"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__name
+#, python-format
+msgid "Name"
+msgstr "Nom"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/xml_export/export_record_to_xml.py:0
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__record_id
+#, python-format
+msgid "Record to export"
+msgstr "Enregistrement à exporter"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/confirmation/confirmation_wizard.py:0
+#: model:ir.model.fields,field_description:script_tools.field_confirmation_wizard__global_run
+#, python-format
+msgid "Run method on every records at once"
+msgstr "Exécuter la méthode sur tous les enregistrements à la fois"
+
+#. module: script_tools
+#: model:ir.ui.menu,name:script_tools.script_root
+#: model_terms:ir.ui.view,arch_db:script_tools.script_tools_form
+msgid "Script"
+msgstr "Scénario"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/script_tools.py:0
+#: model:ir.model,name:script_tools.model_script_tools
+#, python-format
+msgid "Script Tools"
+msgstr "Outils de script"
+
+#. module: script_tools
+#: model:ir.actions.act_window,name:script_tools.script_tools_action
+#: model:ir.ui.menu,name:script_tools.script_tools_menu
+#: model_terms:ir.ui.view,arch_db:script_tools.script_tools_form
+msgid "Script tools"
+msgstr "Outils de script"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/wizard/wizard.py:0
+#: model:ir.model,name:script_tools.model_script_wizard
+#, python-format
+msgid "Script wizard"
+msgstr "Assistant de script"
+
+#. module: script_tools
+#: model_terms:ir.ui.view,arch_db:script_tools.script_tools_form
+msgid "Toolbox"
+msgstr "Boîte à outils"
+
+#. module: script_tools
+#. odoo-python
+#: code:addons/script_tools/xml_export/export_record_to_xml.py:0
+#: model:ir.model.fields,field_description:script_tools.field_script_export_record_xml__xml_id
+#, python-format
+msgid "XML id"
+msgstr "Identifiant XML"
