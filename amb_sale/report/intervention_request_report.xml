@@ -11,11 +11,9 @@
             <field name="binding_type">report</field>
             <field name="paperformat_id" ref="amb_sale.custom_intervention_request_report_format"/>
         </record>
-
         <!-- Layout -->
         <template id="intervention_request_layout" t-name="amb_sale.intervention_request_layout">
             <t t-if="not o" t-set="o" t-value="doc"/>
-
             <t t-if="not company">
                 <!-- Multicompany -->
                 <t t-if="company_id">
@@ -30,11 +28,10 @@
             </t>
 
             <div class="header"/>
-
-            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
                 <t t-out="0"/>
             </div>
-
             <div class="footer" style="font-size:15px;">
                 <div style="position:relative;font-size:12px;">
                     <div class="row mt-1 border border-dark">
@@ -136,14 +133,12 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="text-center" style="border-top: 1px solid black;font-size:12px;">
                     <ul style="list-style:none; margin:0; text-align:center;">
                         <li>
-                            {{ x_studio_oci_conf_formejurid }}
-<!--                    <t t-out="company.x_studio_oci_conf_formejurid"/> -->
-                            - N° siren : {{x_studio_oci_conf_siren }}
-<!--                    <t t-out="company.x_studio_oci_conf_siren"/> -->
+                            <t t-out="company.x_studio_oci_conf_formejurid"/>
+                            - N° siren :
+                            <t t-out="company.x_studio_oci_conf_siren"/>
                             - APE
                             <t t-out="company.ape"/>
                             - Identification
@@ -153,8 +148,9 @@
                             <span t-field="company.vat"/>
                         </li>
                         <li t-if="company.siret">
-                            Siège social : {{ x_studio_oci_conf_juridique }}
-<!--                        <span t-field="company.x_studio_oci_conf_juridique"/> ∙-->
+                            Siège social :
+                            <span t-field="company.x_studio_oci_conf_juridique"/>
+                            ∙
                             <span t-field="company.street"/>
                             ∙
                             <span t-field="company.street2"/>
@@ -204,8 +200,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            {{ x_studio_oci_conf_juridique }}
-<!--                                        <span class="medium-text" t-field="company.x_studio_oci_conf_juridique"/>-->
+                                            <span class="medium-text" t-field="company.x_studio_oci_conf_juridique"/>
                                             <br/>
                                             <strong>
                                                 <span t-out="company.website.replace('http://', '').replace('https://', '')"/>
@@ -214,21 +209,17 @@
                                             <span class="small-text">
                                                 Qualibois
                                             </span>
-                                            {{ x_studio_oci_conf_qualibois }}
-<!--                                        <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>-->
+                                            <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>
                                             <br/>
                                             <span class="small-text">Garantie
                                                 RC et Décenale :
                                             </span>
-                                            {{ x_studio_assurance }}
-<!--                                        <span class="small-text" t-field="company.x_studio_assurance"/>-->
+                                            <span class="small-text" t-field="company.x_studio_assurance"/>
                                             <br/>
                                             <strong class="medium-text">
-                                                {{ x_studio_oci_conf_rib }}
-<!--                                            <span class="small-text" t-field="company.x_studio_oci_conf_rib"/>-->
+                                                <span class="small-text" t-field="company.x_studio_oci_conf_rib"/>
                                                 <br/>
-                                                {{ x_studio_oci_conf_bic }}
-<!--                                            <span class="small-text" t-field="company.x_studio_oci_conf_bic"/>-->
+                                                <span class="small-text" t-field="company.x_studio_oci_conf_bic"/>
                                             </strong>
                                         </div>
                                     </div>
@@ -276,12 +267,13 @@
                                                 <span t-field="company.second_partner_id.zip"/>
                                                 <span t-field="company.second_partner_id.city"/>
                                                 ∙
-                                                Siret : {{ x_studio_siret_contact }}
-    <!--                                        <span t-field="company.second_partner_id.x_studio_siret_contact"/>-->
+                                                Siret :
+                                                <span t-field="company.second_partner_id.x_studio_siret_contact"/>
                                                 <br/>
                                                 Tél:
 
-                                                <span style="font-size:15px;" t-field="company.second_partner_id.phone"/>
+                                                <span style="font-size:15px;"
+                                                      t-field="company.second_partner_id.phone"/>
                                             </t>
                                         </p>
                                     </div>
@@ -293,8 +285,8 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center ">
-                                                    {{ x_studio_oci_saleorder_yourref }}
-<!--                                            <span t-if="not o.x_studio_oci_saleorder_yourref" t-field="o.x_studio_oci_saleorder_yourref"/>-->
+                                                    <span t-if="not o.x_studio_oci_saleorder_yourref"
+                                                          t-field="o.x_studio_oci_saleorder_yourref"/>
                                                     <br/>
                                                 </th>
                                             </tr>
@@ -306,8 +298,8 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center small-text">
-                                                    {{ x_studio_oci_saleorder_technicien }}
-<!--                                            <span t-if="o.x_studio_oci_saleorder_technicien" t-field="o.x_studio_oci_saleorder_technicien"/> -->
+                                                    <span t-if="o.x_studio_oci_saleorder_technicien"
+                                                          t-field="o.x_studio_oci_saleorder_technicien"/> 
                                                     <span t-if="o.commitment_date"
                                                           t-out="o.commitment_date.strftime('%d/%m/%Y')"/>
                                                     <br/>
@@ -367,8 +359,8 @@
                                 </div>
                                 <div class="col-4">
                                     <div class="text-right medium-text">
-                                        <strong>N° série: {{ x_studio_numero_serie_equipement_contact }}
-<!--                                    <span t-field="o.partner_id.x_studio_numero_serie_equipement_contact"/>-->
+                                        <strong>N° série:
+                                            <span t-field="o.partner_id.x_studio_numero_serie_equipement_contact"/>
                                         </strong>
                                     </div>
                                 </div>
@@ -439,6 +431,5 @@
                 </div>
             </t>
         </template>
-
     </data>
 </odoo>

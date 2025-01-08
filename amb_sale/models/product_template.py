@@ -9,6 +9,5 @@ class ProductTemplate(models.Model):
 
     @api.depends('seller_ids')
     def _compute_supplier_info(self):
-        for product in self:
-            if len(product.seller_ids) > 0:
-                product.supplier_id = product.seller_ids[0].id
+        for product in self.filtered(lambda x: x.seller_ids):
+            product.supplier_id = product.seller_ids[0].id
