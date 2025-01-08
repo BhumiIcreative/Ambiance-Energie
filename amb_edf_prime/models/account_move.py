@@ -1,0 +1,75 @@
+# coding: utf-8
+
+from odoo import api, fields, models, _
+import logging
+log = logging.getLogger(__name__).info
+
+
+class AccountMove(models.Model):
+    _name = 'account.move'
+    _inherit = ['account.move', 'abstract.edf.prime.input']
+
+    def _prepare_move_line_with_product(self, product_id):
+        ####################
+        # VARIABLES EN DUR #
+        if self.company_id.id == 1:      # AMBIANCE
+            var_edf_prime_account_id = 1170
+        if self.company_id.id == 2:      # JLCP
+            var_edf_prime_account_id = 2433
+        ####################
+
+        move_line_vals = {
+            'product_id': product_id.id,
+            'name': 'PRIME CEE EDF',
+            'quantity': 1,
+            'price_unit': self.edf_prime,
+            'account_id' : var_edf_prime_account_id,
+        }
+
+        return move_line_vals
+
+    def _prepare_credit_note(self):
+        move_reversal = self.env['account.move.reversal'].with_context(
+            {'active_ids': [self.id], 'active_id': self.id, 'active_model': 'account.move'}).create(
+            {
+                'refund_method': 'refund',
+                'reason': 'PRIME CEE EDF',
+            })
+        reversal = move_reversal.reverse_moves()
+        reverse_move = self.env['account.move'].browse(reversal['res_id'])
+        return reverse_move
+
+    def _post_edf_prime(self):
+
+        product_tmpl_id = self.env.ref('amb_edf_prime.product_edf_prime')
+        product_id = product_tmpl_id.product_variant_id
+        prime_move_line = self._prepare_move_line_with_product(product_id)
+
+        bypass_context = dict(force_bypass_timeline=True, check_move_validity=False)
+        self.with_context(**bypass_context).write({
+            'invoice_line_ids': [(6, 0, prime_move_line)],
+            'edf_prime': 0,
+        })
+        self.action_post()
+
+    def _reconcile_edf_prime(self, reverse_move):
+        log('test %s, %s', self.line_ids, reverse_move.line_ids)
+        receivable_lines = self.line_ids.filtered(
+            lambda line: line.account_internal_type in ('receivable') if line.account_internal_type else '')
+        to_reconcile = reverse_move.line_ids.filtered(lambda line: line.account_id == receivable_lines.account_id)
+
+        (receivable_lines + to_reconcile).reconcile()
+
+    def action_post(self):
+        res = super().action_post()
+        if self.edf_prime and self.type == 'out_invoice': # Only for invoice client
+
+            # Make a credit note
+            reverse_move = self._prepare_credit_note()
+
+            # replace invoice_line_ids by edf_prime line
+            reverse_move._post_edf_prime()
+
+            # reconcile
+            self._reconcile_edf_prime(reverse_move)
+        return res
