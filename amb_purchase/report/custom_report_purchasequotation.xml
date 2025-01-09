@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="purchase.report_purchase_quotation" model="ir.actions.report">
+        <field name="paperformat_id" ref="amb_purchase.custom_purchase_order_report_format" />
+    </record>
+
+    <record model="ir.ui.view" id="custom_report_purchasequotation_document">
+      <field name="name">Custom_purchaseorder_quotation</field>
+      <field name="inherit_id" ref="purchase.report_purchasequotation_document"/>
+      <field name="arch" type="xml">
+        <t t-call="web.external_layout" position="replace">
+          <t t-call="amb_purchase.custom_external_layout_purchase">
+                <t t-set="doc" t-value="o.with_context(lang=o.partner_id.lang)"/>
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <table class="table table-sm o_main_table table-bordered border-dark small-text">
+                        <thead class="small">
+                            <tr>
+                                <th name="th_description" class="border-dark text-left"><strong>Description</strong></th>
+                                <th name="th_expected_date" class="border-dark text-center"><strong>Date prévue</strong></th>
+                                <th name="th_quantity" class="border-dark text-right"><strong>Qté</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody class="border-dark" style="font-size:9px">
+                            <t t-foreach="doc.order_line" t-as="order_line">
+                                <tr t-att-class="'bg-200 font-weight-bold o_line_section' if order_line.display_type == 'line_section' else 'font-italic o_line_note' if order_line.display_type == 'line_note' else ''">
+                                    <t t-if="not order_line.display_type">
+                                        <td id="product" class="border-dark text-left">
+                                            <span t-field="order_line.name"/>
+                                        </td>
+                                        <td class="border-dark text-center">
+                                            <span t-field="order_line.date_planned" t-options="{'widget': 'date'}"/>
+                                        </td>
+                                        <td class="border-dark text-right">
+                                            <span t-field="order_line.product_qty"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <td colspan="99" id="section" class="border-dark text-left" >
+                                            <span t-field="order_line.name"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <p t-field="doc.notes"/>
+                </div>
+          </t>
+        </t>
+      </field>
+    </record>
+  </data>
+</odoo>
