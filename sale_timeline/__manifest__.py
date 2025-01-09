@@ -10,11 +10,12 @@
     'depends': [
         'account',
         'sale',
-        # 'amb_sale',
+        'amb_sale',
         'amb_edf_prime',
+        'oci_point_of_sale'
     ],
     'data': [
-        # 'data/account_payment_term.xml',
+        'data/account_payment_term.xml',
         'data/account_journal.xml',
         'security/ir.model.access.csv',
         'views/account_move_views.xml',
