@@ -21,12 +21,13 @@
     <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
         <!-- Header -->
         <div class="header" t-att-style="report_header_style"/>
+
         <!-- Page -->
-        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
-             t-att-data-oe-lang="o and o.env.context.get('lang')">
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
             <!-- This div ensures that the address is not cropped by the header. only for first page -->
             <t t-out="0"/>
         </div>
+
         <!-- FOOTER -->
         <div class="footer o_standard_footer" style="font-size:15px;">
             <div class="row">
@@ -44,18 +45,15 @@
                             :
                             <span t-field="company.vat"/>
                         </li>
-                        <li t-if="company.siret">Siège social :
-                            <span t-field="company.x_studio_oci_conf_juridique"/>
+                        <li t-if="company.siret">
+                            Siège social : <span t-field="company.x_studio_oci_conf_juridique"/>
                             <span t-field="company.street"/>
                             <span t-field="company.street2"/>
                             <span t-field="company.zip"/>
                             <span t-field="company.city"/>
                         </li>
                         <div t-if="report_type == 'pdf'" class="text-muted">
-                            Page:
-                            <span class="page"/>
-                            /
-                            <span class="topage"/>
+                            Page: <span class="page"/> / <span class="topage"/>
                         </div>
                     </ul>
                 </div>
@@ -63,9 +61,8 @@
                     <t t-if="env.context.get('proforma', False) or is_pro_forma">
                         <div name="qr_code" class="text-right">
                             <div t-if="doc.oci_point_of_sale" class="row">
-                                <!--                                                <span t-field="doc.oci_point_of_sale.x_studio_qrcode_payment" t-options="{'widget': 'image'}" style="width:50px;display:inline-block;"/>-->
-                                <span t-field="doc.x_studio_qrcode_payment" t-options="{'widget': 'image'}"
-                                      style="width:50px;display:inline-block;"/>
+<!--                                <span t-field="doc.oci_point_of_sale.x_studio_qrcode_payment" t-options="{'widget': 'image'}" style="width:50px;display:inline-block;"/>-->
+                                <span t-field="doc.x_studio_qrcode_payment" t-options="{'widget': 'image'}" style="width:50px;display:inline-block;"/>
                             </div>
                         </div>
                     </t>

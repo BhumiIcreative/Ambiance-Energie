@@ -9,7 +9,7 @@
                 <field name="client_situation" widget="monetary" style="color : red;" invisible="client_situation &gt;= 0"/>
                 <field name="client_situation" widget="monetary" style="color : green;" invisible="client_situation &lt;= 0"/>
                 <field name="client_situation" widget="monetary" invisible="client_situation != 0"/>
-<!--                <field name="oci_point_of_sale"/>-->
+                <field name="oci_point_of_sale"/>
                 <field name="counter_sale"/>
             </xpath>
 
@@ -22,10 +22,10 @@
                     <label for="advance"/>
                 </div>
                 <field name="advance" nolabel="1" widget='monetary' options="{'currency_field': 'currency_id'}" readonly="state not in ['draft', 'sent']"/>
-<!--                <label for="advance_payment_instrument_id" required="advance &gt; 0.0001"/>-->
+                <label for="advance_payment_instrument_id" required="advance &gt; 0.0001"/>
                 <div class="oe_inline o_td_label" required="advance &gt; 0.0001">
                     <field name="advance_state" invisible="1"/>
-<!--                    <field name="advance_payment_instrument_id" nolabel="1" options="{'no_open':True}"/>-->
+                    <field name="advance_payment_instrument_id" nolabel="1" options="{'no_open':True}"/>
                     <button class="col-6 btn btn-secondary" name="action_sale_confirm_advance" type="object" string="Confirmer payment" invisible=" state not in ['draft', 'sent'] or advance_state != 'not_confirmed'"/>
                 </div>
 

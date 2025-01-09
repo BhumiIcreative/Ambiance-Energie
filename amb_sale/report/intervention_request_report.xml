@@ -11,6 +11,7 @@
             <field name="binding_type">report</field>
             <field name="paperformat_id" ref="amb_sale.custom_intervention_request_report_format"/>
         </record>
+
         <!-- Layout -->
         <template id="intervention_request_layout" t-name="amb_sale.intervention_request_layout">
             <t t-if="not o" t-set="o" t-value="doc"/>
@@ -27,11 +28,15 @@
                 </t>
             </t>
 
+            <!-- Header -->
             <div class="header"/>
-            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
-                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+
+            <!-- Article -->
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
                 <t t-out="0"/>
             </div>
+
+            <!-- Footer -->
             <div class="footer" style="font-size:15px;">
                 <div style="position:relative;font-size:12px;">
                     <div class="row mt-1 border border-dark">
@@ -107,18 +112,18 @@
                             </div>
                             <div class="row mt-1 mb-1 border-top border-dark">
                                 <div class="col-4">
-                                    <strong>Pas satisfait
-                                        <input type="checkbox"/>
+                                    <strong>
+                                        Pas satisfait <input type="checkbox"/>
                                     </strong>
                                 </div>
                                 <div class="col-4">
-                                    <strong>Satisfait
-                                        <input type="checkbox"/>
+                                    <strong>
+                                        Satisfait <input type="checkbox"/>
                                     </strong>
                                 </div>
                                 <div class="col-4">
-                                    <strong>Très satisfait
-                                        <input type="checkbox"/>
+                                    <strong>
+                                        Très satisfait <input type="checkbox"/>
                                     </strong>
                                 </div>
                             </div>
@@ -127,8 +132,8 @@
                             <h5>
                                 <strong>Signature Client:</strong>
                             </h5>
-                            <strong style="font-size:12px;">"Bon pour
-                                acceptation de travaux"
+                            <strong style="font-size:12px;">
+                                "Bon pour acceptation de travaux"
                             </strong>
                         </div>
                     </div>
@@ -137,32 +142,20 @@
                     <ul style="list-style:none; margin:0; text-align:center;">
                         <li>
                             <t t-out="company.x_studio_oci_conf_formejurid"/>
-                            - N° siren :
-                            <t t-out="company.x_studio_oci_conf_siren"/>
-                            - APE
-                            <t t-out="company.ape"/>
-                            - Identification
-                            <t t-out="company.country_id.vat_label or 'Tax ID'"/>
-                            :
-
+                            - N° siren : <t t-out="company.x_studio_oci_conf_siren"/>
+                            - APE <t t-out="company.ape"/>
+                            - Identification <t t-out="company.country_id.vat_label or 'Tax ID'"/> :
                             <span t-field="company.vat"/>
                         </li>
                         <li t-if="company.siret">
-                            Siège social :
-                            <span t-field="company.x_studio_oci_conf_juridique"/>
-                            ∙
-                            <span t-field="company.street"/>
-                            ∙
-                            <span t-field="company.street2"/>
-                            <span t-field="company.zip"/>
-                            ∙
-                            <span t-field="company.city"/>
+                            Siège social : <span t-field="company.x_studio_oci_conf_juridique"/> ∙ <span t-field="company.street"/> ∙ <span t-field="company.street2"/> <span t-field="company.zip"/> ∙ <span t-field="company.city"/>
                         </li>
                     </ul>
                 </div>
             </div>
         </template>
 
+        <!-- File Name -->
         <template id="report_intervention_request">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
@@ -176,10 +169,11 @@
             <t t-call="amb_sale.intervention_request_layout">
                 <div class="page">
                     <div class="row">
+
+                        <!-- Image left header section-->
                         <div class="col-5">
                             <div>
-                                <div name="company_address"
-                                     class="text-center">
+                                <div name="company_address" class="text-center">
                                     <style>
                                         .small-text{
                                         font-size:10px;
@@ -193,10 +187,8 @@
                                         }
                                     </style>
                                     <div class="row">
-                                        <img src="amb_sale/static/description/logo-ambiance-fondblanc.bmp"
-                                             style="width:100%;"/>
-                                        <t t-set="company"
-                                           t-value="o.company_id"/>
+                                        <img src="amb_sale/static/description/logo-ambiance-fondblanc.bmp" style="width:100%;"/>
+                                        <t t-set="company" t-value="o.company_id"/>
                                     </div>
                                     <div class="row">
                                         <div class="col">
@@ -211,8 +203,8 @@
                                             </span>
                                             <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>
                                             <br/>
-                                            <span class="small-text">Garantie
-                                                RC et Décenale :
+                                            <span class="small-text">
+                                                Garantie RC et Décenale :
                                             </span>
                                             <span class="small-text" t-field="company.x_studio_assurance"/>
                                             <br/>
@@ -227,9 +219,7 @@
                                         <strong>Demande d'intervention</strong>
                                     </h6>
                                     <p class="text-left">
-                                        BC n°
-                                        <span t-field="o.name"/>
-                                        du
+                                        BC n° <span t-field="o.name"/> du
                                         <strong>
                                             <span t-out="o.date_order.strftime('%d/%m/%Y')"/>
                                         </strong>
@@ -238,42 +228,23 @@
                                 <t t-out="0"/>
                             </div>
                         </div>
+
+                        <!-- Address right header section-->
                         <div class="col-7">
                             <div class="row" style="height:20px;"/>
                             <div class="row mt-1">
                                 <div class="col-12">
                                     <div class="text-left small-text">
                                         <p>
-                                            <span t-field="company.city"/>
-                                            :
-                                            <span t-field="company.street"/>
-                                            ∙
-                                            <span t-field="company.zip"/>
-                                            <span t-field="company.city"/>
-                                            ∙
-                                            Siret :
-                                            <span t-field="company.siret"/>
+                                            <span t-field="company.city"/> : <span t-field="company.street"/> ∙ <span t-field="company.zip"/> <span t-field="company.city"/> ∙  Siret : <span t-field="company.siret"/>
                                             <br/>
-                                            Tél:
-                                            <span style="font-size:15px;"
-                                                  t-field="company.phone"/>
+                                            Tél: <span style="font-size:15px;" t-field="company.phone"/>
                                             <t t-if="company.second_partner_id">
                                                 <br/>
                                                 <br/>
-                                                <span t-field="company.second_partner_id.city"/>
-                                                :
-                                                <span t-field="company.second_partner_id.street"/>
-                                                ∙
-                                                <span t-field="company.second_partner_id.zip"/>
-                                                <span t-field="company.second_partner_id.city"/>
-                                                ∙
-                                                Siret :
-                                                <span t-field="company.second_partner_id.x_studio_siret_contact"/>
+                                                <span t-field="company.second_partner_id.city"/> : <span t-field="company.second_partner_id.street"/> ∙ <span t-field="company.second_partner_id.zip"/> <span t-field="company.second_partner_id.city"/> ∙ Siret : <span t-field="company.second_partner_id.x_studio_siret_contact"/>
                                                 <br/>
-                                                Tél:
-
-                                                <span style="font-size:15px;"
-                                                      t-field="company.second_partner_id.phone"/>
+                                                Tél: <span style="font-size:15px;" t-field="company.second_partner_id.phone"/>
                                             </t>
                                         </p>
                                     </div>
@@ -285,8 +256,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center ">
-                                                    <span t-if="not o.x_studio_oci_saleorder_yourref"
-                                                          t-field="o.x_studio_oci_saleorder_yourref"/>
+                                                    <span t-if="not o.x_studio_oci_saleorder_yourref" t-field="o.x_studio_oci_saleorder_yourref"/>
                                                     <br/>
                                                 </th>
                                             </tr>
@@ -298,10 +268,8 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center small-text">
-                                                    <span t-if="o.x_studio_oci_saleorder_technicien"
-                                                          t-field="o.x_studio_oci_saleorder_technicien"/> 
-                                                    <span t-if="o.commitment_date"
-                                                          t-out="o.commitment_date.strftime('%d/%m/%Y')"/>
+                                                    <span t-if="o.x_studio_oci_saleorder_technicien" t-field="o.x_studio_oci_saleorder_technicien"/> 
+                                                    <span t-if="o.commitment_date" t-out="o.commitment_date.strftime('%d/%m/%Y')"/>
                                                     <br/>
                                                 </th>
                                             </tr>
@@ -313,8 +281,7 @@
                                 <div class="col-12">
                                     <div class=" border border-dark">
                                         <div class="col text-center">
-                                            <t t-set="partner_id"
-                                               t-value="o.partner_id"/>
+                                            <t t-set="partner_id" t-value="o.partner_id"/>
                                             <p class="text-center">
                                                 <span t-field="partner_id.name"/>
                                             </p>
@@ -328,8 +295,7 @@
                                                 <span t-field="partner_id.zip"/>
                                                 <span t-field="partner_id.city"/>
                                                 <br/>
-                                                <span t-if="partner_id.country_id"
-                                                      t-field="partner_id.country_id.name"/>
+                                                <span t-if="partner_id.country_id" t-field="partner_id.country_id.name"/>
                                             </p>
                                             <p class="text-center mt-n3">
                                                 <t t-if="partner_id.phone">
@@ -359,8 +325,8 @@
                                 </div>
                                 <div class="col-4">
                                     <div class="text-right medium-text">
-                                        <strong>N° série:
-                                            <span t-field="o.partner_id.x_studio_numero_serie_equipement_contact"/>
+                                        <strong>
+                                            N° série: <span t-field="o.partner_id.x_studio_numero_serie_equipement_contact"/>
                                         </strong>
                                     </div>
                                 </div>
@@ -397,9 +363,7 @@
                             </thead>
                             <tbody>
                                 <tr t-foreach="o.order_line" t-as="l">
-                                    <td class="border border-dark"
-                                        t-if="l.display_type == 'line_note'"
-                                        colspan="5">
+                                    <td class="border border-dark" t-if="l.display_type == 'line_note'" colspan="5">
                                         <span t-field="l.name"/>
                                     </td>
                                     <t t-if="l.display_type != 'line_note'">
@@ -417,8 +381,7 @@
                                             <span t-field="l.currency_id.symbol"/>
                                         </td>
                                         <td class="border border-dark">
-                                            <span t-field="l.discount"
-                                                  t-options='{"widget":"float", "precision":2}'/>
+                                            <span t-field="l.discount" t-options='{"widget":"float", "precision":2}'/>
                                         </td>
                                         <td class="border border-dark">
                                             <span t-field="l.price_total"/>

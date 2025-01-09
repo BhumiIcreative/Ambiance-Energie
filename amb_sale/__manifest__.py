@@ -12,12 +12,13 @@
     'application': True,
     # any module necessary for this one to work correctly
     'depends': [
-        'amb_product',
-        'amb_subscription',
-        # 'sale_timeline',
         'sale_management',
-        'account_followup',
         'stock',
+        'account_followup',
+        'amb_product', # used fields.
+        'amb_subscription', # used fields.
+        'oci_point_of_sale', # used fields.
+        'sale_timeline', # used fields.
     ],
     # always loaded
     'data': [
