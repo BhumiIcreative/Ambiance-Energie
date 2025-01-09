@@ -18,47 +18,42 @@ msgstr ""
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Action nécessaire"
 
 #. module: oci_point_of_sale
 #: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_search
 msgid "Active"
-msgstr ""
+msgstr "Active"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Activités"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Activité Exception Décoration"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "État d'activité"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
-
-#. module: oci_point_of_sale
-#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__active
-msgid "Archive"
-msgstr ""
+msgstr "Icône de type d'activité"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__oci_contact_pof_societe
 msgid "Company"
-msgstr ""
+msgstr "Entreprise"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__create_uid
@@ -73,23 +68,23 @@ msgstr ""
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom d'affichage"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__entrepot
 #: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_form
 msgid "Entrepot"
-msgstr ""
+msgstr "Entrepôt"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnées"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__activity_type_icon
@@ -99,7 +94,7 @@ msgstr ""
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "A un message"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__id
@@ -114,18 +109,18 @@ msgstr ""
 #. module: oci_point_of_sale
 #: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icône pour indiquer une activité exceptionnelle."
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si cette case est cochée, les nouveaux messages nécessitent votre attention."
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_has_error
 #: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si cette case est cochée, certains messages présentent une erreur de livraison."
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_is_follower
@@ -160,7 +155,7 @@ msgstr ""
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__name
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_date_deadline
@@ -200,7 +195,7 @@ msgstr ""
 #. module: oci_point_of_sale
 #: model:ir.model,name:oci_point_of_sale.model_oci_point_of_sale
 msgid "OCI Point of Sale"
-msgstr ""
+msgstr "Point de vente OCI"
 
 #. module: oci_point_of_sale
 #: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_form
@@ -212,22 +207,22 @@ msgstr ""
 #: model:ir.actions.act_window,name:oci_point_of_sale.oci_point_of_sale_action
 #: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_search
 msgid "Point of Sale"
-msgstr ""
+msgstr "Point de vente"
 
 #. module: oci_point_of_sale
 #: model:ir.ui.menu,name:oci_point_of_sale.contact_menu_oci_point_of_sale
 msgid "Point of sale"
-msgstr ""
+msgstr "Point de vente"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__qrcode_payment
 msgid "QR Code Payment"
-msgstr ""
+msgstr "Paiement par code QR"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Utilisateur responsable"
 
 #. module: oci_point_of_sale
 #: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_has_sms_error
