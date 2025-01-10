@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="amb_move_view_form" model="ir.ui.view">
+      <field name="priority" eval="10"/>
+      <field name="name">amb.invoice.form</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+          <field name="amount_residual" position="after">
+              <field name="type_invoice" invisible="1"/>
+            <label for="edf_prime" invisible="type_invoice != 'sto'"/>
+            <div class="oe_inline d-flex" invisible="type_invoice != 'sto'">
+              <button class="btn-link btn-primary" name="action_add_edf_prime" invisible="state not in ('draft', 'sent')" type="object" string="Modifier"/>
+              <field class="text-right" name="edf_prime"/>
+            </div>
+          </field>
+          <field name="amount_residual" position="attributes">
+              <attribute name="invisible"></attribute>
+            <attribute name="invisible">state not in ('draft', 'posted')</attribute>
+          </field>
+      </field>
+  </record>
+</odoo>
