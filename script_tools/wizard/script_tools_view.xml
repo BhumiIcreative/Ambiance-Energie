@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Form view and menu setup for the Script Tools model.-->
+    <record model="ir.ui.view" id="script_tools_form">
+        <field name="name">Script tools form</field>
+        <field name="model">script.tools</field>
+        <field name="arch" type="xml">
+            <form string="Script tools">
+                <header>
+                    <button name="exec_code" type="object" string="Exec code" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <notebook>
+                        <page string="Script" name="script">
+                            <group string="File">
+                                <field name="file" filename="fname"/>
+                                <field name="fname" invisible="1"/>
+                            </group>
+
+                            <label for='code' string='CODE'/>
+                            <field name="code" widget="code" options="{'mode': 'python'}" nolabel='1'/>
+                            <button name="exec_code" type="object" string="Exec code" class="btn-primary"/>
+                        </page>
+                        <page name="toolbox" string="Toolbox"/>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="script_tools_action">
+        <field name="name">Script tools</field>
+        <field name="res_model">script.tools</field>
+        <field name="view_mode">form</field>
+    </record>
+    <menuitem
+            id="script_root"
+            parent="base.menu_administration"
+            name="Script"
+            groups="base.group_no_one"/>
+    <menuitem
+            action="script_tools_action"
+            id="script_tools_menu"
+            parent="script_root"
+            name="Script tools"/>
+
+</odoo>

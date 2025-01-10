@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Form view and menu setup for the Export record to xml form model -->
+    <record model="ir.ui.view" id="export_record_to_xml_form">
+        <field name="name">Export record to xml form</field>
+        <field name="model">script.export.record.xml</field>
+        <field name="arch" type="xml">
+            <form string="Export record to xml">
+                <sheet>
+                    <group>
+                        <field name="record_id"/>
+                    </group>
+                    <group>
+                        <field name="xml_id"/>
+                    </group>
+                    <label for='field_ids' string="Exported fields"/>
+                    <field name="field_ids" nolabel="1" readonly="0"/>
+                </sheet>
+                <footer>
+                    <button name="export" type="object" string="Export" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="export_record_to_xml_action">
+        <field name="name">Export record to xml</field>
+        <field name="res_model">script.export.record.xml</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem
+            action="export_record_to_xml_action"
+            id="export_record_to_xml_menu"
+            parent="script_root"
+            name="Export record to xml"/>
+</odoo>

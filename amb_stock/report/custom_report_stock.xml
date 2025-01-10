@@ -1,0 +1,108 @@
+<odoo>
+    <template id="report_transfer_voucher">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.partner_id.lang or o.company_id.partner_id.lang"/>
+                <t t-call="amb_stock.report_template_transfer_voucher" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+    <!-- Transfer Voucher report template  -->
+    <template id="report_template_transfer_voucher">
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <div class="row">
+                    <div class="ps-0 pb-5 pe-5">
+                        <h2>
+                            <span t-field="o.name"/>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-6 ">
+                        <span>
+                            <strong>Delivery address</strong>
+                        </span>
+                        <br/>
+                        <span t-field="o.partner_id"/>
+                        <br/>
+
+                        <span>
+                            <strong>Operation type</strong>
+                        </span>
+                        <br/>
+                        <span t-field="o.picking_type_id"/>
+                        <br/>
+                        <span>
+                            <strong>Original location</strong>
+                        </span>
+                        <br/>
+                        <span t-field="o.location_id"/>
+                        <br/>
+                    </div>
+                    <div class="col-6">
+                        <span>
+                            <strong>Expected date</strong>
+                        </span>
+                        <br/>
+                        <span t-field="o.scheduled_date"/>
+                        <br/>
+                        <span>
+                            <strong>Effective date</strong>
+                        </span>
+                        <br/>
+                        <span t-field="o.date_done"/>
+                        <br/>
+                        <span>
+                            <strong>Original document</strong>
+                        </span>
+                        <br/>
+                        <span t-field="o.origin"/>
+                        <br/>
+                    </div>
+                </div>
+
+                <table class="table table-striped" style="margin-top:70px;">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>Article</span>
+                            </th>
+                            <th>
+                                <span>Requested</span>
+                            </th>
+                            <th>
+                                <span>Done</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="o.move_ids_without_package" t-as="table_line">
+                            <td>
+                                <span t-field="table_line.product_id.display_name"/>
+                            </td>
+                            <td>
+                                <span t-field="table_line.product_uom_qty"/>
+                            </td>
+                            <td>
+                                <span t-field="table_line.quantity"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </t>
+    </template>
+    <!-- Transfer Voucher report action  -->
+    <record id="transfer_voucher_report" model="ir.actions.report">
+        <field name="name">Transfer Voucher</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">amb_stock.report_transfer_voucher</field>
+        <field name="report_file">amb_stock.report_transfer_voucher</field>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
