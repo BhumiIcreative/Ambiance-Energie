@@ -1,0 +1,11 @@
+<odoo>
+  <data noupdate="0">
+    <record model="product.template" id="product_edf_prime">
+      <field name="name">Prime CEE EDF</field>
+      <field name="invoice_policy">order</field>
+      <field name="type">service</field>
+      <field name="sale_ok" eval="False"/>
+      <field name="purchase_ok" eval="False"/>
+     </record>
+  </data>
+</odoo>

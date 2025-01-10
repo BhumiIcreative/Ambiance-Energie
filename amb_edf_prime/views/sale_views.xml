@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="amb_sale_view_form" model="ir.ui.view">
+      <field name="priority" eval="10"/>
+      <field name="name">amb.sale.form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form" />
+      <field name="arch" type="xml">
+
+          <xpath expr="//label[@for='advance']/.." position="before">
+              <field name="type_order" invisible="1"/>
+            <label for="edf_prime" invisible="type_order != 'sto'"/>
+            <div class="oe_inline d-flex" invisible="type_order != 'sto'">
+              <button class="btn-link btn-primary" name="action_add_edf_prime" invisible="state not in ('draft', 'sent')" type="object" string="Modifier"/>
+              <field class="text-right" name="edf_prime"/>
+            </div>
+          </xpath>
+
+      </field>
+  </record>
+
+</odoo>
