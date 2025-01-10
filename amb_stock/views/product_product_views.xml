@@ -1,0 +1,48 @@
+<odoo>
+    <!-- Added buttons in Product Variants -->
+    <record model="ir.ui.view" id="amb_product_product_free_qty">
+        <field name="name">amb_product_product_free_qty</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_form_view_procurement_button"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']/t/button[@name='action_view_stock_move_lines']" position="before">
+                <button class="oe_stat_button"
+                        name="action_view_stock_move_lines_free_qty"
+                        icon="fa-cubes"
+                        type="object" invisible="type != 'product'">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value d-flex gap-1">
+                            <field name="free_qty" widget="statinfo" nolabel="1" class="mr4 oe_inline"/>
+                            <field name="uom_name" class="oe_inline"/>
+                        </span>
+                        <span class="o_stat_text">Saleable quantity</span>
+                    </div>
+                </button>
+                <button class="oe_stat_button"
+                        name="action_view_stock_move_lines_net_qty"
+                        icon="fa-cubes"
+                        type="object" invisible="type != 'product'">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value d-flex gap-1">
+                            <field name="net_qty" widget="statinfo" nolabel="1" class="mr4 oe_inline"/>
+                            <field name="uom_name" class="oe_inline"/>
+                        </span>
+                        <span class="o_stat_text">Net quantity</span>
+                    </div>
+                </button>
+                <button class="oe_stat_button"
+                        name="action_view_ordered_stock"
+                        icon="fa-cubes"
+                        type="object" invisible="type != 'product'">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value d-flex gap-1">
+                            <field name="order_qty" widget="statinfo" nolabel="1" class="mr4 oe_inline"/>
+                            <field name="uom_name" class="oe_inline"/>
+                        </span>
+                        <span class="o_stat_text">Quantity ordered</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
