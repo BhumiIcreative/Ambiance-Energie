@@ -16,10 +16,9 @@
         'sale_management',
         'stock',
         'account_followup',
-        'amb_product', # used fields.
-        'amb_subscription', # used fields.
-        'oci_point_of_sale', # used fields.
-        # 'sale_timeline', # used fields.
+        'amb_product', 
+        'oci_point_of_sale',
+        'sale_timeline', 
     ],
     # always loaded
     'data': [

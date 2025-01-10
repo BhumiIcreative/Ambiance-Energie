@@ -46,9 +46,7 @@
                 <field name="sponsorship"/>
             </xpath>
 
-            <xpath expr="//field[@name='partner_id']" position="after">
-              <field name="current_subscription" invisible="type_order != 'gran'"/>
-            </xpath>
+          
 
             <xpath expr="//button[@id='create_invoice_percentage']" position="attributes">
               <attribute name="context"></attribute>

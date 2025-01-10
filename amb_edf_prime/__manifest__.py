@@ -13,8 +13,9 @@
 
     # any module necessary for this one to work correctly
     'depends': [
+        'sale_management',
         'amb_sale',
-        'amb_account',
+        'account',
         'script_tools',
     ],
 

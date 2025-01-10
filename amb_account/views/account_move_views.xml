@@ -9,7 +9,7 @@
             <xpath expr="//field[@name='ref']" position="after">
                  <field name="type_invoice" invisible="move_type not in ['out_invoice', 'out_refund']"
                        required="move_type == 'out_invoice' or move_type == 'out_refund'"/>
-                 <field name="current_subscription" invisible="type_invoice != 'gran'"/>
+                 
                 <field name="client_situation" widget="monetary"
                        invisible="client_situation &lt;= 0 or move_type not in ['out_invoice', 'out_refund']"
                        class="text-danger"/>

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from odoo import api, models
+from odoo import api, models,fields
 from math import *
 
 import logging
@@ -10,6 +10,14 @@ log = logging.getLogger(__name__).info
 class SaleOrder(models.Model):
     _name = 'sale.order'
     _inherit = ['sale.order', 'abstract.edf.prime.input']
+
+    type_order = fields.Selection([
+        ('std', 'Standard'),
+        ('gran', 'Granule'),
+        ('serv', 'Service'),
+        ('sto', 'Stove'),
+    ], string='Type Order', default='std')
+    advance = fields.Monetary(string='Advance', tracking=True, copy=False)
 
     @api.depends('amount_total', 'type_order', 'edf_prime')
     def _compute_amount_left_to_pay(self):

@@ -17,6 +17,7 @@
         "sale_timeline",
         "l10n_fr",
         'amb_account',
+        'amb_sale',
     ],
     # always loaded
     "data": [
@@ -25,6 +26,8 @@
         "security/ir.model.access.csv",
         "views/subscription_views.xml",
         "views/res_company_views.xml",
+        "views/account_move_views.xml",
+        "views/sale_order_views.xml",
         "report/commissioning_report.xml",
         "report/custom_external_layout.xml",
         "report/custom_external_layout_commissioning.xml",

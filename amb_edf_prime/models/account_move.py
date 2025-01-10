@@ -1,4 +1,4 @@
-from odoo import models
+from odoo import models,fields,_
 import logging
 log = logging.getLogger(__name__).info
 
@@ -6,6 +6,17 @@ log = logging.getLogger(__name__).info
 class AccountMove(models.Model):
     _name = 'account.move'
     _inherit = ['account.move', 'abstract.edf.prime.input']
+
+    type_invoice = fields.Selection(
+        [
+            ("std", _("Standard")),
+            ("gran", _("Granule")),
+            ("serv", _("Service")),
+            ("sto", _("Stove")),
+        ],
+        string=_("Type invoice"),
+        default="std",
+    )
 
     def _prepare_move_line_with_product(self, product_id):
         ####################

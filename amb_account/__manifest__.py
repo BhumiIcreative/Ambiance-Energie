@@ -14,7 +14,6 @@
     "depends": [
         "base",
         "account",
-        "amb_subscription",
         "account_followup",
         "oci_point_of_sale",
     ],

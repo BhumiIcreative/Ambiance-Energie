@@ -39,9 +39,7 @@ class AccountMove(models.Model):
     client_situation = fields.Monetary(
         string=_("Client situation"), related="partner_id.total_due"
     )
-    current_subscription = fields.Many2one(
-        "subscription.wood.pellet", string=_("Current subscription wood pellet")
-    )
+   
     package_count = fields.Integer(string=_("Package count"))
     weight = fields.Float(string=_("Weight"))
     volume = fields.Float(string=_("Volume"))
@@ -91,7 +89,6 @@ class AccountMove(models.Model):
                 vals.update(
                     {
                         "type_invoice": sale.type_order,
-                        "current_subscription": sale.current_subscription.id,
                         "oci_point_of_sale": sale.oci_point_of_sale.id,
                         "payment_instrument_id": sale.payment_instrument_id.id,
                     }
@@ -99,54 +96,7 @@ class AccountMove(models.Model):
         invoice = super(AccountMove, self).create(vals)
         return invoice
 
-    def action_post(self):
-        if (
-            self.type_invoice == "gran"
-            and self.amount_total > self.current_subscription.amount
-        ):
-            raise UserError(
-                _(
-                    "You can't confirm the quotation, amount in subscription is not sufficient"
-                )
-            )
-        res = super(AccountMove, self).action_post()
-
-        if self.type_invoice == "gran":
-            # register payment
-            subscription = self.env["subscription.wood.pellet"].search(
-                [
-                    ("partner_id", "=", self.partner_id.id),
-                    ("date_start", "<", datetime.datetime.now()),
-                    ("date_end", ">", datetime.datetime.now()),
-                ]
-            )
-            if subscription:
-                if subscription.amount < self.amount_total:
-                    raise ValidationError(
-                        _("Invoice amount is greater than balance subscription.")
-                    )
-                else:
-                    vals = {
-                        "amount": self.amount_total,
-                        "journal_id": self.env["account.journal"]
-                        .search([("code", "=", "BNK1")])
-                        .id,
-                        "payment_date": datetime.datetime.now(),
-                        "payment_type": "inbound",
-                        "partner_type": "customer",
-                        "payment_method_id": self.env["account.payment.method"]
-                        .search(
-                            [("code", "=", "manual"), ("payment_type", "=", "inbound")]
-                        )
-                        .id,
-                        "partner_id": self.partner_id.id,
-                        "communication": self.name,
-                        "invoice_ids": [(6, 0, [self.id])],
-                        "company_id": self.company_id.id,
-                    }
-                    payment = self.env["account.payment"].create(vals)
-                    payment.action_register_payment()
-        return res
+    
 
     def generate_invoice_rest_payments(self):
         in_need_of_action = self.env["account.move"].search(

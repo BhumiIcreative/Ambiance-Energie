@@ -1,0 +1,10 @@
+<odoo>
+    <record id="amb_sub_move_view_form" model="ir.ui.view">
+        <field name="name">amb.sub.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+	<field name="current_subscription" invisible="type_invoice != 'gran'"/>
+	</field>
+	</record>
+	</odoo>
