@@ -67,7 +67,7 @@ class AccountMove(models.Model):
         string="Stock picking",
         help="Auto-complete from a Stock picking.",
     )
-    oci_point_of_sale = fields.Many2one("x_point_de_vente", string=_("Point of sale"))
+    oci_point_of_sale = fields.Many2one("oci.point.of.sale", string=_("Point of sale"))
     sent_by = fields.Many2one("res.partner", string=_("Sent by"))
     origin_so = fields.Many2one("sale.order", compute=_compute_origin_so)
 
@@ -213,7 +213,7 @@ class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
     oci_point_of_sale = fields.Many2one(
-        "x_point_de_vente",
+        "oci.point.of.sale",
         string=_("Point of sale"),
         related="move_id.oci_point_of_sale",
     )

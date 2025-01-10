@@ -16,14 +16,16 @@
         "account",
         "amb_subscription",
         "account_followup",
+        "oci_point_of_sale",
     ],
     # always loaded
     "data": [
         "data/account_journal.xml",
         "data/ir_config_parameter.xml",
         "data/report_paperformat.xml",
-        # 'report/custom_external_layout.xml',
+        'report/custom_external_layout.xml',
         "views/account_move_views.xml",
-        # 'report/custom_invoice_report.xml',
+        'report/custom_invoice_report.xml',
+        'report/accounting_pieces.xml',
     ],
 }
