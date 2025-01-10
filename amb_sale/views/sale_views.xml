@@ -1,0 +1,62 @@
+<odoo>
+    <record id="amb_sale_view_form" model="ir.ui.view">
+        <field name="priority" eval="10"/>
+        <field name="name">amb.sale.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="client_situation" widget="monetary" style="color : red;" invisible="client_situation &gt;= 0"/>
+                <field name="client_situation" widget="monetary" style="color : green;" invisible="client_situation &lt;= 0"/>
+                <field name="client_situation" widget="monetary" invisible="client_situation != 0"/>
+                <field name="oci_point_of_sale" options="{'no_quick_create':True}"/>
+                <field name="counter_sale"/>
+            </xpath>
+
+<!--            <xpath expr="//field[@name='amount_total']" position="replace">-->
+<!--                <field name="amount_total" nolabel="1" widget='monetary' style="margin-top: 5px;" options="{'currency_field': 'currency_id'}"/>-->
+<!--            </xpath>-->
+
+            <xpath expr="//field[@name='tax_totals']" position="after">
+                <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                    <label for="advance"/>
+                </div>
+                <field name="advance" nolabel="1" widget='monetary' options="{'currency_field': 'currency_id'}" readonly="state not in ['draft', 'sent']"/>
+                <label for="advance_payment_instrument_id" required="advance &gt; 0.0001"/>
+                <div class="oe_inline o_td_label" required="advance &gt; 0.0001">
+                    <field name="advance_state" invisible="1"/>
+                    <div>
+                        <field name="advance_payment_instrument_id" nolabel="1" options="{'no_open':True}"/>
+                    </div>
+                    <button class="col-6 btn btn-primary" name="action_sale_confirm_advance" type="object" string="Confirmer payment" invisible=" state not in ['draft', 'sent'] or advance_state != 'not_confirmed'"/>
+                </div>
+
+                <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                    <label for="amount_left_to_pay"/>
+                </div>
+                <field name="amount_left_to_pay" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </xpath>
+
+            <xpath expr="//form//sheet/group[@name='sale_header']/group[@name='order_details']/field[@name='date_order']" position="after">
+                <field name="commitment_date" string="Livraison prévue le" required="type_order == 'serv'"/>
+            </xpath>
+
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="type_order"/>
+                <field name="sponsorship"/>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+              <field name="current_subscription" invisible="type_order != 'gran'"/>
+            </xpath>
+
+            <xpath expr="//button[@id='create_invoice_percentage']" position="attributes">
+              <attribute name="context"></attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="before">
+              <field name="discount_fixed"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,75 @@
+<odoo>
+    <template id="custom_external_layout" t-name="custom_external_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-call="amb_sale.custom_external_layout_standard">
+            <t t-out="0"/>
+        </t>
+    </template>
+
+    <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
+        <!-- Header -->
+        <div class="header" t-att-style="report_header_style"/>
+
+        <!-- Page -->
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <!-- This div ensures that the address is not cropped by the header. only for first page -->
+            <t t-out="0"/>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer o_standard_footer" style="font-size:15px;">
+            <div class="row">
+                <div class="col-1" style="border-top: 1px solid black;font-size:12px;"/>
+                <div class="text-center col-10" style="border-top: 1px solid black;font-size:12px">
+                    <ul style="list-style:none; margin:0; text-align:center;">
+                        <li>
+                            <t t-out="company.x_studio_oci_conf_formejurid"/>
+                            - N° siren :
+                            <t t-out="company.x_studio_oci_conf_siren"/>
+                            - APE
+                            <t t-out="company.ape"/>
+                            - Identification
+                            <t t-out="company.country_id.vat_label or 'Tax ID'"/>
+                            :
+                            <span t-field="company.vat"/>
+                        </li>
+                        <li t-if="company.siret">
+                            Siège social : <span t-field="company.x_studio_oci_conf_juridique"/>
+                            <span t-field="company.street"/>
+                            <span t-field="company.street2"/>
+                            <span t-field="company.zip"/>
+                            <span t-field="company.city"/>
+                        </li>
+                        <div t-if="report_type == 'pdf'" class="text-muted">
+                            Page: <span class="page"/> / <span class="topage"/>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-1" style="border-top: 1px solid black;font-size:12px;">
+                    <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                        <div name="qr_code" class="text-right">
+                            <div t-if="doc.oci_point_of_sale" class="row">
+<!--                                <span t-field="doc.oci_point_of_sale.x_studio_qrcode_payment" t-options="{'widget': 'image'}" style="width:50px;display:inline-block;"/>-->
+                                <span t-field="doc.x_studio_qrcode_payment" t-options="{'widget': 'image'}" style="width:50px;display:inline-block;"/>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                    </t>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

@@ -1,0 +1,482 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* amb_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20210111\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-29 13:14+0000\n"
+"PO-Revision-Date: 2021-01-29 13:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_layout
+msgid "- APE 4674B"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_layout
+msgid "- Identification"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_layout
+msgid "- N° siren : 479573099"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><ins>Comments:</ins></small>"
+msgstr "<small><ins>Commentaire:</ins></small>"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Base HT</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Date d'échéance</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Description</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Montant TVA</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Montant</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Moyen de paiement</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>PU HT</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Prix TTC</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Quantité</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<strong>Discount</strong>"
+msgstr "<strong>Remise</strong>"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Réf</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Sous-total</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>TVA</strong></small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small><strong>Taux</strong></small>"
+msgstr "<small><strong>Nom</strong></small>"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid ""
+"<small>Devis valable 1 mois. Accompte arrondi de 30% à la "
+"commande</small><br/>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid ""
+"<small>Pour bénéficier d'une TVA réduite à 5.5%. Vous attestez par votre "
+"acceptation de ce devis que vous correspondez aux conditions d'attribution ("
+" voir attestation simplifiée de la Direction Générale des Impôts ).</small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small>Prime CEE EDF</small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small>Total HT</small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<small>Total TVA</small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid ""
+"<strong><u>Bon pour accord :</u></strong><br/>\n"
+"                                <small>(Nom, date et signature)</small>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong><u>Descriptif de l'intervention</u></strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong><u>Heures de fonctionnement:</u></strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong><u>Nombre d'allumages:</u></strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>A réception de facture</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Chèque</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Demande d'intervention</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Espèces</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Intervention du:</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Libellé</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<strong>Mobile:</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<strong>Net à payer en Euro</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Net à payer en Euros:</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Prix TTC</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Prix unitaire HT</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Quantité</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Discount</strong>"
+msgstr "<strong>Remise</strong>"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Réf four</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Réf</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Signature Client:</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Technicien:</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<strong>Total T.T.C:</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<strong>Total TTC</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<strong>Tél:</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "<strong>Votre référence</strong>"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "<u><strong>Historique Client:</strong></u>"
+msgstr ""
+
+#. module: amb_sale
+#: model:ir.model.fields,help:amb_sale.field_sale_advance_payment_inv__advance_payment_method
+msgid ""
+"A standard invoice is issued with all the order lines ready for invoicing,"
+"         according to their invoicing policy (based on ordered or delivered "
+"quantity)."
+msgstr ""
+"Une facture standard est émise avec toutes les lignes de commande prêtes à "
+"être facturées,         conformément à la politique de facturation (basé sur "
+"la quantité livrée et commandée)."
+
+#. module: amb_sale
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__current_subscription
+msgid "Abonnement en cours pellets"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid "Amount left to pay"
+msgstr "Reste à payer"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "BC n°"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid "Check price on line %s"
+msgstr "Vérifiez le prix sur la ligne %s"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "Client"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__client_situation
+#, python-format
+msgid "Client situation"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "Commande n°"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__counter_sale
+#, python-format
+msgid "Counter sale"
+msgstr "Vente comptoir"
+
+#. module: amb_sale
+#: model:ir.model.fields,field_description:amb_sale.field_sale_advance_payment_inv__advance_payment_method
+msgid "Create Invoice"
+msgstr "Créer une facture"
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid "Current subscription wood pellet"
+msgstr "Abonnement en cours pellets"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "Date"
+msgstr ""
+
+#. module: amb_sale
+#: model:ir.actions.report,name:amb_sale.intervention_request_report
+msgid "Demande d'intervention"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "Devis n°"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid "EDF prime"
+msgstr "Prime EDF"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "Facture Pro-Forma n°"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#: model:ir.model.fields.selection,name:amb_sale.selection__sale_order__type_order__gran
+#, python-format
+msgid "Granule"
+msgstr "Granulé"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "N° série:"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_layout
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: amb_sale
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__sponsorship
+msgid "Parrainage"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.edited_report_saleorder
+msgid "Parrainage:"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__oci_point_of_sale
+#, python-format
+msgid "Point of sale"
+msgstr "Point de vente"
+
+#. module: amb_sale
+#: model:ir.model.fields.selection,name:amb_sale.selection__sale_order__type_order__sto
+msgid "Poële"
+msgstr ""
+
+#. module: amb_sale
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__edf_prime
+msgid "Prime EDF"
+msgstr ""
+
+#. module: amb_sale
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__amount_left_to_pay
+msgid "Reste à payer"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_layout
+msgid "S.A.S au capital de 32 000 euros"
+msgstr ""
+
+#. module: amb_sale
+#: model:ir.model,name:amb_sale.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Facture de paiement d'avance"
+
+#. module: amb_sale
+#: model:ir.model,name:amb_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#: model:ir.model.fields.selection,name:amb_sale.selection__sale_order__type_order__serv
+#, python-format
+msgid "Service"
+msgstr ""
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_layout
+msgid "Siège social : sas bill"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid "Sponsorship"
+msgstr "Parrainage"
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#: model:ir.model.fields.selection,name:amb_sale.selection__sale_order__type_order__std
+#, python-format
+msgid "Standard"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid "Stove"
+msgstr "Poële"
+
+#. module: amb_sale
+#: model:ir.model.fields,field_description:amb_sale.field_sale_order__type_order
+msgid "Type commande"
+msgstr ""
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid "Type order"
+msgstr "Type commande"
+
+#. module: amb_sale
+#: code:addons/amb_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"You can't confirm the quotation, amount in subscription is not sufficient"
+msgstr ""
+"Vous ne pouvez pas confirmer ce devis, le solde de l'abonnement n'est pas "
+"suffisant"
+
+#. module: amb_sale
+#: model_terms:ir.ui.view,arch_db:amb_sale.intervention_request_document
+msgid "du"
+msgstr ""
