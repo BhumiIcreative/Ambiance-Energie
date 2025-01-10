@@ -18,19 +18,19 @@
                         <thead class="small">
                             <tr>
                                 <th width="7%" class="border-dark text-center">
-                                    <strong>Réf interne</strong>
+                                    <strong>Internal ref</strong>
                                 </th>
                                 <th width="7%" class="border-dark text-center">
-                                    <strong>Réf</strong>
+                                    <strong>Ref</strong>
                                 </th>
                                 <th width="45%" class="border-dark text-center">
                                     <strong>Description</strong>
                                 </th>
                                 <th width="5%" class="border-dark text-center">
-                                    <strong>Date demandée</strong>
+                                    <strong>Date requested</strong>
                                 </th>
                                 <th width="8%" class="border-dark text-center">
-                                    <strong>Qté</strong>
+                                    <strong>Qty</strong>
                                 </th>
                                 <th width="8%" class="border-dark text-center">
                                     <strong>PU HT</strong>
@@ -99,7 +99,7 @@
                                 <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
                                     <tr class="is-subtotal text-right">
                                         <td colspan="99" id="subtotal" class="border-dark" >
-                                            <strong class="mr16">Sous-total</strong>
+                                            <strong class="mr16">Subtotal</strong>
                                             <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
                                         </td>
                                     </tr>
@@ -111,7 +111,7 @@
                         <div class="col-4">
                             <table class="table table-sm">
                                 <tr class="border-black">
-                                    <td name="td_subtotal_label"><strong>Sous-total</strong></td>
+                                    <td name="td_subtotal_label"><strong>Subtotal</strong></td>
                                     <td class="text-right">
                                         <span t-field="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
                                     </td>

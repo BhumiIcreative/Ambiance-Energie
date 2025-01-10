@@ -51,7 +51,7 @@
                             <span class="small-text">Qualibois </span>
                             <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>
                             <br/>
-                            <span class="small-text">Garantie RC et Décenale : </span>
+                            <span class="small-text">RC and ten-year guarantee : </span>
                             <span class="small-text" t-field="company.x_studio_assurance"/>
                             <br/>
                             <strong class="medium-text"><span class="small-text" t-field="company.x_studio_oci_conf_rib"/> <br/>
@@ -61,7 +61,7 @@
                     <table class="table table-sm table-bordered border-dark" style="width: 80%; margin-left: auto; margin-right: auto;">
                         <tbody>
                             <tr>
-                                <td class="border-dark text-center" style="font-size:10px;">Votre référence</td>
+                                <td class="border-dark text-center" style="font-size:10px;">Your reference</td>
                             </tr>
                             <tr>
                                 <td t-if="doc.partner_ref" class="border-dark text-center small-text">
@@ -75,10 +75,10 @@
                     </table>
                     <h6 class="text-uppercase mt-3 text-left">
 
-                        <t t-if="doc.state == 'draft'">Demande de prix <span t-field="doc.name"/></t>
-                        <t t-if="doc.state in ['sent', 'to approve']">Bon de Commande N° <span t-field="doc.name"/></t>
-                        <t t-if="doc.state in ['purchase', 'done']">Bon de Commande N° <span t-field="doc.name"/></t>
-                        <t t-if="doc.state == 'cancel'">Bons de Commande Annulés N° <span t-field="doc.name"/></t>
+                        <t t-if="doc.state == 'draft'">Price request <span t-field="doc.name"/></t>
+                        <t t-if="doc.state in ['sent', 'to approve']">Purchase Order No. <span t-field="doc.name"/></t>
+                        <t t-if="doc.state in ['purchase', 'done']">Purchase Order No. <span t-field="doc.name"/></t>
+                        <t t-if="doc.state == 'cancel'">Canceled Purchase Orders No.<span t-field="doc.name"/></t>
                     </h6>
                 </div>
             </div>
@@ -194,12 +194,12 @@
     <div class="footer o_standard_footer" style="font-size:15px;">
         <div class="text-center" style="border-top: 1px solid black;font-size:12px">
             <ul style="list-style:none; margin:0; text-align:center;">
-                <li><t t-esc="company.x_studio_oci_conf_formejurid"/> - N° siren : <t t-esc="company.x_studio_oci_conf_siren"/> - APE <t t-esc="company.ape"/> - Identification
+                <li><t t-esc="company.x_studio_oci_conf_formejurid"/> - Siren number: <t t-esc="company.x_studio_oci_conf_siren"/> - APE <t t-esc="company.ape"/> - Identification
                     <t t-esc="company.country_id.vat_label or 'Tax ID'"/>:
 
                     <span t-field="company.vat"/>
                 </li>
-                <li t-if="company.siret">Siège social : <span t-field="company.x_studio_oci_conf_juridique"/> ∙
+                <li t-if="company.siret">Head office : <span t-field="company.x_studio_oci_conf_juridique"/> ∙
                     <span t-field="company.street"/> ∙
                     <span t-field="company.street2"/>
                     <span t-field="company.zip"/> ∙

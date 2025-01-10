@@ -18,8 +18,8 @@
                         <thead class="small">
                             <tr>
                                 <th name="th_description" class="border-dark text-left"><strong>Description</strong></th>
-                                <th name="th_expected_date" class="border-dark text-center"><strong>Date prévue</strong></th>
-                                <th name="th_quantity" class="border-dark text-right"><strong>Qté</strong></th>
+                                <th name="th_expected_date" class="border-dark text-center"><strong>Expected date</strong></th>
+                                <th name="th_quantity" class="border-dark text-right"><strong>Qty</strong></th>
                             </tr>
                         </thead>
                         <tbody class="border-dark" style="font-size:9px">

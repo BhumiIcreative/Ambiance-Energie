@@ -12,7 +12,7 @@
         "base",
         "purchase",
         "account",
-        "amb_account",
+        "oci_point_of_sale",
     ],
     "data": [
         "datas/report_paperformat.xml",

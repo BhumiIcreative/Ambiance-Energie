@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-09 14:30+0000\n"
-"PO-Revision-Date: 2025-01-09 14:30+0000\n"
+"POT-Creation-Date: 2025-01-10 11:52+0000\n"
+"PO-Revision-Date: 2025-01-10 11:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
-msgid "- N° siren :"
+msgid "- Siren number:"
 msgstr ""
 
 #. module: amb_purchase
@@ -41,36 +41,43 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
 msgid ""
 "<br/>\n"
-"                            <span class=\"small-text\">Garantie RC et Décenale : </span>"
+"                            <span class=\"small-text\">Qualibois </span>"
 msgstr ""
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
 msgid ""
 "<br/>\n"
-"                            <span class=\"small-text\">Qualibois </span>"
+"                            <span class=\"small-text\">RC and ten-year guarantee : </span>"
 msgstr ""
+"<br/>\n"
+"                            <span class=\"small-text\">Garantie RC et Décenale : </span>"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
-msgid "<strong class=\"mr16\">Sous-total</strong>"
-msgstr ""
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Sous-total</strong>"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
-msgid "<strong>Date demandée</strong>"
-msgstr ""
-
-#. module: amb_purchase
-#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchasequotation_document
-msgid "<strong>Date prévue</strong>"
-msgstr ""
+msgid "<strong>Date requested</strong>"
+msgstr "<strong>Date demandée</strong>"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchasequotation_document
 msgid "<strong>Description</strong>"
 msgstr ""
+
+#. module: amb_purchase
+#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchasequotation_document
+msgid "<strong>Expected date</strong>"
+msgstr "<strong>Date prévue</strong>"
+
+#. module: amb_purchase
+#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
+msgid "<strong>Internal ref</strong>"
+msgstr "<strong>Réf interne</strong>"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
@@ -85,8 +92,13 @@ msgstr ""
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchasequotation_document
-msgid "<strong>Qté</strong>"
-msgstr ""
+msgid "<strong>Qty</strong>"
+msgstr "<strong>Qté</strong>"
+
+#. module: amb_purchase
+#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
+msgid "<strong>Ref</strong>"
+msgstr "<strong>Réf</strong>"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
@@ -95,18 +107,8 @@ msgstr ""
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
-msgid "<strong>Réf interne</strong>"
-msgstr ""
-
-#. module: amb_purchase
-#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
-msgid "<strong>Réf</strong>"
-msgstr ""
-
-#. module: amb_purchase
-#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
-msgid "<strong>Sous-total</strong>"
-msgstr ""
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Sous-total</strong>"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
@@ -125,18 +127,15 @@ msgstr ""
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
-msgid "Bon de Commande N°"
-msgstr ""
+msgid "Canceled Purchase Orders No."
+msgstr "Numéro de bons de commande annulés
+"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
-msgid "Bons de Commande Annulés N°"
-msgstr ""
-
-#. module: amb_purchase
-#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
-msgid "Demande de prix"
-msgstr ""
+msgid "Head office :"
+msgstr "Siège social :
+"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
@@ -146,9 +145,17 @@ msgstr ""
 #. module: amb_purchase
 #. odoo-python
 #: code:addons/amb_purchase/models/purchase_order.py:0
+#: model:ir.model.fields,field_description:amb_purchase.field_purchase_order__oci_point_of_sale
 #, python-format
 msgid "Point of sale"
-msgstr ""
+msgstr "Point de vente
+"
+
+#. module: amb_purchase
+#: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
+msgid "Price request"
+msgstr "Demande de prix
+"
 
 #. module: amb_purchase
 #: model:ir.model,name:amb_purchase.model_purchase_order
@@ -157,18 +164,18 @@ msgstr "Bon de commande fournisseur"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
-msgid "Siège social :"
-msgstr ""
+msgid "Purchase Order No."
+msgstr "Bon de Commande N°"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_report_purchaseorder
 msgid "Taxes"
-msgstr ""
+msgstr "Impôts"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
-msgid "Votre référence"
-msgstr ""
+msgid "Your reference"
+msgstr "Votre référence"
 
 #. module: amb_purchase
 #: model_terms:ir.ui.view,arch_db:amb_purchase.custom_external_layout_standard_purchase
