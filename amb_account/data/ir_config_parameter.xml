@@ -1,0 +1,19 @@
+<odoo>
+  <data noupdate="1">
+
+    <record model="ir.config_parameter" id="invoice_info_comment">
+      <field name="key">account.invoice_info_comment</field>
+      <field name="value">Garantie RC &amp; Décenale MAAF contrat n°51051570 J</field>
+    </record>
+
+    <record model="ir.config_parameter" id="text_invoice_comments_1">
+      <field name="key">text_invoice_comments_1</field>
+      <field name="value">Conformément à l’article L441-6 du code du commerce, des pénalités de retard au taux annuel de 20% et une indemnité de 40€ sont dues à défaut de règlement le jour suivant la date de paiement figurant sur la facture.</field>
+    </record>
+
+    <record model="ir.config_parameter" id="text_invoice_comments_2">
+      <field name="key">text_invoice_comments_2</field>
+      <field name="value">Prix unitaire net(remise déduite) incluant 0.84€HT d’ECO-PARTICIPATION par appareil(code 1.8) Escompte pour paiement anticipé : néant</field>
+    </record>
+  </data>
+</odoo>

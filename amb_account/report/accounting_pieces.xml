@@ -1,0 +1,115 @@
+<odoo>
+    <template id="report_document_pieces">
+        <t t-call="web.html_container">
+            <t t-set="company" t-value="docs.env.company"/>
+            <div class="oe_structure"></div>
+            <t t-foreach="docs"
+               t-as="doc"> <!-- each doc is a 'res.partner', called doc for the 'web.external_layout' template -->
+                <t t-call="web.internal_layout">
+
+                    <div class="page">
+
+
+            <h2>
+                <span  t-if="doc.name" t-field="doc.name"/>
+            </h2>
+
+            <div class="row mt32 mb32">
+                <div class="col-auto mw-100 mb-2" >
+                    <strong>Date :</strong>
+                    <p class="m-0" t-field="doc.date"/>
+                </div>
+                <div class="col-auto mw-100 mb-2" >
+                    <strong>Journal :</strong>
+                    <br/><span class="m-0" t-field="doc.journal_id.code"/> · <span style="font-size:small" class="m-0" t-field="doc.journal_id"/>
+                </div>
+                <div class="col-auto mw-100 mb-2" >
+                    <strong>Société :</strong>
+                    <p class="m-0" t-field="doc.company_id.name"/>
+                </div>
+                <div t-if="doc.ref" class="col-auto mw-100 mb-2" >
+                    <strong>Référence :</strong>
+                    <p class="m-0" t-field="doc.ref"/>
+                </div>
+                <div t-if="doc.oci_point_of_sale" class="col-auto mw-100 mb-2" >
+                    <strong>Point de vente :</strong>
+                    <br/><span class="m-0" t-field="doc.oci_point_of_sale"/>
+                </div>
+
+
+            </div>
+
+            <table style="padding:0" class="table o_report_block_table">
+                <thead>
+                    <tr>
+                        <th style="padding: 0;">
+                            <span>Compte Partenaire</span>
+                        </th>
+                        <th style="padding: 0;">
+                            <span>Partenaire</span>
+                        </th>
+                        <th style="padding: 0;">
+                            <span>Libellé</span>
+                        </th>
+                        <th style="padding: 0;text-align:right;">
+                            <span>Débit</span>
+                        </th>
+                        <th style="padding: 0;text-align:right;">
+                            <span>Crédit</span>
+                        </th>
+                        <th style="padding: 0; padding-left:10px">
+                            <span style="font-style: oblique; font-size: smaller;">Info taxes</span>
+                        </th>
+                    </tr>
+<!--                    <span t-esc="doc"/>dddddddddd-->
+                </thead>
+                <tbody>
+                    <tr t-foreach="doc.line_ids" t-as="table_line">
+                        <span t-esc="table_line.display_type"/>dsddd
+<!--                        <t t-if="not table_line.display_type">-->
+                            <td style="padding: 0; width:60px;">
+                                <span t-field="table_line.account_id.code"/>
+                            </td>
+                            <td style="padding: 0; width:150px;">
+                                <span t-field="table_line.partner_id.display_name"/>
+                            </td>
+                            <td style="padding: 0;">
+                                <span t-field="table_line.name"/>
+                            </td>
+                            <td style="padding: 0; width:100px; text-align:right;">
+                                <span t-field="table_line.debit"/>
+                            </td>
+                            <td style="padding: 0; width:100px; text-align:right;">
+                                <span t-field="table_line.credit"/>
+                            </td>
+                            <td style="padding: 0; width:150px; padding-left:10px">
+                                <span style="font-style: oblique; font-size: smaller;" t-field="table_line.x_studio_taxes_audit"/>
+                            </td>
+<!--                        </t>-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+<!--                    <t t-set="fallback_address" t-value="doc.browse(doc.address_get(['invoice'])['invoice']) or doc"/>-->
+<!--                    <t t-call-assets="account_followup.assets_followup_report"/>-->
+                    <div class="page">
+<!--                        <span t-out="doc.get_followup_html(options)">Follow-up details</span>-->
+                    </div>
+                </t>
+                <div class="oe_structure"></div>
+                <!-- The invoice PDFs are attached by extending function _render_qweb_pdf_prepare_streams of ir.actions.report -->
+            </t>
+        </t>
+    </template>
+
+    <record id="new_action" model="ir.actions.report">
+        <field name="name">Account Pieces</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">amb_account.report_document_pieces</field>
+        <field name="report_file">amb_account.report_document_pieces</field>
+        <field name="binding_model_id" ref="model_account_move"/>
+<!--        <field name="print_report_name">'Follow-up ' + object.display_name</field>-->
+    </record>
+</odoo>
