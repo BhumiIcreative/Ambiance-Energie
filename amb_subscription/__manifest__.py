@@ -9,12 +9,13 @@
     # for the full list
     "category": "subscription",
     "version": "17.0.1.0.0",
-    "application": True,
+    'license': 'LGPL-3',
     # any module necessary for this one to work correctly
     "depends": [
         "sale_management",
         "account",
         "l10n_fr",
+        'sale_timeline'
     ],
     # always loaded
     "data": [
@@ -28,5 +29,7 @@
         "report/custom_external_layout.xml",
         "report/custom_external_layout_commissioning.xml",
     ],
-    'license': 'LGPL-3',
+    "application": False,
+    'installable': True
+
 }
