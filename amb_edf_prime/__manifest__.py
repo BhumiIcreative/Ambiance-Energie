@@ -1,4 +1,3 @@
-# coding: utf-8
 {
     "name": "Amb EDF Prime",
     "summary": "Amb EDF Prime",
@@ -8,11 +7,10 @@
     "application": False,
     "installable": True,
     # any module necessary for this one to work correctly
-    'depends': [
-        'sale_management',
-        'amb_sale',
-        'account',
-        'script_tools',
+    "depends": [
+        "amb_sale",
+        "amb_account",
+        "script_tools",
     ],
     # always loaded
     "data": [

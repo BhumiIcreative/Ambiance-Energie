@@ -1,4 +1,4 @@
-Amb EDF Prime
+Amb Stock
 ============
 
 Usage
