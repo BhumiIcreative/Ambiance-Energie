@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="amb_purchase_view_form" model="ir.ui.view">
+      <field name="priority" eval="10"/>
+      <field name="name">amb.purchase.form</field>
+      <field name="model">purchase.order</field>
+      <field name="inherit_id" ref="purchase.purchase_order_form" />
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='partner_ref']" position="after">
+          <field name="oci_point_of_sale"/>
+        </xpath>
+        
+        <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes"> 
+          <attribute name="domain">['|', 
+            ('seller_ids.partner_id', '=', parent.partner_id), 
+            ('seller_ids.partner_id.child_ids', '=', parent.partner_id), 
+            ('purchase_ok', '=', True)] 
+          </attribute> 
+        </xpath> 
+
+      </field>
+  </record>
+
+</odoo>
