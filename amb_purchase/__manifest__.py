@@ -11,8 +11,11 @@
     "depends": [
         "base",
         "purchase",
+        "l10n_fr",
         "account",
+        "purchase_stock",
         "oci_point_of_sale",
+        "amb_subscription",
     ],
     "data": [
         "datas/report_paperformat.xml",
