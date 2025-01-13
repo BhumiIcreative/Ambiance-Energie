@@ -3,6 +3,8 @@
         <record id="sale.action_report_saleorder" model="ir.actions.report">
             <field name="paperformat_id" ref="amb_sale.custom_sale_order_report_format"/>
         </record>
+        <template id="account_avatax_sale.report_invoice_document" active="False">
+        </template>
         <template id="edited_report_saleorder" inherit_id="sale.report_saleorder_document">
             <xpath expr="//t[@t-call='web.external_layout']" position="replace">
                 <t t-call="amb_sale.custom_external_layout">

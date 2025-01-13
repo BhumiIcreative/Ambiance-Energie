@@ -4,7 +4,9 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
-	<field name="current_subscription" invisible="type_invoice != 'gran'"/>
-	</field>
+        	<xpath expr="//field[@name='ref']" position="after">
+				<field name="current_subscription" invisible="type_invoice != 'gran'"/>
+			</xpath>
+		</field>
 	</record>
 	</odoo>

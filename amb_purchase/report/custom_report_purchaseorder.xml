@@ -4,12 +4,9 @@
     <record id="purchase.action_report_purchase_order" model="ir.actions.report">
         <field name="paperformat_id" ref="amb_purchase.custom_purchase_order_report_format" />
     </record>
-
-    <record model="ir.ui.view" id="custom_report_purchaseorder">
-      <field name="name">Custom_purchaseorder</field>
-      <field name="inherit_id" ref="purchase.report_purchaseorder_document"/>
-      <field name="arch" type="xml">
-        <t t-call="web.external_layout" position="replace">
+    <template id="purchase_stock.report_purchaseorder_document" active="False">
+    </template>
+    <template id="custom_report_purchaseorder_inherit">
           <t t-call="amb_purchase.custom_external_layout_purchase">
                 <t t-set="doc" t-value="o.with_context(lang=o.partner_id.lang)"/>
                 <div class="page">
@@ -134,8 +131,12 @@
                     <p t-field="doc.notes"/>
                 </div>
           </t>
-        </t>
-      </field>
-    </record>
+    </template>
+
+    <template id="custom_report_purchaseorder" inherit_id="purchase.report_purchaseorder">
+        <xpath expr="//t[@t-call='purchase.report_purchaseorder_document']" position="attributes">
+            <attribute name="t-call">amb_purchase.custom_report_purchaseorder_inherit</attribute>
+        </xpath>
+    </template>
   </data>
 </odoo>

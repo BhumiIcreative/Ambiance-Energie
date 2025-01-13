@@ -33,4 +33,22 @@
             </field>
         </field>
     </record>
+
+     <record id="inherit_amb_sale_view_form" model="ir.ui.view">
+        <field name="name">inherit.amb.sale.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="amb_sale.amb_sale_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='advance']" position="after">
+                <label for="advance_payment_instrument_id" required="advance &gt; 0.0001"/>
+                <div class="oe_inline o_td_label" required="advance &gt; 0.0001">
+                    <field name="advance_state" invisible="1"/>
+                    <div>
+                        <field name="advance_payment_instrument_id" nolabel="1" options="{'no_open':True}"/>
+                    </div>
+                    <button class="col-6 btn btn-primary" name="action_sale_confirm_advance" type="object" string="Confirmer payment" invisible=" state not in ['draft', 'sent'] or advance_state != 'not_confirmed'"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
 </odoo>

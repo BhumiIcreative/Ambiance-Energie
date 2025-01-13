@@ -28,10 +28,6 @@ class SaleOrder(models.Model):
     oci_point_of_sale = fields.Many2one('oci.point.of.sale',
                                         string='Point of Sale')
     advance = fields.Monetary(string='Advance', tracking=True, copy=False)
-    advance_payment_instrument_id = fields.Many2one(
-        'sale_timeline.payment.instrument',
-        string='Advance Payment Method',
-        copy=False)
     advance_state = fields.Selection([
         ('not_confirmed', 'Not Confirmed'),
         ('confirmed', 'Confirmed')
@@ -59,7 +55,7 @@ class SaleOrder(models.Model):
             sale_id.client_situation = -sale_id.partner_id.total_due
 
    
-    @api.depends('amount_total', 'payment_timeline_ids', 'advance')
+    @api.depends('amount_total', 'advance')
     def _compute_amount_missing_from_timeline(self):
         """
             Adjusts payment schedules by taking into account any advance
@@ -170,6 +166,23 @@ class SaleOrder(models.Model):
             })
         return res
 
+    def prepare_custom_account_payment_vals(self):
+        '''This method is designed to be extendable, allowing for customization in payment 
+        value preparation'''
+        return {
+                'payment_type': 'inbound',
+                'partner_id': self.partner_id.id,
+                'partner_type': 'customer',
+                'company_id': self.company_id.id,
+                'currency_id': self.currency_id.id,
+                'date': self.date_order,
+                'amount': self.advance,
+                'sale_id': self.id,
+                'oci_point_of_sale': self.oci_point_of_sale.id,
+                'ref': "Acompte sur devis " + self.name,
+                'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id
+            }
+
     def create_payment(self):
         """
             Creates a payment record for the advance amount in the order.
@@ -180,22 +193,12 @@ class SaleOrder(models.Model):
         if not journal:
             raise UserError(_('No Journal Found.'))
 
+        account_payment_vals = self.prepare_custom_account_payment_vals()
+        account_payment_vals['journal_id'] = journal.id
+
         self.update({
             'advance_payment_ids':
-                [(4, self.env['account.payment'].create({
-                    'payment_type': 'inbound',
-                    'partner_id': self.partner_id.id,
-                    'partner_type': 'customer',
-                    'journal_id': journal.id,
-                    'company_id': self.company_id.id,
-                    'currency_id': self.currency_id.id,
-                    'date': self.date_order,
-                    'amount': self.advance,
-                    'sale_id': self.id,
-                    'payment_instrument_id': self.advance_payment_instrument_id.id,
-                    'oci_point_of_sale': self.oci_point_of_sale.id,
-                    'ref': "Acompte sur devis " + self.name,
-                    'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id}).id)],
+                [(4, self.env['account.payment'].create(account_payment_vals).id)],
             'advance_state': 'confirmed'
         })
 

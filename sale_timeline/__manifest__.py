@@ -10,8 +10,8 @@
     'depends': [
         'account',
         'sale',
-        # 'amb_sale',
-        # 'amb_edf_prime',
+        'amb_sale',
+        'amb_edf_prime',
     ],
     'data': [
         'data/account_payment_term.xml',

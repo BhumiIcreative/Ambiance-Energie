@@ -1,4 +1,4 @@
- import datetime
+import datetime
 from math import *
 
 from odoo import api, fields, models, _
@@ -7,14 +7,15 @@ from odoo.exceptions import UserError
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
- current_subscription = fields.Many2one(
+
+    current_subscription = fields.Many2one(
         'subscription.wood.pellet',
         string='Current Subscription Wood Pellet',
         compute='_get_subscription',
         store=True)
 
 
-  @api.depends('type_order', 'partner_id')
+    @api.depends('type_order', 'partner_id')
     def _get_subscription(self):
         """
             Finds the customer's current subscription for wood pellets, if any.
@@ -28,7 +29,7 @@ class SaleOrder(models.Model):
             ])
 
 
-def action_confirm(self):
+    def action_confirm(self):
         """
             Confirms the order, ensuring subscription rules and payment
             conditions are met.
@@ -88,5 +89,5 @@ def action_confirm(self):
                     vals = self.env['sale.order.line']._add_missing_default_values(
                         vals)
                     self.order_line = [(0, 0, vals)]
-        else:
-            raise UserError(_("There are no product named 'GRANULE' "))
+        # else:
+        #     raise UserError(_("There are no product named 'GRANULE' "))

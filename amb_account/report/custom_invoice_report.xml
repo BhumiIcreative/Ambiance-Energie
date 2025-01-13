@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
+    <!--Inherits the existing invoice report template to use a custom layout defined by 'amb_account.custom_external_layout_standard'.-->
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="attributes">
             <attribute name="t-call">amb_account.custom_external_layout_standard</attribute>
         </xpath>
     </template>
-  </data>
 </odoo>
