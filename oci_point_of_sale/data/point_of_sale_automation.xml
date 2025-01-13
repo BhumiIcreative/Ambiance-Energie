@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Server Action -->
+    <record id="server_action_set_oci_point_of_sale" model="ir.actions.server">
+        <field name="name">Set OCI Point of Sale</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">
+            <![CDATA[
+                for order in records:
+                    if order.partner_id:
+                        order.write({'oci_point_of_sale': order.partner_id.oci_point_of_sale})
+            ]]>
+        </field>
+    </record>
+
+    <!-- Automated Action -->
+    <record id="automation_set_oci_point_of_sale" model="base.automation">
+        <field name="name">Automated Set OCI Point of Sale</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="trigger">on_create_or_write</field>
+        <field name="action_server_ids" eval="[(6, 0, [ref('oci_point_of_sale.server_action_set_oci_point_of_sale')])]"/>
+    </record>
+</odoo>
