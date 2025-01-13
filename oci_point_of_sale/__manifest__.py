@@ -6,7 +6,7 @@
     'website': "http://www.aktivsoftware.com / https://www.oci.fr",
     'version': '17.0.1.0.0',
     'license': 'LGPL-3',
-    'depends': ['stock', 'mail', 'contacts', 'sale'],
+    'depends': ['base_automation', 'stock', 'mail', 'contacts'],
     'data': [
         'security/ir.model.access.csv',
         'views/oci_point_of_sale_views.xml',
