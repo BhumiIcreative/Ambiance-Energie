@@ -17,6 +17,8 @@
             <t t-raw="0"/>
         </t>
     </template>
+     <template id="account_avatax_sale.report_invoice_document" active="False">
+        </template>
     <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
         <!-- Header -->
         <div class="header">

@@ -108,7 +108,6 @@ class AccountMove(models.Model):
                     {
                         "type_invoice": sale.type_order,
                         "oci_point_of_sale": sale.oci_point_of_sale.id,
-                        "payment_instrument_id": sale.payment_instrument_id.id,
                     }
                 )
         invoice = super(AccountMove, self).create(vals)
@@ -192,19 +191,16 @@ class AccountMove(models.Model):
             except UserError as e:
                 log.exception(e)
 
-    def _generate_invoice_rest_payments(self):
-        """
-        Generates a payment for the remaining invoice amount based on the company
-        and associates it with the invoice. Creates a new payment if the total
-        amount is greater than the sum of existing payments.
-        """
-        self.ensure_one()
-        if self.company_id.id == 1:
+    def create_payment_vals_dict(self):
+        ####################
+        # variables en dur #
+        ####################
+        if self.company_id.id == 1:  # société Ambiance Energie
             var_journal_id = 12
         if self.company_id.id == 2:
             var_journal_id = 40
 
-        payment_res = {
+        return {
             "payment_type": "inbound",
             "partner_type": "customer",
             "state": "draft",
@@ -219,8 +215,11 @@ class AccountMove(models.Model):
             "communication": self.name + " / reste à payer",
             "company_id": self.company_id.id,
             "oci_point_of_sale": self.oci_point_of_sale.id,
-            "payment_instrument_id": self.payment_instrument_id.id,
         }
+
+    def _generate_invoice_rest_payments(self):
+        self.ensure_one()
+        payment_res = self.create_payment_vals_dict()
 
         self._cr.execute(
             """

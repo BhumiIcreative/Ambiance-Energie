@@ -16,6 +16,7 @@
         "account",
         "sale_timeline",
         "l10n_fr",
+        "account_avatax_sale",
         'amb_account',
         'amb_sale',
     ],

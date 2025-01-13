@@ -18,7 +18,6 @@
         'account_followup',
         'amb_product', 
         'oci_point_of_sale',
-        'sale_timeline', 
     ],
     # always loaded
     'data': [

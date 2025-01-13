@@ -87,5 +87,3 @@ class SaleOrder(models.Model):
                     vals = self.env['sale.order.line']._add_missing_default_values(
                         vals)
                     self.order_line = [(0, 0, vals)]
-        else:
-            raise UserError(_("There are no product named 'GRANULE' "))

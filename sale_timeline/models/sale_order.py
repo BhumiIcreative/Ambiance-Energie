@@ -1,7 +1,7 @@
 from odoo import models, fields, api, _
 
 
-class SaleOrder(models.Model):
+class SaleOrder(models.Model): 
     _inherit = 'sale.order'
 
     payment_timeline_ids = fields.One2many(
@@ -12,6 +12,10 @@ class SaleOrder(models.Model):
         'sale_timeline.payment.instrument', 'Payment Method')
     amount_missing_from_timeline = fields.Monetary(
         "Amount Out of Payment Timeline", compute="_compute_amount_missing_from_timeline")
+    advance_payment_instrument_id = fields.Many2one(
+        'sale_timeline.payment.instrument',
+        string='Advance Payment Method',
+        copy=False)
 
     @api.depends('payment_term_id')
     def _compute_is_timeline(self):
@@ -33,6 +37,11 @@ class SaleOrder(models.Model):
             vals['payment_timeline_ids'] = [
                 (6, 0, self.payment_timeline_ids.ids)]
         return vals
+
+    def prepare_custom_account_payment_vals(self):
+        res = super().prepare_custom_account_payment_vals()
+        res['payment_instrument_id'] = self.advance_payment_instrument_id.id
+        return res
 
     def write(self, values):
         res = super().write(values)

@@ -33,6 +33,20 @@ class AccountMove(models.Model):
         for move in self:
             move.is_timeline = move.invoice_payment_term_id.name == "Echéancier de paiement"
 
+    @api.model
+    def create(self, vals):
+        if vals.get("invoice_origin"):
+            sale = self.env["sale.order"].search(
+                [("name", "=", vals["invoice_origin"])]
+            )
+            if sale:
+                vals.update(
+                    {
+                        "payment_instrument_id": sale.payment_instrument_id.id,
+                    }
+                )
+        return super().create(vals)
+
     def write(self, values):
         res = super().write(values)
         self._process_timeline(validate_timeline=False)

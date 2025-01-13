@@ -81,3 +81,8 @@ class AccountMove(models.Model):
                     payment = self.env["account.payment"].create(vals)
                     payment.action_register_payment()
         return res
+
+    def create_payment_vals_dict(self):
+        res = super().create_payment_vals_dict()
+        res["payment_instrument_id"] = self.payment_instrument_id.id
+        return res
