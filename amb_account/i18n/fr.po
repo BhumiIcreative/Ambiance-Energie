@@ -1,0 +1,590 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* amb_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-13 04:54+0000\n"
+"PO-Revision-Date: 2025-01-13 04:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"***\n"
+"                            <br/>\n"
+"                            *** Quote no."
+msgstr ""
+"***\n"
+"                            <br/>\n"
+"                            *** Devis n°"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "*** Purchase order no."
+msgstr "*** Bon de commande n°"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "- Siren number"
+msgstr "- N° siren "
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "- Identification"
+msgstr "- Identification"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "- Siren number:"
+msgstr "- N° siren"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<br/>\n"
+"                                        Tél:"
+msgstr ""
+"<br/>\n"
+"                                        Tel:"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<br/>\n"
+"                                    Tél:"
+msgstr ""
+"<br/>\n"
+"                                    Tel:"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<br/>\n"
+"                                <span class=\"small-text\">Qualibois</span>"
+msgstr ""
+"<br/>\n"
+"                                <span class=\"small-text\">Qualibois</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<br/>\n"
+"                                <span class=\"small-text\">RC and ten-year guarantee :</span>"
+msgstr ""
+"<br/>\n"
+"                                <span class=\"small-text\">RC et garantie décennale :</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                                    <strong>Amount</strong>\n"
+"                                                </small>"
+msgstr ""
+"<small>\n"
+"                                                    <strong>Montante</strong>\n"
+"                                                </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                                    <strong>Base HT</strong>\n"
+"                                                </small>"
+msgstr ""
+"<small>\n"
+"                                                    <strong>Base HT</strong>\n"
+"                                                </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                                    <strong>Due date</strong>\n"
+"                                                </small>"
+msgstr ""
+"<small>\n"
+"                                                    <strong>Date d'échéance</strong>\n"
+"                                                </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                                    <strong>Payment method</strong>\n"
+"                                                </small>"
+msgstr ""
+"<small>\n"
+"                                                    <strong>Mode de paiement</strong>\n"
+"                                                </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                                    <strong>Rate</strong>\n"
+"                                                </small>"
+msgstr ""
+"<small>\n"
+"                                                    <strong>Taux</strong>\n"
+"                                                </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                                    <strong>VAT price</strong>\n"
+"                                                </small>"
+msgstr ""
+"<small>\n"
+"                                                    <strong>prix TVA</strong>\n"
+"                                                </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                            <strong>Still to pay</strong>\n"
+"                                        </small>"
+msgstr ""
+"<small>\n"
+"                                            <strong>Reste à payer</strong>\n"
+"                                        </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                            <strong>Total TTC</strong>\n"
+"                                        </small>"
+msgstr ""
+"<small>\n"
+"                                            <strong>Total TTC</strong>\n"
+"                                        </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                        <ins>Comments:</ins>\n"
+"                                    </small>"
+msgstr ""
+"<small>\n"
+"                                        <ins>Commentaires:</ins>\n"
+"                                    </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                    <ins>Comments:</ins>\n"
+"                                </small>"
+msgstr ""
+"<small>\n"
+"                                    <ins>Commentaires:</ins>\n"
+"                                </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                <strong>Discount %</strong>\n"
+"                            </small>"
+msgstr ""
+"<small>\n"
+"                                <strong>Rabais %</strong>\n"
+"                            </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                <strong>Qty</strong>\n"
+"                            </small>"
+msgstr ""
+"<small>\n"
+"                                <strong>Qté</strong>\n"
+"                            </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                <strong>Ref</strong>\n"
+"                            </small>"
+msgstr ""
+"<small>\n"
+"                                <strong>Réf</strong>\n"
+"                            </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                <strong>Subtotal</strong>\n"
+"                            </small>"
+msgstr ""
+"<small>\n"
+"                                <strong>Sous-total</strong>\n"
+"                            </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                <strong>Unit price excluding tax</strong>\n"
+"                            </small>"
+msgstr ""
+"<small>\n"
+"                                <strong>Prix unit HT</strong>\n"
+"                            </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                <strong>VAT</strong>\n"
+"                            </small>"
+msgstr ""
+"<small>\n"
+"                                <strong>TVA</strong>\n"
+"                            </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"<small>\n"
+"                                <strong>Wording</strong>\n"
+"                            </small>"
+msgstr ""
+"<small>\n"
+"                                <strong>Libellé</strong>\n"
+"                            </small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "<small>Total HT</small>"
+msgstr "<small>Total HT</small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "<small>VAT amount</small>"
+msgstr "<small>Montant TVA</small>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<span style=\"font-style: oblique; font-size: smaller;\">Info taxes</span>"
+msgstr "<span style=\"font-style: oblique; font-size: smaller;\">Info taxes</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<span>Credit</span>"
+msgstr "<span>Crédit</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<span>Debit</span>"
+msgstr "<span>Débit</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "<span>Invoice</span>"
+msgstr "<span>Facture</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<span>Partner Account</span>"
+msgstr "<span>Compte Partenaire</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<span>Partner</span>"
+msgstr "<span>Partenaire</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<span>Wording</span>"
+msgstr "<span>Libellé</span>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<strong>Company :</strong>"
+msgstr "<strong>Société :</strong>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<strong>Date :</strong>"
+msgstr "<strong>Date :</strong>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid ""
+"<strong>Journal :</strong>\n"
+"                                <br/>"
+msgstr ""
+"<strong>Journal :</strong>\n"
+"                                <br/>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid ""
+"<strong>Point of sale :</strong>\n"
+"                                <br/>"
+msgstr ""
+"<strong>Point de vente :</strong>\n"
+"                                <br/>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.report_document_pieces
+msgid "<strong>Reference :</strong>"
+msgstr "<strong>Reference :</strong>"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "<strong>Tel:</strong>"
+msgstr "<strong>Tel:</strong>"
+
+#. module: amb_account
+#: model:ir.actions.report,name:amb_account.new_action
+msgid "Account Pieces"
+msgstr "Pièces de compte"
+
+#. module: amb_account
+#: model:ir.model.fields,help:amb_account.field_account_bank_statement_line__purchase_stock_picking_bill_id
+#: model:ir.model.fields,help:amb_account.field_account_move__purchase_stock_picking_bill_id
+#: model:ir.model.fields,help:amb_account.field_account_payment__purchase_stock_picking_bill_id
+msgid "Auto-complete from a Stock picking."
+msgstr "Remplissage automatique à partir d'une sélection de stock."
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "Canceled Purchase Orders No."
+msgstr "Numéro de bons de commande annulés"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__client_situation
+#: model:ir.model.fields,field_description:amb_account.field_account_move__client_situation
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__client_situation
+msgid "Client situation"
+msgstr "Situation des clients"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__comment
+#: model:ir.model.fields,field_description:amb_account.field_account_move__comment
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__comment
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__current_subscription
+#: model:ir.model.fields,field_description:amb_account.field_account_move__current_subscription
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__current_subscription
+msgid "Current subscription wood pellet"
+msgstr "Abonnement en cours à pellets de bois"
+
+#. module: amb_account
+#: model:account.journal,name:amb_account.account_journal_edf_prime
+msgid "EDF prime"
+msgstr "Prime EDF"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+msgid "Export informations"
+msgstr "Exporter les informations"
+
+#. module: amb_account
+#: model:ir.model.fields.selection,name:amb_account.selection__account_move__type_invoice__gran
+msgid "Granule"
+msgstr "Granule"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "Head office :"
+msgstr "Siège social :"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__commissioning_identification
+#: model:ir.model.fields,field_description:amb_account.field_account_move__commissioning_identification
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__commissioning_identification
+msgid "Identification"
+msgstr "Identification"
+
+#. module: amb_account
+#. odoo-python
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid "Invoice amount is greater than balance subscription."
+msgstr "Le montant de la facture est supérieur au solde de l'abonnement."
+
+#. module: amb_account
+#: model:ir.model,name:amb_account.model_account_move
+msgid "Journal Entry"
+msgstr "Entrée de journal"
+
+#. module: amb_account
+#: model:ir.model,name:amb_account.model_account_move_line
+msgid "Journal Item"
+msgstr "Article de journal"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__origin_so
+#: model:ir.model.fields,field_description:amb_account.field_account_move__origin_so
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__origin_so
+msgid "Origin So"
+msgstr "Origine donc"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__package_count
+#: model:ir.model.fields,field_description:amb_account.field_account_move__package_count
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__package_count
+msgid "Package count"
+msgstr "Nombre de colis"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+msgid "Package info"
+msgstr "Informations sur le forfait"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.amb_account_move_view_form
+msgid "Package informations"
+msgstr "Informations sur le forfait"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"Page:\n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+msgstr ""
+"Page:\n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__oci_point_of_sale
+#: model:ir.model.fields,field_description:amb_account.field_account_move__oci_point_of_sale
+#: model:ir.model.fields,field_description:amb_account.field_account_move_line__oci_point_of_sale
+msgid "Point of sale"
+msgstr "Point de vente"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__port
+#: model:ir.model.fields,field_description:amb_account.field_account_move__port
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__port
+msgid "Port"
+msgstr "Port"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "Price request"
+msgstr "Demande de prix"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "Purchase Order No."
+msgstr "Numéro de bon de commande"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__sent_by
+#: model:ir.model.fields,field_description:amb_account.field_account_move__sent_by
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__sent_by
+msgid "Sent by"
+msgstr "Envoyé par"
+
+#. module: amb_account
+#: model:ir.model.fields.selection,name:amb_account.selection__account_move__type_invoice__serv
+msgid "Service"
+msgstr "Service"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__shipped
+#: model:ir.model.fields,field_description:amb_account.field_account_move__shipped
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__shipped
+msgid "Shipped"
+msgstr "Expédié"
+
+#. module: amb_account
+#: model:ir.model.fields.selection,name:amb_account.selection__account_move__type_invoice__std
+msgid "Standard"
+msgstr "Standard"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__purchase_stock_picking_bill_id
+#: model:ir.model.fields,field_description:amb_account.field_account_move__purchase_stock_picking_bill_id
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__purchase_stock_picking_bill_id
+msgid "Stock picking"
+msgstr "Sélection de titres"
+
+#. module: amb_account
+#: model:ir.model.fields.selection,name:amb_account.selection__account_move__type_invoice__sto
+msgid "Stove"
+msgstr "Stove"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__type_invoice
+#: model:ir.model.fields,field_description:amb_account.field_account_move__type_invoice
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__type_invoice
+msgid "Type invoice"
+msgstr "Tapez la facture"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__volume
+#: model:ir.model.fields,field_description:amb_account.field_account_move__volume
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__volume
+msgid "Volume"
+msgstr "Volume"
+
+#. module: amb_account
+#: model:ir.model.fields,field_description:amb_account.field_account_bank_statement_line__weight
+#: model:ir.model.fields,field_description:amb_account.field_account_move__weight
+#: model:ir.model.fields,field_description:amb_account.field_account_payment__weight
+msgid "Weight"
+msgstr "Poids"
+
+#. module: amb_account
+#. odoo-python
+#: code:addons/amb_account/models/account_move.py:0
+#, python-format
+msgid ""
+"You can't confirm the quotation, amount in subscription is not sufficient"
+msgstr ""
+"Vous ne pouvez pas confirmer le devis, le montant de la souscription n'est pas suffisant"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "Your reference"
+msgstr "Votre référence"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid "of"
+msgstr "de"
+
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"∙\n"
+"                                        Siret :"
+msgstr ""
+"∙\n"
+"                                        Siret :"
+#. module: amb_account
+#: model_terms:ir.ui.view,arch_db:amb_account.custom_external_layout_standard
+msgid ""
+"∙\n"
+"                                    Siret :"
+msgstr ""
+"∙\n"
+"                                    Siret :"

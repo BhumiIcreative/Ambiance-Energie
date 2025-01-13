@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!--Inherited the existing account move form view and fields-->
     <record id="amb_account_move_view_form" model="ir.ui.view">
         <field name="priority" eval="10"/>
         <field name="name">amb.account.move.form</field>
@@ -7,18 +7,17 @@
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='ref']" position="after">
-                 <field name="type_invoice" invisible="move_type not in ['out_invoice', 'out_refund']"
+                <field name="type_invoice" invisible="move_type not in ['out_invoice', 'out_refund']"
                        required="move_type == 'out_invoice' or move_type == 'out_refund'"/>
-                 
+                <field name="current_subscription" invisible="type_invoice != 'gran'"/>
                 <field name="client_situation" widget="monetary"
-                       invisible="client_situation &lt;= 0 or move_type not in ['out_invoice', 'out_refund']"
+                       invisible="client_situation &gt;= 0 or move_type not in ['out_invoice', 'out_refund']"
                        class="text-danger"/>
                 <field name="client_situation" widget="monetary" class="text-success"
-                       invisible="client_situation &gt;= 0 or move_type not in ['out_invoice', 'out_refund']"/>
+                       invisible="client_situation &lt;= 0 or move_type not in ['out_invoice', 'out_refund']"/>
                 <field name="client_situation" widget="monetary"
                        invisible="move_type not in ['out_invoice', 'out_refund']"/>
-               <field name="commissioning_identification"/>
-
+                <field name="commissioning_identification"/>
                 <field name="oci_point_of_sale" invisible="move_type not in ['out_invoice', 'out_refund']"
                        required="move_type == 'out_invoice' or move_type == 'out_refund'"/>
             </xpath>
@@ -41,15 +40,9 @@
                     </group>
                 </page>
             </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="before">
-                <field name="discount_fixed"/>
-            </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
-                <attribute name="digits">"(2, 2)"</attribute>
-            </xpath>
         </field>
     </record>
-
+    <!--Inherited the existing account move tree view and fields-->
     <record id="account.view_invoice_tree" model="ir.ui.view">
         <field name="name">amb.account.tree</field>
         <field name="model">account.move</field>
@@ -91,7 +84,6 @@
                 <field name="payment_state" optional="hide"/>
                 <field name="move_type" invisible="context.get('default_type', True)"/>
             </tree>
-
         </field>
     </record>
 </odoo>
