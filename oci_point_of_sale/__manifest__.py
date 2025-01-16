@@ -12,4 +12,5 @@
         'security/ir.model.access.csv'
     ],
     'application': False,
+    'post_init_hook':'post_init_hook'
 }
