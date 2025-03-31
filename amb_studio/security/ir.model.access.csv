@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+amb_studio.access_point_de_vente,access_point_de_vente,amb_studio.model_point_de_vente,base.group_user,1,1,1,1
+amb_studio.access_oci_type_produit_contact,access_oci_type_produit_contact,amb_studio.model_oci_type_produit_contact,base.group_user,1,1,1,1
+amb_studio.access_oci_provenance_contact,access_oci_provenance_contact,amb_studio.model_oci_provenance_contact,base.group_user,1,1,1,1
+amb_studio.access_technicien,access_technicien,amb_studio.model_technicien,base.group_user,1,1,1,1
+amb_studio.access_region,access_region,amb_studio.model_region,base.group_user,1,1,1,1
