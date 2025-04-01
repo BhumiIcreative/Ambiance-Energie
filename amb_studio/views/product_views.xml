@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_product_expense_kanban_view" model="ir.ui.view">
+        <field name="name">product.product.kanban.expense</field>
+        <field name="inherit_id" ref="product.product_kanban_view"/>
+        <field name="model">product.product</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='product_lst_price']/field[@name='lst_price']" position="attributes">
+                  <attribute name="widget">monetary</attribute>
+            </xpath>
+            <xpath expr="//div[@name='product_lst_price']/field[@name='lst_price']" position="after">
+                 Qté: <field name="qty_available"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

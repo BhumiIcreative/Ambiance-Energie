@@ -20,10 +20,15 @@
         "sale",
         "sale_stock",
         "stock",
+        "hr_expense",
+        "amb_stock",
     ],
     # always loaded
     "data": [
         "security/ir.model.access.csv",
+        "views/account_tax_view.xml",
+        "views/product_views.xml",
+        "views/stock_picking_views.xml",
     ],
     "license": "LGPL-3",
 }
