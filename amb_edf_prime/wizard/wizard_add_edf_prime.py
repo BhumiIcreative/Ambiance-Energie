@@ -6,9 +6,9 @@ class WizardAddEdfPrime(models.TransientModel):
     _description = "Edf Prime Wizard"
     _inherit = "script.wizard"
 
-    amount = fields.Float("Amount")
-    res_model = fields.Char("Model")
-    res_id = fields.Integer("Res id")
+    amount = fields.Float(string="Amount")
+    res_model = fields.Char(string="Model")
+    res_id = fields.Integer(string="Res Id")
 
     def confirm(self):
         """

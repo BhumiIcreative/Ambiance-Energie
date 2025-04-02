@@ -1,8 +1,4 @@
 from odoo import models
-import logging
-
-log = logging.getLogger(__name__).info
-
 
 class AccountMove(models.Model):
     _name = "account.move"

@@ -8,7 +8,7 @@ class AbstractEdfPrimeInput(models.AbstractModel):
 
     edf_prime = fields.Monetary(string="Prime EDF", readonly=True)
     edf_prime_locked = fields.Boolean(
-        "Prime EDF locked", readonly=True, copy=False
+        "Prime EDF Locked", readonly=True, copy=False
     )
 
     currency_id = fields.Many2one("res.currency")

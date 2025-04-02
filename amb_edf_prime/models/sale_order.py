@@ -1,9 +1,5 @@
 from odoo import api, models
 
-import logging
-
-log = logging.getLogger(__name__).info
-
 
 class SaleOrder(models.Model):
     _name = "sale.order"
