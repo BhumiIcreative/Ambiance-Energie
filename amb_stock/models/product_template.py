@@ -1,16 +1,13 @@
-import logging
+
 
 from odoo import models, fields, api, _
-
-_logger = logging.getLogger(__name__)
-log = _logger.info
 
 
 class productTemplate(models.Model):
     _inherit = 'product.template'
 
-    free_qty = fields.Float(string='Saleable quantity', compute='_cpt_custom_qty', store=True, readonly=True)
-    net_qty = fields.Float(string='Net quantity', compute='_cpt_custom_qty', store=True, readonly=True)
+    free_qty = fields.Float(string='Saleable Quantity', compute='_cpt_custom_qty', store=True, readonly=True)
+    net_qty = fields.Float(string='Net Quantity', compute='_cpt_custom_qty', store=True, readonly=True)
     order_qty = fields.Float(string='Order Stock', compute='_cpt_custom_qty', store=True, readonly=True)
 
     @api.depends(

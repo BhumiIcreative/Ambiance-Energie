@@ -1,19 +1,14 @@
-import logging
-
 from odoo import models, fields, api, _
-
-_logger = logging.getLogger(__name__)
-log = _logger.info
 
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
-    free_qty = fields.Float(string='Saleable quantity', compute='_cpt_free_qty', store=True, readonly=True)
-    net_qty = fields.Float(string='Net quantity', compute='_cpt_net_qty', store=True, readonly=True)
+    free_qty = fields.Float(string='Saleable Quantity', compute='_cpt_free_qty', store=True, readonly=True)
+    net_qty = fields.Float(string='Net Quantity', compute='_cpt_net_qty', store=True, readonly=True)
     order_qty = fields.Float(string='Order Stock', compute='_cpt_order_qty', store=True, readonly=True)
-    purchase_order_line_ids = fields.One2many('purchase.order.line', 'product_id', string='Purchase order lines')
-    purchase_order_ids = fields.Many2many('purchase.order', string='Purchase order', compute='_cpt_purchase_order_ids',
+    purchase_order_line_ids = fields.One2many('purchase.order.line', 'product_id', string='Purchase Order Lines')
+    purchase_order_ids = fields.Many2many('purchase.order', string='Purchase Order', compute='_cpt_purchase_order_ids',
                                           store=True)
 
     @api.depends(
