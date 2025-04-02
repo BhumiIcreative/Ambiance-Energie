@@ -1,20 +1,14 @@
-# -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 from odoo import models, fields, _
-
-import logging
-
-_logger = logging.getLogger(__name__)
-log = _logger.info
 
 
 class FileWizard(models.TransientModel):
     _name = "file_wizard"
-    _description = _("File wizard")
+    _description = _("File Wizard")
 
-    file_content = fields.Binary(_("File"), required=True)
-    file_name = fields.Char(_("File name"), required=True)
-    name = fields.Char(_("Name"))
+    file_content = fields.Binary(string="File", required=True)
+    file_name = fields.Char(string="File Name", required=True)
+    name = fields.Char(string="Name")
 
     def open_wizard(self):
         """Opens a form view for the file wizard to allow file download"""

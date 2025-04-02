@@ -1,39 +1,8 @@
 # file_wizard
 
-**Table of Contents**
-
-* Usage
-* Dependencies
-* Issues & Bugs
-* Development
-
----
-
 ## Usage
 
-* The `file_wizard` module allows users to open a form view for downloading files. 
-
----
-
-## Dependencies
-
-### Odoo modules dependencies
-
-| Module         | Technical Name | Why used?                                                                                        |
-|----------------|----------------|--------------------------------------------------------------------------------------------------|
----
-
-### Python library dependenci
-
-* This module doesn't have any python dependencies
-
----
-
-## Limitations, Issues & Bugs
-
-* This module doesn't have any limitations, issues & bugs
-
----
+* The `file_wizard` module allows users to open a form view for downloading files.
 
 ## Development
 
