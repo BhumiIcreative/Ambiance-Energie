@@ -32,7 +32,6 @@ class SaleOrderLine(models.Model):
     @api.depends(
         "product_uom_qty",
         "qty_delivered",
-        "qty_delivered_manual",
         "state",
         "invoice_status",
     )
@@ -43,7 +42,6 @@ class SaleOrderLine(models.Model):
                     record["commande_en_cours"] = (
                         record.product_uom_qty
                         - record.qty_delivered
-                        - record.qty_delivered_manual
                     )
                 else:
                     record["commande_en_cours"] = 0

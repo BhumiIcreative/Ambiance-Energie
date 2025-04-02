@@ -13,7 +13,7 @@
         "l10n_fr",
         "account",
         "purchase_stock",
-        "oci_point_of_sale",
+        "amb_studio",
         "amb_subscription",
         "fields_module",
     ],
