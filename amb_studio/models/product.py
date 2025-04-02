@@ -1,26 +1,26 @@
-# -*- coding: utf-8 -*-
 from odoo import fields, models
 
 
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    field_zxHZP = fields.Many2many(
-        "product.template.attribute.value",
-        string="Valeur caratéristique du modèle produit",
+    field_zxHZP_ids = fields.Many2many(
+        "product.template.attribute.value", 'x_product_template_product_template_attribute_value_rel',
+        string="Characteristic value of the product model",
         copy=False,
         ondelete="cascade",
     )
-    frais_approche_article = fields.Char(string="Frais approche", copy=False)
-    non_remisable_1 = fields.Boolean(string="Non remisable", copy=False)
-    commandes_clients = fields.One2many(
+
+    frais_approche_article = fields.Char(string="Fresh Approach", copy=False)
+    non_remisable_1 = fields.Boolean(string="Non Remisable", copy=False)
+    commandes_clients_ids = fields.One2many(
         "sale.order.line",
         "product_template_id",
         string="Commandes clients",
         copy=False,
         domain=[("commande_en_cours", ">", 0)],
     )
-    stocks = fields.One2many(
+    stocks_ids = fields.One2many(
         "stock.quant",
         "product_tmpl_id",
         string="Stocks",
@@ -28,16 +28,16 @@ class ProductTemplate(models.Model):
         domain=[("location_id.usage", "=", "internal")],
     )
     rf_fournisseur = fields.Char(
-        string="Réf fournisseur",
+        string="Réf Fournisseur",
         copy=False,
         readonly=True,
         help="This vendor's product code will be used when printing a request for quotation. Keep empty to use the internal one.",
         related="product_variant_id.seller_ids.product_code",
     )
-    field_jPwOa = fields.One2many(
+    field_jPwOa_ids = fields.One2many(
         "stock.move",
         "product_tmpl_id",
-        string="Commandes en cours",
+        string="Commandes en Cours",
         copy=False,
         readonly=True,
         domain=[
@@ -49,7 +49,7 @@ class ProductTemplate(models.Model):
         ],
     )
     dernier_prix_dachat_fournisseur = fields.Float(
-        string="Dernier prix d'achat fournisseur",
+        string="Dernier Prix D'achat Fournisseur",
         copy=False,
         readonly=True,
         help="The price to purchase a product",
@@ -60,25 +60,25 @@ class ProductTemplate(models.Model):
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    field_VojtB = fields.Monetary(string="New Monétaire", copy=False)
-    commandes_clients = fields.One2many(
+    field_VojtB = fields.Monetary(string="New Monetary", copy=False)
+    commandes_clients_ids = fields.One2many(
         "sale.order.line",
         "product_id",
-        string="Commandes clients",
+        string="Commandes Clients",
         copy=False,
         domain=[("commande_en_cours", ">", 0)],
     )
-    stocks_1 = fields.One2many(
+    stocks_1_ids = fields.One2many(
         "stock.quant",
         "product_id",
-        string="stocks",
+        string="Stocks",
         copy=False,
         domain=[("location_id.usage", "=", "internal")],
     )
-    commandes_en_cours = fields.One2many(
+    commandes_en_cours_ids = fields.One2many(
         "stock.move",
         "product_id",
-        string="Commandes en cours",
+        string="Commandes en Cours",
         copy=False,
         readonly=True,
         domain=[

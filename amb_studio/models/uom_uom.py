@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import fields, models
 
 
@@ -6,7 +5,7 @@ class UomUom(models.Model):
     _inherit = "uom.uom"
 
     uom_id__product_template_count = fields.Integer(
-        string="Unit of Measure count",
+        string="Unit of Measure Count",
         copy=False,
         compute="_compute_uom_id__product_template_count",
     )

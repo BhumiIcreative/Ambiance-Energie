@@ -1,29 +1,28 @@
-# -*- coding: utf-8 -*-
 from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    pos_vendeur = fields.Many2one(
+    pos_vendeur_id = fields.Many2one(
         "point_de_vente",
-        string="pos_vendeur",
+        string="Pos Vendeur",
         copy=False,
         readonly=True,
         ondelete="set null",
         related="user_id.point_de_vente",
     )
-    oci_saleorder_yourref = fields.Char(string="Votre référence", copy=False)
+    oci_saleorder_yourref = fields.Char(string="Votre Référence", copy=False)
     oci_saleorder_refcustomer = fields.Char(
-        string="Référence client", copy=False, readonly=True, related="partner_id.ref"
+        string="Référence Client", copy=False, readonly=True, related="partner_id.ref"
     )
-    field_pMXi2 = fields.Many2one(
+    field_pMXi2_id = fields.Many2one(
         "hr.employee", string="Employé", copy=False, ondelete="set null"
     )
-    field_xAmex = fields.Many2many(
+    field_xAmex_ids = fields.Many2many(
         "hr.employee", string="Employé", copy=False, ondelete="cascade"
     )
-    oci_saleorder_technicien = fields.Many2one(
+    oci_saleorder_technicien_id = fields.Many2one(
         "hr.employee", string="Technicien", copy=False, ondelete="set null"
     )
     adresse = fields.Char(

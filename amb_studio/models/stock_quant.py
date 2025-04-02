@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import fields, models
 
 
@@ -9,25 +8,25 @@ class StockQuant(models.Model):
         string="Réservé", copy=False, readonly=True, compute="_compute_rserv"
     )
     dispo_la_vente = fields.Float(
-        string="Dispo à la vente",
+        string="Dispo à la Vente",
         copy=False,
         readonly=True,
         compute="_compute_dispo_la_vente",
     )
     commandes_fournisseurs_en_cours = fields.Float(
-        string="Commandes fournisseurs en cours",
+        string="Commandes Fournisseurs en Cours",
         copy=False,
         readonly=True,
         compute="_compute_commandes_fournisseurs_en_cours",
     )
     quantit_terme = fields.Float(
-        string="Quantité à terme",
+        string="Quantité à Terme",
         copy=False,
         readonly=True,
         compute="_compute_quantit_terme",
     )
     type_article = fields.Selection(
-        string="Type article",
+        string="Type Article",
         copy=False,
         readonly=True,
         tracking="100",

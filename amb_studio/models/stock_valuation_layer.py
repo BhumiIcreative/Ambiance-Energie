@@ -1,15 +1,15 @@
-# -*- coding: utf-8 -*-
 from odoo import fields, models
 
 
 class StockValuationLayer(models.Model):
     _inherit = "stock.valuation.layer"
 
-    field_RFPir = fields.Many2one(
-        "stock.warehouse", string="Entrepôt", copy=False, ondelete="set null"
+    field_RFPir_id = fields.Many2one(
+        "stock.warehouse", string="Warehouse", copy=False, ondelete="set null"
     )
-    field_pkvcm = fields.Many2many(
-        "stock.location", string="Emplacements de stock", copy=False, ondelete="cascade"
+    field_pkvcm_ids = fields.Many2many(
+        "stock.location", 'x_stock_location_stock_valuation_layer_rel', string="Emplacements de stock", copy=False,
+        ondelete="cascade"
     )
     magasin = fields.Char(
         string="Magasin", copy=False, readonly=True, compute="_compute_magasin"
