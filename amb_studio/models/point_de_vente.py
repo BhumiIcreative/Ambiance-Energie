@@ -11,6 +11,6 @@ class PointDeVente(models.Model):
         "res.company", string="Company", copy=False, ondelete="set null"
     )
     entrepot_id = fields.Many2one(
-        "stock.warehouse", string="Entrepot", copy=False, ondelete="set null"
+        "stock.warehouse", string="Warehouse", copy=False, ondelete="set null"
     )
-    qrcode_payment = fields.Binary(string="QR Code Paiement", copy=False)
+    qrcode_payment = fields.Binary(string="QR Code Payment", copy=False)

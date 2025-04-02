@@ -5,10 +5,10 @@ class StockMoveLine(models.Model):
     _inherit = "stock.move.line"
 
     field_RucZV = fields.Char(
-        string="New Champ Lié", copy=False, readonly=True, related="owner_id.name"
+        string="New Field Linked", copy=False, readonly=True, related="owner_id.name"
     )
     oci_description_achat = fields.Text(
-        string="Description Achat",
+        string="Description Purchase",
         copy=False,
         readonly=True,
         related="move_id.purchase_line_id.name",

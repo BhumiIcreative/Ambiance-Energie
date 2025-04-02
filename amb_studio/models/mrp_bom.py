@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class MrpBomLine(models.Model):
@@ -22,19 +22,21 @@ class MrpBomLine(models.Model):
         "res.currency", string="Currency", copy=False, ondelete="set null"
     )
     cot_total = fields.Monetary(
-        string="Coût Total", copy=False, readonly=True, compute="_compute_cot_total"
+        string="Total Cost", copy=False, readonly=True, compute="_compute_cot_total"
     )
     prix_de_vente_total = fields.Monetary(
-        string="Prix De Vente Total",
+        string="Total Selling Price",
         copy=False,
         readonly=True,
         compute="_compute_prix_de_vente_total",
     )
 
+    @api.depends("product_qty", "cot_unitaire")
     def _compute_cot_total(self):
         for record in self:
             record["cot_total"] = record.cot_unitaire * record.product_qty
 
+    @api.depends("prix_de_vente_unitaire", "product_qty")
     def _compute_prix_de_vente_total(self):
         for record in self:
             record["prix_de_vente_total"] = (

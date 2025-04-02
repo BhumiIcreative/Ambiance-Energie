@@ -16,15 +16,17 @@ class AccountFullReconcile(models.Model):
         string="Count AML", copy=False, readonly=True, compute="_compute_count_aml"
     )
 
-    @api.depends('reconciled_line_ids')
+    @api.depends("reconciled_line_ids")
     def _compute_dernire_ecriture_comptable(self):
         for record in self.filtered(lambda x: x.reconciled_line_ids):
             last_aml = record.reconciled_line_ids[0]
-            for aml in record.reconciled_line_ids.filtered(lambda x: x.date > last_aml.date):
+            for aml in record.reconciled_line_ids.filtered(
+                lambda x: x.date > last_aml.date
+            ):
                 last_aml = aml
-            record["dernire_ecriture_comptable"] = last_aml
+            record["dernire_ecriture_comptable_id"] = last_aml
 
-    @api.depends('reconciled_line_ids')
+    @api.depends("reconciled_line_ids")
     def _compute_count_aml(self):
         for record in self:
             record["count_aml"] = len(record.reconciled_line_ids)
