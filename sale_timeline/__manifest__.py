@@ -15,7 +15,6 @@
     ],
     'data': [
         'data/account_payment_term.xml',
-        'data/account_journal.xml',
         'security/ir.model.access.csv',
         'views/account_move_views.xml',
         'views/account_payment_views.xml',
