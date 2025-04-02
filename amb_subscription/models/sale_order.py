@@ -14,6 +14,7 @@ class SaleOrder(models.Model):
         compute='_get_subscription',
         store=True)
 
+
     @api.depends('type_order', 'partner_id')
     def _get_subscription(self):
         """
@@ -26,6 +27,7 @@ class SaleOrder(models.Model):
                 ('date_start', '<', datetime.datetime.now()),
                 ('date_end', '>', datetime.datetime.now()),
             ])
+
 
     def action_confirm(self):
         """
@@ -87,3 +89,5 @@ class SaleOrder(models.Model):
                     vals = self.env['sale.order.line']._add_missing_default_values(
                         vals)
                     self.order_line = [(0, 0, vals)]
+        # else:
+        #     raise UserError(_("There are no product named 'GRANULE' "))

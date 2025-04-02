@@ -49,6 +49,7 @@
                 <field name="name"/>
                 <filter domain="[['active','=',True]]" name="active" string="Active"/>
                 <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
             </search>
         </field>
     </record>

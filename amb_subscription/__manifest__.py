@@ -9,14 +9,13 @@
     # for the full list
     "category": "subscription",
     "version": "17.0.1.0.0",
-    "application": True,
+    "application": False,
     # any module necessary for this one to work correctly
     "depends": [
         "sale_management",
         "account",
         "sale_timeline",
         "l10n_fr",
-        "account_avatax_sale",
         'amb_account',
         'amb_sale',
     ],

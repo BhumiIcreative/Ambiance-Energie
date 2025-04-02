@@ -28,15 +28,17 @@ class ScriptTools(models.TransientModel):
             )
 
         # Return action dictionary for opening a single record
-        return {
+        b = {
             "type": "ir.actions.act_window",
             "name": name or record_id._name,
             "res_model": record_id._name,
-            "views": [(False, "form")],
+            # 'view_type': 'form',
+            'view_mode': 'form',
             "res_id": record_id.id,
             "target": target,
             "context": context,
         }
+        return b
 
     def open_records(
         self,

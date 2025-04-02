@@ -8,6 +8,7 @@ class ScriptWizard(models.TransientModel):
     _description = _("Script wizard")
 
     def open_wizard(self, name="", target="new", context=dict()):
+
         # Opens the script tools wizard with specified parameters.
         return self.env["script.tools"].open_wizard(
             self,
@@ -18,6 +19,6 @@ class ScriptWizard(models.TransientModel):
 
     def create_and_open(self, vals, name="", target="new", context=dict()):
         """Creates a new record and opens its associated script tools wizard."""
-        return self.create(vals).open_wizard(
+        return  self.create(vals).open_wizard(
             name=name or self._description, target=target, context=context
         )

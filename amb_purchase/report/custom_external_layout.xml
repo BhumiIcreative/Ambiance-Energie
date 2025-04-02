@@ -42,20 +42,20 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <span class="medium-text" t-field="company.x_studio_oci_conf_juridique"/>
+<!--                            <span class="medium-text" t-field="company.x_studio_oci_conf_juridique"/>-->
                             <br/>
                             <strong>
                                 <span t-esc="company.website.replace('http://', '').replace('https://', '')"/>
                             </strong>
                             <br/>
-                            <span class="small-text">Qualibois </span>
-                            <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>
-                            <br/>
-                            <span class="small-text">RC and ten-year guarantee : </span>
-                            <span class="small-text" t-field="company.x_studio_assurance"/>
-                            <br/>
-                            <strong class="medium-text"><span class="small-text" t-field="company.x_studio_oci_conf_rib"/> <br/>
-                            <span class="small-text" t-field="company.x_studio_oci_conf_bic"/></strong>
+<!--                            <span class="small-text">Qualibois </span>-->
+<!--                            <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>-->
+<!--                            <br/>-->
+<!--                            <span class="small-text">RC and ten-year guarantee : </span>-->
+<!--                            <span class="small-text" t-field="company.x_studio_assurance"/>-->
+<!--                            <br/>-->
+<!--                            <strong class="medium-text"><span class="small-text" t-field="company.x_studio_oci_conf_rib"/> <br/>-->
+<!--                            <span class="small-text" t-field="company.x_studio_oci_conf_bic"/></strong>-->
                         </div>
                     </div>
                     <table class="table table-sm table-bordered border-dark" style="width: 80%; margin-left: auto; margin-right: auto;">
@@ -104,8 +104,8 @@
                                 <span t-field="company.second_partner_id.street"/> ∙
                                 <span t-field="company.second_partner_id.zip"/>
                                 <span t-field="company.second_partner_id.city"/> ∙
-                                            Siret :
-                                <span t-field="company.second_partner_id.x_studio_siret_contact"/>
+<!--                                            Siret :-->
+<!--                                <span t-field="company.second_partner_id.x_studio_siret_contact"/>-->
                                 <br/>
                                             Tél:
 
@@ -194,12 +194,14 @@
     <div class="footer o_standard_footer" style="font-size:15px;">
         <div class="text-center" style="border-top: 1px solid black;font-size:12px">
             <ul style="list-style:none; margin:0; text-align:center;">
-                <li><t t-esc="company.x_studio_oci_conf_formejurid"/> - Siren number: <t t-esc="company.x_studio_oci_conf_siren"/> - APE <t t-esc="company.ape"/> - Identification
+                <li>
+<!--                    <t t-esc="company.x_studio_oci_conf_formejurid"/> - Siren number: <t t-esc="company.x_studio_oci_conf_siren"/> - APE <t t-esc="company.ape"/> - Identification-->
                     <t t-esc="company.country_id.vat_label or 'Tax ID'"/>:
 
                     <span t-field="company.vat"/>
                 </li>
-                <li t-if="company.siret">Head office : <span t-field="company.x_studio_oci_conf_juridique"/> ∙
+                <li t-if="company.siret">
+<!--                    Head office : <span t-field="company.x_studio_oci_conf_juridique"/> ∙-->
                     <span t-field="company.street"/> ∙
                     <span t-field="company.street2"/>
                     <span t-field="company.zip"/> ∙

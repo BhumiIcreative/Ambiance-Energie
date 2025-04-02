@@ -1,0 +1,259 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* oci_point_of_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 05:06+0000\n"
+"PO-Revision-Date: 2025-01-16 05:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_search
+msgid "Active"
+msgstr "Actif"
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__active
+msgid "Archive"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__oci_contact_pof_societe
+msgid "Company"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__entrepot
+#: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_form
+msgid "Entrepot"
+msgstr "Entrepôt"
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__id
+msgid "ID"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_has_error
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model,name:oci_point_of_sale.model_oci_point_of_sale
+msgid "OCI Point of Sale"
+msgstr "Point de vente OCI"
+
+#. module: oci_point_of_sale
+#: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_form
+#: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_tree
+msgid "Point de vente"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.actions.act_window,name:oci_point_of_sale.oci_point_of_sale_action
+#: model_terms:ir.ui.view,arch_db:oci_point_of_sale.oci_point_of_sale_view_search
+msgid "Point of Sale"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.ui.menu,name:oci_point_of_sale.contact_menu_oci_point_of_sale
+msgid "Point of sale"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__qrcode_payment
+msgid "QR Code Payment"
+msgstr "Paiement par code QR"
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,field_description:oci_point_of_sale.field_oci_point_of_sale__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: oci_point_of_sale
+#: model:ir.model.fields,help:oci_point_of_sale.field_oci_point_of_sale__website_message_ids
+msgid "Website communication history"
+msgstr ""

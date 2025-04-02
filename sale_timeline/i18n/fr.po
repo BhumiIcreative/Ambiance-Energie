@@ -1,0 +1,204 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_timeline
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 08:58+0000\n"
+"PO-Revision-Date: 2025-01-16 08:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_bank_statement_line__advance
+#: model:ir.model.fields,field_description:sale_timeline.field_account_move__advance
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__advance
+msgid "Advance"
+msgstr "Avance"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_order__advance_payment_instrument_id
+msgid "Advance Payment Method"
+msgstr "Méthode de paiement anticipé"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_bank_statement_line__advance_payment_ids
+#: model:ir.model.fields,field_description:sale_timeline.field_account_move__advance_payment_ids
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__advance_payment_ids
+msgid "Advance Payments"
+msgstr "Paiements anticipés"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_bank_statement_line__amount_missing_from_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_move__amount_missing_from_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__amount_missing_from_timeline
+msgid "Amount Missing from Payment Timeline"
+msgstr "Montant manquant dans le délai de paiement"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_order__amount_missing_from_timeline
+msgid "Amount Out of Payment Timeline"
+msgstr "Montant du délai de paiement"
+
+#. module: sale_timeline
+#: model_terms:ir.ui.view,arch_db:sale_timeline.inherit_amb_sale_view_form
+msgid "Confirmer payment"
+msgstr ""
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__create_uid
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_timeline_payment_instrument__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__create_date
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_timeline_payment_instrument__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__date
+msgid "Date"
+msgstr ""
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__advance
+msgid "Deposit"
+msgstr "Dépôt"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__display_name
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_timeline_payment_instrument__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: sale_timeline
+#: model:account.journal,name:sale_timeline.subscription_default_journal
+msgid "Echeancier"
+msgstr ""
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__id
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_timeline_payment_instrument__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__ac_id
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment_term__move_id
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_bank_statement_line__is_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_move__is_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__is_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_order__is_timeline
+msgid "Is Timeline ?"
+msgstr "Est-ce que la Chronologie ?"
+
+#. module: sale_timeline
+#: model:ir.model,name:sale_timeline.model_account_move
+msgid "Journal Entry"
+msgstr "Entrée de journal"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__write_uid
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_timeline_payment_instrument__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__write_date
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_timeline_payment_instrument__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__move_id
+msgid "Move"
+msgstr "Se déplacer"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_timeline_payment_instrument__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_bank_statement_line__payment_instrument_id
+#: model:ir.model.fields,field_description:sale_timeline.field_account_move__payment_instrument_id
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__payment_instrument_id
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_order__payment_instrument_id
+msgid "Payment Method"
+msgstr "Mode de paiement"
+
+#. module: sale_timeline
+#: model:ir.model,name:sale_timeline.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Conditions de paiement"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_bank_statement_line__payment_timeline_ids
+#: model:ir.model.fields,field_description:sale_timeline.field_account_move__payment_timeline_ids
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__payment_timeline_ids
+#: model:ir.model.fields,field_description:sale_timeline.field_sale_order__payment_timeline_ids
+msgid "Payment Timeline"
+msgstr "Délai de paiement"
+
+#. module: sale_timeline
+#: model:ir.model,name:sale_timeline.model_sale_timeline_payment_instrument
+msgid "Payment instrument"
+msgstr "Instrument de paiement"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__payment_instrument_id
+msgid "Payment method"
+msgstr "Mode de paiement"
+
+#. module: sale_timeline
+#: model:account.payment.term,name:sale_timeline.timeline_payment
+#: model:ir.model,name:sale_timeline.model_payment_timeline
+msgid "Payment timeline"
+msgstr "Délai de paiement"
+
+#. module: sale_timeline
+#: model:ir.model,name:sale_timeline.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_account_payment__oci_point_of_sale
+msgid "Point of sale"
+msgstr "Point de vente"
+
+#. module: sale_timeline
+#: model:ir.model.fields,field_description:sale_timeline.field_payment_timeline__sale_id
+msgid "Sale"
+msgstr "Vente"
+
+#. module: sale_timeline
+#: model:ir.model,name:sale_timeline.model_sale_order
+msgid "Sales Order"
+msgstr "Commande de vente"
+
+#. module: sale_timeline
+#: model_terms:ir.ui.view,arch_db:sale_timeline.inherit_account_move_form_view
+msgid "Total"
+msgstr ""

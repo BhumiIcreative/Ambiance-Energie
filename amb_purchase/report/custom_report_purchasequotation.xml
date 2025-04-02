@@ -5,7 +5,13 @@
         <field name="paperformat_id" ref="amb_purchase.custom_purchase_order_report_format" />
     </record>
 
-    <template id="purchase_stock.report_purchasequotation_document" active="False">
+<!--    <template id="purchase_stock.report_purchasequotation_document" active="False">-->
+<!--    </template>-->
+
+      <template id="custom_report_purchasequotation" inherit_id="purchase.report_purchasequotation">
+        <xpath expr="//t[@t-call='purchase.report_purchasequotation_document']" position="attributes">
+            <attribute name="t-call">amb_purchase.custom_report_purchasequotation_document</attribute>
+        </xpath>
     </template>
 
     <template id="custom_report_purchasequotation_document">
@@ -49,10 +55,6 @@
           </t>
     </template>
 
-    <template id="custom_report_purchasequotation" inherit_id="purchase.report_purchasequotation">
-        <xpath expr="//t[@t-call='purchase.report_purchasequotation_document']" position="attributes">
-            <attribute name="t-call">amb_purchase.custom_report_purchasequotation_document</attribute>
-        </xpath>
-    </template>
+
   </data>
 </odoo>

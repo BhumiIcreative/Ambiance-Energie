@@ -5,6 +5,7 @@
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
         	<xpath expr="//field[@name='ref']" position="after">
+				<field name="type_invoice" invisible="1"/>
 				<field name="current_subscription" invisible="type_invoice != 'gran'"/>
 			</xpath>
 		</field>

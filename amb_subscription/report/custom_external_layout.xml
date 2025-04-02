@@ -17,8 +17,6 @@
             <t t-raw="0"/>
         </t>
     </template>
-     <template id="account_avatax_sale.report_invoice_document" active="False">
-        </template>
     <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
         <!-- Header -->
         <div class="header">
@@ -90,9 +88,9 @@
                                     <span t-field="company.second_partner_id.phone"/>
                                 </span>
                                 <br/>
-                                <span class="medium-text">Siret :
-                                    <span t-field="company.second_partner_id.x_studio_siret_contact"/>
-                                </span>
+<!--                                <span class="medium-text">Siret :-->
+<!--                                    <span t-field="company.second_partner_id.x_studio_siret_contact"/>-->
+<!--                                </span>-->
                             </div>
                         </div>
                     </div>

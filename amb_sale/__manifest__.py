@@ -17,7 +17,9 @@
         'stock',
         'account_followup',
         'amb_product', 
+        'account_avatax_sale',
         'oci_point_of_sale',
+        'l10n_fr',
     ],
     # always loaded
     'data': [

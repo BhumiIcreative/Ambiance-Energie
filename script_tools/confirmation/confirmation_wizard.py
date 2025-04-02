@@ -64,6 +64,7 @@ class ConfirmationWizard(models.TransientModel):
         return self._run_method(self.cancel_method)
 
     def create_and_open(self, vals, **kwargs):
-        return super().create_and_open(
+        asuper = super().create_and_open(
             vals, name=kwargs.get("name") or self.name, **kwargs
         )
+        return asuper
