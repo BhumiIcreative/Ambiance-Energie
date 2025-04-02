@@ -2,15 +2,13 @@
     "name": "Amb account",
     "summary": "Amb account",
     "description": "Amb account",
-    "author": "Aktiv Software",
-    "website": "https://www.aktivsoftware.com",
+    "version": "17.0.1.0.0",
+    "author": "Aktiv software / Groupe OCI",
+    "website": "https://www.aktivsoftware.com / https://www.oci.fr",
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     "category": "account",
-    "version": "0.2",
-    "installable": True,
-    "application": True,
     'license': 'LGPL-3',
     # any module necessary for this one to work correctly
     "depends": [
@@ -18,10 +16,10 @@
         "account",
         "account_followup",
         "oci_point_of_sale",
+        'sale'
     ],
     # always loaded
     "data": [
-        "data/account_journal.xml",
         "data/ir_config_parameter.xml",
         "data/report_paperformat.xml",
         "report/custom_external_layout.xml",
@@ -29,4 +27,6 @@
         "report/custom_invoice_report.xml",
         "report/accounting_pieces.xml",
     ],
+    "installable": True,
+    "application": True,
 }

@@ -1,15 +1,51 @@
+import datetime
+import logging
+
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError, UserError
-
-import datetime
-
-import logging
 
 log = logging.getLogger(__name__).info
 
 
 class AccountMove(models.Model):
     _inherit = "account.move"
+
+    client_situation = fields.Monetary(
+        string="Client Situation", related="partner_id.total_due"
+    )
+    current_subscription = fields.Many2one(
+        "subscription.wood.pellet", string="Current Subscription Wood Pellet"
+    )
+    package_count = fields.Integer(string="Package Count")
+    weight = fields.Float(string="Weight")
+    volume = fields.Float(string="Volume")
+    port = fields.Float(string="Port")
+    shipped = fields.Float(string="Shipped")
+    comment = fields.Char(string="Comment")
+    commissioning_identification = fields.Char(string="Identification")
+    type_invoice = fields.Selection(
+        [
+            ("std", "Standard"),
+            ("gran", "Granule"),
+            ("serv", "Service"),
+            ("sto", "Stove"),
+        ],
+        string="Type Invoice",
+        default="std",
+    )
+    purchase_stock_picking_bill_id = fields.Many2one(
+        "stock.picking",
+        store=False,
+        readonly=True,
+        states={"draft": [("readonly", False)]},
+        string="Stock Picking",
+        help="Auto-complete from a Stock picking.",
+    )
+    oci_point_of_sale = fields.Many2one(
+        "oci.point.of.sale", string="Point of Sale"
+    )
+    sent_by = fields.Many2one("res.partner", string="Sent By")
+    origin_so = fields.Many2one("sale.order", compute='_compute_origin_so', string='Origin SO')
 
     @api.model
     def _autopost_draft_entries_asc(self):
@@ -40,43 +76,6 @@ class AccountMove(models.Model):
                 "sale_line_ids"
             ).order_id[:1]
 
-    client_situation = fields.Monetary(
-        string="Client situation", related="partner_id.total_due"
-    )
-    current_subscription = fields.Many2one(
-        "subscription.wood.pellet", string="Current subscription wood pellet"
-    )
-    package_count = fields.Integer(string="Package count")
-    weight = fields.Float(string="Weight")
-    volume = fields.Float(string="Volume")
-    port = fields.Float(string="Port")
-    shipped = fields.Float(string="Shipped")
-    comment = fields.Char(string="Comment")
-    commissioning_identification = fields.Char(string="Identification")
-    type_invoice = fields.Selection(
-        [
-            ("std", "Standard"),
-            ("gran", "Granule"),
-            ("serv", "Service"),
-            ("sto", "Stove"),
-        ],
-        string="Type invoice",
-        default="std",
-    )
-    purchase_stock_picking_bill_id = fields.Many2one(
-        "stock.picking",
-        store=False,
-        readonly=True,
-        states={"draft": [("readonly", False)]},
-        string="Stock picking",
-        help="Auto-complete from a Stock picking.",
-    )
-    oci_point_of_sale = fields.Many2one(
-        "oci.point.of.sale", string="Point of sale"
-    )
-    sent_by = fields.Many2one("res.partner", string="Sent by")
-    origin_so = fields.Many2one("sale.order", compute=_compute_origin_so)
-
     @api.constrains("oci_point_of_sale")
     def _check_point_of_sale(self):
         """
@@ -85,9 +84,9 @@ class AccountMove(models.Model):
         """
         for r in self:
             if (
-                r.move_type in ("out_refund", "out_invoice")
-                and r.type_invoice == "std"
-                and not r.oci_point_of_sale
+                    r.move_type in ("out_refund", "out_invoice")
+                    and r.type_invoice == "std"
+                    and not r.oci_point_of_sale
             ):
                 raise ValidationError(
                     "Point of sale is required on standard invoice"
@@ -120,8 +119,8 @@ class AccountMove(models.Model):
         registers a payment linked to the current subscription.
         """
         if (
-            self.type_invoice == "gran"
-            and self.amount_total > self.current_subscription.amount
+                self.type_invoice == "gran"
+                and self.amount_total > self.current_subscription.amount
         ):
             raise UserError(
                 _(

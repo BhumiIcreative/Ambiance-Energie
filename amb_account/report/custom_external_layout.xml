@@ -1,4 +1,5 @@
 <odoo>
+    <!-- Custom Layout  -->
     <template id="custom_external_layout" t-name="custom_external_layout">
         <t t-if="not o" t-set="o" t-value="doc"/>
         <t t-if="not company">
@@ -18,6 +19,7 @@
         </t>
         <t t-esc="o.company_id.name"/>
     </template>
+    <!-- Custom Layout Template (Header, Footer)  -->
     <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
         <div class="header">
             <div class="row">
@@ -41,24 +43,24 @@
                         </div>
                         <div class="row">
                             <div class="col">
-<!--                                <span class="medium-text" t-field="company.x_studio_oci_conf_juridique"/>-->
+                                <span class="medium-text" t-field="company.oci_conf_juridique"/>
                                 <br/>
                                 <strong>
                                     <span t-esc="company.website.replace('http://', '').replace('https://', '')"/>
                                 </strong>
                                 <br/>
-<!--                                <span class="small-text">Qualibois</span>-->
-<!--                                <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>-->
+                                <span class="small-text">Qualibois</span>
+                                <span class="small-text" t-field="company.oci_conf_qualibois"/>
                                 <br/>
-<!--                                <span class="small-text">RC and ten-year guarantee :</span>-->
-<!--                                <span class="small-text" t-field="company.x_studio_assurance"/>-->
+                                <span class="small-text">RC and ten-year guarantee :</span>
+                                <span class="small-text" t-field="company.assurance"/>
                                 <br/>
 
-<!--                                <strong class="medium-text">-->
-<!--                                    <span class="small-text" t-field="company.x_studio_oci_conf_rib"/>-->
-<!--                                    <br/>-->
-<!--                                    <span class="small-text" t-field="company.x_studio_oci_conf_bic"/>-->
-<!--                                </strong>-->
+                                <strong class="medium-text">
+                                    <span class="small-text" t-field="company.oci_conf_rib"/>
+                                    <br/>
+                                    <span class="small-text" t-field="company.oci_conf_bic"/>
+                                </strong>
                             </div>
                         </div>
                         <table class="table table-sm table-bordered border-dark"
@@ -122,8 +124,8 @@
                                         <span t-field="company.second_partner_id.zip"/>
                                         <span t-field="company.second_partner_id.city"/>
                                         ∙
-<!--                                        Siret :-->
-<!--                                        <span t-field="company.second_partner_id.x_studio_siret_contact"/>-->
+                                        Siret :
+                                        <span t-field="company.second_partner_id.siret_contact"/>
                                         <br/>
                                         Tél:
 
@@ -508,9 +510,9 @@
                 <div class="col-10" style="border-top: 1px solid black;font-size:12px;">
                     <ul style="list-style:none; margin:0; text-align:center;">
                         <li>
-<!--                            <t t-esc="o.company_id.x_studio_oci_conf_formejurid"/>-->
-<!--                            - Siren number :-->
-<!--                            <t t-esc="o.company_id.x_studio_oci_conf_siren"/>-->
+                            <t t-esc="o.company_id.oci_conf_formejurid"/>
+                            - Siren number :
+                            <t t-esc="o.company_id.oci_conf_siren"/>
                             - APE
                             <t t-esc="o.company_id.ape"/>
                             - Identification
@@ -518,7 +520,7 @@
                             <span t-field="o.company_id.vat"/>
                         </li>
                         <li t-if="o.company_id.siret">Head office :
-<!--                            <span t-field="o.company_id.x_studio_oci_conf_juridique"/>-->
+                            <span t-field="o.company_id.oci_conf_juridique"/>
                             ∙
                             <span t-field="o.company_id.street"/>
                             ∙
@@ -536,15 +538,15 @@
                     </ul>
                 </div>
                 <div class="col-1" style="border-top: 1px solid black;font-size:12px;">
-<!--                    <t t-if="o.move_type == 'out_invoice'">-->
-<!--                        <div name="qr_code" class="text-right">-->
-<!--                            <div t-if="o.oci_point_of_sale" class="row">-->
-<!--                                <span t-field="o.oci_point_of_sale.x_studio_qrcode_payment"-->
-<!--                                      t-options="{'widget': 'image'}"-->
-<!--                                      style="width:60px;display:inline-block;"/>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </t>-->
+                    <t t-if="o.move_type == 'out_invoice'">
+                        <div name="qr_code" class="text-right">
+                            <div t-if="o.oci_point_of_sale" class="row">
+                                <span t-field="o.oci_point_of_sale.qrcode_payment"
+                                      t-options="{'widget': 'image'}"
+                                      style="width:60px;display:inline-block;"/>
+                            </div>
+                        </div>
+                    </t>
                 </div>
                 <div class="row mt-3">
                     <div class="col">

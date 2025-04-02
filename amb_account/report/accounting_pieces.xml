@@ -1,5 +1,5 @@
 <odoo>
-    <!--Template for generating account pieces report in PDF format.-->
+    <!-- Template for generating account pieces report in PDF format. -->
     <template id="report_document_pieces">
         <t t-call="web.html_container">
             <t t-set="company" t-value="docs.env.company"/>
@@ -37,8 +37,6 @@
                                 <br/>
                                 <span class="m-0" t-field="doc.oci_point_of_sale"/>
                             </div>
-
-
                         </div>
 
                         <table style="padding:0" class="table o_report_block_table">
@@ -82,23 +80,21 @@
                                     <td style="padding: 0; width:100px; text-align:right;">
                                         <span t-field="table_line.credit"/>
                                     </td>
-<!--                                    <td style="padding: 0; width:150px; padding-left:10px">-->
-<!--                                        <span style="font-style: oblique; font-size: smaller;"-->
-<!--                                              t-field="table_line.x_studio_taxes_audit"/>-->
-<!--                                    </td>-->
+                                    <td style="padding: 0; width:150px; padding-left:10px">
+                                        <span style="font-style: oblique; font-size: smaller;"
+                                              t-field="table_line.taxes_audit"/>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="page">
-                    </div>
+                    <div class="page"/>
                 </t>
-                <div class="oe_structure"></div>
+                <div class="oe_structure"/>
             </t>
         </t>
     </template>
-    <!--Action record for generating the "Account Pieces" report for account moves.-->
+    <!-- Action record for generating the "Account Pieces" report for account moves. -->
     <record id="new_action" model="ir.actions.report">
         <field name="name">Account Pieces</field>
         <field name="model">account.move</field>

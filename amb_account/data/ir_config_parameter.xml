@@ -1,21 +1,16 @@
 <odoo noupdate="1">
-
-    <record model="ir.config_parameter" id="invoice_info_comment">
-        <field name="key">account.invoice_info_comment</field>
-        <field name="value">Liability guarantee &amp; Ten-year MAAF contract n°51051570 J</field>
-    </record>
-
     <record model="ir.config_parameter" id="text_invoice_comments_1">
         <field name="key">text_invoice_comments_1</field>
-        <field name="value">In accordance with article L441-6 of the commercial code, late payment penalties at the annual rate
+        <field name="value">In accordance with article L441-6 of the commercial code, late payment penalties at the
+            annual rate
             of 20% and compensation of €40 are due in the absence of payment the day following the payment date shown
             on the invoice.
         </field>
     </record>
-
     <record model="ir.config_parameter" id="text_invoice_comments_2">
         <field name="key">text_invoice_comments_2</field>
-        <field name="value">Net unit price (discount deducted) including €0.84 excluding ECO-PARTICIPATION per device (code
+        <field name="value">Net unit price (discount deducted) including €0.84 excluding ECO-PARTICIPATION per device
+            (code
             1.8) Discount for early payment: none
         </field>
     </record>
