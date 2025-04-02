@@ -1,13 +1,12 @@
-# coding: utf-8
 {
     "name": "Amb purchase",
     "summary": "Amb purchase",
     "description": "Amb purchase",
+    "version": "17.0.1.0.0",
     "author": "Aktiv software / Groupe OCI",
     "website": "http://www.aktivsoftware.com / https://www.oci.fr",
     "category": "purchase",
-    "version": "17.0.1.0.0",
-    "application": True,
+    "license": "LGPL-3",
     "depends": [
         "base",
         "purchase",
@@ -24,5 +23,7 @@
         "report/custom_report_purchasequotation.xml",
         "views/purchase_views.xml",
     ],
-    "license": "LGPL-3",
+    "application": True,
+    "auto_install": False,
+    "installable": True,
 }
