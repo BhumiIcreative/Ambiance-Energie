@@ -23,7 +23,7 @@ class PaymentTimeLine(models.Model):
     move_id = fields.Many2one('account.move', string='Move')
     sale_id = fields.Many2one('sale.order', string='Sale')
     payment_instrument_id = fields.Many2one('sale_timeline.payment.instrument',
-                                            string='Payment method')
+                                            string='Payment Method')
     advance = fields.Boolean(string='Deposit', default=False, readonly=True)
 
     def compute_payment_term_id(self):

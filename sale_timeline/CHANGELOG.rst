@@ -5,3 +5,4 @@ amb_subscription
 ----------
 
 - Migrated to version 17
+- Removed data record 'subscription_default_journal' because it is not used.
