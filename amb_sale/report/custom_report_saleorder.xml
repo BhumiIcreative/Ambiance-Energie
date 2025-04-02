@@ -29,7 +29,7 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <!--                                        <span class="medium-text" t-field="company.x_studio_oci_conf_juridique"/>-->
+                                    <span class="medium-text" t-field="company.oci_conf_juridique"/>
                                     <br/>
                                     <strong>
                                         <span t-out="company.website.replace('http://', '').replace('https://', '')"/>
@@ -38,20 +38,20 @@
                                     <span class="small-text">
                                         Qualibois
                                     </span>
-                                    <!--                                        <span class="small-text" t-field="company.x_studio_oci_conf_qualibois"/>-->
+                                    <span class="small-text" t-field="company.oci_conf_qualibois"/>
 
                                     <br/>
                                     <span class="small-text">
                                         Garantie RC et Décenale :
                                     </span>
-                                    <!--                                        <span class="small-text" t-field="company.x_studio_assurance"/>-->
+                                    <span class="small-text" t-field="company.assurance"/>
 
                                     <br/>
                                     <strong class="medium-text">
-                                        <!--                                            <span class="small-text" t-field="company.x_studio_oci_conf_rib"/>-->
+                                        <span class="small-text" t-field="company.oci_conf_rib"/>
 
                                         <br/>
-                                        <!--                                            <span class="small-text" t-field="company.x_studio_oci_conf_bic"/>-->
+                                        <span class="small-text" t-field="company.oci_conf_bic"/>
                                     </strong>
                                 </div>
                             </div>
@@ -64,10 +64,10 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <!--                                            <td t-if="doc.x_studio_oci_saleorder_yourref"-->
-                                        <!--                                                class="border-dark text-center small-text">-->
-                                        <!--                                                <span t-field="doc.x_studio_oci_saleorder_yourref"/>-->
-                                        <!--                                            </td>-->
+                                        <td t-if="doc.oci_saleorder_yourref"
+                                            class="border-dark text-center small-text">
+                                            <span t-field="doc.oci_saleorder_yourref"/>
+                                        </td>
                                         <td t-else="else" class="border-dark text-center">
                                             <br/>
                                         </td>
@@ -126,7 +126,8 @@
                                             ∙
                                             <span t-field="company.second_partner_id.zip"/>
                                             <span t-field="company.second_partner_id.city"/>
-                                            <!--                                                ∙ Siret : <span t-field="company.second_partner_id.x_studio_siret_contact"/>-->
+                                            ∙ Siret :
+                                            <span t-field="company.second_partner_id.siret_contact"/>
                                             <br/>
                                             Tél:
                                             <span style="font-size:15px;" t-field="company.second_partner_id.phone"/>
@@ -144,11 +145,11 @@
                                                 <table class="table table-sm table-borderless">
                                                     <thead>
                                                         <tr>
-                                                            <!--                                                                <th class="text-center small-text">-->
-                                                            <!--                                                                    <span t-field="doc.x_studio_oci_saleorder_refcustomer"/>-->
-                                                            <!--                                                                    <t t-if="not doc.x_studio_oci_saleorder_refcustomer"/>-->
-                                                            <!--                                                                    <br/>-->
-                                                            <!--                                                                </th>-->
+                                                            <th class="text-center small-text">
+                                                                <span t-field="doc.oci_saleorder_refcustomer"/>
+                                                                <t t-if="not doc.oci_saleorder_refcustomer"/>
+                                                                <br/>
+                                                            </th>
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -350,7 +351,7 @@
                                     Entreprise partenaire Solution
                                     Habitat EDF N° PACTE 47198, agréée
                                     QualiBois sous le
-                                    <!--                                        <span t-field="doc.company_id.x_studio_oci_conf_qualibois"/>-->
+                                    <span t-field="doc.company_id.oci_conf_qualibois"/>
                                     <br/>
                                     <span t-out="doc.env['ir.config_parameter'].sudo().get_param('text_conform')"/>
                                 </div>

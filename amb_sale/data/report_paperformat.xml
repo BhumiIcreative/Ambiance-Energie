@@ -14,7 +14,6 @@
         <field name="page_width">0</field>
         <field name="dpi">90</field>
     </record>
-
     <record id="custom_intervention_request_report_format" model="report.paperformat">
         <field name="name">Intervention request report format</field>
         <field name="default" eval="True"/>

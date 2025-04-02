@@ -2,15 +2,14 @@
     'name': "Amb sale",
     'summary': "Amb sale",
     'description': "Amb sale",
+    'version': '17.0.1.0.0',
     'author': "Aktiv software / Groupe OCI",
     'website': "http://www.aktivsoftware.com / https://www.oci.fr",
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'sale',
-    'version': '17.0.1.0.0',
-    'application': False,
-    'installable': True,
+    'license': 'LGPL-3',
     # any module necessary for this one to work correctly
     'depends': [
         'sale_management',
@@ -31,5 +30,7 @@
         'report/custom_report_saleorder.xml',
         'report/intervention_request_report.xml',
     ],
-    'license': 'LGPL-3',
+    'application': False,
+    'installable': True,
+    'auto_install': False,
 }

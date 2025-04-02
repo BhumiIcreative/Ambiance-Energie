@@ -1,6 +1,3 @@
-import datetime
-from math import *
-
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
@@ -12,7 +9,7 @@ class SaleOrder(models.Model):
         string='Client Situation',
         compute='_compute_client_situation',
         store=True)
-   
+
     amount_left_to_pay = fields.Monetary(
         string='Amount Left To Pay',
         compute='_compute_amount_left_to_pay',
@@ -54,7 +51,6 @@ class SaleOrder(models.Model):
         for sale_id in self:
             sale_id.client_situation = -sale_id.partner_id.total_due
 
-   
     @api.depends('amount_total', 'advance')
     def _compute_amount_missing_from_timeline(self):
         """
@@ -64,8 +60,6 @@ class SaleOrder(models.Model):
         super()._compute_amount_missing_from_timeline()
         for sale in self:
             sale.amount_missing_from_timeline -= sale.advance
-
-    
 
     @api.onchange('oci_point_of_sale')
     def onchange_pos(self):
@@ -148,7 +142,6 @@ class SaleOrder(models.Model):
         # Return to the invoice view after processing counter sale
         return self.action_view_invoice()
 
-    
     def _prepare_invoice(self):
         """
             Prepares the invoice with specific payment terms and advance
@@ -170,18 +163,18 @@ class SaleOrder(models.Model):
         '''This method is designed to be extendable, allowing for customization in payment 
         value preparation'''
         return {
-                'payment_type': 'inbound',
-                'partner_id': self.partner_id.id,
-                'partner_type': 'customer',
-                'company_id': self.company_id.id,
-                'currency_id': self.currency_id.id,
-                'date': self.date_order,
-                'amount': self.advance,
-                'sale_id': self.id,
-                'oci_point_of_sale': self.oci_point_of_sale.id,
-                'ref': "Acompte sur devis " + self.name,
-                'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id
-            }
+            'payment_type': 'inbound',
+            'partner_id': self.partner_id.id,
+            'partner_type': 'customer',
+            'company_id': self.company_id.id,
+            'currency_id': self.currency_id.id,
+            'date': self.date_order,
+            'amount': self.advance,
+            'sale_id': self.id,
+            'oci_point_of_sale': self.oci_point_of_sale.id,
+            'ref': "Acompte sur devis " + self.name,
+            'payment_method_id': self.env.ref('account.account_payment_method_manual_in').id
+        }
 
     def create_payment(self):
         """

@@ -30,7 +30,7 @@ class SaleOrderLine(models.Model):
                     {
                         'title': _('Warning'),
                         'message': _('Check the price on the line %s, minimum price %s' % (
-                        self.product_id.name, self.product_id.min_price)),
+                            self.product_id.name, self.product_id.min_price)),
                     },
             }
 
@@ -41,7 +41,7 @@ class SaleOrderLine(models.Model):
             discount, quantity, or price changes.
         """
         self.discount = 0.00 if self.price_unit == 0.00 or self.product_uom_qty == 0.00 else self.discount_fixed / (
-                    self.product_uom_qty * self.price_unit) * 100
+                self.product_uom_qty * self.price_unit) * 100
 
     def _prepare_invoice_line(self, **optional_values):
         """
