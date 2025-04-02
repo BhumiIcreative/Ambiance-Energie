@@ -20,9 +20,7 @@
     <template id="custom_external_layout_standard" t-name="custom_external_layout_standard">
         <!-- Header -->
         <div class="header">
-
         </div>
-
         <!-- Body -->
         <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
              t-att-data-oe-lang="o and o.env.context.get('lang')">
@@ -39,7 +37,6 @@
                     font-size:18px;
                     }
                 </style>
-
                 <div class="row">
                     <div class="col-6">
                         <span class="small-text">SAS BILL</span>
@@ -49,7 +46,6 @@
                         </span>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-6">
                         <div class="row">
@@ -73,7 +69,6 @@
                                     <span t-field="company.siret"/>
                                 </span>
                             </div>
-
                             <div class="col-6">
                                 <span class="small-text">
                                     <span t-field="company.second_partner_id.street"/>
@@ -88,14 +83,13 @@
                                     <span t-field="company.second_partner_id.phone"/>
                                 </span>
                                 <br/>
-<!--                                <span class="medium-text">Siret :-->
-<!--                                    <span t-field="company.second_partner_id.x_studio_siret_contact"/>-->
-<!--                                </span>-->
+                                <span class="medium-text">Siret :
+                                    <span t-field="company.second_partner_id.siret_contact"/>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-6">
                         <strong class="small-text">
@@ -110,7 +104,6 @@
             </div>
             <t t-raw="0"/>
         </div>
-
         <!-- Footer -->
         <div class="footer o_standard_footer" style="font-size:15px;">
             <div class="text-center" style="border-top: 1px solid black;">
@@ -129,11 +122,9 @@
                         <span t-field="company.city"/>
                     </li>
                 </ul>
-
                 <div name="financial_infos">
                     <span t-field="company.report_footer"/>
                 </div>
-
                 <div t-if="report_type == 'pdf'" class="text-muted"
                      style="text-align:center; padding-top:8px; color: #8A8989;">
                     Page:

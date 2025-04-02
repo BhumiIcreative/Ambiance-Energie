@@ -1,6 +1,7 @@
 <odoo>
     <template id="custom_external_layout_standard_commissioning" inherit_id="web.external_layout_standard">
-        <xpath expr="//div[hasclass('row')][1]" position="replace">
+        <xpath expr="//div[hasclass('row')][1]" position="attributes">
+            <attribute name="class" add="d-none" seperator=" "/>
         </xpath>
     </template>
     <template id="custom_external_layout_commissioning" inherit_id="web.external_layout">

@@ -1,22 +1,15 @@
- # coding: utf-8
+import datetime
 
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError, UserError
 
-import datetime
-
-import logging
-
-log = logging.getLogger(__name__).info
-
 
 class AccountMove(models.Model):
     _inherit = "account.move"
-    
-    current_subscription = fields.Many2one(
-            "subscription.wood.pellet", string=_("Current subscription wood pellet")
-        )
 
+    current_subscription = fields.Many2one(
+        "subscription.wood.pellet", string="Current Subscription Wood Pellet"
+    )
 
     @api.model
     def create(self, vals):
@@ -35,8 +28,8 @@ class AccountMove(models.Model):
 
     def action_post(self):
         if (
-            self.type_invoice == "gran"
-            and self.amount_total > self.current_subscription.amount
+                self.type_invoice == "gran"
+                and self.amount_total > self.current_subscription.amount
         ):
             raise UserError(
                 _(
