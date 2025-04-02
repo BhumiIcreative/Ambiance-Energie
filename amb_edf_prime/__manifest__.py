@@ -15,7 +15,7 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
-        "datas/product_template.xml",
+        "data/product_template.xml",
         "views/account_move_view.xml",
         "views/sale_views.xml",
         "wizard/wizard_add_edf_prime_view.xml",

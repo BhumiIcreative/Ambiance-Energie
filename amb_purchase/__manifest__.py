@@ -15,9 +15,10 @@
         "purchase_stock",
         "oci_point_of_sale",
         "amb_subscription",
+        "fields_module",
     ],
     "data": [
-        "datas/report_paperformat.xml",
+        "data/report_paperformat.xml",
         "report/custom_external_layout.xml",
         "report/custom_report_purchaseorder.xml",
         "report/custom_report_purchasequotation.xml",
