@@ -40,8 +40,7 @@ class SaleOrderLine(models.Model):
             if not record.invoice_status == "invoiced":
                 if record.state == "done" or record.state == "sale":
                     record["commande_en_cours"] = (
-                        record.product_uom_qty
-                        - record.qty_delivered
+                        record.product_uom_qty - record.qty_delivered
                     )
                 else:
                     record["commande_en_cours"] = 0

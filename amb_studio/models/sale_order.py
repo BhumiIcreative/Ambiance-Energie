@@ -49,6 +49,10 @@ class SaleOrder(models.Model):
         compute="_compute_no_invoiced",
     )
 
+    oci_abo_date_prochaine_intervention = fields.Date(
+        string="Next intervention date", copy=False
+    )
+
     @api.depends("invoice_ids")
     def _compute_no_invoiced(self):
         for record in self:

@@ -33,6 +33,26 @@ class StockQuant(models.Model):
         help="A storable product is a product for which you manage stock. The Inventory app has to be installed.\nA consumable product is a product for which stock is not managed.\nA service is a non-material product you provide.",
         related="product_tmpl_id.type",
     )
+    rfrence_fournisseur = fields.Char(
+        string="Supplier reference",
+        copy=False,
+        readonly=True,
+        help="This vendor's product code will be used when printing a request for quotation. Keep empty to use the internal one.",
+        related="product_id.seller_ids.product_code",
+    )
+    rfrence_fournisseur_1 = fields.Char(
+        string="Supplier reference",
+        copy=False,
+        readonly=True,
+        help="This vendor's product code will be used when printing a request for quotation. Keep empty to use the internal one.",
+        related="product_id.seller_ids.product_code",
+    )
+    fournisseur = fields.Char(
+        string="Supplier",
+        copy=False,
+        readonly=True,
+        related="product_id.seller_ids.display_name",
+    )
 
     @api.depends("product_id.commandes_clients_ids.commande_en_cours")
     def _compute_rserv(self):
