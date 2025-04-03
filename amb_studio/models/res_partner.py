@@ -11,18 +11,22 @@ class ResPartner(models.Model):
         "res.partner", string="Former owner name", copy=False, ondelete="set null"
     )
     nom_parrainage_contact_id = fields.Many2one(
-        "res.partner", string="Sponsorship contact name", copy=False, ondelete="set null"
+        "res.partner",
+        string="Sponsorship contact name",
+        copy=False,
+        ondelete="set null",
     )
     numero_serie_equipement_contact = fields.Char(string="Serial No.")
     modele_equipement_contact = fields.Char(string="Model")
     type_produit_contact_ids = fields.Many2many(
-        "oci.type.produit.contact", 'x_res_partner_x_oci_type_produit_contact_rel',
+        "oci.type.produit.contact",
+        "x_res_partner_x_oci_type_produit_contact_rel",
         string="Product Type",
         copy=False,
         ondelete="cascade",
     )
     provenance_contact_id = fields.Many2one(
-        "oci.provenance.contact", string="Provenance", copy=False, ondelete="set null"
+        "oci.provenance.contact", string="Origin", copy=False, ondelete="set null"
     )
     commercial_contact_id = fields.Many2one(
         "hr.employee", string="Commercial", copy=False, ondelete="set null"
@@ -35,15 +39,17 @@ class ResPartner(models.Model):
     )
     autre_information_equipement_contact = fields.Char(string="Other Information")
     liste_de_prix = fields.Char(
-        string="Liste de Prix-",
+        string="Price List-",
         copy=False,
         readonly=True,
         related="property_product_pricelist.display_name",
     )
-    facturation_ttc = fields.Boolean(string="Facturation TTC", copy=False)
-    region_id = fields.Many2one("region", string="Région", copy=False, ondelete="set null")
-    telephone2_contact = fields.Char(string="Téléphone 2", copy=False)
+    facturation_ttc = fields.Boolean(string="Invoicing Including Tax", copy=False)
+    region_id = fields.Many2one(
+        "region", string="Regions", copy=False, ondelete="set null"
+    )
+    telephone2_contact = fields.Char(string="Phone 2", copy=False)
     mobile2 = fields.Char(string="Mobile 2", copy=False)
     mobile3 = fields.Char(string="Mobile 3", copy=False)
     oci_sms_granules = fields.Boolean(string="SMS GRANULES", copy=False)
-    oci_sms_promo_entretien = fields.Boolean(string="SMS PROMO ENTRETIEN", copy=False)
+    oci_sms_promo_entretien = fields.Boolean(string="SMS PROMO INTERVIEW", copy=False)

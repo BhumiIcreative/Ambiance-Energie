@@ -17,7 +17,7 @@
         'account_followup',
         'amb_product', 
         'account_avatax_sale',
-        'oci_point_of_sale',
+        'amb_studio',
         'l10n_fr',
     ],
     # always loaded

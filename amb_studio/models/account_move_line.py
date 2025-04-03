@@ -12,7 +12,7 @@ class AccountMoveLine(models.Model):
         copy=False,
         readonly=True,
         help="Give the date of the most recent accounting entry in the reconciliation.",
-        related="full_reconcile_id.dernire_ecriture_comptable.date",
+        related="full_reconcile_id.dernire_ecriture_comptable_id.date",
     )
 
     # @api.depends('tax_audit')

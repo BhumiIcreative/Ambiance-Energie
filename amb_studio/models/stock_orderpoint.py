@@ -5,7 +5,7 @@ class StockWarehouseOrderpoint(models.Model):
     _inherit = "stock.warehouse.orderpoint"
 
     oci_stock_fournisseur = fields.Char(
-        string="Fournisseur",
+        string="Supplier",
         copy=False,
         readonly=True,
         related="product_id.seller_ids.display_name",
