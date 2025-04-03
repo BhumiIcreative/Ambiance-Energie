@@ -50,7 +50,7 @@ class ProductTemplate(models.Model):
         ],
     )
     dernier_prix_dachat_fournisseur = fields.Float(
-        string="Dernier Prix D'achat Fournisseur",
+        string="Latest Supplier Purchase Price",
         copy=False,
         readonly=True,
         help="The price to purchase a product",

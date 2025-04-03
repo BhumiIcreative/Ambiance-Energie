@@ -39,6 +39,8 @@
         "views/stock_quant_views.xml",
         "views/stock_valuation_layer_views.xml",
         "views/uom_uom_views.xml",
+        "views/account_move_views.xml",
+        "views/product_template_views.xml"
     ],
     "application": False,
     "installable": True,
