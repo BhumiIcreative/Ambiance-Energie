@@ -1,0 +1,12 @@
+<odoo>
+    <record id="amb_studio_res_groups_tree_view" model='ir.ui.view'>
+        <field name='name'>amb.studio.res.groups.tree.view</field>
+        <field name='model'>res.groups</field>
+        <field name='arch' type='xml'>
+            <tree string="Access Groups">
+                <field name="full_name" readonly='True'/>
+                <field name="users" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -9,8 +9,7 @@
     # for the full list
     "category": "Studio",
     "version": "17.0.1.0.0",
-    "application": False,
-    "installable": True,
+    "license": "LGPL-3",
     # any module necessary for this one to work correctly
     "depends": [
         "account",
@@ -22,6 +21,7 @@
         "stock",
         "hr_expense",
         "amb_stock",
+    'mass_mailing'
     ],
     # always loaded
     "data": [
@@ -29,6 +29,19 @@
         "views/account_tax_view.xml",
         "views/product_views.xml",
         "views/stock_picking_views.xml",
+        "views/account_batch_payment_views.xml",
+        "views/account_payment_view.xml",
+        "views/account_full_reconcile_views.xml",
+        "views/mailing_contact_views.xml",
+        "views/res_group_views.xml",
+        "views/sale_order_views.xml",
+        "views/stock_oderpoint_views.xml",
+        "views/stock_quant_views.xml",
+        "views/stock_valuation_layer_views.xml",
+        "views/uom_uom_views.xml",
     ],
-    "license": "LGPL-3",
+    "application": False,
+    "installable": True,
+    "auto_install": False,
+
 }

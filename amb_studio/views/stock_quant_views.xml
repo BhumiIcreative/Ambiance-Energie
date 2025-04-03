@@ -1,0 +1,13 @@
+<odoo>
+<!--    <record model="ir.ui.view" id="amb_studio_inherit_view_stock_quant_tree_inventory_editable">-->
+<!--        <field name="name">amb.studio.inherit.view.stock.quant.tree.inventory.editable</field>-->
+<!--        <field name="model">stock.quant</field>-->
+<!--        <field name="inherit_id" ref="stock.view_stock_quant_tree_inventory_editable"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='product_id']" position="after">-->
+<!--                <field name="rfrence_fournisseur_1" string="Référence fournisseur"/>-->
+<!--                <field name="fournisseur" string="Fournisseur"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

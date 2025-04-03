@@ -1,0 +1,24 @@
+<odoo>
+<!--    <record id="amb_studio_inherit_product_uom_form_view" model="ir.ui.view">-->
+<!--        <field name="name">amb.studio.inherit.product.uom.form.view</field>-->
+<!--        <field name="model">uom.uom</field>-->
+<!--        <field name="inherit_id" ref="uom.product_uom_form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//header" position="inside">-->
+<!--                <button class="oe_stat_button" icon="fa-diamond" type="action" name="781">-->
+<!--                    <field name="x_uom_id__product_template_count" string="Articles" widget="statinfo"/>-->
+<!--                </button>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+    <record id="amb_studio_inherit_product_uom_tree_view" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.product.uom.tree.view</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.product_uom_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='uom_type']" position="after">
+                <field name="rounding"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

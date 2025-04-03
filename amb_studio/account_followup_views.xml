@@ -1,0 +1,14 @@
+<odoo>
+    <record id="amb_studio_inherit_customer_statements_search_view" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.customer.statements.search.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_followup.customer_statements_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='studio_group_by_cRfvb']" position="after">
+                <filter context="{'group_by': 'point_de_vente'}" name="studio_group_by_qT7Oo"
+                        string="Point de vente"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+
+<!--    <record id="amb_studio_inherit_sale_subscription_primary_form_view" model='ir.ui.view'>-->
+<!--        <field name='name'>amb.studio.inherit.sale.subscription.primary.form.view</field>-->
+<!--        <field name='model'>sale.order</field>-->
+<!--        <field name="inherit_id" ref="sale_subscription.sale_subscription_primary_form_view"/>-->
+<!--        <field name='arch' type='xml'>-->
+<!--            <xpath expr="//field[@name='sale_order_template_id']" position="after">-->
+<!--                <field name="oci_abo_date_prochaine_intervention" string="Date prochaine intervention"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="amb_studio_inherit_sale_subscription_view_search" model='ir.ui.view'>-->
+<!--        <field name='name'>amb.studio.inherit.sale.subscription.view.search</field>-->
+<!--        <field name='model'>sale.order</field>-->
+<!--        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_search"/>-->
+<!--        <field name='arch' type='xml'>-->
+<!--            <xpath expr="//filter[@name='end_month']" position="after">-->
+<!--                <filter context="{'group_by': 'payment_instrument_id'}" name="studio_group_by_6CJkc"-->
+<!--                        string="Méthode de paiement"/>-->
+<!--&lt;!&ndash;                <filter context="{'group_by': 'oci_abo_date_prochaine_intervention'}"&ndash;&gt;-->
+<!--&lt;!&ndash;                        name="studio_group_by_PPYMh" string="Date prochaine intervention"/>&ndash;&gt;-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="amb_studio_inherit_sale_subscription_view_tree" model="ir.ui.view">-->
+<!--        <field name="name">amb.studio.inherit.sale.subscription.view.tree</field>-->
+<!--        <field name="model">sale.order</field>-->
+<!--        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_tree"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--&lt;!&ndash;            <xpath expr="//field[@name='partner_id']" position="after">&ndash;&gt;-->
+<!--&lt;!&ndash;                <field name="oci_abo_date_prochaine_intervention"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xpath>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xpath expr="//field[@name='user_id']" position="after">&ndash;&gt;-->
+<!--&lt;!&ndash;                <field name="oci_point_of_sale"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xpath>&ndash;&gt;-->
+<!--            <xpath expr="//field[@name='company_id']" position="after">-->
+<!--                <field name="recurring_amount_total"/>-->
+<!--            </xpath>-->
+<!--&lt;!&ndash;            <xpath expr="//field[@name='recurring_total']" position="after">&ndash;&gt;-->
+<!--&lt;!&ndash;                <field name="payment_instrument_id"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xpath>&ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

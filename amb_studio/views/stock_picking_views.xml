@@ -22,4 +22,20 @@
             </field>
         </field>
     </record>
+    <record id="amb_studio_inherit_view_picking_internal_search" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.view.picking.internal.search</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='activities_exception']" position="after">
+                <separator name="studio_separator_FY61S"/>
+                <!-- not studio_filter_XCuGB                -->
+<!--                <filter domain="[['invoice_ids','=',False]]" name="studio_filter_XCuGB"-->
+<!--                        string="Non facturé"/>-->
+            </xpath>
+            <xpath expr="//filter[@name='picking_type']" position="after">
+                <filter context="{'group_by': 'date'}" name="studio_group_by_eDy4G" string="Creation Date"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

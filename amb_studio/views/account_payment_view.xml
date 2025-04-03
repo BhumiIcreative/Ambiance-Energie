@@ -1,0 +1,21 @@
+<odoo>
+    <!-- Inherit payment form view  -->
+<!--    <record id="amb_studio_inherit_view_account_payment_form" model="ir.ui.view">-->
+<!--        <field name="name">amb.studio.inherit.view.account.payment.form</field>-->
+<!--        <field name="model">account.payment</field>-->
+<!--        <field name="inherit_id" ref="account.view_account_payment_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--&lt;!&ndash;            <xpath expr="//field[@name='ref']" position="after">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <field name="move_id.name" readonly="state != draft"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            </xpath>&ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+    <record id="amb_studio_account_payment_pivot_view" model="ir.ui.view">
+        <field name="name">amb.studio.account.payment.pivot.view</field>
+        <field name="model">account.payment</field>
+        <field name="arch" type="xml">
+            <pivot string="Payments">
+            </pivot>
+        </field>
+    </record>
+</odoo>

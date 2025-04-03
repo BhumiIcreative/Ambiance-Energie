@@ -1,0 +1,12 @@
+<odoo>
+<!--    <record id="amb_studio_inherit_mailing_contact_view_tree" model="ir.ui.view">-->
+<!--        <field name="name">amb.studio.inherit.mailing.contact.view.tree</field>-->
+<!--        <field name="model">mailing.contact</field>-->
+<!--        <field name="inherit_id" ref="mass_mailing.mailing_contact_view_tree"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='company_name']" position="after">-->
+<!--                <field name="mobile"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>
