@@ -1,0 +1,12 @@
+<odoo>
+    <record id="amb_studio_inherit_view_payment_term_tree" model="ir.ui.view">
+        <field name="name">account.payment.term.tree.studio</field>
+        <field name="model">account.payment.term</field>
+        <field name="inherit_id" ref="account.view_payment_term_tree"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='sequence']" position="after">
+              <field name="id" groups="base.group_no_one"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

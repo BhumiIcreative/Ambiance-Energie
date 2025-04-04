@@ -8,7 +8,7 @@
                 <attribute name="readonly">not company_id</attribute>
             </xpath>
             <xpath expr="//field[@name='external_ref']" position="attributes">
-                <attribute name="string">Réf Livraison</attribute>
+                <attribute name="string">Ref Delivery</attribute>
             </xpath>
         </field>
     </record>

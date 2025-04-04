@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="amb_studio_oci_type_produit_contact" model="ir.ui.view">
+        <field name="name">oci.type.produit.contact.list.studio</field>
+        <field name="model">oci.type.produit.contact</field>
+        <field name="arch" type="xml">
+           <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

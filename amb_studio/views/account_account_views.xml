@@ -1,0 +1,16 @@
+<odoo>
+    <record id="amb_studio_inherit_view_account_list" model="ir.ui.view">
+        <field name="name">account.account.list.studio</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="before">
+              <field name="id" groups="base.group_no_one"/>
+            </xpath>
+            <xpath expr="//tree[1]/field[@name='name']" position="after">
+              <field name="reconcile" widget="boolean_toggle" position="move"/>
+              <field name="deprecated" string="Obsolete"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,26 @@
+<odoo>
+    <record id="amb_studio_inherit_view_partner_tree" model="ir.ui.view">
+        <field name="name">res.partner.tree.studio</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="after">
+              <field name="street" optional="show"/>
+              <field name="zip" optional="show"/>
+            <xpath expr="//field[@name='city']" position="move"/>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="after">
+              <field name="mobile"/>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+              <field name="property_product_pricelist" invisible="1"/>
+              <field name="total_due"/>
+              <field name="date_de_pose_equipement_contact" optional="hide"/>
+              <field name="siret" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='city']" position="attributes">
+              <attribute name="optional">show</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

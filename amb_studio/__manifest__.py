@@ -13,6 +13,7 @@
     # any module necessary for this one to work correctly
     "depends": [
         "account",
+        "account_accountant",
         "mrp",
         "product",
         "purchase",
@@ -21,7 +22,9 @@
         "stock",
         "hr_expense",
         "amb_stock",
-    'mass_mailing'
+        'mass_mailing',
+        "account_batch_payment",
+        "sale_timeline",
     ],
     # always loaded
     "data": [
@@ -40,7 +43,14 @@
         "views/stock_valuation_layer_views.xml",
         "views/uom_uom_views.xml",
         "views/account_move_views.xml",
-        "views/product_template_views.xml"
+        "views/product_template_views.xml",
+        "views/res_partner_views.xml",
+        "views/account_account_views.xml",
+        "views/account_payment_term_views.xml",
+        "views/ir_cron_views.xml",
+        "views/product_category_views.xml",
+        "views/oci_type_produit_contact.xml",
+        "views/res_company_views.xml"
     ],
     "application": False,
     "installable": True,

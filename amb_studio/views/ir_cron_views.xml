@@ -1,0 +1,12 @@
+<odoo>
+    <record id="amb_studio_inherit_ir_cron_view_tree" model="ir.ui.view">
+        <field name="name">Scheduled Actions Studio</field>
+        <field name="model">ir.cron</field>
+        <field name="inherit_id" ref="base.ir_cron_view_tree"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='priority']" position="before">
+             <field name="id" groups="base.group_no_one"/>
+           </xpath>
+        </field>
+    </record>
+</odoo>

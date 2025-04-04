@@ -18,4 +18,28 @@
             </pivot>
         </field>
     </record>
+
+    <record id="amb_studio_inherit_view_account_payment_tree" model="ir.ui.view">
+      <field name="name">account.payment.tree.inherit.studio</field>
+      <field name="model">account.payment</field>
+      <field name="inherit_id" ref="account.view_account_payment_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='date']" position="before">
+          <xpath expr="//field[@name='amount_company_currency_signed']" position="move"/>
+        </xpath>
+        <xpath expr="//field[@name='payment_method_line_id']" position="attributes">
+          <attribute name="optional">show</attribute>
+        </xpath>
+        <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="oci_point_of_sale"/>
+          <field name="payment_instrument_id" string="Payment method" readonly="1" optional="show"/>
+        </xpath>
+        <!-- <xpath expr="//field[@name='state']" position="after">
+          <field name="payment_difference" string="Payment difference" optional="show"/>
+        </xpath> -->
+        <xpath expr="//field[@name='amount_company_currency_signed']" position="attributes">
+          <attribute name="readonly">1</attribute>
+        </xpath>
+      </field>
+    </record>
 </odoo>
