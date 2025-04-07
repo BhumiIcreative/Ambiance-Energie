@@ -1,0 +1,19 @@
+<odoo>
+    <record id="amb_studio_inherit_mrp_bom_form_view" model="ir.ui.view">
+    <field name="name">amb.studio.inherit.mrp.bom.form.view</field>
+    <field name="model">mrp.bom</field>
+    <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='attachments_count']" position="after">
+            <field name="cot_unitaire" string="Coût unitaire"/>
+            <field name="prix_de_vente_unitaire" string="Prix de vente unitaire"/>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[1]/field[@name='bom_line_ids']/tree[1]/field[@name='product_qty']"
+               position="after">
+            <field name="cot_total" string="Coût total"/>
+            <field name="prix_de_vente_total" string="Prix de vente total" sum="Sum of Prix de vente total"/>
+            <field name="currency_id" attrs="{}" invisible="1"/>
+        </xpath>
+    </field>
+    </record>
+</odoo>

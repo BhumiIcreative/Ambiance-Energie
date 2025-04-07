@@ -4,18 +4,88 @@
         <field name="model">account.move.line</field>
         <field name="inherit_id" ref="account.view_move_line_tree"/>
         <field name="arch" type="xml">
-            <!-- <xpath expr="//field[@name='analytic_account_id']" position="attributes">
-              <attribute name="invisible">1</attribute>
-            </xpath> -->
+
             <xpath expr="//field[@name='tax_ids']" position="attributes">
-              <attribute name="invisible">1</attribute>
+                <attribute name="invisible">1</attribute>
             </xpath>
             <xpath expr="//field[@name='balance']" position="attributes">
-              <attribute name="optional">show</attribute>
+                <attribute name="optional">show</attribute>
             </xpath>
             <xpath expr="//field[@name='date_maturity']" position="before">
-              <field name="date_de_lettrage"/>
-              <!-- <field name="taxes_audit"/> -->
+                <field name="date_de_lettrage"/>
+                <field name="taxes_audit"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="amb_studio_inherit_view_move_line_tree_grouped_sales_purchases" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.view.move.line.tree.grouped.sales.purchases</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree_grouped_sales_purchases"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="amb_studio_inherit_view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.view.account.invoice.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search[1]/group[1]/separator[1]" position="after">
+                <filter domain="[['oci_point_of_sale','ilike','Reims']]"
+                        name="studio_filter_jjLiU" string="Reims"/>
+                <filter domain="[['oci_point_of_sale','ilike','Charleville']]"
+                        name="studio_filter_EPh4j" string="Charleville"/>
+                <separator name="studio_separator_b8MRW"/>
+<!--                <filter domain="[['partner_id.type_produit_contact.x_name','=','REVENDEUR']]"-->
+<!--                        name="studio_filter_8qfsS" string="Revendeur"/>-->
+            </xpath>
+            <xpath expr="//filter[@name='duedate']" position="after">
+                <filter context="{'group_by': 'oci_point_of_sale'}" name="studio_group_by_KPuW1"
+                        string="Point de vente"/>
+<!--                <filter context="{'group_by': 'type'}" name="studio_group_by_UNNQD" string="Type (facture/avoir)"/>-->
+                <filter context="{'group_by': 'partner_id'}" name="studio_group_by_0U8lp" string="Partner"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="amb_studio_inherit_view_invoice_tree" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.view.invoice.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_origin']" position="after">
+                <field name="oci_point_of_sale"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="amb_studio_inherit_view_account_move_line_filter" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.view.account.move.line.filter</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='reconcile_model_id']" position="after">
+                <field name="debit"/>
+                <field name="credit"/>
+            </xpath>
+            <xpath expr="//filter[@name='posted']" position="after">
+                <filter domain="[['parent_state','=','cancel']]"
+                        name="studio_filter_jhaMv" string="Annulé"/>
+            </xpath>
+            <xpath expr="//filter[@name='unreconciled']" position="after">
+                <filter domain="['&amp;','&amp;','&amp;','&amp;',['move_id.state','=','posted'],['full_reconcile_id','=',False],['balance','!=',0],['account_id.reconcile','=',True],'|',['matched_credit_ids','!=',False],['matched_debit_ids','!=',False]]"
+                        name="studio_filter_BZlkX" string="Lettrage Partiel"/>
+            </xpath>
+            <xpath expr="//search[1]/separator[7]" position="after">
+                <filter domain="[['account_id.internal_group','=','expense']]"
+                        name="studio_filter_qgWrX" string="Comptes de Charges"/>
+                <filter domain="[['account_id.internal_group','=','income']]"
+                        name="studio_filter_Ojo8h" string="Comptes de Produits"/>
+                <separator name="studio_separator_XkjY3"/>
+            </xpath>
+            <xpath expr="//filter[@name='groupby_date']" position="after">
+                <filter context="{'group_by': 'taxes_audit'}" name="studio_group_by_5TIAP"
+                        string="taxes_audit"/>
             </xpath>
         </field>
     </record>

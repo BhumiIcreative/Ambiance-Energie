@@ -1,13 +1,31 @@
 <odoo>
-<!--    <record model="ir.ui.view" id="amb_studio_inherit_view_stock_quant_tree_inventory_editable">-->
-<!--        <field name="name">amb.studio.inherit.view.stock.quant.tree.inventory.editable</field>-->
-<!--        <field name="model">stock.quant</field>-->
-<!--        <field name="inherit_id" ref="stock.view_stock_quant_tree_inventory_editable"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <xpath expr="//field[@name='product_id']" position="after">-->
-<!--                <field name="rfrence_fournisseur_1" string="Référence fournisseur"/>-->
-<!--                <field name="fournisseur" string="Fournisseur"/>-->
+    <record model="ir.ui.view" id="amb_studio_inherit_view_stock_quant_tree_inventory_editable">
+        <field name="name">amb.studio.inherit.view.stock.quant.tree.inventory.editable</field>
+        <field name="model">stock.quant</field>
+        <field name="inherit_id" ref="stock.view_stock_quant_tree_inventory_editable"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="rfrence_fournisseur_1" string="Référence fournisseur"/>
+                <field name="fournisseur" string="Fournisseur"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_stock_quant_tree_inherit">
+        <field name="name">stock.quant.tree.inherit</field>
+        <field name="model">stock.quant</field>
+        <field name="inherit_id" ref="stock.view_stock_quant_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="replace"/>
+            <xpath expr="//field[@name='product_uom_id']" position="replace">
+                <field name="rserv" string="Réservé"/>
+                <field name="dispo_la_vente" string="Dispo à la vente"/>
+                <field name="commandes_fournisseurs_en_cours" string="Commandes fournisseurs en cours"/>
+                <field name="quantit_terme" string="Quantité à terme"/>
+            </xpath>
+<!--            <xpath expr="//field[@name='reserved_quantity']" position="replace"/>-->
+<!--            <xpath expr="//field[@name='product_id']" position="before">-->
+<!--                <field name="studio_type_article" string="Type article" attrs="{}" invisible="1"/>-->
 <!--            </xpath>-->
-<!--        </field>-->
-<!--    </record>-->
+        </field>
+    </record>
 </odoo>

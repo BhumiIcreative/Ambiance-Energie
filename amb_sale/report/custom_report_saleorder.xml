@@ -5,7 +5,10 @@
     </record>
     <!-- Replace base sale order  -->
     <template id="edited_report_saleorder" inherit_id="sale.report_saleorder_document">
-        <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+        <xpath expr="//t[@t-call='web.external_layout']" position="attributes">
+            <attribute name="class">d-none</attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='web.external_layout']" position="after">
             <t t-call="amb_sale.custom_external_layout">
                 <div class="row">
                     <!-- Image left header section-->

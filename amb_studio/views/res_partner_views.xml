@@ -5,22 +5,36 @@
         <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='function']" position="after">
-              <field name="street" optional="show"/>
-              <field name="zip" optional="show"/>
-            <xpath expr="//field[@name='city']" position="move"/>
+                <field name="street" optional="show"/>
+                <field name="zip" optional="show"/>
+                <xpath expr="//field[@name='city']" position="move"/>
             </xpath>
-            <xpath expr="//field[@name='phone']" position="after">
-              <field name="mobile"/>
-            </xpath>
+<!--            <xpath expr="//field[@name='phone']" position="after">-->
+<!--                <field name="mobile"/>-->
+<!--            </xpath>-->
             <xpath expr="//field[@name='email']" position="after">
-              <field name="property_product_pricelist" invisible="1"/>
-              <field name="total_due"/>
-              <field name="date_de_pose_equipement_contact" optional="hide"/>
-              <field name="siret" optional="hide"/>
+                <field name="property_product_pricelist" invisible="1"/>
+                <field name="total_due"/>
+                <field name="date_de_pose_equipement_contact" optional="hide"/>
+                <field name="siret" optional="hide"/>
             </xpath>
             <xpath expr="//field[@name='city']" position="attributes">
-              <attribute name="optional">show</attribute>
+                <attribute name="optional">show</attribute>
             </xpath>
         </field>
     </record>
+<!--    <record id="amb_studio_inherit_res_partner_kanban_view" model="ir.ui.view">-->
+<!--        <field name="name">amb.studio.inherit.res.partner.kanban.view</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.res_partner_kanban_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/ul[1]/li[7]" position="replace"/>-->
+<!--            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/ul[1]/li[4]/field[@name='city']"-->
+<!--                   position="replace"/>-->
+<!--            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/div[1]/span[1]/field[@name='category_id']"-->
+<!--                   position="after">-->
+<!--                <field display="full" name="contact_address"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
 </odoo>

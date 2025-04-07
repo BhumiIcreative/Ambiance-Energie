@@ -1,0 +1,12 @@
+<odoo>
+    <record id="amb_studio_inherit_purchase_order_tree" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.purchase.order.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_status']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -50,7 +50,12 @@
         "views/ir_cron_views.xml",
         "views/product_category_views.xml",
         "views/oci_type_produit_contact.xml",
-        "views/res_company_views.xml"
+        "views/res_company_views.xml",
+        "views/stock_move_line_views.xml",
+        "views/purchase_views.xml",
+        "views/mrp_bom_views.xml",
+        "views/delivery_views.xml",
+        "views/bank_rec_widget_views.xml",
     ],
     "application": False,
     "installable": True,
