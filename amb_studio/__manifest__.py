@@ -21,10 +21,8 @@
         "sale_stock",
         "stock",
         "hr_expense",
-        "amb_stock",
         'mass_mailing',
         "account_batch_payment",
-        "sale_timeline",
     ],
     # always loaded
     "data": [
@@ -56,6 +54,11 @@
         "views/mrp_bom_views.xml",
         "views/delivery_views.xml",
         "views/bank_rec_widget_views.xml",
+        "views/sale_report_views.xml",
+        "views/stock_move_line_views.xml",
+        "views/account_journal_view.xml",
+        "views/technicien.xml",
+        "views/product_supplierinfo_views.xml",
     ],
     "application": False,
     "installable": True,

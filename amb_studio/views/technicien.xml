@@ -1,0 +1,17 @@
+<odoo>
+    <record id="amb_studio_view_technicien_form" model="ir.ui.view">
+        <field name="name">technicien.form.studio</field>
+        <field name="model">technicien</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Technician">
+                  <div class="oe_title">
+                    <h1>
+                      <field name="name" required="1"/>
+                    </h1>
+                  </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

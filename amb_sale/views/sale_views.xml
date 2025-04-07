@@ -11,7 +11,7 @@
                 <field name="client_situation" widget="monetary" style="color : green;"
                        invisible="client_situation &lt;= 0"/>
                 <field name="client_situation" widget="monetary" invisible="client_situation != 0"/>
-                <field name="oci_point_of_sale" options="{'no_create': True, 'no_create_edit':True}"/>
+                <!-- <field name="oci_point_of_sale" options="{'no_create': True, 'no_create_edit':True}"/> -->
                 <field name="counter_sale"/>
             </xpath>
             <xpath expr="//field[@name='tax_totals']" position="after">
@@ -28,7 +28,7 @@
             </xpath>
             <xpath expr="//form//sheet/group[@name='sale_header']/group[@name='order_details']/field[@name='date_order']"
                    position="after">
-                <field name="commitment_date" string="Livraison prévue le" required="type_order == 'serv'"/>
+                <field name="commitment_date" string="Delivery scheduled for" required="type_order == 'serv'"/>
             </xpath>
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="type_order"/>
@@ -38,7 +38,7 @@
                 <attribute name="context"></attribute>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="before">
-                <field name="discount_fixed"/>
+                <field name="discount_fixed" digits="[2,2]"/>
             </xpath>
         </field>
     </record>

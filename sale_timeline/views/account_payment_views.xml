@@ -32,7 +32,7 @@
                 <field name="oci_point_of_sale" options="{'no_create': True, 'no_create_edit':True}"/>
             </xpath>
             <xpath expr="//field[@name='payment_method_line_id']" position="after">
-                <field name="payment_instrument_id"/>
+                <field name="payment_instrument_id" string="Payment method" readonly="1" optional="show"/>
             </xpath>
         </field>
     </record>

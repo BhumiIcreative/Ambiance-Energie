@@ -57,4 +57,14 @@
             </xpath>
         </field>
     </record>
+    <record id="amb_studio_inherit_view_order_form" model="ir.ui.view">
+        <field name="name">view.order.form.studio</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="oci_point_of_sale"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

@@ -1,0 +1,15 @@
+<odoo>
+    <record id="amb_studio_inherit_view_account_journal_tree" model="ir.ui.view">
+        <field name="name">account.journal.tree.studio</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence']" position="after">
+              <field name="code"/>
+            </xpath>
+            <xpath expr="//field[@name='journal_group_ids']" position="after">
+              <field name="restrict_mode_hash_table"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
