@@ -7,6 +7,9 @@
             <xpath expr="//field[@name='journal_id']" position="after">
                 <field name="payment_method_id"/>
             </xpath>
+            <xpath expr="//filter[@name='company']" position="after">
+                <filter context="{'group_by': 'payment_instrument_id'}" name="studio_group_by_eR1OX" string="Payment Instrument"/>
+            </xpath>
         </field>
     </record>
     <record id="account_payment_inherit_tree_view" model="ir.ui.view">

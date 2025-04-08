@@ -4,6 +4,8 @@ from odoo import fields, models
 class PointDeVente(models.Model):
     _name = "point.de.vente"
     _description = "Point de Vente"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
 
     name = fields.Char(string="Name", copy=False)
     pos_archive = fields.Boolean(string="Active", copy=False)
@@ -14,3 +16,5 @@ class PointDeVente(models.Model):
         "stock.warehouse", string="Warehouse", copy=False, ondelete="set null"
     )
     qrcode_payment = fields.Binary(string="QR Code Payment", copy=False)
+    active = fields.Boolean(string='Active', default=True)
+    

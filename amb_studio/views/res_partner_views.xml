@@ -37,4 +37,73 @@
 <!--            </xpath>-->
 <!--        </field>-->
 <!--    </record>-->
+
+    <record id="amb_studio_inherit_view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.studio</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+          <field name="region_id"/>
+          <field name="siret_contact"/>
+          <field name="property_account_position_id"/>
+          <field name="ape_contact"/>
+          <field name="point_de_vente_id" options="{'no_create' :true, 'no_open' :true}" domain="[['pos_archive', '=' , False]]" required="1"/>
+          <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='misc']/field[@name='company_id']" position="move"/>
+          <field name="type_produit_contact_ids" widget="many2many_tags"/>
+          <field name="oci_sms_granules"/>
+          <field name="oci_sms_promo_entretien"/>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[1]" position="attributes">
+          <attribute name="string">Phone 1</attribute>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[2]" position="attributes">
+          <attribute name="string">Mobile 1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='phone_sanitized']" position="after">
+          <field name="telephone2_contact" widget="phone"/>
+        </xpath>
+        <xpath expr="//field[@name='category_id']" position="after">
+          <field name="provenance_contact_id"/>
+          <field name="ancien_proprietaire_contact_id"/>
+          <field name="nom_parrainage_contact_id" invisible="provenance_contact_id != 9" required="provenance_contact_id == 9"/>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="before">
+          <field name="est_un_client"/>
+          <field name="commercial_contact_id"/>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='property_supplier_payment_term_id']" position="before">
+          <field name="est_un_fournisseur"/>
+        </xpath>
+        <xpath expr="//field[@name='ref']" position="before">
+          <field name="facturation_ttc" invisible="1"/>
+        </xpath>
+        <xpath expr="//field[@name='property_account_receivable_id']" position="attributes">
+          <attribute name="domain">[("deprecated", "=" ,False)]</attribute>
+        </xpath>
+        <xpath expr="//field[@name='property_account_payable_id']" position="attributes">
+          <attribute name="domain">[('deprecated', '=', False)]</attribute>
+        </xpath>
+        <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+          <page string="Equipement">
+            <group >
+              <group >
+                <field name="numero_serie_equipement_contact"/>
+                <field name="date_de_pose_equipement_contact"/>
+                <field name="modele_equipement_contact" />
+                <field name="autre_information_equipement_contact"/>
+              </group>
+              <group name="studio_group_TqWPH_right"/>
+            </group>
+          </page>
+        </xpath>
+       <!--  <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='company_id']" position="attributes">
+          <attribute name="readonly">parent_id</attribute>
+          <attribute name="required">id != 1 and id != 143237 and id != 55990]]}</attribute>
+        </xpath> -->
+        </field>
+    </record>
 </odoo>

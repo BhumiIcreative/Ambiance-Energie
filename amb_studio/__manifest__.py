@@ -23,6 +23,7 @@
         "hr_expense",
         'mass_mailing',
         "account_batch_payment",
+        "sale_subscription",
     ],
     # always loaded
     "data": [
@@ -62,6 +63,7 @@
         "views/account_journal_view.xml",
         "views/technicien.xml",
         "views/product_supplierinfo_views.xml",
+        "views/point_de_vente.xml"
     ],
     "application": False,
     "installable": True,

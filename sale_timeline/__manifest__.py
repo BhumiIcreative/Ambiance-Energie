@@ -12,6 +12,7 @@
         'sale',
         # 'amb_sale',
         'amb_edf_prime',
+        'sale_subscription',
     ],
     'data': [
         'data/account_payment_term.xml',

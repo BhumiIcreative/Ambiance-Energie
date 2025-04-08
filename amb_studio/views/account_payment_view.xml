@@ -32,7 +32,6 @@
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="oci_point_of_sale"/>
-                <field name="payment_instrument_id" string="Payment method" readonly="1" optional="show"/>
             </xpath>
             <!-- change models of payment_difference   -->
             <!-- <xpath expr="//field[@name='state']" position="after">
@@ -54,8 +53,6 @@
             <xpath expr="//filter[@name='company']" position="after">
                 <filter context="{'group_by': 'oci_point_of_sale'}" name="studio_group_by_lMHv9"
                         string="Point de vente"/>
-                <filter context="{'group_by': 'payment_instrument_id'}" name="studio_group_by_eR1OX"
-                        string="Payment Instrument"/>
             </xpath>
             <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
                 <separator name="studio_separator_kw0A6"/>

@@ -51,4 +51,25 @@
             </xpath>
         </field>
     </record>
+    <record id="sale_subscription_view_search_inherit" model='ir.ui.view'>
+        <field name='name'>sale.subscription.view.search.inherit</field>
+        <field name='model'>sale.order</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_search"/>
+        <field name='arch' type='xml'>
+            <xpath expr="//filter[@name='end_month']" position="after">
+                <filter context="{'group_by': 'payment_instrument_id'}" name="studio_group_by_6CJkc"
+                        string="Méthode de paiement"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="sale_subscription_view_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.subscription.view.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='recurring_total']" position="after">
+                <field name="payment_instrument_id"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>
