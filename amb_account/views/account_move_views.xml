@@ -18,7 +18,7 @@
                 <field name="client_situation" widget="monetary"
                        invisible="move_type not in ['out_invoice', 'out_refund']"/>
                 <field name="commissioning_identification"/>
-                <field name="oci_point_of_sale" invisible="move_type not in ['out_invoice', 'out_refund']"
+                <field name="oci_point_of_sale"
                        required="move_type == 'out_invoice' or move_type == 'out_refund'"
                        options="{'no_create': True, 'no_create_edit':True}"/>
             </xpath>

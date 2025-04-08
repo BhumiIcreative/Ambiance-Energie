@@ -31,7 +31,7 @@ class ResPartner(models.Model):
     commercial_contact_id = fields.Many2one(
         "hr.employee", string="Commercial", copy=False, ondelete="set null"
     )
-    est_un_client = fields.Boolean(string="Is a customer", copy=False)
+    est_un_client = fields.Boolean(string="Is a customer", copy=False, store=True)
     est_un_fournisseur = fields.Boolean(string="Is a supplier", copy=False)
     date_de_pose_equipement_contact = fields.Char(string="Installation date")
     point_de_vente_id = fields.Many2one(
@@ -43,6 +43,7 @@ class ResPartner(models.Model):
         copy=False,
         readonly=True,
         related="property_product_pricelist.display_name",
+        store=True
     )
     facturation_ttc = fields.Boolean(string="Invoicing Including Tax", copy=False)
     region_id = fields.Many2one(

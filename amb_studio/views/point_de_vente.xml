@@ -39,7 +39,7 @@
         <field name="arch" type="xml">
             <tree string="Point of sale">
                 <field name="name"/>
-                <field name="active"/>
+                <field name="pos_archive"/>
             </tree>
         </field>
     </record>
@@ -52,9 +52,9 @@
         <field name="arch" type="xml">
             <search string="Point of Sale">
                 <field name="name"/>
-                <filter domain="[['active','=',True]]" name="active" string="Active"/>
+                <filter domain="[['pos_archive','=',True]]" name="active" string="Active"/>
                 <separator/>
-                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <filter string="Archived" name="inactive" domain="[('pos_archive', '=', False)]"/>
             </search>
         </field>
     </record>

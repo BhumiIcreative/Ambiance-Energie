@@ -1,11 +1,26 @@
 <odoo>
-    <record id="amb_studio_oci_type_produit_contact" model="ir.ui.view">
-        <field name="name">oci.type.produit.contact.list.studio</field>
+    <record id="amb_studio_oci_type_produit_contact_tree" model="ir.ui.view">
+        <field name="name">oci.type.produit.contact.tree.studio</field>
         <field name="model">oci.type.produit.contact</field>
         <field name="arch" type="xml">
            <tree>
                 <field name="name"/>
             </tree>
+        </field>
+    </record>
+    <record id="amb_studio_oci_type_produit_contact_form" model="ir.ui.view">
+        <field name="name">oci.type.produit.contact.form.studio</field>
+        <field name="model">oci.type.produit.contact</field>
+        <field name="arch" type="xml">
+           <form>
+                <sheet string="OCI Product Type Contact">
+                  <div class="oe_title">
+                    <h1>
+                      <field name="name" required="1"/>
+                    </h1>
+                  </div>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>

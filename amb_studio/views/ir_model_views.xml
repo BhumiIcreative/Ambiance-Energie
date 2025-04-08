@@ -1,0 +1,23 @@
+<odoo>
+    <record id="amb_studio_inherit_view_model_fields_tree" model="ir.ui.view">
+        <field name="name">view.model.fields.tree.studio</field>
+        <field name="model">ir.model.fields</field>
+        <field name="inherit_id" ref="base.view_model_fields_tree"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='model_id']" position="after">
+              <field name="modules"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="amb_studio_inherit_view_model_fields_search" model="ir.ui.view">
+        <field name="name">view.model.fields.search.studio</field>
+        <field name="model">ir.model.fields</field>
+        <field name="inherit_id" ref="base.view_model_fields_search"/>
+        <field name="arch" type="xml">
+           <xpath expr="//search[1]/field[@name='readonly']" position="after">
+              <field name="domain"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

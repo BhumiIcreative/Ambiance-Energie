@@ -38,4 +38,124 @@
             <pivot string="Article"/>
         </field>
     </record>
+
+    <record id="amb_studio_inherit_product_template_only_form_view" model="ir.ui.view">
+        <field name="name">product.template.form.studio</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after">
+              <field name="non_remisable_1" groups="account.group_account_manager" />
+              <field name="non_remisable_1" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='taxes_id']" position="after">
+              <field name="frais_approche_article"/>
+              <field name="dernier_prix_dachat_fournisseur" widget="monetary"/>
+            </xpath>
+            <xpath expr="//form[@name='Product Template']/sheet[1]/notebook[1]/page[@name='general_information']/group[1]/group[@name='group_standard_price']/field[@name='company_id']" position="attributes">
+              <attribute name="required">id != 20281 and name != 'Prime CEE EDF'</attribute>
+            </xpath>
+            <xpath expr="//field[@name='seller_ids']" position="inside">
+              <tree string="Supplier Information" multi_edit="1">
+                <field name="sequence" widget="handle" readonly="1"/>
+                <field name="partner_id" readonly="1"/>
+                <field name="product_id" readonly="1" optional="hide" invisible="context.get('product_template_invisible_variant', False)" groups="product.group_product_variant"/>
+                <field name="product_tmpl_id" string="Article" readonly="1" invisible="context.get('visible_product_tmpl_id', True)"/>
+                <field name="currency_id" groups="base.group_multi_currency"/>
+                <field name="date_start" optional="hide"/>
+                <field name="date_end" optional="hide"/>
+                <field name="company_id" readonly="1" groups="base.group_multi_company"/>
+                <field name="product_code"/>
+                <field name="min_qty"/>
+                <field name="product_uom" groups="uom.group_uom"/>
+                <field name="price"/>
+              </tree>
+            </xpath>
+            <xpath expr="//form[@name='Product Template']/sheet[1]/notebook[1]" position="inside">
+              <page string="Current orders">
+                <group>
+                  <group>
+                    <field name="field_jPwOa_ids">
+                      <tree decoration-muted="state == 'cancel'" default_order="date_deadline, picking_id, sequence" string="Moves" create="0">
+                        <field name="date_deadline" widget="date" readonly="state in ['done']" column_invisible="1"/>
+                        <field name="date" string="Creation date" widget="date" optional="hide"/>
+                        <field name="picking_id" string="Reference" column_invisible="1"/>
+                        <field name="sequence" column_invisible="1"/>
+                        <field name="point_de_vente_2" />
+                        <field name="origin" optional="show"/>
+                        <field name="client"/>
+                        <field name="product_id" readonly="state in ['done']" column_invisible="1"/>
+                        <field name="product_uom_qty" string="Order in progress" sum="Sum of Initial Request"/>
+                        <field name="product_uom" options="{'no_open': True, 'no_create': True}" string="Unit of measurement" groups="uom.group_uom" attrs="{}" column_invisible="1"/>
+                        <field name="location_id" options="{'no_create': True}" column_invisible="1"/>
+                        <field name="location_dest_id" column_invisible="1"/>
+                        <field name="create_date" column_invisible="1"/>
+                        <field name="state" optional="show" column_invisible="1"/>
+                        <field name="company_id" column_invisible="1"/>
+                      </tree>
+                      <form string="Stock Moves" create="0" edit="0">
+                        <header>
+                          <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,assigned,done"/>
+                        </header>
+                        <sheet>
+                          <div class="oe_button_box" name="button_box">
+                            <button name="action_get_account_moves" icon="fa-usd" class="oe_stat_button" string="Accounting Entries" type="object" groups="account.group_account_user"/>
+                          </div>
+                          <group>
+                            <group colspan="2">
+                              <group>
+                                <field name="reference"/>
+                                <field name="location_id" options="{'no_create': True}"/>
+                                <field name="location_dest_id" options="{'no_create': True}"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                              </group>
+                              <group>
+                                <field name="product_id"/>
+                                <field name="product_uom_category_id" invisible="1"/>
+                                <label for="product_uom_qty"/>
+                                <div class="o_row">
+                                  <field name="product_uom_qty"/>
+                                  <field name="product_uom" options="{'no_open': True, 'no_create': True}" groups="uom.group_uom"/>
+                                </div>
+                                <field name="name" invisible="1"/>
+                                <field name="date_deadline"/>
+                                <field name="date" invisible="state != 'done'"/>
+                              </group>
+                            </group>
+                            <group name="origin_grp" string="Origin" groups="base.group_no_one">
+                              <field name="origin"/>
+                              <field name="group_id"/>
+                              <field name="procure_method" readonly="state != 'draft'" groups="stock.group_adv_location"/>
+                              <field name="purchase_line_id"/>
+                            </group>
+                            <group name="linked_group" string="Linked Moves" groups="base.group_no_one" colspan="2">
+                              <field name="move_orig_ids" string="Origin Moves" readonly="1">
+                                <tree>
+                                  <field name="location_id"/>
+                                  <field name="location_dest_id"/>
+                                  <field name="product_uom_qty"/>
+                                  <field name="product_uom"/>
+                                  <field name="state"/>
+                                </tree>
+                              </field>
+                              <field name="move_dest_ids" string="Destination Moves" readonly="1">
+                                <tree>
+                                  <field name="location_id"/>
+                                  <field name="location_dest_id"/>
+                                  <field name="product_uom_qty"/>
+                                  <field name="product_uom"/>
+                                  <field name="state"/>
+                                </tree>
+                              </field>
+                            </group>
+                          </group>
+                        </sheet>
+                      </form>
+                    </field>
+                  </group>
+                </group>
+              </page>
+            </xpath>
+        </field>
+    </record>
 </odoo>

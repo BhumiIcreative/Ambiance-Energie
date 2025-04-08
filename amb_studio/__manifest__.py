@@ -63,7 +63,9 @@
         "views/account_journal_view.xml",
         "views/technicien.xml",
         "views/product_supplierinfo_views.xml",
-        "views/point_de_vente.xml"
+        "views/point_de_vente.xml",
+        "views/oci_provenance_contact.xml",
+        "views/ir_model_views.xml",
     ],
     "application": False,
     "installable": True,

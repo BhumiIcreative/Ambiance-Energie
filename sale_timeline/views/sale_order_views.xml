@@ -31,6 +31,9 @@
             <field name="payment_term_id" position="after">
                 <field invisible="not is_timeline" name="payment_instrument_id" options="{'no_open':True}"/>
             </field>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='payment_instrument_id']" position="after">
+              <field name="campaign_id"/>
+            </xpath>
         </field>
     </record>
 

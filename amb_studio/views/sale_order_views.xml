@@ -60,6 +60,51 @@
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="oci_point_of_sale"/>
             </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+              <field name="modle_de_poele" invisible="not modle_de_poele"/>
+              <field name="adresse" invisible="id"/>
+              <xpath expr="//field[@name='oci_point_of_sale']" position="move"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='client_situation']" position="after">
+              <field name="oci_saleorder_refcustomer"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='client_situation'][3]" position="after">
+              <field name="pos_vendeur_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='validity_date']" position="after">
+              <field name="oci_saleorder_technicien_id"  domain="[('active', '=', True)]" required="type_order == 'serv'"/>
+            </xpath>
+            <!-- <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='payment_instrument_id']" position="after">
+              <field name="campaign_id"/>
+            </xpath> -->
+            <xpath expr="//field[@name='sponsorship']" position="after">
+              <field name="oci_saleorder_yourref"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='sequence']" position="after">
+              <field name="non_remisable"/>
+              <field name="commande_en_cours" force_save="True" readonly="1" invisible="1"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='tax_id']" position="attributes">
+              <attribute name="readonly"> qty_invoiced &gt; 0</attribute>
+              <attribute name="required"> not display_type</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='discount']" position="attributes">
+              <attribute name="readonly">non_remisable</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='margin_lines']/field[@name='margin_order_line']/tree[1]/field[@name='price_subtotal']" position="attributes">
+              <attribute name="sum">Sum of Sous-total</attribute>
+            </xpath>
+            <!-- <xpath expr="//field[@name='team_id']" position="attributes">
+              <attribute name="attrs">{}</attribute>
+            </xpath> -->
+            <xpath expr="//field[@name='client_order_ref']" position="attributes">
+              <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='oci_point_of_sale']" position="attributes">
+              <attribute name="required">not pos_vendeur_id</attribute>
+              <attribute name="domain">[["pos_archive","=",False]]</attribute>
+              <attribute name="options">{"no_create":true,"no_open":true}</attribute>
+            </xpath>
         </field>
     </record>
 </odoo>

@@ -18,8 +18,9 @@
                 <div class="oe_subtotal_footer_separator oe_inline o_td_label">
                     <label for="advance"/>
                 </div>
+                <field name="advance_state" readonly="1" force_save="True"/>
                 <field name="advance" nolabel="1" widget='monetary' options="{'currency_field': 'currency_id'}"
-                       readonly="state not in ['draft', 'sent']"/>
+                       readonly="advance_state == 'confirmed'"/>
                 <div class="oe_subtotal_footer_separator oe_inline o_td_label">
                     <label for="amount_left_to_pay"/>
                 </div>
@@ -39,7 +40,7 @@
             </xpath>
             <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="before">
                 <field name="discount_fixed" digits="[2,2]"/>
-            </xpath>
+            </xpath>           
         </field>
     </record>
 </odoo>

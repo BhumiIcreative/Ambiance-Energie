@@ -106,4 +106,32 @@
         </xpath> -->
         </field>
     </record>
+
+    <record id="amb_studio_inherit_view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.view.filter.studio</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+          <xpath expr="//filter[@name='inactive']" position="after">
+            <filter name="liste_de_prix" domain="[('liste_de_prix', 'ilike' , '30\\%')]" string="Price Discounted by 30%"/>
+            <separator/>
+            <filter name="installation_date_determined" domain="[('date_de_pose_equipement_contact', '!=' , False)]" string="Installation date determined"/>
+            <filter name="Installation_date_not_entered" domain="[('date_de_pose_equipement_contact', '=' , False)]" string="Installation date not entered"/>
+          </xpath>
+          <xpath expr="//filter[@name='supplier']" position="replace"/>
+          <xpath expr="//filter[@name='customer']" position="replace"/>
+          <xpath expr="//search[1]/field[@name='name']" position="after">
+            <field name="city"/>
+          </xpath>
+          <xpath expr="//field[@name='user_id']" position="after">
+            <field name="property_product_pricelist" string="Price list"/>
+            <field name="ref"/>
+            <filter name="est_un_client" domain="[('est_un_client' ,'=', True)]" string="Is a Customer"/>
+            <filter name="est_un_fournisseur" domain="[('est_un_fournisseur', '=', True)]" string="Is a Supplier"/>
+          </xpath>
+          <xpath expr="//filter[@name='group_country']" position="after">
+            <filter name="price_list" context="{'group_by': 'liste_de_prix'}" string="Price List-"/>
+          </xpath>
+        </field>
+      </record>
 </odoo>

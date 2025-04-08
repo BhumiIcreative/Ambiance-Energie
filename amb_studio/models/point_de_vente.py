@@ -16,5 +16,4 @@ class PointDeVente(models.Model):
         "stock.warehouse", string="Warehouse", copy=False, ondelete="set null"
     )
     qrcode_payment = fields.Binary(string="QR Code Payment", copy=False)
-    active = fields.Boolean(string='Active', default=True)
     
