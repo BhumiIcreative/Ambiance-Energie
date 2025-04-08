@@ -27,6 +27,9 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
+        "data/data.xml",
+        "data/paperformart_data.xml",
+        "views/menuitems.xml",
         "views/account_tax_view.xml",
         "views/product_views.xml",
         "views/stock_picking_views.xml",

@@ -1,0 +1,431 @@
+<odoo>
+    <menuitem id="menu_favorites_main" name="Favoris" sequence="2" web_icon="fa fa-star,#f1c40f,#1abc9c"/>
+    <menuitem id="menu_clients_ventes" name="Clients / Ventes" parent="menu_favorites_main"/>
+    <menuitem id="menu_relances_clients" name="Relances Clients" sequence="9"
+              action="account_followup.action_view_list_customer_statements" parent="menu_clients_ventes"/>
+    <menuitem id="menu_fournisseurs_achats" name="Fournisseurs / Achats" parent="menu_favorites_main" sequence="2"
+              action="base.action_open_website"/>
+    <menuitem id="menu_factures_impayées" name="Factures impayées" parent="menu_fournisseurs_achats" sequence="4"
+              action="studio_action_factures_impayees"/>
+
+    <menuitem id="menu_oci_point_of_sale_main" name="Point de vente" sequence="10"
+              web_icon="fa fa-diamond,#f1c40f,#34495e"/>
+    <menuitem id="menu_point_de_vente_" name="OCI" sequence="1000" web_icon="fa fa-diamond,#f1c40f,#34495e"
+              parent="base.menu_administration"
+              groups="sales_team.group_sale_manager','hr.group_hr_manager','purchase.group_purchase_manager','base.group_system'"/>
+    <menuitem id="menu_studio_region" name="Région" parent="contacts.res_partner_menu_config" sequence="10" web_icon="fa fa-diamond,#f1c40f,#34495e"/>
+<!--    <record id="studio_customization.region_region_9c7c179a-61de-4c91-b600-920f8e9d1188" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="studio_customization.region_c57028d3-ed9b-4afb-915a-6101c96cb85e"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Région</field>-->
+<!--    <field name="parent_id" ref="contacts.menu_localisation"/>-->
+<!--    <field name="sequence">3</field>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+
+    <!--    <menuitem id="menu_point_de_vente_point" name="Point de vente" parent="menu_point_de_vente_" sequence="10"-->
+    <!--              action="oci_point_of_sale_action"/>-->
+
+    <!--    <menuitem id="menu_studio_region_region" name="Point de vente" parent="menu_point_de_vente_" sequence="10"-->
+    <!--              action="oci_point_of_sale_action"/>-->
+
+
+    <!--    <menuitem-->
+    <!--            id="contact_menu_oci_point_of_sale"-->
+    <!--            name="Point of sale"-->
+    <!--            action="oci_point_of_sale_action"-->
+    <!--            parent="contacts.res_partner_menu_config"-->
+    <!--            sequence="2"/>-->
+
+    <record id="iap.iap_root_menu" model="ir.ui.menu">
+        <field name="name">Compte IAP</field>
+        <field name="parent_id" ref="base.menu_custom"/>
+        <field name="sequence">3</field>
+    </record>
+
+    <!--     <record id="studio_customization.inventaire_routes_5d1d6767-8b34-481d-a686-8645232710e0" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.routes_9608f99b-11ce-481a-9275-f172109c923b"/>-->
+    <!--    <field name="active" eval="False"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Routes</field>-->
+    <!--    <field name="parent_id" ref="stock.menu_warehouse_config"/>-->
+    <!--    <field name="sequence">1</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <!--    -->
+    <!--     <record id="studio_customization.inventaire_routes_31925b50-2d01-4080-99df-ce214b68e2b3" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.routes_33d8fa71-58b9-4b65-bd0d-eba40a41b262"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Routes</field>-->
+    <!--    <field name="parent_id" ref="stock.menu_warehouse_config"/>-->
+    <!--    <field name="sequence">3</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <!--    <record id="studio_customization.configuration_lettra_f51dd1c8-2c2c-43e3-ac22-49a9ab256b94" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.lettrage_complet_dcd5d7bd-268a-4a6e-97f5-696f43f95610"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Lettrage Complet</field>-->
+    <!--    <field name="parent_id" ref="base.menu_custom"/>-->
+    <!--    <field name="sequence">14</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <record id="base.menu_ir_property" model="ir.ui.menu">
+        <field name="name">Parameters</field>
+        <field name="parent_id" ref="base.menu_custom"/>
+        <field name="sequence">11</field>
+    </record>
+    <record id="base.menu_automation" model="ir.ui.menu">
+        <field name="name">Automation</field>
+        <field name="parent_id" ref="base.menu_custom"/>
+        <field name="sequence">8</field>
+    </record>
+    <record id="base.next_id_9" model="ir.ui.menu">
+        <field name="name">Database Structure</field>
+        <field name="parent_id" ref="base.menu_custom"/>
+        <field name="sequence">7</field>
+    </record>
+    <!--     <record id="studio_customization.comptabilite_methode_dd047d4a-070f-44b8-a050-dca955e6c3a7" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.methodes_de_paiement_ad654500-9553-4de4-b1d8-3ccd05fc356c"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Méthodes de paiement</field>-->
+    <!--    <field name="parent_id" ref="account.account_invoicing_menu"/>-->
+    <!--    <field name="sequence">1</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <record id="account.menu_action_payment_term_form" model="ir.ui.menu">
+        <field name="name">Conditions de paiement</field>
+        <field name="parent_id" ref="account.account_invoicing_menu"/>
+    </record>
+
+    <record id="account.menu_action_tax_form" model="ir.ui.menu">
+        <field name="name">Taxes</field>
+        <field name="parent_id" ref="account.account_invoicing_menu"/>
+    </record>
+
+    <record id="account.menu_action_account_journal_form" model="ir.ui.menu">
+        <field name="name">Journaux</field>
+        <field name="parent_id" ref="account.account_invoicing_menu"/>
+        <field name="sequence">5</field>
+    </record>
+
+    <record id="account.menu_action_account_fiscal_position_form" model="ir.ui.menu">
+        <field name="name">Positions fiscales</field>
+        <field name="parent_id" ref="account.account_invoicing_menu"/>
+        <field name="sequence">3</field>
+    </record>
+    <!--    <record id="studio_customization.inventaire_stocks_et_a95c37bf-cb13-4344-9b7e-c7667c232a39" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.stocks_et_ratios_par_bbb54be8-d3c8-4aaf-8d57-b0b3d297913c"/>-->
+    <!--    <field name="active" eval="False"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Stocks et ratios par point de vente</field>-->
+    <!--    <field name="parent_id" ref="stock.menu_stock_inventory_control"/>-->
+    <!--    <field name="sequence">2</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+
+    <record id="stock.menu_reordering_rules_config" model="ir.ui.menu">
+        <field name="name">Règles de réapprovisionnement</field>
+        <field name="parent_id" ref="stock.menu_stock_inventory_control"/>
+        <field name="sequence">3</field>
+    </record>
+    <!--    <record id="studio_customization.favoris_article_a662963c-d856-4d85-8f01-0b329c1bd3c4" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.article_777dc013-6dd9-480d-8467-afa548585a05"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Article</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_a4feb331-7d5e-4431-bdff-19bfc684a147"/>-->
+    <!--    <field name="sequence">1</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <record id="account.action_account_reconcile_model_menu" model="ir.ui.menu">
+        <field name="name">Modèles de rapprochement</field>
+        <field name="parent_id" ref="account.account_account_menu"/>
+        <field name="sequence">4</field>
+    </record>
+    <menuitem id="studio_favoris_comptabilite" action="account.action_move_journal_line"
+              groups="account.group_account_user" name="Pièces comptables"
+    <!--    <record id="studio_customization.favoris_comptabilite_37663957-bec4-47c4-abf2-43f30d8a53e1" model="ir.ui.menu"-->
+    <!--            context="{'studio': True}">-->
+    <!--        <field name="action" ref=""/>-->
+    <!--        <field name="active" eval="True"/>-->
+    <!--        <field name="groups_id" eval="[(6, 0, [ref('account.group_account_user')])]"/>-->
+    <!--        <field name="name">Pièces comptables</field>-->
+    <!--        <field name="parent_id" ref="studio_customization.favoris_comptabilite_f700d773-f1f4-4b2e-b4d8-b3957534a7da"/>-->
+    <!--        <field name="sequence">1</field>-->
+    <!--        <field name="web_icon" eval="False"/>-->
+    <!--    </record>-->
+    <!--    -->
+    <!--     <record id="studio_customization.favoris_factures_tou_322ffda4-ecd8-4fda-9d97-0950d3d97aff" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.factures_toutes_fc17fd62-6764-4545-b270-938720e2bb52"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Factures (toutes)</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+    <!--    <field name="sequence">4</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <!--    <record id="studio_customization.favoris_avoirs_e22e8888-acce-4efc-a701-0261f78cc0b2" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.avoirs_38496dbe-8374-47c5-b499-9e38d1c28aec"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Avoirs</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+    <!--    <field name="sequence">6</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <!--    <record id="studio_customization.favoris_generer_enca_e34bc15e-5db6-4a4e-8f07-050cfb210b04" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.generer_encaissement_71ce2c3a-0d21-4fe2-bb2c-4e660fdb9f52"/>-->
+    <!--    <field name="active" eval="False"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Générer encaissement</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+    <!--    <field name="sequence">7</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <!--    <record id="studio_customization.favoris_factures_3002c499-4d0b-4e4a-a5be-70968461729f" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.factures_d8aa4182-08e2-4392-8c03-d110ede699c3"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Factures impayées</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+    <!--    <field name="sequence">5</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <record id="base.menu_security" model="ir.ui.menu">
+
+        <field name="name">Sécurité</field>
+        <field name="parent_id" ref="base.menu_custom"/>
+        <field name="sequence">12</field>
+    </record>
+    <!--     <record id="studio_customization.favoris_bon_de_comma_f8da7e8d-06ce-4786-8bb2-768215d078d1" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.bon_de_commande_d68ded80-69db-49e6-86a4-c247b6587171"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_salesman')])]"/>-->
+    <!--    <field name="name">Bon de commande / livraison</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+    <!--    <field name="sequence">2</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <!--    <record id="studio_customization.favoris_clients_c07331d3-bc41-480e-bcdd-f5ceb2b83d89" model="ir.ui.menu"-->
+    <!--            context="{'studio': True}">-->
+    <!--        <field name="action" ref="studio_customization.clients_1bfd20bc-3362-4d86-8f94-378153db882c"/>-->
+    <!--        <field name="active" eval="False"/>-->
+    <!--        <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--        <field name="name">Clients</field>-->
+    <!--        <field name="parent_id" ref="studio_customization.favoris_a4feb331-7d5e-4431-bdff-19bfc684a147"/>-->
+    <!--        <field name="sequence">10</field>-->
+    <!--        <field name="web_icon" eval="False"/>-->
+    <!--    </record>-->
+
+    <!--     <record id="studio_customization.favoris_devis_257af115-ce1c-474e-bc8b-0230ba8ce827" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.devis_2d0d533a-6d06-4542-b3c3-28ca83807412"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [ref('sales_team.group_sale_salesman')])]"/>-->
+    <!--    <field name="name">Devis</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+    <!--    <field name="sequence">1</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <!--     <record id="studio_customization.favoris_clients_9124a9c8-6187-42e7-8352-9f88e6a9eed3" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.clients_900432bf-7588-48f8-b687-b5caaaf8ac22"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Clients</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+    <!--    <field name="sequence" eval="False"/>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <!--    <record id="studio_customization.articles_article_d40faf37-fbbc-423a-8929-c4bfe8689901" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.article_60be89de-929f-4193-b9fb-6dce40fd8ea5"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Articles</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.articles_abc979ee-2270-4c57-b515-c5bd3942d6b7"/>-->
+    <!--    <field name="sequence">10</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <record id="base.menu_email" model="ir.ui.menu">
+        <field name="name">Email</field>
+        <field name="parent_id" ref="base.menu_custom"/>
+    </record>
+    <record id="base.next_id_2" model="ir.ui.menu">
+
+        <field name="name">Interface utilisateur</field>
+        <field name="parent_id" ref="base.menu_custom"/>
+        <field name="sequence">6</field>
+    </record>
+    <menuitem id="menu_studio_articles" groups="sales_team.group_sale_salesman" name="Articles" sequence="9"
+              web_icon="fa fa-cube,#f1c40f,#34495e"/>
+
+    <!--    <record id="studio_customization.favoris_comptabilite_f700d773-f1f4-4b2e-b4d8-b3957534a7da" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="base.action_open_website"/>-->
+    <!--    <field name="active" eval="False"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Comptabilité</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_a4feb331-7d5e-4431-bdff-19bfc684a147"/>-->
+    <!--    <field name="sequence">3</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <!--    <menuitem id="menu_studio_favoris_comptabilite" action="account.action_manual_reconciliation" name="Lettrage" -->
+    <!--     <record id="studio_customization.favoris_comptabilite_c36d6aa6-2398-4c1a-b142-91bafc4a7f68" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="account.action_manual_reconciliation"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Lettrage</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_comptabilite_f700d773-f1f4-4b2e-b4d8-b3957534a7da"/>-->
+    <!--    <field name="sequence" eval="False"/>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <record id="account.menu_action_account_moves_all" model="ir.ui.menu">
+        <field name="name">Écritures comptables</field>
+        <field name="parent_id" ref="account.menu_finance_entries_accounting_miscellaneous"/>
+        <field name="sequence">10</field>
+    </record>
+
+    <!--      <record id="studio_customization.favoris_fournisseurs_cae58998-0707-4212-9a97-7b373e787103" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="purchase.purchase_form_action"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Bons de commande</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_fournisseurs_205368ba-bde0-460e-b021-41bd53b6ee1f"/>-->
+    <!--    <field name="sequence">2</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+
+    <record id="sale.menu_sale_general_settings" model="ir.ui.menu">
+        <field name="name">Configuration</field>
+        <field name="parent_id" ref="sale.menu_sale_config"/>
+    </record>
+    <record id="sale.sale_menu_config_activity_type" model="ir.ui.menu">
+
+        <field name="name">Types d'activités</field>
+        <field name="parent_id" ref="sale.menu_sale_config"/>
+        <field name="sequence">2</field>
+    </record>
+    <!--     <record id="studio_customization.favoris_fournisseurs_24b261a8-c454-4001-bdbc-49bf5f5c43eb" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="account.action_move_in_refund_type"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Avoir</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_fournisseurs_205368ba-bde0-460e-b021-41bd53b6ee1f"/>-->
+    <!--    <field name="sequence">5</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <!--    <record id="studio_customization.contacts_provenance_c1369cf8-e4d6-4ff6-9353-c83ab18ce0a8" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="studio_customization.provenance_e8edef6e-849a-437c-8058-46c37e6e7c43"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Provenance</field>-->
+    <!--    <field name="parent_id" ref="contacts.res_partner_menu_config"/>-->
+    <!--    <field name="sequence">1</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <!--     <record id="studio_customization.favoris_fournisseurs_f9eed7da-89d6-4e23-a685-8f1c6092d91a" model="ir.ui.menu" context="{'studio': True}">-->
+    <!--    <field name="action" ref="account.action_move_in_invoice_type"/>-->
+    <!--    <field name="active" eval="True"/>-->
+    <!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+    <!--    <field name="name">Factures (toutes)</field>-->
+    <!--    <field name="parent_id" ref="studio_customization.favoris_fournisseurs_205368ba-bde0-460e-b021-41bd53b6ee1f"/>-->
+    <!--    <field name="sequence">3</field>-->
+    <!--    <field name="web_icon" eval="False"/>-->
+    <!--  </record>-->
+    <record id="account.menu_action_move_out_receipt_type" model="ir.ui.menu">
+        <field name="name">Ticket de caisse</field>
+        <field name="parent_id" ref="account.menu_finance_receivables"/>
+        <field name="sequence">1</field>
+    </record>
+<!--    <record id="studio_customization.favoris_fournisseurs_16d8b8d3-943c-40ee-bc38-177bda9e5eac" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="purchase.purchase_rfq"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Demandes de prix</field>-->
+<!--    <field name="parent_id" ref="studio_customization.favoris_fournisseurs_205368ba-bde0-460e-b021-41bd53b6ee1f"/>-->
+<!--    <field name="sequence">1</field>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--    <record id="studio_customization.vente_technicien_72148ec3-6e02-4577-be09-0625bb4923ca" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="studio_customization.technicien_0af4d782-413d-453d-b645-456f483a7060"/>-->
+<!--    <field name="active" eval="False"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Technicien</field>-->
+<!--    <field name="parent_id" ref="sale.menu_sale_config"/>-->
+<!--    <field name="sequence">3</field>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--     <record id="studio_customization.vente_journal_des_ve_0a82e927-7bc6-4dc8-8534-b4f1a9885816" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="studio_customization.journal_des_ventes_e21c5b77-dcea-4ac5-b08b-3f859e28739e"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Journal des Factures de ventes</field>-->
+<!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+<!--    <field name="sequence">8</field>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--     <record id="studio_customization.contacts_point_de_ve_dfa877e0-4aa7-47c8-9631-02986f8ca841" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="studio_customization.point_de_vente_6de7f0b7-c56b-4269-ab73-db129348fa70"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Point de vente</field>-->
+<!--    <field name="parent_id" ref="contacts.res_partner_menu_config"/>-->
+<!--    <field name="sequence">2</field>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--    <record id="studio_customization.favoris_fournisseurs_562979e1-0903-4c7f-9021-2620c3af12d9" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="base.action_partner_supplier_form"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Fournisseurs</field>-->
+<!--    <field name="parent_id" ref="studio_customization.favoris_fournisseurs_205368ba-bde0-460e-b021-41bd53b6ee1f"/>-->
+<!--    <field name="sequence" eval="False"/>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--    <record id="studio_customization.contacts_type_produi_28e0573b-9157-466b-a86e-88065d970e4b" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="studio_customization.type_produit_a25f51a0-cf45-4c30-93aa-d3c6a16442d0"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Type produit</field>-->
+<!--    <field name="parent_id" ref="contacts.res_partner_menu_config"/>-->
+<!--    <field name="sequence" eval="False"/>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--    <record id="studio_customization.favoris_commandes_a__fe31fb26-eff7-4267-95de-41115cb901a7" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="studio_customization.commandes_a_facturer_26592e44-7d59-4d29-9b58-5f7a4ac2eeda"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Commandes à facturer</field>-->
+<!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+<!--    <field name="sequence">3</field>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--     <record id="studio_customization.favoris_encaissement_05e03d8e-d83d-4bbe-825c-57869f17142f" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="studio_customization.encaissements_recus_66af32c6-63bc-492c-b9f2-4c3feaf7877f"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Encaissements reçus</field>-->
+<!--    <field name="parent_id" ref="studio_customization.favoris_clients_73af7de1-d39e-4399-a3e0-a61cb91f80da"/>-->
+<!--    <field name="sequence">7</field>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+<!--    <record id="sale.menu_report_product_all" model="ir.ui.menu" context="{'studio': True}">-->
+<!--    <field name="action" ref="sale_enterprise.sale_report_action_dashboard"/>-->
+<!--    <field name="active" eval="True"/>-->
+<!--    <field name="groups_id" eval="[(6, 0, [])]"/>-->
+<!--    <field name="name">Vente</field>-->
+<!--    <field name="parent_id" ref="sale.menu_sale_report"/>-->
+<!--    <field name="sequence" eval="False"/>-->
+<!--    <field name="web_icon" eval="False"/>-->
+<!--  </record>-->
+</odoo>

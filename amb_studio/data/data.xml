@@ -1,0 +1,106 @@
+<odoo>
+    <!-- Création Mouvement Pour écart server action  -->
+    <record id="model_account_bank_statement_action" model="ir.actions.server">
+        <field name="name">Création Mouvement Pour écart</field>
+        <field name="model_id" ref="account.model_account_bank_statement"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">object_write</field>
+        <field name="code"/>
+        <field name="evaluation_type">value</field>
+        <field name="update_m2m_operation">add</field>
+        <field name="update_path">line_ids</field>
+        <!--            <field name="resource_ref" ref="documents.documents_tag_to_validate"/>-->
+    </record>
+
+    <!-- Sale Order -->
+    <!--POS = Charleville server action  -->
+    <record id="model_sale_order_action1" model="ir.actions.server">
+        <field name="name">POS = Charleville</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">object_write</field>
+        <field name="code"/>
+    </record>
+
+    <!-- POS = Reims server action  -->
+    <record id="model_sale_order_action2" model="ir.actions.server">
+        <field name="name">POS = Reims</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">object_write</field>
+        <field name="code"/>
+    </record>
+
+    <!-- Point de vente selon vendeur server action  -->
+    <record id="model_sale_order_action3" model="ir.actions.server">
+        <field name="name">Point de vente selon vendeur</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[for order in records:
+  order['oci_point_of_sale'] = order.user_id.partner_id.point_de_vente_id
+
+]]></field>
+    </record>
+
+    <!--compute x_studio_no_invoiced server action  -->
+    <record id="model_sale_order_action4" model="ir.actions.server">
+        <field name="name">compute x_studio_no_invoiced</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[for record in records:
+  record['no_invoiced'] = record.amount_total - sum(record.invoice_ids.mapped(lambda x: x.amount_total_signed))]]></field>
+    </record>
+
+    <!-- Account Move -->
+    <!-- POS achat compta server action  -->
+    <record id="model_account_move_action" model="ir.actions.server">
+        <field name="name">POS achat compta</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[for order in records:
+  order['oci_point_of_sale'] = order.user_id.partner_id.point_de_vente_id
+
+]]></field>
+    </record>
+
+    <!-- POS achat server action  -->
+    <record id="model_account_move_action" model="ir.actions.server">
+        <field name="name">POS achat</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[for order in records:
+  if order.user_id.partner_id.point_de_vente_id:
+    order['oci_point_of_sale'] = order.user_id.partner_id.point_de_vente_id
+]]></field>
+    </record>
+
+    <!-- Création facture client [OCI] server action  -->
+    <record id="model_account_move_action2" model="ir.actions.server">
+        <field name="name">Création facture client [OCI]</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[for record in records:
+  fact_id = record.id
+  sale_ids = env['sale.order'].search([('invoice_ids.id','=',fact_id)])
+  if len(sale_ids) == 1:
+    record.update({
+      'ref':sale_ids[0].oci_saleorder_yourref
+    })
+
+]]></field>
+    </record>
+
+</odoo>
