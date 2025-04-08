@@ -150,4 +150,18 @@
 <!--            </xpath>-->
 <!--        </field>-->
 <!--    </record>-->
+
+    <record id="amb_studio_inherit_mrp_product_product_search_view" model="ir.ui.view">
+        <field name="name">mrp.product.product.search.studio</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="mrp.mrp_product_product_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search[1]/field[@name='name']" position="before">
+              <field name="seller_ids"/>
+            </xpath>
+            <xpath expr="//field[@name='warehouse_id']" position="after">
+              <field name="default_code"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

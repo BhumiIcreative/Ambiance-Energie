@@ -1,0 +1,31 @@
+<odoo>
+  <record id="amb_studio_region_form" model="ir.ui.view">
+    <field name="name">region.form.studio</field>
+    <field name="model">region</field>
+    <field name="arch" type="xml">
+       <form>
+            <sheet string="Region">
+              <group>
+                <group>
+                  <field name="pays_id"/>
+                  <field name="code"/>
+                  <field name="name" required="1"/>
+                </group>
+              </group>
+            </sheet>
+        </form>
+    </field>
+  </record>
+
+  <record id="amb_studio_region_tree" model="ir.ui.view">
+    <field name="name">region.tree.studio</field>
+    <field name="model">region</field>
+    <field name="arch" type="xml">
+      <tree string="Region" editable="bottom">
+          <field name="pays_id" options="{'no_create': true}" required="1"/>
+          <field name="code" required="1"/>
+        <field name="name" required="1"/>
+      </tree>
+    </field>
+  </record>
+</odoo>

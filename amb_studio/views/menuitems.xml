@@ -149,8 +149,8 @@
         <field name="parent_id" ref="account.account_account_menu"/>
         <field name="sequence">4</field>
     </record>
-    <menuitem id="studio_favoris_comptabilite" action="account.action_move_journal_line"
-              groups="account.group_account_user" name="Pièces comptables"
+<!--     <menuitem id="studio_favoris_comptabilite" action="account.action_move_journal_line"
+              groups="account.group_account_user" name="Pièces comptables" -->
     <!--    <record id="studio_customization.favoris_comptabilite_37663957-bec4-47c4-abf2-43f30d8a53e1" model="ir.ui.menu"-->
     <!--            context="{'studio': True}">-->
     <!--        <field name="action" ref=""/>-->

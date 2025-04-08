@@ -107,4 +107,15 @@
             </xpath>
         </field>
     </record>
+
+    <record id="amb_studio_inherit_view_quotation_tree_with_onboarding" model="ir.ui.view">
+        <field name="name">view.quotation.tree.with.onboarding.studio</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_status']" position="attributes">
+              <attribute name="optional">show</attribute>
+            </xpath>
+        </field>
+    </record>
 </odoo>

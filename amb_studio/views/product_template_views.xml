@@ -158,4 +158,25 @@
             </xpath>
         </field>
     </record>
+
+    <record id="amb_studio_inherit_product_template_search_form_view_stock" model="ir.ui.view">
+        <field name="name">product.template.search.form.view.studio</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.product_template_search_form_view_stock"/>
+        <field name="arch" type="xml">
+          <xpath expr="//search[1]/separator[5]" position="replace">
+            <field name="rf_fournisseur"/>
+            <field name="seller_ids"/>
+            <separator/>
+            <filter domain="[('bom_ids', 'ilike', 'Kit')]" name="studio_filter_9P5xM" string="Kit"/>
+          </xpath>
+          <xpath expr="//search[1]/field[@name='name']" position="before">
+            <field name="default_code"/>
+          </xpath>
+          <xpath expr="//search[1]/group[1]/filter[@name='categ_id']" position="after">
+            <filter context="{'group_by': 'supplier_id'}" name="studio_group_by_X27dP" string="Supplier"/>
+          </xpath>
+        </field>
+      </record>
+
 </odoo>

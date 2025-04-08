@@ -30,7 +30,7 @@
         "security/ir.model.access.csv",
         "data/data.xml",
         "data/paperformart_data.xml",
-        "views/menuitems.xml",
+        # "views/menuitems.xml",
         "views/account_tax_view.xml",
         "views/product_views.xml",
         "views/stock_picking_views.xml",
@@ -66,6 +66,7 @@
         "views/point_de_vente.xml",
         "views/oci_provenance_contact.xml",
         "views/ir_model_views.xml",
+        "views/region.xml"
     ],
     "application": False,
     "installable": True,

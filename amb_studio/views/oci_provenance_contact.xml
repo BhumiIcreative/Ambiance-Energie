@@ -14,4 +14,14 @@
         </form>
     </field>
   </record>
+
+  <record id="amb_studio_oci_provenance_contact_tree" model="ir.ui.view">
+    <field name="name">oci.provenance.contact.tree.studio</field>
+    <field name="model">oci.provenance.contact</field>
+    <field name="arch" type="xml">
+      <tree string="OCI_provenance_contact">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
 </odoo>
