@@ -53,8 +53,8 @@ class SaleOrder(models.Model):
         string="Next intervention date", copy=False
     )
 
-    oci_point_of_sale = fields.Many2one('point.de.vente',
-                                        string='Point of Sale')
+    # oci_point_of_sale = fields.Many2one('point.de.vente',
+    #                                     string='Point of Sale')
 
     @api.depends("invoice_ids")
     def _compute_no_invoiced(self):

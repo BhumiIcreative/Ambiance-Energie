@@ -54,7 +54,7 @@ class StockQuant(models.Model):
         related="product_id.seller_ids.display_name",
     )
 
-    @api.depends("product_id.commandes_clients_ids.commande_en_cours")
+    # @api.depends("product_id.commandes_clients_ids.commande_en_cours")
     def _compute_rserv(self):
         for record in self:
             id_sale = self.env["sale.order.line"].search(
@@ -76,7 +76,7 @@ class StockQuant(models.Model):
         for record in self:
             record["dispo_la_vente"] = record.quantity - record.rserv
 
-    @api.depends("product_id.purchase_order_line_ids.cde_frns_en_cours")
+    # @api.depends("product_id.purchase_order_line_ids.cde_frns_en_cours")
     def _compute_commandes_fournisseurs_en_cours(self):
         for record in self:
             id_sale = self.env["purchase.order.line"].search(

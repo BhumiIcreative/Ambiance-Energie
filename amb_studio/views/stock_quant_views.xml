@@ -22,10 +22,25 @@
                 <field name="commandes_fournisseurs_en_cours" string="Commandes fournisseurs en cours"/>
                 <field name="quantit_terme" string="Quantité à terme"/>
             </xpath>
-<!--            <xpath expr="//field[@name='reserved_quantity']" position="replace"/>-->
-<!--            <xpath expr="//field[@name='product_id']" position="before">-->
-<!--                <field name="studio_type_article" string="Type article" attrs="{}" invisible="1"/>-->
-<!--            </xpath>-->
+            <!--            <xpath expr="//field[@name='reserved_quantity']" position="replace"/>-->
+            <!--            <xpath expr="//field[@name='product_id']" position="before">-->
+            <!--                <field name="studio_type_article" string="Type article" attrs="{}" invisible="1"/>-->
+            <!--            </xpath>-->
         </field>
+    </record>
+
+    <record id="action_studio_stocks_et_ratios_par" model="ir.actions.act_window">
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                        This is your new action ; by default, it contains a list view and a form view.
+                    </p>
+                    <p>
+                        You can start customizing these screens by clicking on the Studio icon on the
+                        top right corner (you can also customize this help message there).
+                    </p>
+                ]]></field>
+        <field name="name">Stocks et ratios par point de vente</field>
+        <field name="res_model">stock.quant</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>

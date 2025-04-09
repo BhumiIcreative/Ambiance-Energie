@@ -7,6 +7,20 @@
             <xpath expr="//field[@name='journal_id']" position="after">
                 <field name="payment_method_id"/>
             </xpath>
+             <xpath expr="//field[@name='company_id']" position="after">
+                <field name="oci_point_of_sale"/>
+            </xpath>
+            <xpath expr="//filter[@name='company']" position="after">
+                <filter context="{'group_by': 'oci_point_of_sale'}" name="studio_group_by_lMHv9"
+                        string="Point de vente"/>
+            </xpath>
+            <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
+                <separator name="studio_separator_kw0A6"/>
+                <filter domain="[['oci_point_of_sale','ilike','Reims']]"
+                        name="studio_filter_RqjhA" string="Reims"/>
+                <filter domain="[['oci_point_of_sale','ilike','Charleville']]"
+                        name="studio_filter_aNfU6" string="Charleville"/>
+            </xpath>
             <xpath expr="//filter[@name='company']" position="after">
                 <filter context="{'group_by': 'payment_instrument_id'}" name="studio_group_by_eR1OX" string="Payment Instrument"/>
             </xpath>
@@ -21,6 +35,9 @@
                 <attribute name="edit">true</attribute>
                 <attribute name="multi_edit">1</attribute>
             </xpath> -->
+             <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="oci_point_of_sale"/>
+            </xpath>
             <xpath expr="//field[@name='amount_company_currency_signed']" position="attributes">
                 <attribute name="readonly">1</attribute>
             </xpath>

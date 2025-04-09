@@ -1,4 +1,5 @@
 <odoo>
+    <!-- Tree View  -->
     <record id="amb_studio_account_full_reconcile_tree_view" model="ir.ui.view">
         <field name="name">amb.studio.account.full.reconcile.tree.view</field>
         <field name="model">account.full.reconcile</field>
@@ -9,6 +10,7 @@
             </tree>
         </field>
     </record>
+    <!-- Form View  -->
     <record id="amb_studio_inherit_view_full_reconcile_form" model="ir.ui.view">
         <field name="name">amb.studio.inherit.view.full.reconcile.form</field>
         <field name="model">account.full.reconcile</field>
@@ -24,11 +26,11 @@
                     <field name="date" optional="show" readonly="1"/>
                     <field name="company_id" options="{'no_create': True}"
                            optional="show"/>
-<!--                     groups="base.group_multi_company"-->
+                    <!--                     groups="base.group_multi_company"-->
                     <field name="move_id" optional="show"/>
                     <field name="account_id" optional="show" options="{'no_open': True, 'no_create': True}"
                            domain="[('company_id', '=', company_id)]" groups="account.group_account_user"/>
-<!--                    <field name="statement_id" invisible="1"/>-->
+                    <!--                    <field name="statement_id" invisible="1"/>-->
                     <field name="partner_id" optional="show" readonly="1"/>
                     <field name="ref" optional="hide"/>
                     <field name="name"/>
@@ -62,5 +64,20 @@
                 </tree>
             </xpath>
         </field>
+    </record>
+    <!--Action -->
+    <record id="action_studio_lettrage_complet" model="ir.actions.act_window">
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                        This is your new action ; by default, it contains a list view and a form view.
+                    </p>
+                    <p>
+                        You can start customizing these screens by clicking on the Studio icon on the
+                        top right corner (you can also customize this help message there).
+                    </p>
+                ]]></field>
+        <field name="name">Lettrage Complet</field>
+        <field name="res_model">account.full.reconcile</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>

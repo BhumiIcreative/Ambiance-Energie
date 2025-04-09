@@ -12,8 +12,12 @@
     "license": "LGPL-3",
     # any module necessary for this one to work correctly
     "depends": [
-        "account",
+        # "account",
+        'account_3way_match',
         "account_accountant",
+        "l10n_fr",
+        "contacts",
+        "sale_management",
         "mrp",
         "product",
         "purchase",
@@ -29,10 +33,10 @@
     "data": [
         "security/ir.model.access.csv",
         "data/data.xml",
-        "data/paperformart_data.xml",
-        "views/menuitems.xml",
+        # "data/paperformart_data.xml",
+        # "views/menuitems.xml",
         "views/account_tax_view.xml",
-        "views/product_views.xml",
+        "views/product_product_views.xml",
         "views/stock_picking_views.xml",
         "views/account_batch_payment_views.xml",
         "views/account_payment_view.xml",
@@ -46,6 +50,7 @@
         "views/uom_uom_views.xml",
         "views/account_move_views.xml",
         "views/product_template_views.xml",
+        "views/product_product_views.xml",
         "views/res_partner_views.xml",
         "views/account_account_views.xml",
         "views/account_payment_term_views.xml",
@@ -66,7 +71,8 @@
         "views/point_de_vente.xml",
         "views/oci_provenance_contact.xml",
         "views/ir_model_views.xml",
-        "views/region.xml"
+        "views/region.xml",
+        "views/stock_route.xml"
     ],
     "application": False,
     "installable": True,

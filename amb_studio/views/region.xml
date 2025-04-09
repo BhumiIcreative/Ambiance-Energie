@@ -1,31 +1,44 @@
 <odoo>
-  <record id="amb_studio_region_form" model="ir.ui.view">
-    <field name="name">region.form.studio</field>
-    <field name="model">region</field>
-    <field name="arch" type="xml">
-       <form>
-            <sheet string="Region">
-              <group>
-                <group>
-                  <field name="pays_id"/>
-                  <field name="code"/>
-                  <field name="name" required="1"/>
-                </group>
-              </group>
-            </sheet>
-        </form>
-    </field>
-  </record>
-
-  <record id="amb_studio_region_tree" model="ir.ui.view">
-    <field name="name">region.tree.studio</field>
-    <field name="model">region</field>
-    <field name="arch" type="xml">
-      <tree string="Region" editable="bottom">
-          <field name="pays_id" options="{'no_create': true}" required="1"/>
-          <field name="code" required="1"/>
-        <field name="name" required="1"/>
-      </tree>
-    </field>
-  </record>
+    <record id="amb_studio_region_form" model="ir.ui.view">
+        <field name="name">region.form.studio</field>
+        <field name="model">region</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Region">
+                    <group>
+                        <group>
+                            <field name="pays_id"/>
+                            <field name="code"/>
+                            <field name="name" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="amb_studio_region_tree" model="ir.ui.view">
+        <field name="name">region.tree.studio</field>
+        <field name="model">region</field>
+        <field name="arch" type="xml">
+            <tree string="Region" editable="bottom">
+                <field name="pays_id" options="{'no_create': true}" required="1"/>
+                <field name="code" required="1"/>
+                <field name="name" required="1"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_studio_region" model="ir.actions.act_window">
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                        This is your new action ; by default, it contains a list view and a form view.
+                    </p>
+                    <p>
+                        You can start customizing these screens by clicking on the Studio icon on the
+                        top right corner (you can also customize this help message there).
+                    </p>
+                ]]></field>
+        <field name="name">Région</field>
+        <field name="res_model">region</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
 </odoo>

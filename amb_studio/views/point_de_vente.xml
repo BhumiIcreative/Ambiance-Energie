@@ -6,22 +6,22 @@
         <field name="arch" type="xml">
             <form>
                 <sheet string="Point of sale">
-                  <div class="oe_title">
-                    <h1>
-                      <field name="name" required="1"/>
-                    </h1>
-                  </div>
-                  <group>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
                     <group>
-                        <field name="pos_archive"/>
-                        <field name="oci_contact_pof_societe_id" required="1"/>
-                        <field name="entrepot_id"/>
-                        <field name="qrcode_payment" options="{'size': [0, 90]}" widget="image"/>
+                        <group>
+                            <field name="pos_archive"/>
+                            <field name="oci_contact_pof_societe_id" required="1"/>
+                            <field name="entrepot_id"/>
+                            <field name="qrcode_payment" options="{'size': [0, 90]}" widget="image"/>
+                        </group>
+                        <group>
+                            <field name="id" groups="base.group_no_one"/>
+                        </group>
                     </group>
-                    <group>
-                        <field name="id" groups="base.group_no_one"/>
-                    </group>
-                  </group>
                 </sheet>
                 <div class="oe_chatter" name="studio_div_548c36">
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -31,7 +31,6 @@
             </form>
         </field>
     </record>
-
     <!-- point.de.vente tree view -->
     <record id="amb_studio_view_point_de_vente_tree" model="ir.ui.view">
         <field name="name">point.de.vente.tree.studio</field>
@@ -43,8 +42,6 @@
             </tree>
         </field>
     </record>
-
-
     <!-- point.de.vente search view -->
     <record id="amb_studio_point_de_vente_view_search" model="ir.ui.view">
         <field name="name">point.de.vente.view.search.studio</field>
@@ -58,4 +55,16 @@
             </search>
         </field>
     </record>
+    <record id="oci_point_of_sale_action" model="ir.actions.act_window">
+        <field name="name">Point of Sale</field>
+        <field name="res_model">point.de.vente</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+    <menuitem
+            id="contact_menu_oci_point_of_sale"
+            name="Point of sale"
+            action="oci_point_of_sale_action"
+            parent="contacts.res_partner_menu_config"
+            sequence="2"/>
 </odoo>

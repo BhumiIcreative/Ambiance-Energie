@@ -1,17 +1,33 @@
 <odoo>
+    <!-- Form View  -->
     <record id="amb_studio_view_technicien_form" model="ir.ui.view">
         <field name="name">technicien.form.studio</field>
         <field name="model">technicien</field>
         <field name="arch" type="xml">
             <form>
                 <sheet string="Technician">
-                  <div class="oe_title">
-                    <h1>
-                      <field name="name" required="1"/>
-                    </h1>
-                  </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" required="1"/>
+                        </h1>
+                    </div>
                 </sheet>
             </form>
         </field>
+    </record>
+    <!-- Action -->
+    <record id="action_studio_technicien" model="ir.actions.act_window">
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                        This is your new action ; by default, it contains a list view and a form view.
+                    </p>
+                    <p>
+                        You can start customizing these screens by clicking on the Studio icon on the
+                        top right corner (you can also customize this help message there).
+                    </p>
+                ]]></field>
+        <field name="name">Technicien</field>
+        <field name="res_model">technicien</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>

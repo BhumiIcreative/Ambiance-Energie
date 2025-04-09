@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Product.product test tree -->
+    <!-- Tree View -->
     <record id="amb_studio_inherit_product_product_tree_view" model="ir.ui.view">
         <field name="name">product.product.tree.studio</field>
         <field name="model">product.product</field>
@@ -16,8 +16,7 @@
             </xpath>
         </field>
     </record>
-
-    <!-- product.product form view -->
+    <!-- Form View -->
     <record id="amb_studio_inherit_product_view_form_normal" model="ir.ui.view">
         <field name="name">product.product.view.form.normal.studio</field>
         <field name="model">product.product</field>
@@ -89,9 +88,9 @@
                                 <field name="date" string="Creation date" widget="date" optional="hide"/>
                                 <field name="picking_id" string="Reference" column_invisible="1"/>
                                 <field name="sequence" column_invisible="1"/>
-                                <field name="point_de_vente_1"/>
+<!--&lt;!&ndash;                                <field name="point_de_vente_1"/>&ndash;&gt;stock move-->
                                 <field name="origin" optional="show" string="Order reference"/>
-                                <field name="client_1" string="Client"/>
+<!--                                <field name="client_1" string="Client"/>tock move-->
                                 <field name="product_id" readonly="state in ['done']" column_invisible="1"/>
                                 <field name="product_uom_qty" string="Order in progress" sum="Sum of Initial Request"/>
                                 <field name="product_uom" options="{'no_open': True, 'no_create': True}"
@@ -108,8 +107,7 @@
             </xpath>
         </field>
     </record>
-
-    <!-- product.product kanban view -->
+    <!-- Kanban View -->
     <record id="amb_studio_inherit_product_kanban_view" model="ir.ui.view">
         <field name="name">product.product.kanban.expense</field>
         <field name="inherit_id" ref="product.product_kanban_view"/>
@@ -119,49 +117,46 @@
                 <attribute name="widget">monetary</attribute>
             </xpath>
             <xpath expr="//div[@name='product_lst_price']/field[@name='lst_price']" position="after">
-                      Qté:
+                Qté:
                 <field name="qty_available"/>
             </xpath>
         </field>
     </record>
-<!--    <record id="amb_studio_inherit_mrp_product_template_search_view" model="ir.ui.view">-->
-<!--        <field name="name">amb.studio.inherit.mrp.product.template.search.view</field>-->
-<!--        <field name="model">product.template</field>-->
-<!--        <field name="mode">primary</field>-->
-<!--        <field name="inherit_id" ref="mrp.mrp_product_template_search_view"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--&lt;!&ndash;            <xpath expr="//field[@name='pricelist_id']" position="after">&ndash;&gt;-->
-<!--&lt;!&ndash;                <field name="seller_ids"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <field name="rf_fournisseur"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                <field name="default_code"/>&ndash;&gt;-->
-<!--&lt;!&ndash;            </xpath>&ndash;&gt;-->
-<!--            <xpath expr="//filter[@name='inactive']" position="after">-->
-<!--                <separator name="studio_separator_we9K7"/>-->
-<!--                <filter domain="[['virtual_available',&lt;,0]]" name="studio_filter_wnhSA"-->
-<!--                        string="Quantité prévue négative"/>-->
-<!--                <filter domain="[['virtual_available',&lt;,5]]" name="studio_filter_KNhmE"-->
-<!--                        string="Qté prévue inférieur à 5"/>-->
-<!--                <separator name="studio_separator_MvKDw"/>-->
-<!--                <filter domain="[['outgoing_qty',&gt;,0]]" name="studio_filter_pA8mt"-->
-<!--                        string="Articles à livrer"/>-->
-<!--            </xpath>-->
-<!--            <xpath expr="//search[1]/group[1]/filter[@name='categ_id']" position="after">-->
-<!--                <filter context="{'group_by': 'supplier_id'}" name="studio_group_by_JOdjG" string="Fournisseur"/>-->
-<!--            </xpath>-->
-<!--        </field>-->
-<!--    </record>-->
-
+    <!-- Search View -->
     <record id="amb_studio_inherit_mrp_product_product_search_view" model="ir.ui.view">
         <field name="name">mrp.product.product.search.studio</field>
         <field name="model">product.product</field>
         <field name="inherit_id" ref="mrp.mrp_product_product_search_view"/>
         <field name="arch" type="xml">
             <xpath expr="//search[1]/field[@name='name']" position="before">
-              <field name="seller_ids"/>
+                <field name="seller_ids"/>
             </xpath>
             <xpath expr="//field[@name='warehouse_id']" position="after">
-              <field name="default_code"/>
+                <field name="default_code"/>
             </xpath>
         </field>
+    </record>
+    <!-- Pivot View -->
+    <record id="product_pivot_view" model="ir.ui.view">
+        <field name="name">product.product.pivot</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <pivot string="Article"/>
+        </field>
+    </record>
+    <!-- Action -->
+    <record id="action_studio_article_product" model="ir.actions.act_window">
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                        This is your new action ; by default, it contains a list view and a form view.
+                    </p>
+                    <p>
+                        You can start customizing these screens by clicking on the Studio icon on the
+                        top right corner (you can also customize this help message there).
+                    </p>
+                ]]></field>
+        <field name="name">Article</field>
+        <field name="res_model">product.product</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>

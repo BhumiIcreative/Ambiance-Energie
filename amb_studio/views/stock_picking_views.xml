@@ -7,9 +7,9 @@
             <xpath expr="//field[@name='date_done']" position="attributes">
                 <attribute name="readonly">not company_id</attribute>
             </xpath>
-            <xpath expr="//field[@name='external_ref']" position="attributes">
-                <attribute name="string">Ref Delivery</attribute>
-            </xpath>
+<!--            <xpath expr="//field[@name='external_ref']" position="attributes">-->
+<!--                <attribute name="string">Ref Delivery</attribute>-->
+<!--            </xpath>-->
         </field>
     </record>
     <record id="amb_studio_inherit_view_stock_move_line_detailed_operation_tree" model="ir.ui.view">

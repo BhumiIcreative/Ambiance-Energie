@@ -1,5 +1,6 @@
 from . import sale_order
-from . import product
+from . import product_template
+from . import product_product
 from . import stock_valuation_layer
 from . import point_de_vente
 from . import res_partner

@@ -1,4 +1,5 @@
 <odoo>
+    <!-- Tree view    -->
     <record id="amb_studio_inherit_view_partner_tree" model="ir.ui.view">
         <field name="name">res.partner.tree.studio</field>
         <field name="model">res.partner</field>
@@ -9,9 +10,9 @@
                 <field name="zip" optional="show"/>
                 <xpath expr="//field[@name='city']" position="move"/>
             </xpath>
-<!--            <xpath expr="//field[@name='phone']" position="after">-->
-<!--                <field name="mobile"/>-->
-<!--            </xpath>-->
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="mobile"/>
+            </xpath>
             <xpath expr="//field[@name='email']" position="after">
                 <field name="property_product_pricelist" invisible="1"/>
                 <field name="total_due"/>
@@ -23,115 +24,196 @@
             </xpath>
         </field>
     </record>
-<!--    <record id="amb_studio_inherit_res_partner_kanban_view" model="ir.ui.view">-->
-<!--        <field name="name">amb.studio.inherit.res.partner.kanban.view</field>-->
-<!--        <field name="model">res.partner</field>-->
-<!--        <field name="inherit_id" ref="base.res_partner_kanban_view"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/ul[1]/li[7]" position="replace"/>-->
-<!--            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/ul[1]/li[4]/field[@name='city']"-->
-<!--                   position="replace"/>-->
-<!--            <xpath expr="//kanban[1]/templates[1]/t[1]/div[1]/div[1]/div[1]/span[1]/field[@name='category_id']"-->
-<!--                   position="after">-->
-<!--                <field display="full" name="contact_address"/>-->
-<!--            </xpath>-->
-<!--        </field>-->
-<!--    </record>-->
-
+    <!-- Form view    -->
     <record id="amb_studio_inherit_view_partner_form" model="ir.ui.view">
         <field name="name">res.partner.form.studio</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']//field[@name='company_id']"
+                   position="attributes">
+                <attribute name="readonly">parent_id</attribute>
+                <attribute name="required">id != 1 and id != 143237 and id != 55990</attribute>
+            </xpath>
             <xpath expr="//field[@name='vat']" position="after">
-          <field name="region_id"/>
-          <field name="siret_contact"/>
-          <field name="property_account_position_id"/>
-          <field name="ape_contact"/>
-          <field name="point_de_vente_id" options="{'no_create' :true, 'no_open' :true}" domain="[['pos_archive', '=' , False]]" required="1"/>
-          <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='misc']/field[@name='company_id']" position="move"/>
-          <field name="type_produit_contact_ids" widget="many2many_tags"/>
-          <field name="oci_sms_granules"/>
-          <field name="oci_sms_promo_entretien"/>
-        </xpath>
-        <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[1]" position="attributes">
-          <attribute name="string">Phone 1</attribute>
-        </xpath>
-        <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[2]" position="attributes">
-          <attribute name="string">Mobile 1</attribute>
-        </xpath>
-        <xpath expr="//field[@name='phone_sanitized']" position="after">
-          <field name="telephone2_contact" widget="phone"/>
-        </xpath>
-        <xpath expr="//field[@name='category_id']" position="after">
-          <field name="provenance_contact_id"/>
-          <field name="ancien_proprietaire_contact_id"/>
-          <field name="nom_parrainage_contact_id" invisible="provenance_contact_id != 9" required="provenance_contact_id == 9"/>
-        </xpath>
-        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="before">
-          <field name="est_un_client"/>
-          <field name="commercial_contact_id"/>
-        </xpath>
-        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']" position="attributes">
-          <attribute name="invisible">1</attribute>
-        </xpath>
-        <xpath expr="//field[@name='property_supplier_payment_term_id']" position="before">
-          <field name="est_un_fournisseur"/>
-        </xpath>
-        <xpath expr="//field[@name='ref']" position="before">
-          <field name="facturation_ttc" invisible="1"/>
-        </xpath>
-        <xpath expr="//field[@name='property_account_receivable_id']" position="attributes">
-          <attribute name="domain">[("deprecated", "=" ,False)]</attribute>
-        </xpath>
-        <xpath expr="//field[@name='property_account_payable_id']" position="attributes">
-          <attribute name="domain">[('deprecated', '=', False)]</attribute>
-        </xpath>
-        <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
-          <page string="Equipement">
-            <group >
-              <group >
-                <field name="numero_serie_equipement_contact"/>
-                <field name="date_de_pose_equipement_contact"/>
-                <field name="modele_equipement_contact" />
-                <field name="autre_information_equipement_contact"/>
-              </group>
-              <group name="studio_group_TqWPH_right"/>
-            </group>
-          </page>
-        </xpath>
-       <!--  <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='company_id']" position="attributes">
-          <attribute name="readonly">parent_id</attribute>
-          <attribute name="required">id != 1 and id != 143237 and id != 55990]]}</attribute>
-        </xpath> -->
+                <field name="region_id"/>
+                <field name="siret_contact"/>
+                <field name="property_account_position_id"/>
+                <field name="ape_contact"/>
+                <field name="point_de_vente_id" options="{'no_create' :true, 'no_open' :true}"
+                       domain="[['pos_archive', '=' , False]]" required="1"/>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='misc']/field[@name='company_id']"
+                       position="move"/>
+                <field name="type_produit_contact_ids" widget="many2many_tags"/>
+                <field name="oci_sms_granules"/>
+                <field name="oci_sms_promo_entretien"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[1]" position="attributes">
+                <attribute name="string">Phone 1</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[2]" position="attributes">
+                <attribute name="string">Mobile 1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='phone_sanitized']" position="after">
+                <field name="telephone2_contact" widget="phone"/>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="provenance_contact_id"/>
+                <field name="ancien_proprietaire_contact_id"/>
+                <field name="nom_parrainage_contact_id" invisible="provenance_contact_id != 9"
+                       required="provenance_contact_id == 9"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']"
+                   position="before">
+                <field name="est_un_client"/>
+                <field name="commercial_contact_id"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='sales_purchases']/group[@name='container_row_2']/group[@name='sale']/field[@name='user_id']"
+                   position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_supplier_payment_term_id']" position="before">
+                <field name="est_un_fournisseur"/>
+            </xpath>
+            <xpath expr="//field[@name='ref']" position="before">
+                <field name="facturation_ttc" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='property_account_receivable_id']" position="attributes">
+                <attribute name="domain">[("deprecated", "=" ,False)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_account_payable_id']" position="attributes">
+                <attribute name="domain">[('deprecated', '=', False)]</attribute>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                <page string="Equipement">
+                    <group>
+                        <group>
+                            <field name="numero_serie_equipement_contact"/>
+                            <field name="date_de_pose_equipement_contact"/>
+                            <field name="modele_equipement_contact"/>
+                            <field name="autre_information_equipement_contact"/>
+                        </group>
+                        <group name="studio_group_TqWPH_right"/>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
-
+    <!-- Kanban view    -->
+    <record id="amb_studio_inherit_res_partner_kanban_view" model="ir.ui.view">
+        <field name="name">amb.studio.inherit.res.partner.kanban.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//templates/t/div/div[2]/div/ul/li[4]" position="replace"/>
+        </field>
+    </record>
+    <!-- Search view    -->
+    <record id="amb_studio_inherit_view_res_partner_filter" model="ir.ui.view">
+        <field name="name">customer.statements.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/filter[@name='inactive']" position="after">
+                <separator/>
+                <filter domain="[['liste_de_prix','ilike','30\\%']]" name="studio_filter_sVkHy"
+                        string="Prix Remisé de 30%"/>
+                <separator name="studio_separator_IrlHV"/>
+                <filter domain="[['date_de_pose_equipement_contact','!=',False]]" name="studio_filter_u0oXS"
+                        string="Date de pose déterminée"/>
+                <filter domain="[['date_de_pose_equipement_contact','=',False]]" name="studio_filter_tMHL9"
+                        string="Date de pose non saisie"/>
+            </xpath>
+            <xpath expr="//filter[@name='supplier']" position="replace"/>
+            <xpath expr="//filter[@name='customer']" position="replace"/>
+            <xpath expr="//search[1]/field[@name='name']" position="after">
+                <field name="city"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="property_product_pricelist" string="Liste de prix"/>
+                <field name="ref"/>
+                <filter domain="[['est_un_client','=',True]]" name="studio_filter_Gik2W"
+                        string="Est un Client"/>
+                <filter domain="[['est_un_fournisseur','=',True]]" name="studio_filter_Qpmd0"
+                        string="Est un Fournisseur"/>
+            </xpath>
+            <xpath expr="//filter[@name='group_country']" position="after">
+                <filter context="{'group_by': 'liste_de_prix'}" name="studio_group_by_cRfvb"
+                        string="Liste de Prix-"/>
+            </xpath>
+        </field>
+    </record>
+    <!-- Filter view    -->
     <record id="amb_studio_inherit_view_res_partner_filter" model="ir.ui.view">
         <field name="name">res.partner.view.filter.studio</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
-          <xpath expr="//filter[@name='inactive']" position="after">
-            <filter name="liste_de_prix" domain="[('liste_de_prix', 'ilike' , '30\\%')]" string="Price Discounted by 30%"/>
-            <separator/>
-            <filter name="installation_date_determined" domain="[('date_de_pose_equipement_contact', '!=' , False)]" string="Installation date determined"/>
-            <filter name="Installation_date_not_entered" domain="[('date_de_pose_equipement_contact', '=' , False)]" string="Installation date not entered"/>
-          </xpath>
-          <xpath expr="//filter[@name='supplier']" position="replace"/>
-          <xpath expr="//filter[@name='customer']" position="replace"/>
-          <xpath expr="//search[1]/field[@name='name']" position="after">
-            <field name="city"/>
-          </xpath>
-          <xpath expr="//field[@name='user_id']" position="after">
-            <field name="property_product_pricelist" string="Price list"/>
-            <field name="ref"/>
-            <filter name="est_un_client" domain="[('est_un_client' ,'=', True)]" string="Is a Customer"/>
-            <filter name="est_un_fournisseur" domain="[('est_un_fournisseur', '=', True)]" string="Is a Supplier"/>
-          </xpath>
-          <xpath expr="//filter[@name='group_country']" position="after">
-            <filter name="price_list" context="{'group_by': 'liste_de_prix'}" string="Price List-"/>
-          </xpath>
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <filter name="liste_de_prix" domain="[('liste_de_prix', 'ilike' , '30\\%')]"
+                        string="Price Discounted by 30%"/>
+                <separator/>
+                <filter name="installation_date_determined" domain="[('date_de_pose_equipement_contact', '!=' , False)]"
+                        string="Installation date determined"/>
+                <filter name="Installation_date_not_entered" domain="[('date_de_pose_equipement_contact', '=' , False)]"
+                        string="Installation date not entered"/>
+            </xpath>
+            <xpath expr="//filter[@name='supplier']" position="replace"/>
+            <xpath expr="//filter[@name='customer']" position="replace"/>
+            <xpath expr="//search[1]/field[@name='name']" position="after">
+                <field name="city"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="property_product_pricelist" string="Price list"/>
+                <field name="ref"/>
+                <filter name="est_un_client" domain="[('est_un_client' ,'=', True)]" string="Is a Customer"/>
+                <filter name="est_un_fournisseur" domain="[('est_un_fournisseur', '=', True)]" string="Is a Supplier"/>
+            </xpath>
+            <xpath expr="//filter[@name='group_country']" position="after">
+                <filter name="price_list" context="{'group_by': 'liste_de_prix'}" string="Price List-"/>
+            </xpath>
         </field>
-      </record>
+    </record>
+    <!-- Action   -->
+    <record id="account.res_partner_action_customer" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_id" ref="base.view_partner_tree"/>
+    </record>
+    <record id="contacts.action_contacts" model="ir.actions.act_window">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,kanban,form,map,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="context">{'default_is_company': True}</field>
+    </record>
+    <record id="action_studio_clients" model="ir.actions.act_window">
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                        This is your new action ; by default, it contains a list view and a form view.
+                    </p>
+                    <p>
+                        You can start customizing these screens by clicking on the Studio icon on the
+                        top right corner (you can also customize this help message there).
+                    </p>
+                ]]></field>
+        <field name="name">Clients</field>
+        <field name="res_model">res.partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <record id="action_studio_clients2" model="ir.actions.act_window">
+        <field name="context">{'search_default_customer': 1,'res_partner_search_mode': 'customer', 'default_is_company':
+            True, 'default_customer_rank': 1}
+        </field>
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                Créer un nouveau client dans votre carnet d'adresse
+              </p><p>
+                Odoo vous aide à facilement suivre toutes les activités liées à un vendeur.
+              </p>]]></field>
+        <field name="name">Clients</field>
+        <field name="res_model">res.partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_id" ref="base.view_partner_tree"/>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
 </odoo>

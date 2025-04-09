@@ -1,24 +1,5 @@
 <odoo>
-    <!-- Inherit payment form view  -->
-<!--    <record id="amb_studio_inherit_view_account_payment_form" model="ir.ui.view">-->
-<!--        <field name="name">amb.studio.inherit.view.account.payment.form</field>-->
-<!--        <field name="model">account.payment</field>-->
-<!--        <field name="inherit_id" ref="account.view_account_payment_form"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <xpath expr="//field[@name='ref']" position="after">-->
-<!--                <field name="move_id.name" readonly="state != draft"/>-->
-<!--            </xpath>-->
-<!--        </field>-->
-<!--    </record>-->
-    <record id="amb_studio_account_payment_pivot_view" model="ir.ui.view">
-        <field name="name">amb.studio.account.payment.pivot.view</field>
-        <field name="model">account.payment</field>
-        <field name="arch" type="xml">
-            <pivot string="Payments">
-            </pivot>
-        </field>
-    </record>
-
+    <!-- Tree view  -->
     <record id="amb_studio_inherit_view_account_payment_tree" model="ir.ui.view">
         <field name="name">account.payment.tree.inherit.studio</field>
         <field name="model">account.payment</field>
@@ -30,38 +11,44 @@
             <xpath expr="//field[@name='payment_method_line_id']" position="attributes">
                 <attribute name="optional">show</attribute>
             </xpath>
-            <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="oci_point_of_sale"/>
-            </xpath>
-            <!-- change models of payment_difference   -->
-            <!-- <xpath expr="//field[@name='state']" position="after">
-              <field name="payment_difference" string="Payment difference" optional="show"/>
-            </xpath> -->
             <xpath expr="//field[@name='amount_company_currency_signed']" position="attributes">
                 <attribute name="readonly">1</attribute>
             </xpath>
         </field>
     </record>
-    <record model="ir.ui.view" id="amb_studio_inherit_view_account_payment_search">
-        <field name="name">amb.studio.inherit.view.account.payment.search</field>
+    <!-- Pivot View  -->
+    <record id="amb_studio_account_payment_pivot_view" model="ir.ui.view">
+        <field name="name">amb.studio.account.payment.pivot.view</field>
         <field name="model">account.payment</field>
-        <field name="inherit_id" ref="account.view_account_payment_search"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='company_id']" position="after">
-                <field name="oci_point_of_sale"/>
-            </xpath>
-            <xpath expr="//filter[@name='company']" position="after">
-                <filter context="{'group_by': 'oci_point_of_sale'}" name="studio_group_by_lMHv9"
-                        string="Point de vente"/>
-            </xpath>
-            <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
-                <separator name="studio_separator_kw0A6"/>
-                <filter domain="[['oci_point_of_sale','ilike','Reims']]"
-                        name="studio_filter_RqjhA" string="Reims"/>
-                <filter domain="[['oci_point_of_sale','ilike','Charleville']]"
-                        name="studio_filter_aNfU6" string="Charleville"/>
-            </xpath>
+            <pivot string="Payments">
+            </pivot>
         </field>
     </record>
-
+    <!-- Action  -->
+    <record id="account.action_account_payments" model="ir.actions.act_window">
+        <field name="name">Customer Payments</field>
+        <field name="res_model">account.payment</field>
+        <field name="view_mode">tree,kanban,form,graph,activity,pivot</field>
+    </record>
+    <!-- Action Encaissements reçus-->
+    <record id="action_studio_encaissements_recus" model="ir.actions.act_window">
+        <field name="context">{ 'default_payment_type': 'inbound', 'default_partner_type': 'customer',
+            'search_default_inbound_filter': 1, 'res_partner_search_mode': 'customer', }
+        </field>
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                  Enregistrer un paiement
+                </p><p>
+                  Les paiements sont utilisés pour enregistrer les
+mouvements de liquidité. Vous pouvez traiter ces paiements par vos
+propres moyens ou en utilisant les applications installées.
+                </p>
+            ]]></field>
+        <field name="name">Encaissements reçus</field>
+        <field name="res_model">account.payment</field>
+        <field name="target">current</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_id" ref="account.view_account_payment_tree"/>
+        <field name="view_mode">tree,kanban,form,graph</field>
+    </record>
 </odoo>
