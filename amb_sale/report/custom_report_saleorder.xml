@@ -141,7 +141,7 @@
                         </div>
                         <div class="row mt-1">
                             <div class="col-6">
-                                <table>
+                                <table class="table table-borderless">
                                     <thead>
                                         <tr>
                                             <th>

@@ -299,8 +299,8 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center small-text">
-                                                <span t-if="o.oci_saleorder_technicien"
-                                                      t-field="o.oci_saleorder_technicien"/> 
+                                                <span t-if="o.oci_saleorder_technicien_id"
+                                                      t-field="o.oci_saleorder_technicien_id"/> 
                                                 <span t-if="o.commitment_date"
                                                       t-out="o.commitment_date.strftime('%d/%m/%Y')"/>
                                                 <br/>

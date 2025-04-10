@@ -74,6 +74,7 @@
         "views/region.xml",
         "views/stock_route.xml",
         "views/menuitems.xml",
+        "reports/account_batch_payment_report_templates.xml",
     ],
     "application": False,
     "installable": True,

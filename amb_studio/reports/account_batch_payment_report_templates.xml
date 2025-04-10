@@ -1,0 +1,133 @@
+<odoo>
+
+<template id="amb_studio_print_batch_payment" inherit_id="account_batch_payment.print_batch_payment">
+    <xpath expr="//t[@t-foreach='docs']" position="replace">
+                  <t t-foreach="docs" t-as="o" class="align-top">
+            <div class="row">
+              <div class="col h2 text-center o_bold bg-400">
+                <span>Bordereau de remise en banque : </span>
+                <span t-field="o.name"/>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col text-center">
+        </div>
+            </div>
+            <div class="row">
+              <div class="col ">
+                <span> </span>
+              </div>
+            </div>
+            <div class="row">
+      </div>
+            <div class="row">
+      </div>
+            <div class="row">
+      </div>
+            <div class="row">
+      </div>
+            <div class="row">
+              <div class="col-6">
+                <span t-field="o.journal_id.bank_id.name" style="margin-left:40px" class="o_bold"/>
+              </div>
+              <div class="col-6 text-right">
+                <span>Généré le 
+    <span t-field="o.create_date" t-options-widget="&quot;date&quot;"/>
+  
+  <br/></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <span t-field="o.journal_id.bank_id.street" style="margin-left:40px"/>
+              </div>
+              <div class="col-6">
+                <span> </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <span t-field="o.journal_id.bank_id.street2" style="margin-left:40px"/>
+              </div>
+              <div class="col-6">
+                <span> </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <span t-field="o.journal_id.bank_id.zip" style="margin-left:40px"/>
+              </div>
+              <div class="col-6">
+                <span> </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <span t-field="o.journal_id.bank_id.city" style="margin-left:40px"/>
+              </div>
+              <div class="col-6">
+                <span> </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <span>
+                  <strong>Numéro de compte:</strong>
+                  <br/>
+                </span>
+                <span t-field="o.journal_id.bank_account_id.acc_number"/>
+              </div>
+              <div class="col-3"/>
+              <div class="col-3"/>
+              <div class="col-3"/>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span> </span>
+              </div>
+            </div>
+            <div t-foreach="pages(o)" t-as="page" class="page page_batch_payment">
+              <div class="row batch_details">
+                    </div>
+              <table class="table table-borderless table-sm">
+                <thead class="table-bordered">
+                  <tr>
+                    <th class="text-left">Client</th>
+                    <th class="text-center" style="width:100px">Date</th>
+                    <th class="text-left">Mémo</th>
+                    <th class="text-right" style="width:150px">Montant</th>
+                  </tr>
+                </thead>
+                <tr t-foreach="page['payments']" t-as="payment">
+                  <td class="text-left">
+                    <t t-esc="payment.partner_id.name"/>
+                  </td>
+                  <td class="text-center">
+                    <t t-esc="payment.date" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                  </td>
+                  <td class="text-left">
+                    <t t-esc="payment.ref"/>
+                  </td>
+                  <td class="text-right">
+                    <t t-esc="payment.amount" t-options="{'widget': 'monetary', 'display_currency': payment.currency_id}"/>
+                  </td>
+                </tr>
+                <tfoot class="table-bordered">
+                  <tr>
+                    <td/>
+                    <td/>
+                    <td class="text-right o_bold">
+                      <span>Total de la remise<br/></span>
+                    </td>
+                    <td class="text-right o_bold">
+                      <t t-esc="page['total_amount']" t-options="{'widget': 'monetary', 'display_currency': page['currency']}"/>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </t>
+
+    </xpath>
+</template>
+</odoo>
