@@ -20,24 +20,26 @@
                     <span>RAPPORT DE MISE EN SERVICE (PV de réception)</span>
                 </h2>
 
-                <div id="informations" class="mt32 mb32">
-                    <div class="mw-100 mb-2" name="description">
+                <div id="informations" class="row mt32 mb32">
+                    <div class="col-4 mw-100 mb-2" name="description">
                         <strong>Année de construction:</strong>
                         <p class="m-0">.....</p>
                     </div>
-                    <div class="mw-100 mb-2" name="invoice_date">
+                    <div class="col-5 mb-2mw-100 mb-2" name="invoice_date">
                         <strong>Surface habitable:</strong>
                         <p class="m-0">.....</p>
                     </div>
-                    <div class="mw-100 mb-2" name="due_date">
+                    <div class="col-3 mw-100 mb-2" name="due_date">
                         <strong>Nombre de pièces:</strong>
                         <p class="m-0">.....</p>
                     </div>
-                    <div class="mw-100 mb-2" name="origin">
+                </div>
+                <div class="row mt-2" style="font-size:12px">
+                    <div class="col-6 mw-100 mb-2" name="origin">
                         <strong>Mode chauffage avant:</strong>
                         <p class="m-0">.....</p>
                     </div>
-                    <div class="mw-100 mb-2" name="customer_code">
+                    <div class="col-6 mw-100 mb-2" name="customer_code">
                         <strong>Mode chauffage après:</strong>
                         <p class="m-0">.....</p>
                     </div>
