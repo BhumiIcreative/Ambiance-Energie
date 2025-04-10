@@ -75,6 +75,8 @@
         "views/stock_route.xml",
         "views/menuitems.xml",
         "reports/account_batch_payment_report_templates.xml",
+        "reports/cost_structure_report.xml",
+        "reports/report_stock_rule.xml",
     ],
     "application": False,
     "installable": True,
