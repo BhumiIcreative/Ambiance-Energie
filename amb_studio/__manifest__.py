@@ -34,7 +34,7 @@
         "security/ir.model.access.csv",
         "data/data.xml",
         # "data/paperformart_data.xml",
-        # "views/menuitems.xml",
+
         "views/account_tax_view.xml",
         "views/product_product_views.xml",
         "views/stock_picking_views.xml",
@@ -72,7 +72,8 @@
         "views/oci_provenance_contact.xml",
         "views/ir_model_views.xml",
         "views/region.xml",
-        "views/stock_route.xml"
+        "views/stock_route.xml",
+        "views/menuitems.xml",
     ],
     "application": False,
     "installable": True,

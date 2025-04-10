@@ -31,40 +31,40 @@
             </form>
         </field>
     </record>
-    <!-- point.de.vente tree view -->
-    <record id="amb_studio_view_point_de_vente_tree" model="ir.ui.view">
-        <field name="name">point.de.vente.tree.studio</field>
-        <field name="model">point.de.vente</field>
-        <field name="arch" type="xml">
-            <tree string="Point of sale">
-                <field name="name"/>
-                <field name="pos_archive"/>
-            </tree>
-        </field>
-    </record>
-    <!-- point.de.vente search view -->
-    <record id="amb_studio_point_de_vente_view_search" model="ir.ui.view">
-        <field name="name">point.de.vente.view.search.studio</field>
-        <field name="model">point.de.vente</field>
-        <field name="arch" type="xml">
-            <search string="Point of Sale">
-                <field name="name"/>
-                <filter domain="[['pos_archive','=',True]]" name="active" string="Active"/>
-                <separator/>
-                <filter string="Archived" name="inactive" domain="[('pos_archive', '=', False)]"/>
-            </search>
-        </field>
-    </record>
-    <record id="oci_point_of_sale_action" model="ir.actions.act_window">
-        <field name="name">Point of Sale</field>
-        <field name="res_model">point.de.vente</field>
-        <field name="view_mode">tree,form</field>
-        <field name="target">current</field>
-    </record>
-    <menuitem
-            id="contact_menu_oci_point_of_sale"
-            name="Point of sale"
-            action="oci_point_of_sale_action"
-            parent="contacts.res_partner_menu_config"
-            sequence="2"/>
+        <!-- point.de.vente tree view -->
+        <record id="amb_studio_view_point_de_vente_tree" model="ir.ui.view">
+            <field name="name">point.de.vente.tree.studio</field>
+            <field name="model">point.de.vente</field>
+            <field name="arch" type="xml">
+                <tree string="Point of sale">
+                    <field name="name"/>
+                    <field name="pos_archive"/>
+                </tree>
+            </field>
+        </record>
+        <!-- point.de.vente search view -->
+        <record id="amb_studio_point_de_vente_view_search" model="ir.ui.view">
+            <field name="name">point.de.vente.view.search.studio</field>
+            <field name="model">point.de.vente</field>
+            <field name="arch" type="xml">
+                <search string="Point of Sale">
+                    <field name="name"/>
+                    <filter domain="[['pos_archive','=',True]]" name="active" string="Active"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('pos_archive', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="oci_point_of_sale_action" model="ir.actions.act_window">
+            <field name="name">Point of Sale</field>
+            <field name="res_model">point.de.vente</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+        <menuitem
+                id="contact_menu_oci_point_of_sale"
+                name="Point of sale"
+                action="oci_point_of_sale_action"
+                parent="contacts.res_partner_menu_config"
+                sequence="2"/>
 </odoo>
