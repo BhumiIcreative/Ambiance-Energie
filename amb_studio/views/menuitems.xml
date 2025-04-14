@@ -68,8 +68,8 @@
     <menuitem name="Journal des Factures de ventes" sequence="8" action="action_studio_journal_des_ventes"
               id="menu_studio_vente_journal_des_ve"
               parent="menu_clients_ventes"/>
-    <menuitem name="Fournisseurs" action="base.action_partner_supplier_form" id="menu_studio_contacts_type_produi"
-              parent="menu_fournisseurs_achats"/>
+    <menuitem name="Fournisseurs" action="base.action_partner_supplier_form" id="menu_studio_favoris_fournisseurs"
+              parent="menu_fournisseurs_achats" sequence="0"/>
     <menuitem name="Type produit" action="action_studio_type_produit" id="menu_studio_contacts_type_produi"
               parent="contacts.res_partner_menu_config"/>
     <menuitem name="Commandes à facturer" sequence="3" action="action_studio_commandes_a_facturer"
