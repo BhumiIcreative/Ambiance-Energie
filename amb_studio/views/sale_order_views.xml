@@ -133,6 +133,20 @@ ou vérifiez chaque commande et les facturer une par une.
         <field name="view_id" ref="sale.view_quotation_tree_with_onboarding"/>
         <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
     </record>
+    <record id="action_studio_clients_" model="ir.actions.act_window">
+        <field name="context">{'search_default_customer': 1,'res_partner_search_mode': 'customer', 'default_is_company': True, 'default_customer_rank': 1}</field>
+        <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
+                Créer un nouveau client dans votre carnet d'adresse
+              </p><p>
+                Odoo vous aide à facilement suivre toutes les activités liées à un vendeur.
+              </p>]]></field>
+        <field name="name">Clients</field>
+        <field name="res_model">res.partner</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_id" ref="base.view_partner_tree"/>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
 
     <!-- Sale Subscription     -->
     <!-- Form View    -->
