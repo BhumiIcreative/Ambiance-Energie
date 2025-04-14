@@ -55,24 +55,6 @@
         <field name="margin_left">7.0</field>
         <field name="display_name">A4 paysage</field>
     </record>
-    <record id="amb_account.custom_invoice_report_format" model="report.paperformat" context="{'studio': True}">
-        <field name="default" eval="True"/>
-        <field name="format">A4</field>
-        <field name="margin_bottom">23.0</field>
-        <field name="print_page_height">297.0</field>
-        <field name="dpi">90</field>
-        <field name="print_page_width">210.0</field>
-        <field name="page_height" eval="False"/>
-        <field name="margin_top">80.0</field>
-        <field name="page_width" eval="False"/>
-        <field name="header_spacing">75</field>
-        <field name="header_line" eval="False"/>
-        <field name="name">Invoice report format</field>
-        <field name="orientation">Portrait</field>
-        <field name="margin_right">7.0</field>
-        <field name="margin_left">7.0</field>
-        <field name="display_name">Invoice report format</field>
-    </record>
     <record id="studio_paperformat_a4_extrait_compte" model="report.paperformat"
             context="{'studio': True}">
         <field name="default" eval="True"/>

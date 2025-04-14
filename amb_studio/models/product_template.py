@@ -19,7 +19,7 @@ class ProductTemplate(models.Model):
         "product_template_id",
         string="Customer orders",
         copy=False,
-        # domain=[("commande_en_cours", ">", 0)],
+        domain=[("commande_en_cours", ">", 0)],
     )
     stocks_ids = fields.One2many(
         "stock.quant",

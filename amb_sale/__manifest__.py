@@ -25,6 +25,7 @@
         'data/ir_config_parameter.xml',
         'data/report_paperformat.xml',
         'views/sale_views.xml',
+        'views/product_template.xml',
         'views/res_partner_views.xml',
         'report/custom_external_layout.xml',
         'report/custom_report_saleorder.xml',

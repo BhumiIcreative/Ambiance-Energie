@@ -1,0 +1,12 @@
+<odoo>
+    <record id="amb_sale_inherit_mrp_product_template_search_view" model="ir.ui.view">
+        <field name="name">amb.sale.inherit.mrp.product.template.search.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="mrp.mrp_product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search[1]/group[1]/filter[@name='categ_id']" position="after">
+                <filter context="{'group_by': 'supplier_id'}" name="studio_group_by_JOdjG" string="Fournisseur"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

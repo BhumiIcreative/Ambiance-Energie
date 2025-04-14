@@ -16,10 +16,7 @@
             <xpath expr="//field[@name='list_price']" position="after">
                 <field name="dernier_prix_dachat_fournisseur"/>
             </xpath>
-    <!-- move to amb_stock            -->
-<!--            <xpath expr="//field[@name='standard_price']" position="after">-->
-<!--                <field name="free_qty"/>-->
-<!--            </xpath>-->
+
             <xpath expr="//field[@name='activity_exception_decoration']" position="after">
                 <field name="reordering_min_qty"/>
                 <field name="reordering_max_qty"/>
@@ -56,10 +53,6 @@
                 <separator name="studio_separator_MvKDw"/>
                 <filter domain="[['outgoing_qty','&gt;',0]]" name="studio_filter_pA8mt" string="Articles à livrer"/>
             </xpath>
-<!-- move to amb_sale            -->
-<!--            <xpath expr="//search[1]/group[1]/filter[@name='categ_id']" position="after">-->
-<!--                <filter context="{'group_by': 'supplier_id'}" name="studio_group_by_JOdjG" string="Fournisseur"/>-->
-<!--            </xpath>-->
         </field>
     </record>
     <!-- Form View -->

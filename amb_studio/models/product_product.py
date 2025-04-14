@@ -10,7 +10,7 @@ class ProductProduct(models.Model):
         "product_id",
         string="Customer Orders",
         copy=False,
-        # domain=[("commande_en_cours", ">", 0)],
+        domain=[("commande_en_cours", ">", 0)],
     )
     stocks_1_ids = fields.One2many(
         "stock.quant",

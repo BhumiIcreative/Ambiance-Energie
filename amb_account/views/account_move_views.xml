@@ -43,7 +43,7 @@
             </xpath>
         </field>
     </record>
-     <record id="amb_account_inherit_view_out_invoice_tree" model="ir.ui.view">
+    <record id="amb_account_inherit_view_out_invoice_tree" model="ir.ui.view">
         <field name="priority" eval="10"/>
         <field name="name">amb.account.move.form</field>
         <field name="model">account.move</field>
@@ -53,5 +53,23 @@
                 <field name="oci_point_of_sale"/>
             </xpath>
         </field>
-     </record>
+    </record>
+    <record id="amb_account_inherit_view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">amb.account.inherit.view.account.invoice.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search[1]/group[1]/separator[1]" position="after">
+                <filter domain="[['oci_point_of_sale','ilike','Reims']]"
+                        name="studio_filter_jjLiU" string="Reims"/>
+                <filter domain="[['oci_point_of_sale','ilike','Charleville']]"
+                        name="studio_filter_EPh4j" string="Charleville"/>
+            </xpath>
+            <xpath expr="//filter[@name='duedate']" position="after">
+                <filter context="{'group_by': 'oci_point_of_sale'}" name="studio_group_by_KPuW1"
+                        string="Point de vente"/>
+
+            </xpath>
+        </field>
+    </record>
 </odoo>

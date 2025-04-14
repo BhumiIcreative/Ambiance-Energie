@@ -33,15 +33,15 @@
     "data": [
         "security/ir.model.access.csv",
         "data/data.xml",
-        # "data/paperformart_data.xml",
-
+        "data/paperformart_data.xml",
+        "data/base_automation.xml",
         "views/account_tax_view.xml",
         "views/product_product_views.xml",
         "views/stock_picking_views.xml",
         "views/account_batch_payment_views.xml",
         "views/account_payment_view.xml",
         "views/account_full_reconcile_views.xml",
-        "views/mailing_contact_views.xml",
+        # "views/mailing_contact_views.xml",
         "views/res_group_views.xml",
         "views/sale_order_views.xml",
         "views/stock_oderpoint_views.xml",
