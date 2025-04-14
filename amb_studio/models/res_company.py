@@ -13,3 +13,5 @@ class ResCompany(models.Model):
     oci_conf_juridique = fields.Char(string="Simplified Legal Form", copy=False)
     oci_conf_bic = fields.Char(string="BIC", copy=False)
     assurance = fields.Char(string="Civil Liability and Ten-Year Warranty", copy=False)
+    second_partner_id = fields.Many2one("res.partner", string="Second Contact")
+

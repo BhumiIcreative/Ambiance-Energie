@@ -14,7 +14,7 @@
         "account",
         "purchase_stock",
         "amb_subscription",
-        "fields_module",
+
     ],
     "data": [
         "data/report_paperformat.xml",

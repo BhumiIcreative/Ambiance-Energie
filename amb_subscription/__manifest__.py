@@ -16,7 +16,7 @@
         "account",
         "sale_timeline",
         "l10n_fr",
-        'fields_module',
+
     ],
     # always loaded
     "data": [
