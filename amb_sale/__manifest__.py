@@ -18,6 +18,7 @@
         'amb_product', 
         'account_avatax_sale',
         'l10n_fr',
+        'amb_studio',
     ],
     # always loaded
     'data': [

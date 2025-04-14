@@ -13,7 +13,6 @@
         "l10n_fr",
         "account",
         "purchase_stock",
-        "amb_studio",
         "amb_subscription",
         "fields_module",
     ],

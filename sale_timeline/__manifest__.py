@@ -10,7 +10,6 @@
     'depends': [
         'account',
         'sale',
-        # 'amb_sale',
         'amb_edf_prime',
         'sale_subscription',
     ],

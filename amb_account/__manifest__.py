@@ -15,7 +15,8 @@
         "base",
         "account",
         "account_followup",
-        'sale'
+        "sale",
+        "amb_studio",
     ],
     # always loaded
     "data": [

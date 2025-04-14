@@ -22,8 +22,8 @@ class SaleOrder(models.Model):
         ('sto', 'Stove'),
     ], string='Type Order', default='std')
     sponsorship = fields.Char(string='Sponsorship')
-    # oci_point_of_sale = fields.Many2one('oci.point.of.sale',
-    #                                     string='Point of Sale')
+    oci_point_of_sale = fields.Many2one('point.de.vente',
+                                        string='Point of Sale')
     advance = fields.Monetary(string='Advance', tracking=True, copy=False)
     advance_state = fields.Selection([
         ('not_confirmed', 'Not Confirmed'),

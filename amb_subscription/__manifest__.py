@@ -16,10 +16,7 @@
         "account",
         "sale_timeline",
         "l10n_fr",
-        'amb_account',
-        'amb_sale',
         'fields_module',
-        "amb_studio"
     ],
     # always loaded
     "data": [

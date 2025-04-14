@@ -9,5 +9,5 @@ class AccountPayment(models.Model):
         'sale_timeline.payment.instrument',
         string='Payment Instrument')
     oci_point_of_sale = fields.Many2one(
-        'oci.point.of.sale',
+        'point.de.vente',
         string='Point of sale')
