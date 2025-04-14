@@ -57,9 +57,9 @@
                                     <th style="padding: 0;text-align:right;">
                                         <span>Credit</span>
                                     </th>
-                                    <th style="padding: 0; padding-left:10px">
+                                    <!-- <th style="padding: 0; padding-left:10px">
                                         <span style="font-style: oblique; font-size: smaller;">Info taxes</span>
-                                    </th>
+                                    </th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,10 +80,10 @@
                                     <td style="padding: 0; width:100px; text-align:right;">
                                         <span t-field="table_line.credit"/>
                                     </td>
-                                    <td style="padding: 0; width:150px; padding-left:10px">
+                                   <!--  <td style="padding: 0; width:150px; padding-left:10px">
                                         <span style="font-style: oblique; font-size: smaller;"
                                               t-field="table_line.taxes_audit"/>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             </tbody>
                         </table>

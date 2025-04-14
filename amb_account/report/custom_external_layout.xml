@@ -275,7 +275,7 @@
                                     <span t-field="l.product_id.default_code"/>
                                 </td>
                                 <td class="border-dark text-left">
-                                    <span t-esc="l.name.split(']',1)[1] if ']' in l.name else l.name"/>
+                                    <span t-esc="l.name.split(']', 1)[1] if l.name and ']' in l.name else l.name or ''"/>
                                 </td>
                                 <td class="border-dark text-center">
                                     <span t-esc="'%.1f'%(l.quantity)"/>
