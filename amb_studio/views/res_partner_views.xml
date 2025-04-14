@@ -35,7 +35,7 @@
                 <attribute name="readonly">parent_id</attribute>
                 <attribute name="required">id != 1 and id != 143237 and id != 55990</attribute>
             </xpath>
-            <xpath expr="//field[@name='vat']" position="after">
+            <xpath expr="//div[@class='o_address_format']" position="after">
                 <field name="region_id"/>
                 <field name="siret_contact"/>
                 <field name="property_account_position_id"/>
